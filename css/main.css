@@ -1,0 +1,28 @@
+.layout {
+    background-image: url("../design/main.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.sun {
+    align-items: center;
+    width: 280px;
+    transform: translate(-30%, 15%);
+}
+
+.cir1 {
+    transform: translate(-110%, -28%);
+}
+
+.cir2 {
+    transform: translate(-10%, 50%);
+}
+
+.arc {
+    fill: aqua;
+    mix-blend-mode: multiply;
+    width: 100px;
+    transform: translate(-70%, -28%);
+}
