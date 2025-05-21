@@ -1,0 +1,38 @@
+body {
+    background-color: rgb(255, 245, 230);
+}
+
+h1 {
+    color: rgb(5, 5, 5);
+    font-family: 'microsoft yahei';
+    font-size: 2em;
+    font-weight: bold;
+    text-align: left;
+    letter-spacing: -2px;
+}
+
+h2 {
+    color: rgb(5, 5, 5);
+    font-family: 'microsoft yahei';
+    font-size: em;
+    font-weight: bold;
+    text-align: left;
+    letter-spacing: -2px;
+}
+
+p {
+    color: rgb(5, 5, 5);
+    font-family: 'microsoft yahei';
+    text-align: left;
+    letter-spacing: 0px;
+}
+  
+.box {
+    border: 5px solid rgb(5, 5, 5);
+    width: 250px;
+    height: 250px;
+    font-size: 22px;
+    background: linear-gradient(to bottom, rgb(255, 245, 230), rgb(76, 0, 255));
+    align-items: center;
+    padding: 10px;
+}
