@@ -1,38 +1,89 @@
+:root {
+  --bg-color: rgb(255, 245, 230);
+  --text_color: rgb(5, 5, 5);
+  --shadow-color: white;
+  
+  --font-zh-en: 'Microsoft Yahei', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: rgb(5, 5, 5);
+    --text_color: rgb(255, 245, 230);
+    --shadow-color: black;
+  }
+}
+
 body {
-    background-color: rgb(255, 245, 230);
+    background-color: var(--bg-color);
 }
 
 h1 {
-    color: rgb(5, 5, 5);
-    font-family: 'microsoft yahei';
-    font-size: 2em;
+    color: var(--text_color);
+    font-family: var(--font-zh-en);
+    font-size: 3.5em;
     font-weight: bold;
     text-align: left;
-    letter-spacing: -2px;
+    text-shadow: 0px 0px 10px var(--shadow-color);
+    letter-spacing: -1.5px;
 }
 
 h2 {
-    color: rgb(5, 5, 5);
-    font-family: 'microsoft yahei';
-    font-size: em;
+    color: var(--text_color);
+    font-family: var(--font-zh-en);
+    font-size: 1.5em;
     font-weight: bold;
     text-align: left;
     letter-spacing: -2px;
 }
 
 p {
-    color: rgb(5, 5, 5);
-    font-family: 'microsoft yahei';
+    color: var(--text_color);
+    font-family: var(--font-zh-en);
     text-align: left;
     letter-spacing: 0px;
 }
-  
-.box {
-    border: 5px solid rgb(5, 5, 5);
-    width: 250px;
-    height: 250px;
-    font-size: 22px;
-    background: linear-gradient(to bottom, rgb(255, 245, 230), rgb(76, 0, 255));
+
+.centered{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.title {
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.unselectable {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera, and Edge */
+}
+
+.layout {
+    background-image: url("../design/main.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.sun {
     align-items: center;
-    padding: 10px;
+    width: 320px;
+    height: 320px;
+    transform: translate(-30%, 10%);
+}
+
+.cir1 {
+    transform: translate(-140%, -50%);
+}
+
+.cir2 {
+    transform: translate(-20%, 60%);
 }
