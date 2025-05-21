@@ -10,14 +10,17 @@
     align-items: center;
     width: 280px;
     transform: translate(-30%, 15%);
+    filter: drop-shadow(var(--shadow-color) 0px 0px 2px);
 }
 
 .cir1 {
     transform: translate(-110%, -28%);
+    filter: drop-shadow(var(--shadow-color-inv) 0px 0px 2px);
 }
 
 .cir2 {
     transform: translate(-10%, 50%);
+    filter: drop-shadow(var(--shadow-color-inv) 0px 0px 2px);
 }
 
 .arc {

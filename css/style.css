@@ -2,6 +2,7 @@
   --bg-color: rgb(255, 245, 230);
   --text_color: rgb(5, 5, 5);
   --shadow-color: white;
+  --shadow-color-inv: rgb(5, 5, 5, 0.1);
   
   --font-zh-en: 'Microsoft Yahei', sans-serif;
 }
