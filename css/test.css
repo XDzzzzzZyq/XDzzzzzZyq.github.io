@@ -21,11 +21,11 @@ body {
 h1 {
     color: var(--text_color);
     font-family: var(--font-zh-en);
-    font-size: 3.5em;
+    font-size: 3em;
     font-weight: bold;
     text-align: left;
     text-shadow: 0px 0px 10px var(--shadow-color);
-    letter-spacing: -1.5px;
+    letter-spacing: -3px;
 }
 
 h2 {
@@ -75,15 +75,21 @@ p {
 
 .sun {
     align-items: center;
-    width: 320px;
-    height: 320px;
-    transform: translate(-30%, 10%);
+    width: 280px;
+    transform: translate(-30%, 15%);
 }
 
 .cir1 {
-    transform: translate(-140%, -50%);
+    transform: translate(-110%, -28%);
 }
 
 .cir2 {
-    transform: translate(-20%, 60%);
+    transform: translate(-10%, 50%);
+}
+
+.arc {
+    fill: aqua;
+    mix-blend-mode: multiply;
+    width: 100px;
+    transform: translate(-70%, -28%);
 }
