@@ -29,3 +29,11 @@
     width: 100px;
     transform: translate(-70%, -28%);
 }
+
+.arrow {
+    fill: aqua;
+    mix-blend-mode: multiply;
+    width: 25px;
+    transform: translate(230%, -28%);
+    filter: drop-shadow(var(--shadow-color) 0px 0px 2px);
+}
