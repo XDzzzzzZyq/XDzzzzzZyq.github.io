@@ -57,13 +57,6 @@ p {
     transform: translate(-50%, -50%);
 }
 
-.title {
-    position: absolute;
-    top: 37%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 .unselectable {
     -webkit-user-select: none; /* Safari */
     -moz-user-select: none; /* Firefox */

@@ -2,12 +2,24 @@
     height: 100vh;
 }
 
+.title {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .layout {
     background-image: url("../design/main.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+.xdzzyq{
+    display: block;
+    overflow: hidden;
 }
 
 .sun {
@@ -18,20 +30,20 @@
 }
 
 .cir1 {
-    transform: translate(-140%, -35%);
+    transform: translate(-140%, -27.5%);
     filter: drop-shadow(var(--shadow-color-inv) 0px 0px 2px);
 }
 
 .cir2 {
-    transform: translate(-25%, 130%);
+    transform: translate(-37.5%, 147.5%);
     filter: drop-shadow(var(--shadow-color-inv) 0px 0px 2px);
 }
 
 .arc {
     fill: aqua;
     mix-blend-mode: multiply;
-    width: 100px;
-    transform: translate(-70%, -28%);
+    width: 85px;
+    transform: translate(-75%, -22.5%);
 }
 
 .arrow {
@@ -52,4 +64,18 @@ footer {
     font-size: 0.2em;
     text-align: center;
     letter-spacing: -2px;
+}
+
+.grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 35px 35px;
+  pointer-events: none;
+  z-index: 9999;
 }
