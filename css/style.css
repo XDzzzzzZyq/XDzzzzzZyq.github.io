@@ -17,6 +17,7 @@
 
 body {
     background-color: var(--bg-color);
+    height: 200vh;
 }
 
 h1 {
