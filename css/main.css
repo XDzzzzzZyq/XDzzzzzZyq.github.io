@@ -67,15 +67,49 @@ footer {
 }
 
 .grid-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image:
-    linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
-  background-size: 35px 35px;
-  pointer-events: none;
-  z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: -8px;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: var(--grid-size) var(--grid-size);
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.floating-nav {
+    position: fixed;
+    top: var(--grid-size);
+    right: var(--grid-size);
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 0.0rem 1rem;
+    border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 1000;
+    backdrop-filter: blur(6px);
+}
+
+.floating-nav a {
+    font-family: var(--font-zh-en);
+    text-decoration: none;
+    color: var(--text-color);
+    box-sizing: border-box;
+    width: calc(var(--grid-size) * 6);
+    height: var(--grid-size);
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+}
+
+.floating-nav a:first-child {
+    width: auto;
+}
+
+.floating-nav a:hover {
+    color: #007BFF;
 }
