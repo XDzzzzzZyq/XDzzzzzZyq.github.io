@@ -1,8 +1,8 @@
 :root {
   --bg-color: rgb(255, 245, 230);
   --text_color: rgb(5, 5, 5);
-  --shadow-color: white;
-  --shadow-color-inv: rgb(5, 5, 5, 0.1);
+  --shadow-color: #fff;
+  --shadow-color-inv: rgba(5, 5, 5, 0.1);
   --grid-size: 35px;
   --font-zh-en: 'Microsoft Yahei', sans-serif;
 }
@@ -11,55 +11,53 @@
   :root {
     --bg-color: rgb(5, 5, 5);
     --text_color: rgb(255, 245, 230);
-    --shadow-color: black;
+    --shadow-color: #000;
   }
 }
 
 body {
-    background-color: var(--bg-color);
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  height: 200vh;
+}
 
-    display: flex;
-    flex-direction: column;
-    height: 200vh;
+h1, h2, p {
+  color: var(--text_color);
+  font-family: var(--font-zh-en);
 }
 
 h1 {
-    color: var(--text_color);
-    font-family: var(--font-zh-en);
-    font-size: 3em;
-    font-weight: bold;
-    text-align: center;
-    text-shadow: 0px 0px 10px var(--shadow-color);
-    letter-spacing: -3px;
-    width: 100%;
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 0 10px var(--shadow-color);
+  letter-spacing: -3px;
+  width: 100%;
 }
 
 h2 {
-    color: var(--text_color);
-    font-family: var(--font-zh-en);
-    font-size: 1.5em;
-    font-weight: bold;
-    text-align: left;
-    letter-spacing: -2px;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: left;
+  letter-spacing: -2px;
 }
 
 p {
-    color: var(--text_color);
-    font-family: var(--font-zh-en);
-    text-align: left;
-    letter-spacing: 0px;
+  text-align: left;
+  letter-spacing: 0;
 }
 
-.centered{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .unselectable {
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+ */
-    user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera, and Edge */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE10+ */
+  user-select: none;         /* Modern browsers */
 }
