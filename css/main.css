@@ -111,6 +111,11 @@ footer {
   width: auto;
 }
 
-.floating-nav a:hover {
+.link-text {
+  display: inline-block; /* Ensures the span only takes up as much width as the text */
+  padding: 0;            /* Removes default padding */
+}
+
+.link-text:hover {
   color: #007BFF;
 }
