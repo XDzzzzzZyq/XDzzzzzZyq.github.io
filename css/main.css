@@ -23,6 +23,7 @@
 }
 
 .sun {
+  transform-style: preserve-3d;
   align-items: center;
   width: 280px;
   transform: translate(-30%, 15%);
@@ -89,6 +90,7 @@ footer {
   flex-direction: row;
   background-color: rgba(255,255,255,0.85);
   padding: 0 1rem;
+  gap: calc(var(--grid-size) * 4);;
   border-radius: 999px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   z-index: 1000;
@@ -100,7 +102,7 @@ footer {
   text-decoration: none;
   color: var(--text-color);
   box-sizing: border-box;
-  width: calc(var(--grid-size) * 6);
+  /* width: calc(var(--grid-size) * 6); */
   height: var(--grid-size);
   justify-content: flex-end;
   display: flex;

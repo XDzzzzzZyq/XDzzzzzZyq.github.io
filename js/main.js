@@ -8,15 +8,42 @@ document.addEventListener("DOMContentLoaded", function() {
     const cir1 = document.querySelector('.cir1');
     const cir2 = document.querySelector('.cir2');
     const off = "-=90%";
-    tl.to(sun, { rotation: 360, duration: 3, scrollTrigger: {
-        trigger: sun,
-        scrub: true,
-        markers: true
-    } });
+
+    tl.fromTo(sun, 
+        {
+            scale: 5,
+        },
+        {
+            scale: 1,
+            duration: 0.5,
+            ease: "power3.out",
+        }, 0);
+    tl.fromTo(sun, 
+        {
+            rotationZ: 0,
+            rotationY: 180,
+        },
+        {
+            rotationZ: 180,
+            rotationY: 0,
+            duration: 1.5,
+            ease: "power2.out",
+        }, 0);
+    tl.to(sun, {
+        rotation: "+=90",
+        ease: "power1.inOut",
+        scrollTrigger: {
+            trigger: ".title",
+            start: "top 25%",
+            end: "bottom top",
+            scrub: 0.5,
+            markers: true,
+        }
+        }, 0);
     tl.fromTo(arc, { opacity: 0 }, { 
         opacity: 1, 
         duration: 1,
-        transformOrigin: "50% 50%" });
+        transformOrigin: "50% 50%" }, off);
     tl.fromTo(cir1, { scale: 0 }, { 
         scale: 1, 
         duration: 1,
