@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <title>// __XDzZyq__</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/main.css">
-    <title> // __XDzZyq__</title>
 </head>
-<body class="`layout">
+<body class="`layout", style="display: flex;  flex-direction: column;">
     <main class="main">
-        
         <div class="grid-overlay"></div>
 
         <nav class="floating-nav">
@@ -16,39 +16,51 @@
             <a href="#bio"><span class="link-text">Bio</span></a>
             <a href="#contact"><span class="link-text">Contact</span></a>
         </nav>
+
         <section id="home">
-        <div class="title">
-            <img src="res/elem/sun.svg" class="centered unselectable sun" alt="Sun">
-            <svg width="70" height="70" xmlns="http://www.w3.org/2000/svg" class="centered cir1">
-                <circle cx="35" cy="35" r="35" fill="white" />
-            </svg>
-
-            <svg width="145" height="145" xmlns="http://www.w3.org/2000/svg" class="unselectable centered arc" alt="Arc">
-                <path class="arc-path" d="M0,72.5 A72.5,72.5 0 0,1 72.5,0"/>
-            </svg>
-
-            <svg width="35" height="35" xmlns="http://www.w3.org/2000/svg" class="centered cir2">
-                <circle cx="17.5" cy="17.5" r="17.5" fill="white" />
-            </svg>
-
-            <h1 class="unselectable centered xdzzyq">XDzZyq</h1>
-
-            <img src="res/elem/arrow.svg" class="unselectable centered arrow" alt="Arrow">
-        </div>
+            <div class="title">
+                <img src="res/elem/sun.svg" class="centered unselectable sun" alt="Sun">
+                <svg width="70" height="70" xmlns="http://www.w3.org/2000/svg" class="centered cir1">
+                    <circle cx="35" cy="35" r="35" fill="white" />
+                </svg>
+                <svg width="145" height="145" xmlns="http://www.w3.org/2000/svg" class="unselectable centered arc" alt="Arc">
+                    <path class="arc-path" d="M0,72.5 A72.5,72.5 0 0,1 72.5,0"/>
+                </svg>
+                <svg width="35" height="35" xmlns="http://www.w3.org/2000/svg" class="centered cir2">
+                    <circle cx="17.5" cy="17.5" r="17.5" fill="white" />
+                </svg>
+                <h1 class="unselectable centered xdzzyq">XDzZyq</h1>
+                <img src="res/elem/arrow.svg" class="unselectable centered arrow" alt="Arrow">
+            </div>
         </section>
 
-        <section id="work"></section>
+        <section id="work">
+            <div class="works">
+                <div class="work-item">
+                    <img src="res/works/work1.jpg" alt="Work 1">
+                    <h2>Work Title 1</h2>
+                </div>
+                <div class="work-item">
+                    <img src="res/works/work2.jpg" alt="Work 2">
+                    <h2>Work Title 2</h2>
+                </div>
+                <div class="work-item">
+                    <img src="res/works/work3.jpg" alt="Work 3">
+                    <h2>Work Title 3</h2>
+                </div>
+            </div>
+        </section>
+
         <section id="bio"></section>
         <section id="contact"></section>
-
-        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
-
-        <script type="module" src="js/home.js"></script>
     </main>
     <footer>
-        <p>© 2025 XDzZyq. All rights reserved.</p>
+        <p, class="centered">© 2025 XDzZyq. All rights reserved.</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+    <script type="module" src="js/home.js"></script>
 </body>
-</html> 
+</html>
