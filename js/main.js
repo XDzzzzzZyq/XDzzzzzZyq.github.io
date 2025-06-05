@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     gsap.registerPlugin(ScrollTrigger);
 
     let tl = gsap.timeline();
+    let fact = 1.0;
 
     const sun = document.querySelector('.sun');
     const arc = document.querySelector('.arc-path');
@@ -24,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         {
             scale: 1,
-            duration: 0.5,
+            duration: 0.5 * fact,
             ease: "power3.out",
         }, 0);
     tl.fromTo(sun, 
@@ -35,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
         {
             rotationZ: 180,
             rotationY: 0,
-            duration: 1.5,
+            duration: 1.5 * fact,
             ease: "power2.out",
         }, 0);
     tl.to(sun, {
@@ -51,28 +52,28 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 0);
     tl.fromTo(cir1, { scale: 0 }, { 
         scale: 1, 
-        duration: 1,
+        duration: 1 * fact,
         transformOrigin: "50% 50%" }, "<");
     tl.to(arc, {
       strokeDashoffset: 0,
-      duration: 1.0,
+      duration: 1.0 * fact,
       ease: "power2.out"
     }, off);
     tl.set(cir2, { autoAlpha: 1 }, "<"); // Show cir2 before animating
     tl.fromTo(
         cir2,
         { rotation: -90, }, // Start hidden and rotated
-        { rotation: 0, duration: 1, transformOrigin: "-150% 50%", ease: "power2.out" },
+        { rotation: 0, duration: 1 * fact, transformOrigin: "-150% 50%", ease: "power2.out" },
         "<"
     );
 
     let split = new SplitText(".xdzzyq", { type: "chars" });
     tl.from(split.chars, {
-        duration: 0.5,
+        duration: 0.5 * fact,
         autoAlpha: 0,
         yPercent: "random(-100, 100)",
         stagger: {
-            amount: 0.5,
+            amount: 0.5 * fact,
             from: "random"
         }
     }, off);
