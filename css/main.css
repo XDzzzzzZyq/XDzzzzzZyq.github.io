@@ -41,14 +41,17 @@
   transform: translate(-37.5%, 147.5%);
 }
 
-.arc, .arrow {
-  fill: aqua;
+.arc {
   mix-blend-mode: multiply;
 }
 
-.arc {
-  width: 85px;
-  transform: translate(-75%, -22.5%);
+.arc-path {
+  width: 300px;
+  height: 300px;
+  fill: none;
+  stroke: var(--light_blur);
+  stroke-width: 35px;
+  transform: translate(77px, 72px) rotate(90deg);
 }
 
 .arrow {
