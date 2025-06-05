@@ -61,4 +61,6 @@ p {
   -moz-user-select: none;    /* Firefox */
   -ms-user-select: none;     /* IE10+ */
   user-select: none;         /* Modern browsers */
+  pointer-events: none;
+  cursor: default;
 }
