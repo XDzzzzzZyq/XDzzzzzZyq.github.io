@@ -1,0 +1,40 @@
+.board-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(calc(var(--grid-size) * 7), 1fr));
+  gap: var(--grid-size);
+  padding: var(--grid-size);
+}
+
+.card {
+  background: #222;
+  border-radius: var(--grid-size);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.card-meta {
+  font-size: 0.8rem;
+  color: #bbb;
+  margin-top: 0.5rem;
+}
