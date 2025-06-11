@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const arrow = document.querySelector('.arrow');
 
-    tl.fromTo(arrow, { y: -30, opacity: 0 }, { 
-        y: -10, opacity: 1, 
+    tl.fromTo(arrow, { opacity: 0 }, { 
+        y: "+=10", opacity: 1, 
         duration: 0.5 }, off);
 });
