@@ -14,7 +14,7 @@ h1 {
   font-size: calc(var(--grid-size) * var(--h1-font-size-multiplier));
   font-weight: bold;
   text-align: center;
-  text-shadow: var(--h1-text-shadow);
+  text-shadow: 0 0 calc(var(--grid-size) * var(--h1-text-shadow-blur-multiplier)) var(--shadow-color);
   letter-spacing: var(--h1-letter-spacing);
   width: 100%;
 }

@@ -11,6 +11,10 @@
 <body class="layout">
     <main class="main">
         <div class="grid-overlay"></div>
+        <button class="debug-toggle" type="button" data-debug-toggle>Debug Grid</button>
+        <div class="debug-panel" data-debug-panel>
+            <div data-debug-info>Grid: --</div>
+        </div>
         <section id="home">
             <div class="unselectable title">
                 <img src="/res/elem/sun.svg" class="centered sun" alt="Sun">
@@ -46,5 +50,6 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
     <script type="module" src="js/home.js"></script>
+    <script type="module" src="js/debug.js"></script>
 </body>
 </html>

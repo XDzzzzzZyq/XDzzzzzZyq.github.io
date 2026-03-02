@@ -11,6 +11,10 @@
 <body class="`layout", style="display: flex;  flex-direction: column;">
     <main class="main">
         <div class="grid-overlay"></div>
+        <button class="debug-toggle" type="button" data-debug-toggle>Debug Grid</button>
+        <div class="debug-panel" data-debug-panel>
+            <div data-debug-info>Grid: --</div>
+        </div>
 
         <nav class="floating-nav">
             <a href="#home"><span class="link-text">Home</span></a>
@@ -52,5 +56,6 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
     <script type="module" src="../js/home.js"></script>
     <script type="module" src="../js/work.js"></script>
+    <script type="module" src="../js/debug.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-import { config, readGridPx } from "./config/animation.js";
+import { config, readGridPx, gridPxValue } from "./config/animation.js";
 
 const sun = document.querySelector(".sun");
 const arc = document.querySelector(".arc-path");
@@ -28,8 +28,9 @@ const updateCircleSizes = () => {
 const updateSvgSizes = () => {
   const arcSvg = document.querySelector("svg[data-size='arc']");
   if (!arcSvg) return;
-  arcSvg.setAttribute("width", config.hero.svgSizes.arcSvgSize);
-  arcSvg.setAttribute("height", config.hero.svgSizes.arcSvgSize);
+  const size = gridPxValue() * config.hero.svgSizes.arcSvgSizeMultiplier;
+  arcSvg.setAttribute("width", size);
+  arcSvg.setAttribute("height", size);
 };
 
 const initHeroAnimation = () => {
@@ -136,7 +137,7 @@ const initHeroAnimation = () => {
     arrow,
     { opacity: 0 },
     {
-      y: config.hero.arrowYOffset,
+      y: gridPxValue() * config.hero.arrowYOffsetMultiplier,
       opacity: 1,
       duration: config.hero.arrowFadeDuration
     },
