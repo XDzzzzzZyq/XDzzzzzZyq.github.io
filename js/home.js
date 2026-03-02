@@ -1,113 +1,147 @@
-const grid = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--grid-size')) * window.innerHeight / 100;
+import { config, readGridPx } from "./config/animation.js";
 
+const sun = document.querySelector(".sun");
+const arc = document.querySelector(".arc-path");
+const cir1 = document.querySelector(".cir1");
+const cir2 = document.querySelector(".cir2");
+const arrow = document.querySelector(".arrow");
 
+const updateCircleSizes = () => {
+  const grid = readGridPx();
+  cir1.setAttribute("width", grid * 2);
+  cir1.setAttribute("height", grid * 2);
 
-const sun = document.querySelector('.sun');
-const arc = document.querySelector('.arc-path');
-const cir1 = document.querySelector('.cir1');
-const cir2 = document.querySelector('.cir2');
+  let circle = cir1.querySelector("circle");
+  circle.setAttribute("r", grid);
+  circle.setAttribute("cx", grid);
+  circle.setAttribute("cy", grid);
 
-cir1.setAttribute('width', grid * 2);
-cir1.setAttribute('height', grid * 2);
+  cir2.setAttribute("width", grid);
+  cir2.setAttribute("height", grid);
 
-var circle = cir1.querySelector('circle');
-circle.setAttribute('r', grid);
-circle.setAttribute('cx', grid);
-circle.setAttribute('cy', grid);
+  circle = cir2.querySelector("circle");
+  circle.setAttribute("r", grid / 2);
+  circle.setAttribute("cx", grid / 2);
+  circle.setAttribute("cy", grid / 2);
+};
 
+const initHeroAnimation = () => {
+  gsap.registerPlugin(ScrollTrigger);
 
-cir2.setAttribute('width', grid);
-cir2.setAttribute('height', grid);
+  const tl = gsap.timeline();
+  const off = config.hero.timelineOverlap;
 
-circle = cir2.querySelector('circle');
-circle.setAttribute('r', grid/2);
-circle.setAttribute('cx', grid/2);
-circle.setAttribute('cy', grid/2);
+  const length = arc.getTotalLength();
+  gsap.set(arc, {
+    strokeDasharray: length,
+    strokeDashoffset: length
+  });
+  gsap.set(cir2, { autoAlpha: 0 });
+  gsap.set(arc, { strokeDashoffset: length });
 
-
-
-console.log("Grid size: " + grid);
-console.log("Inner width: " + window.innerWidth);
-console.log("Inner height: " + window.innerHeight);
-
-document.addEventListener("DOMContentLoaded", function() {
-    gsap.registerPlugin(ScrollTrigger);
-
-    let tl = gsap.timeline();
-    let fact = 1.0;
-    const off = "-=90%";
-
-    const length = arc.getTotalLength();
-    gsap.set(arc, {
-      strokeDasharray: length,
-      strokeDashoffset: length
-    });
-    gsap.set(cir2, { autoAlpha: 0 }); // Instantly hide cir2 before animation
-    gsap.set(arc, { strokeDashoffset: length }); // Already present, ensures arc is hidden
-    console.log("Length of arc: " + length);
-
-    tl.fromTo(sun, 
-        {
-            scale: 5,
-        },
-        {
-            scale: 1,
-            duration: 0.5 * fact,
-            ease: "power3.out",
-        }, 0);
-    tl.fromTo(sun, 
-        {
-            rotationZ: 0,
-            rotationY: 180,
-        },
-        {
-            rotationZ: 180,
-            rotationY: 0,
-            duration: 1.5 * fact,
-            ease: "power2.out",
-        }, 0);
-    tl.to(sun, {
-        rotation: "+=90",
-        ease: "power1.inOut",
-        scrollTrigger: {
-            trigger: ".title",
-            start: "top 25%",
-            end: "bottom top",
-            scrub: 0.5,
-            markers: true,
-        }
-        }, 0);
-    tl.fromTo(cir1, { scale: 0 }, { 
-        scale: 1, 
-        duration: 1 * fact,
-        transformOrigin: "50% 50%" }, "<");
-    tl.to(arc, {
+  tl.fromTo(
+    sun,
+    { scale: config.hero.sunScaleStart },
+    {
+      scale: config.hero.sunScaleEnd,
+      duration: config.hero.sunScaleDuration,
+      ease: config.hero.sunScaleEase
+    },
+    0
+  );
+  tl.fromTo(
+    sun,
+    {
+      rotationZ: config.hero.sunRotateZStart,
+      rotationY: config.hero.sunRotateYStart
+    },
+    {
+      rotationZ: config.hero.sunRotateZEnd,
+      rotationY: config.hero.sunRotateYEnd,
+      duration: config.hero.sunRotateDuration,
+      ease: config.hero.sunRotateEase
+    },
+    0
+  );
+  tl.to(
+    sun,
+    {
+      rotation: "+=" + config.hero.sunScrollRotation,
+      ease: config.hero.sunScrollEase,
+      scrollTrigger: {
+        trigger: ".title",
+        start: config.hero.sunScrollStart,
+        end: config.hero.sunScrollEnd,
+        scrub: config.hero.sunScrollScrub,
+        markers: config.hero.scrollMarkers
+      }
+    },
+    0
+  );
+  tl.fromTo(
+    cir1,
+    { scale: 0 },
+    {
+      scale: 1,
+      duration: config.hero.cir1ScaleDuration,
+      transformOrigin: "50% 50%"
+    },
+    "<"
+  );
+  tl.to(
+    arc,
+    {
       strokeDashoffset: 0,
-      duration: 1.0 * fact,
-      ease: "power2.out"
-    }, off);
-    tl.set(cir2, { autoAlpha: 1 }, "<"); // Show cir2 before animating
-    tl.fromTo(
-        cir2,
-        { rotation: -90, }, // Start hidden and rotated
-        { rotation: 0, duration: 1 * fact, transformOrigin: "-150% 50%", ease: "power2.out" },
-        "<"
-    );
+      duration: config.hero.arcDrawDuration,
+      ease: config.hero.arcDrawEase
+    },
+    off
+  );
+  tl.set(cir2, { autoAlpha: 1 }, "<");
+  tl.fromTo(
+    cir2,
+    { rotation: config.hero.cir2RotationStart },
+    {
+      rotation: config.hero.cir2RotationEnd,
+      duration: config.hero.cir2RotationDuration,
+      transformOrigin: config.hero.cir2TransformOrigin,
+      ease: config.hero.cir2Ease
+    },
+    "<"
+  );
 
-    let split = new SplitText(".xdzzyq", { type: "chars" });
-    tl.from(split.chars, {
-        duration: 0.5 * fact,
-        autoAlpha: 0,
-        yPercent: "random(-100, 100)",
-        stagger: {
-            amount: 0.5 * fact,
-            from: "random"
-        }
-    }, off);
+  const split = new SplitText(".xdzzyq", { type: "chars" });
+  tl.from(
+    split.chars,
+    {
+      duration: config.hero.splitDuration,
+      autoAlpha: 0,
+      yPercent: config.hero.splitYRandom,
+      stagger: {
+        amount: config.hero.splitStaggerAmount,
+        from: "random"
+      }
+    },
+    off
+  );
 
-    const arrow = document.querySelector('.arrow');
+  tl.fromTo(
+    arrow,
+    { opacity: 0 },
+    {
+      y: config.hero.arrowYOffset,
+      opacity: 1,
+      duration: config.hero.arrowFadeDuration
+    },
+    off
+  );
+};
 
-    tl.fromTo(arrow, { opacity: 0 }, { 
-        y: "+=10", opacity: 1, 
-        duration: 0.5 }, off);
+document.addEventListener("DOMContentLoaded", () => {
+  updateCircleSizes();
+  initHeroAnimation();
+});
+
+window.addEventListener("resize", () => {
+  updateCircleSizes();
 });

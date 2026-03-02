@@ -1,26 +1,8 @@
-:root {
-  --bg-color: rgb(255, 245, 230);
-  --text_color: rgb(5, 5, 5);
-  --shadow-color: #fff;
-  --shadow-color-inv: rgba(5, 5, 5, 0.1);
-  --light_blur: #00FFF0;
-  --grid-size: 5vh;
-  --font-zh-en: 'Microsoft Yahei', sans-serif;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color: rgb(5, 5, 5);
-    --text_color: rgb(255, 245, 230);
-    --shadow-color: #000;
-  }
-}
-
 body {
   background-color: var(--bg-color);
   display: flex;
   flex-direction: column;
-  height: 200vh;
+  height: var(--body-height);
 }
 
 h1, h2, p {
@@ -29,19 +11,19 @@ h1, h2, p {
 }
 
 h1 {
-  font-size: calc(var(--grid-size) * 1.4);
+  font-size: calc(var(--grid-size) * var(--h1-font-size-multiplier));
   font-weight: bold;
   text-align: center;
-  text-shadow: 0 0 10px var(--shadow-color);
-  letter-spacing: -3px;
+  text-shadow: var(--h1-text-shadow);
+  letter-spacing: var(--h1-letter-spacing);
   width: 100%;
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: var(--h2-font-size);
   font-weight: bold;
   text-align: left;
-  letter-spacing: -2px;
+  letter-spacing: var(--h2-letter-spacing);
 }
 
 p {

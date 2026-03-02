@@ -1,0 +1,133 @@
+:root {
+  --bg-color: rgb(255, 245, 230);
+  --text_color: rgb(5, 5, 5);
+  --text-color: var(--text_color);
+  --shadow-color: #fff;
+  --shadow-color-inv: rgba(5, 5, 5, 0.1);
+  --light_blur: #00FFF0;
+  --grid-size: 5vh;
+  --font-zh-en: 'Microsoft Yahei', sans-serif;
+
+  --body-height: 200vh;
+  --main-height: 400vh;
+  --home-height: 100vh;
+
+  --h1-font-size-multiplier: 1.4;
+  --h1-letter-spacing: -3px;
+  --h1-text-shadow: 0 0 10px var(--shadow-color);
+  --h2-font-size: 1.5em;
+  --h2-letter-spacing: -2px;
+
+  --title-top: 40%;
+  --title-left: 50%;
+  --title-height-multiplier: 7;
+  --title-translate-x: -50%;
+  --title-translate-y: -50%;
+
+  --xdzzyq-height-multiplier: 3;
+  --xdzzyq-offset-x: 10px;
+  --xdzzyq-offset-y: 2px;
+
+  --sun-width: 280px;
+  --sun-offset-x-multiplier: -2;
+  --sun-offset-y-multiplier: 1;
+  --drop-shadow-main: 0 0 2px var(--shadow-color);
+  --drop-shadow-inv: 0 0 2px var(--shadow-color-inv);
+
+  --cir1-offset-x-multiplier: -1.5;
+  --cir1-offset-y: 6px;
+  --cir2-offset-x: 17.5px;
+  --cir2-offset-y: 60px;
+
+  --arc-stroke-width: 35px;
+  --arc-transform-x: 90px;
+  --arc-transform-y: 62px;
+  --arc-rotate: 90deg;
+
+  --arrow-width: 25px;
+  --arrow-offset-x: 80px;
+  --arrow-offset-y: -25px;
+
+  --grid-line-color: rgba(0, 0, 0, 0.1);
+  --grid-overlay-z: 9999;
+
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --nav-padding-x: 1rem;
+  --nav-gap-multiplier: 4;
+  --nav-radius: 999px;
+  --nav-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --nav-blur: 6px;
+  --nav-hover-color: #007BFF;
+
+  --selector-gap-multiplier: 2;
+  --selector-offset-y-multiplier: 3;
+  --selector-card-bg: rgba(255, 255, 255, 0.8);
+  --selector-card-border: 1px solid rgba(0, 0, 0, 0.08);
+  --selector-card-radius: 18px;
+  --selector-card-padding-y-multiplier: 0.7;
+  --selector-card-padding-x-multiplier: 1.1;
+  --selector-card-min-width-multiplier: 6;
+  --selector-card-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  --selector-card-hover-translate: -4px;
+  --selector-card-hover-shadow: 0 16px 30px rgba(0, 0, 0, 0.12);
+  --selector-title-size: 1.2em;
+  --selector-title-letter-spacing: -1px;
+  --selector-sub-size: 0.8em;
+  --selector-sub-opacity: 0.8;
+  --selector-card-mobile-width-multiplier: 9;
+
+  --work-board-min-width-multiplier: 7;
+  --work-board-gap-multiplier: 1;
+  --work-board-padding-multiplier: 1;
+  --work-card-bg: #222;
+  --work-card-radius-multiplier: 1;
+  --work-card-hover-translate: -5px;
+  --work-card-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  --work-card-transition-duration: 0.2s;
+  --work-card-transition-ease: ease;
+  --work-card-content-padding: 1rem;
+  --work-card-title-size: 1rem;
+  --work-card-meta-size: 0.8rem;
+  --work-card-meta-color: #bbb;
+
+  --footer-font-size: 0.2em;
+
+  --anim-sun-scale-start: 5;
+  --anim-sun-scale-end: 1;
+  --anim-sun-scale-duration: 0.5;
+  --anim-sun-scale-ease: power3.out;
+  --anim-sun-rotate-z-start: 0;
+  --anim-sun-rotate-z-end: 180;
+  --anim-sun-rotate-y-start: 180;
+  --anim-sun-rotate-y-end: 0;
+  --anim-sun-rotate-duration: 1.5;
+  --anim-sun-rotate-ease: power2.out;
+  --anim-sun-scroll-rotation: 90;
+  --anim-sun-scroll-ease: power1.inOut;
+  --anim-sun-scroll-start: top 25%;
+  --anim-sun-scroll-end: bottom top;
+  --anim-sun-scroll-scrub: 0.5;
+  --anim-scroll-markers: false;
+  --anim-cir1-scale-duration: 1;
+  --anim-arc-draw-duration: 1;
+  --anim-arc-draw-ease: power2.out;
+  --anim-cir2-rotation-start: -90;
+  --anim-cir2-rotation-end: 0;
+  --anim-cir2-rotation-duration: 1;
+  --anim-cir2-origin: -150% 50%;
+  --anim-cir2-ease: power2.out;
+  --anim-split-duration: 0.5;
+  --anim-split-y-random: random(-100, 100);
+  --anim-split-stagger-amount: 0.5;
+  --anim-arrow-fade-duration: 0.5;
+  --anim-arrow-y-offset: +=10;
+  --anim-timeline-overlap: -=90%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: rgb(5, 5, 5);
+    --text_color: rgb(255, 245, 230);
+    --shadow-color: #000;
+  }
+}

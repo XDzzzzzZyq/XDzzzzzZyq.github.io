@@ -1,55 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>// __XDzZyq__</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XDzZyq | Select Home</title>
+    <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/work.css">
 </head>
-<body class="`layout", style="display: flex;  flex-direction: column;">
+<body class="layout">
     <main class="main">
         <div class="grid-overlay"></div>
-
-        <nav class="floating-nav">
-            <a href="#home"><span class="link-text">Home</span></a>
-            <a href="#work"><span class="link-text">Works</span></a>
-            <a href="#bio"><span class="link-text">Bio</span></a>
-            <a href="#contact"><span class="link-text">Contact</span></a>
-        </nav>
-
         <section id="home">
             <div class="unselectable title">
                 <img src="res/elem/sun.svg" class="centered sun" alt="Sun">
                 <svg width="70" height="70" xmlns="http://www.w3.org/2000/svg" class="centered cir1">
                     <circle cx="35" cy="35" r="35" fill="white" />
                 </svg>
-                <svg width="145" height="145" xmlns="http://www.w3.org/2000/svg" class="centered arc" alt="Arc">
+                <svg width="145" height="145" xmlns="http://www.w3.org/2000/svg" class="centered arc" aria-hidden="true">
                     <path class="arc-path" d="M0,72.5 A72.5,72.5 0 0,1 72.5,0"/>
                 </svg>
                 <svg width="35" height="35" xmlns="http://www.w3.org/2000/svg" class="centered cir2">
                     <circle cx="17.5" cy="17.5" r="17.5" fill="white" />
                 </svg>
                 <h1 class="centered xdzzyq">XDzZyq</h1>
-                <img src="res/elem/arrow.svg" class="centered arrow" alt="Arrow">
+                <div class="centered selector">
+                    <a class="selector-card" href="design/" aria-label="Enter design portfolio">
+                        <span class="selector-title">Design</span>
+                        <span class="selector-sub">Art works, plugins, scripts</span>
+                    </a>
+                    <a class="selector-card" href="research/" aria-label="Enter research portfolio">
+                        <span class="selector-title">Research</span>
+                        <span class="selector-sub">Notes, publications</span>
+                    </a>
+                </div>
             </div>
         </section>
-
-        <section id="work">
-            <div class="board-container" id="board"></div>
-        </section>
-
-        <section id="bio"></section>
-        <section id="contact"></section>
     </main>
     <footer>
-        <p, class="centered">© 2025 XDzZyq. All rights reserved.</p>
+        <p class="centered">© 2025 XDzZyq. All rights reserved.</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+    <script src="dep/gsap-public/umd/gsap.js"></script>
+    <script src="dep/gsap-public/umd/ScrollTrigger.js"></script>
+    <script src="dep/gsap-public/umd/SplitText.js"></script>
     <script type="module" src="js/home.js"></script>
-    <script type="module" src="js/work.js"></script>
 </body>
 </html>

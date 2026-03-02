@@ -1,21 +1,21 @@
 .board-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(calc(var(--grid-size) * 7), 1fr));
-  gap: var(--grid-size);
-  padding: var(--grid-size);
+  grid-template-columns: repeat(auto-fill, minmax(calc(var(--grid-size) * var(--work-board-min-width-multiplier)), 1fr));
+  gap: calc(var(--grid-size) * var(--work-board-gap-multiplier));
+  padding: calc(var(--grid-size) * var(--work-board-padding-multiplier));
 }
 
 .card {
-  background: #222;
-  border-radius: var(--grid-size);
+  background: var(--work-card-bg);
+  border-radius: calc(var(--grid-size) * var(--work-card-radius-multiplier));
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform var(--work-card-transition-duration) var(--work-card-transition-ease), box-shadow var(--work-card-transition-duration) var(--work-card-transition-ease);
   cursor: pointer;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  transform: translateY(var(--work-card-hover-translate));
+  box-shadow: var(--work-card-shadow);
 }
 
 .card img {
@@ -25,16 +25,16 @@
 }
 
 .card-content {
-  padding: 1rem;
+  padding: var(--work-card-content-padding);
 }
 
 .card-title {
-  font-size: 1rem;
+  font-size: var(--work-card-title-size);
   margin: 0;
 }
 
 .card-meta {
-  font-size: 0.8rem;
-  color: #bbb;
+  font-size: var(--work-card-meta-size);
+  color: var(--work-card-meta-color);
   margin-top: 0.5rem;
 }
