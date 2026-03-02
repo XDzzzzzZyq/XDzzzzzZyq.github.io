@@ -4,7 +4,7 @@
   --shadow-color: #fff;
   --shadow-color-inv: rgba(5, 5, 5, 0.1);
   --light_blur: #00FFF0;
-  --grid-size: 35px;
+  --grid-size: 5vh;
   --font-zh-en: 'Microsoft Yahei', sans-serif;
 }
 

@@ -23,6 +23,7 @@
 
 .xdzzyq {
   height: calc(var(--grid-size) * 3);
+  margin: var(--grid-size);
   display: block;
   overflow: hidden;
   transform: translate(-50%, -50%) translate(10px, 2px);

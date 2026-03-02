@@ -1,13 +1,40 @@
+const grid = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--grid-size')) * window.innerHeight / 100;
+
+
+
+const sun = document.querySelector('.sun');
+const arc = document.querySelector('.arc-path');
+const cir1 = document.querySelector('.cir1');
+const cir2 = document.querySelector('.cir2');
+
+cir1.setAttribute('width', grid * 2);
+cir1.setAttribute('height', grid * 2);
+
+var circle = cir1.querySelector('circle');
+circle.setAttribute('r', grid);
+circle.setAttribute('cx', grid);
+circle.setAttribute('cy', grid);
+
+
+cir2.setAttribute('width', grid);
+cir2.setAttribute('height', grid);
+
+circle = cir2.querySelector('circle');
+circle.setAttribute('r', grid/2);
+circle.setAttribute('cx', grid/2);
+circle.setAttribute('cy', grid/2);
+
+
+
+console.log("Grid size: " + grid);
+console.log("Inner width: " + window.innerWidth);
+console.log("Inner height: " + window.innerHeight);
+
 document.addEventListener("DOMContentLoaded", function() {
     gsap.registerPlugin(ScrollTrigger);
 
     let tl = gsap.timeline();
     let fact = 1.0;
-
-    const sun = document.querySelector('.sun');
-    const arc = document.querySelector('.arc-path');
-    const cir1 = document.querySelector('.cir1');
-    const cir2 = document.querySelector('.cir2');
     const off = "-=90%";
 
     const length = arc.getTotalLength();
