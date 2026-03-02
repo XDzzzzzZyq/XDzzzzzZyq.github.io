@@ -8,21 +8,28 @@ const arrow = document.querySelector(".arrow");
 
 const updateCircleSizes = () => {
   const grid = readGridPx();
-  cir1.setAttribute("width", grid * 2);
-  cir1.setAttribute("height", grid * 2);
+  cir1.setAttribute("width", grid * config.hero.svgSizes.cir1Multiplier);
+  cir1.setAttribute("height", grid * config.hero.svgSizes.cir1Multiplier);
 
   let circle = cir1.querySelector("circle");
-  circle.setAttribute("r", grid);
-  circle.setAttribute("cx", grid);
-  circle.setAttribute("cy", grid);
+  circle.setAttribute("r", grid * config.hero.svgSizes.cir1Multiplier / 2);
+  circle.setAttribute("cx", grid * config.hero.svgSizes.cir1Multiplier / 2);
+  circle.setAttribute("cy", grid * config.hero.svgSizes.cir1Multiplier / 2);
 
-  cir2.setAttribute("width", grid);
-  cir2.setAttribute("height", grid);
+  cir2.setAttribute("width", grid * config.hero.svgSizes.cir2Multiplier);
+  cir2.setAttribute("height", grid * config.hero.svgSizes.cir2Multiplier);
 
   circle = cir2.querySelector("circle");
-  circle.setAttribute("r", grid / 2);
-  circle.setAttribute("cx", grid / 2);
-  circle.setAttribute("cy", grid / 2);
+  circle.setAttribute("r", grid * config.hero.svgSizes.cir2Multiplier / 2);
+  circle.setAttribute("cx", grid * config.hero.svgSizes.cir2Multiplier / 2);
+  circle.setAttribute("cy", grid * config.hero.svgSizes.cir2Multiplier / 2);
+};
+
+const updateSvgSizes = () => {
+  const arcSvg = document.querySelector("svg[data-size='arc']");
+  if (!arcSvg) return;
+  arcSvg.setAttribute("width", config.hero.svgSizes.arcSvgSize);
+  arcSvg.setAttribute("height", config.hero.svgSizes.arcSvgSize);
 };
 
 const initHeroAnimation = () => {
@@ -139,9 +146,11 @@ const initHeroAnimation = () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   updateCircleSizes();
+  updateSvgSizes();
   initHeroAnimation();
 });
 
 window.addEventListener("resize", () => {
   updateCircleSizes();
+  updateSvgSizes();
 });

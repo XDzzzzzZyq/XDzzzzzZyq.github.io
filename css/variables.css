@@ -34,6 +34,11 @@
   --drop-shadow-main: 0 0 2px var(--shadow-color);
   --drop-shadow-inv: 0 0 2px var(--shadow-color-inv);
 
+  --cir1-size-multiplier: 2;
+  --cir2-size-multiplier: 1;
+  --arc-svg-size: 145px;
+  --arc-path-size: 300px;
+
   --cir1-offset-x-multiplier: -1.5;
   --cir1-offset-y: 6px;
   --cir2-offset-x: 17.5px;
@@ -68,6 +73,9 @@
   --selector-card-padding-x-multiplier: 1.1;
   --selector-card-min-width-multiplier: 6;
   --selector-card-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  --selector-card-transition-duration: 0.2s;
+  --selector-card-transition-ease: ease;
+  --selector-card-blur: 6px;
   --selector-card-hover-translate: -4px;
   --selector-card-hover-shadow: 0 16px 30px rgba(0, 0, 0, 0.12);
   --selector-title-size: 1.2em;
@@ -89,6 +97,7 @@
   --work-card-title-size: 1rem;
   --work-card-meta-size: 0.8rem;
   --work-card-meta-color: #bbb;
+  --work-card-meta-margin-top: 0.5rem;
 
   --footer-font-size: 0.2em;
 

@@ -54,7 +54,12 @@ const config = {
     splitStaggerAmount: readNumber("--anim-split-stagger-amount", 0.5),
     arrowFadeDuration: readNumber("--anim-arrow-fade-duration", 0.5),
     arrowYOffset: readUnit("--anim-arrow-y-offset", "+=10"),
-    timelineOverlap: readUnit("--anim-timeline-overlap", "-=90%")
+    timelineOverlap: readUnit("--anim-timeline-overlap", "-=90%"),
+    svgSizes: {
+      cir1Multiplier: readNumber("--cir1-size-multiplier", 2),
+      cir2Multiplier: readNumber("--cir2-size-multiplier", 1),
+      arcSvgSize: readUnit("--arc-svg-size", "145px")
+    }
   }
 };
 

@@ -1,6 +1,7 @@
 import { worksData } from "./config/data.js";
+import { layoutConfig } from "./config/layout.js";
 
-const board = document.getElementById("board");
+const board = document.getElementById(layoutConfig.boardId);
 
 worksData.forEach(item => {
   const card = document.createElement("div");

@@ -36,8 +36,8 @@
   padding: calc(var(--grid-size) * var(--selector-card-padding-y-multiplier)) calc(var(--grid-size) * var(--selector-card-padding-x-multiplier));
   min-width: calc(var(--grid-size) * var(--selector-card-min-width-multiplier));
   box-shadow: var(--selector-card-shadow);
-  backdrop-filter: blur(6px);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  backdrop-filter: blur(var(--selector-card-blur));
+  transition: transform var(--selector-card-transition-duration) var(--selector-card-transition-ease), box-shadow var(--selector-card-transition-duration) var(--selector-card-transition-ease);
 }
 
 .selector-card:hover {
@@ -106,8 +106,8 @@
 }
 
 .arc-path {
-  width: 300px;
-  height: 300px;
+  width: var(--arc-path-size);
+  height: var(--arc-path-size);
   fill: none;
   stroke: var(--light_blur);
   stroke-width: var(--arc-stroke-width);

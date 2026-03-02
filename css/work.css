@@ -36,5 +36,5 @@
 .card-meta {
   font-size: var(--work-card-meta-size);
   color: var(--work-card-meta-color);
-  margin-top: 0.5rem;
+  margin-top: var(--work-card-meta-margin-top);
 }
