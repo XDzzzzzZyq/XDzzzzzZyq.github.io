@@ -21,6 +21,7 @@
   display: flex;
   gap: calc(var(--grid-size) * var(--selector-gap-multiplier));
   transform: translate(-50%, -50%) translate(0, calc(var(--grid-size) * var(--selector-offset-y-multiplier)));
+  pointer-events: auto;
   z-index: 2;
 }
 
@@ -67,10 +68,6 @@
   .selector-card {
     width: calc(var(--grid-size) * var(--selector-card-mobile-width-multiplier));
   }
-}
-
-.layout {
-  background: url("../design/main.png") center/cover no-repeat fixed;
 }
 
 .xdzzyq {
