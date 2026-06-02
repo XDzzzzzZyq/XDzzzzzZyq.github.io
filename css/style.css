@@ -1,13 +1,20 @@
 body {
-  background-color: var(--bg-color);
+  background-color: var(--color-bg);
+  color: var(--color-text);
   display: flex;
   flex-direction: column;
   height: var(--body-height);
+  margin: 0;
+  font-family: var(--font-body);
 }
 
-h1, h2, p {
-  color: var(--text_color);
-  font-family: var(--font-zh-en);
+h1, h2, h3, p, li {
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+a {
+  color: inherit;
 }
 
 h1 {
@@ -29,6 +36,10 @@ h2 {
 p {
   text-align: left;
   letter-spacing: 0;
+}
+
+img {
+  max-width: 100%;
 }
 
 .centered {

@@ -30,7 +30,7 @@
   flex-direction: column;
   align-items: flex-start;
   text-decoration: none;
-  color: var(--text_color);
+  color: var(--text-color);
   background: var(--selector-card-bg);
   border: calc(var(--grid-size) * var(--selector-card-border-width-multiplier)) solid var(--selector-card-border-color);
   border-radius: calc(var(--grid-size) * var(--selector-card-radius-multiplier));
@@ -47,14 +47,14 @@
 }
 
 .selector-title {
-  font-family: var(--font-zh-en);
+  font-family: var(--font-body);
   font-weight: bold;
   font-size: var(--selector-title-size);
   letter-spacing: var(--selector-title-letter-spacing);
 }
 
 .selector-sub {
-  font-family: var(--font-zh-en);
+  font-family: var(--font-body);
   font-size: var(--selector-sub-size);
   opacity: var(--selector-sub-opacity);
 }
@@ -123,7 +123,7 @@ footer {
   left: 50%;
   transform: translate(-50%, 0);
   color: var(--text-color);
-  font-family: var(--font-family);
+  font-family: var(--font-body);
   font-size: var(--footer-font-size);
   text-align: center;
 }
@@ -153,7 +153,7 @@ footer {
   border-radius: calc(var(--grid-size) * var(--debug-toggle-radius-multiplier));
   background: var(--debug-toggle-bg);
   color: var(--debug-toggle-color);
-  font-family: var(--font-zh-en);
+  font-family: var(--font-body);
   font-size: calc(var(--grid-size) * var(--debug-toggle-font-size-multiplier));
   box-shadow: 0 calc(var(--grid-size) * var(--debug-toggle-shadow-y-multiplier)) calc(var(--grid-size) * var(--debug-toggle-shadow-blur-multiplier)) var(--debug-toggle-shadow-color);
   cursor: pointer;
@@ -168,7 +168,7 @@ footer {
   border-radius: calc(var(--grid-size) * var(--debug-panel-radius-multiplier));
   background: var(--debug-panel-bg);
   color: var(--debug-panel-color);
-  font-family: var(--font-zh-en);
+  font-family: var(--font-body);
   font-size: calc(var(--grid-size) * var(--debug-panel-font-size-multiplier));
   z-index: calc(var(--grid-overlay-z) + 1);
   opacity: 0;
@@ -200,7 +200,7 @@ body.debug-mode .debug-panel {
 }
 
 .floating-nav a {
-  font-family: var(--font-zh-en);
+  font-family: var(--font-body);
   text-decoration: none;
   color: var(--text-color);
   box-sizing: border-box;

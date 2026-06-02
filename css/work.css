@@ -7,6 +7,7 @@
 
 .card {
   background: var(--work-card-bg);
+  color: var(--color-inverse);
   border-radius: calc(var(--grid-size) * var(--work-card-radius-multiplier));
   overflow: hidden;
   transition: transform var(--work-card-transition-duration) var(--work-card-transition-ease), box-shadow var(--work-card-transition-duration) var(--work-card-transition-ease);
@@ -29,6 +30,7 @@
 }
 
 .card-title {
+  color: var(--color-inverse);
   font-size: calc(var(--grid-size) * var(--work-card-title-size-multiplier));
   margin: 0;
 }

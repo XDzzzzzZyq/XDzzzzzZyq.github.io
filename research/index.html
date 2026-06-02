@@ -6,23 +6,139 @@
     <title>XDzZyq | Research</title>
     <link rel="stylesheet" href="../css/variables.css">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="css/research.css">
 </head>
-<body class="layout">
-    <main class="main">
-        <nav class="floating-nav">
-            <a href="../"><span class="link-text">Home</span></a>
-            <a href="../design/"><span class="link-text">Design</span></a>
-        </nav>
+<body class="research-page">
+    <main class="research-main">
+        <div class="research-shell">
+            <nav class="research-nav" aria-label="Research navigation">
+                <a class="research-brand" href="../">XDzZyq</a>
+                <div class="research-nav__links">
+                    <a href="#bio">Bio</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#notes">Notes</a>
+                    <a href="#publications">Publications</a>
+                </div>
+            </nav>
 
-        <section id="home">
-            <div class="unselectable title">
-                <h1 class="centered xdzzyq">Research</h1>
-            </div>
-        </section>
+            <section class="research-hero" id="home" aria-labelledby="research-title">
+                <div>
+                    <div class="hero-mark" aria-hidden="true"></div>
+                    <h1 id="research-title">Research</h1>
+                    <p class="research-hero__intro">Learning systems, mathematical notes, and project records by XDzZyq. This page is structured so research entries can be updated from one readable data source.</p>
+                </div>
+                <aside class="bio-panel" aria-labelledby="snapshot-title">
+                    <h2 id="snapshot-title">Snapshot</h2>
+                    <dl class="bio-facts">
+                        <div class="bio-fact">
+                            <dt>Name</dt>
+                            <dd>Yuqian Zhang (XDzZyq)</dd>
+                        </div>
+                        <div class="bio-fact">
+                            <dt>Focus</dt>
+                            <dd>Machine learning, mathematical reasoning, computational physics and biology, computer graphics.</dd>
+                        </div>
+                        <div class="bio-fact">
+                            <dt>Status</dt>
+                            <dd>First-year MScAC student at the University of Toronto.</dd>
+                        </div>
+                        <div class="bio-fact">
+                            <dt>Contact</dt>
+                            <dd><a href="mailto:xdz.zhang@mail.utoronto.ca">xdz.zhang@mail.utoronto.ca</a></dd>
+                        </div>
+                    </dl>
+                    <div class="button-row">
+                        <a class="link-button link-button--primary" href="mailto:xdz.zhang@mail.utoronto.ca">Email Contact</a>
+                        <a class="link-button" href="https://github.com/XDzzzzzZyq" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    </div>
+                </aside>
+            </section>
+
+            <section class="section-block" id="bio" aria-labelledby="bio-title">
+                <div class="section-heading">
+                    <h2 id="bio-title">Bio</h2>
+                    <p>Background, education, and current research direction.</p>
+                </div>
+                <div class="bio-panel">
+                    <p>I am Yuqian Zhang, a first-year MScAC student at the University of Toronto. My work sits at the intersection of mathematical structure, learning systems, and physical modeling.</p>
+                    <p>My research centers on machine learning, mathematical reasoning, computational physics and biology, and computer graphics. I have worked on spatial transcriptomics denoising with graph variational auto-encoders, ocean surface representation learning with transformers, Neural-ODE-based gene expression field estimation, and Bayesian-PINN-Kalman hybrids for time-series inverse problems, alongside an independent study of diffusion posterior sampling for general inverse problems.</p>
+                    <dl class="bio-facts">
+                        <div class="bio-fact">
+                            <dt>Now</dt>
+                            <dd>MScAC, University of Toronto.</dd>
+                        </div>
+                        <div class="bio-fact">
+                            <dt>Previously</dt>
+                            <dd>Duke Kunshan University &amp; Duke University · B.S. Applied Math &amp; Computational Science; Math Track · 08/2022-05/2026.</dd>
+                        </div>
+                        <div class="bio-fact">
+                            <dt>Coursework</dt>
+                            <dd>Stochastic Differential Equation, Measure Theory, Numerical Analysis, Advanced Linear Algebra, Algorithm Analysis &amp; Design, Graphics Software Architecture, Image Data Science.</dd>
+                        </div>
+                        <div class="bio-fact">
+                            <dt>Contact</dt>
+                            <dd><a href="mailto:xdz.zhang@mail.utoronto.ca">xdz.zhang@mail.utoronto.ca</a></dd>
+                        </div>
+                    </dl>
+                </div>
+            </section>
+
+            <section class="section-block" id="projects" aria-labelledby="projects-title">
+                <div class="section-heading">
+                    <h2 id="projects-title">Research Projects</h2>
+                    <p>Panels are loaded from <code>research/data/projects.json</code>. Each entry opens through one reusable detail template.</p>
+                </div>
+                <div class="project-list" data-project-list>
+                    <p class="empty-state">Loading projects...</p>
+                </div>
+            </section>
+
+            <section class="section-block" id="notes" aria-labelledby="notes-title">
+                <div class="section-heading">
+                    <h2 id="notes-title">Math Notes</h2>
+                    <p>Published Notion notes stay prominent while the site keeps stable local pages and fallbacks.</p>
+                </div>
+                <div class="notes-grid">
+                    <a class="note-card" href="notes/math.html">
+                        <h3>Math Note</h3>
+                        <p>Open the embedded public Notion math note inside a dedicated reader page.</p>
+                        <span>Open reader</span>
+                    </a>
+                    <a class="note-card" href="https://marmalade-droplet-f1d.notion.site/Machine-Learning-b25f839889ec4cd3917fa92b01e37b28" target="_blank" rel="noopener noreferrer">
+                        <h3>Machine Learning Note</h3>
+                        <p>Open the published Machine Learning note directly in Notion.</p>
+                        <span>Open Notion</span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="section-block" id="publications" aria-labelledby="publications-title">
+                <div class="section-heading">
+                    <h2 id="publications-title">Publications</h2>
+                    <p>Selected manuscripts and preprints. Update year, title, venue, and links as papers move through the publication pipeline.</p>
+                </div>
+                <ol class="publication-list">
+                    <li class="empty-state">No published works yet. Manuscripts are in preparation.</li>
+                </ol>
+            </section>
+
+            <section class="section-block" id="contact" aria-labelledby="contact-title">
+                <div class="section-heading">
+                    <h2 id="contact-title">Contact</h2>
+                    <p>Reach out for research collaboration, paper requests, or academic inquiries.</p>
+                </div>
+                <div class="contact-panel">
+                    <div class="contact-links">
+                        <a class="link-button link-button--primary" href="mailto:xdz.zhang@mail.utoronto.ca">Email</a>
+                        <a class="link-button" href="https://github.com/XDzzzzzZyq" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
-    <footer>
-        <p class="centered">&copy; 2025 XDzZyq. All rights reserved.</p>
+    <footer class="site-footer">
+        <p>&copy; 2026 XDzZyq. All rights reserved.</p>
     </footer>
+    <script type="module" src="js/research.js"></script>
 </body>
 </html>

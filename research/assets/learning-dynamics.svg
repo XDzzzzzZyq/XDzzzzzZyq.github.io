@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+  <title id="title">Learning dynamics cover</title>
+  <desc id="desc">A grid of nodes and cyan paths representing machine learning dynamics.</desc>
+  <rect width="960" height="560" fill="#050505"/>
+  <g stroke="#fff5e6" stroke-opacity="0.12" stroke-width="1">
+    <path d="M0 80h960M0 160h960M0 240h960M0 320h960M0 400h960M0 480h960"/>
+    <path d="M120 0v560M240 0v560M360 0v560M480 0v560M600 0v560M720 0v560M840 0v560"/>
+  </g>
+  <path d="M120 390C230 240 320 448 430 260S630 132 810 198" fill="none" stroke="#00fff0" stroke-width="18" stroke-linecap="round"/>
+  <path d="M120 390C230 240 320 448 430 260S630 132 810 198" fill="none" stroke="#fff5e6" stroke-opacity="0.36" stroke-width="2"/>
+  <g fill="#fff5e6">
+    <circle cx="120" cy="390" r="18"/>
+    <circle cx="430" cy="260" r="18"/>
+    <circle cx="810" cy="198" r="18"/>
+  </g>
+</svg>

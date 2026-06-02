@@ -1,0 +1,108 @@
+[
+  {
+    "slug": "gvae-spatial-transcriptomics",
+    "title": "Spatial Transcriptomics Denoising through GVAE and Mass Conservation",
+    "year": "2025",
+    "status": "Research Intern · Dr. Yi Zhang",
+    "affiliation": "MScAC, University of Toronto",
+    "summary": "Light-weight Graph Variational Auto-Encoder for denoising spatial transcriptomics data with zero-inflated negative binomial reconstruction and mass conservation.",
+    "abstract": "Developed a Graph Variational Auto-Encoder (GVAE) that denoises spatial transcriptomics data by addressing zero-inflated observation noise and gene diffusion, ensuring localized graph structure and mass conservation while reconstructing a zero-inflated negative binomial distribution. Incorporated probabilistic programming (Pyro) and recent GVAE techniques for robust modeling and inference, achieving accurate reconstruction of gene expression fields from sparse samples and improving downstream latent clustering and cell/bin-level classification. Work to be published this year.",
+    "coverImage": "assets/learning-dynamics.svg",
+    "coverAlt": "Cyan learning trajectory drawn through a dark grid of model states.",
+    "tags": ["Spatial Transcriptomics", "GVAE", "Pyro", "Probabilistic ML", "Single-cell"],
+    "links": {
+      "github": "",
+      "arxiv": "",
+      "publication": ""
+    },
+    "details": [
+      "Formulated denoising as reconstruction of a zero-inflated negative binomial distribution on a spatial graph.",
+      "Improved downstream tasks including latent clustering, cell-level and bin-level classification.",
+      "Publication in preparation; the project will be released alongside the paper this year."
+    ]
+  },
+  {
+    "slug": "ocean-oxygen-relative-spatial-embedding",
+    "title": "Enhancing Ocean Surface Oxygen Representation via Relative Spatial Embedding",
+    "year": "2024",
+    "status": "Research Assistant · Dr. Zuchuan Li",
+    "affiliation": "MScAC, University of Toronto",
+    "summary": "Investigating relative spatial embedding for ocean surface feature representation with Vision Transformer variants on hundreds of gigabytes of satellite time-series data.",
+    "abstract": "Reproduced, modified, and examined several transformer-based models — including Vision Transformer, Positional-induced Transformer, and Relative Position Embedding — to assess how relative spatial embedding enhances ocean surface feature representation. Implemented a satellite data matching system and a corresponding data loader to process massive time-series datasets at the hundreds-of-gigabytes scale.",
+    "coverImage": "assets/geometric-systems.svg",
+    "coverAlt": "Geometric shapes and cyan circle on a warm grid background.",
+    "tags": ["Transformers", "Spatial Embedding", "Representation Learning", "Remote Sensing", "Time Series"],
+    "links": {
+      "github": "",
+      "arxiv": "",
+      "publication": ""
+    },
+    "details": [
+      "Built a satellite data matching pipeline and scalable data loader for hundreds of GB of time-series data.",
+      "Empirically compared absolute and relative spatial embeddings on ocean surface feature prediction."
+    ]
+  },
+  {
+    "slug": "gene-expression-neural-ode",
+    "title": "Gene Expression Field Estimation via Poisson Resampling and Neural ODEs",
+    "year": "2024-2025",
+    "status": "Research Intern · Dr. Yi Zhang",
+    "affiliation": "MScAC, University of Toronto",
+    "summary": "Modeling spatial transcriptomics as Poisson sampling on a diffused gene expression field, with a reversed Neural ODE process for reliable sample generation.",
+    "abstract": "Formulated spatial transcriptomics data as a spatial Poisson sampling process on a diffused gene expression field. Proposed a deep learning algorithm that generates reliable Poisson samples through a reversed Neural ODE process, combining supervised pretraining with semi-supervised operator learning. Achieved accurate reconstruction of the mean field from sparse samples and developed a deeper understanding of fluid dynamics simulation in biological data.",
+    "coverImage": "assets/learning-dynamics.svg",
+    "coverAlt": "Cyan learning trajectory drawn through a dark grid of model states.",
+    "tags": ["Neural ODE", "Poisson Process", "Spatial Transcriptomics", "Operator Learning", "Fluid Dynamics"],
+    "links": {
+      "github": "",
+      "arxiv": "",
+      "publication": ""
+    },
+    "details": [
+      "Combined supervised pretraining with semi-supervised operator learning to stabilize reversed Neural ODE training.",
+      "Reconstructed gene expression mean fields from sparse samples on 2D tissue grids."
+    ]
+  },
+  {
+    "slug": "bpinn-kalman-time-series",
+    "title": "Solving Time Series Inverse Problems by Combining Bayesian-PINN with Kalman Filter",
+    "year": "2023-2024",
+    "status": "Research Assistant · Dr. Zuchuan Li",
+    "affiliation": "MScAC, University of Toronto",
+    "summary": "A Bayesian-PINN and Kalman Filter hybrid for field dynamics inverse problems, with a patched covariance method to improve filter performance.",
+    "abstract": "Proposed a deep learning model for solving inverse problems of field dynamics systems by combining Bayesian neural networks (BNNs), physics-informed neural networks (PINNs), and stochastic differential equations (SDEs) with a Kalman filter. Introduced a patched covariance method to improve Kalman filter performance, and implemented the B-PINN-Kalman pipeline in PyTorch alongside a CUDA-accelerated 2D advection-diffusion fluid solver used as a neural operator.",
+    "coverImage": "assets/geometric-systems.svg",
+    "coverAlt": "Geometric shapes and cyan circle on a warm grid background.",
+    "tags": ["Bayesian NN", "PINN", "Kalman Filter", "SDE", "Inverse Problem", "CUDA"],
+    "links": {
+      "github": "",
+      "arxiv": "",
+      "publication": ""
+    },
+    "details": [
+      "Implemented B-PINN-Kalman in PyTorch and replicated related flow estimation and image generation papers.",
+      "Built a CUDA-accelerated 2D advection-diffusion fluid solver as a neural operator backend."
+    ]
+  },
+  {
+    "slug": "ddpm-general-inverse-problem",
+    "title": "General Study of Denoising Diffusion Probability Models",
+    "year": "2023-2024",
+    "status": "Independent Study · Dr. Zuchuan Li",
+    "affiliation": "MScAC, University of Toronto",
+    "summary": "Independent study of score-based diffusion on general inverse problems, with PyTorch implementations of DDPM and diffusion posterior sampling.",
+    "abstract": "Independently studied score-based diffusion models on the general inverse problem, covering stochastic differential equations, score-based diffusion processes, and diffusion posterior sampling. Implemented diffusion posterior sampling in PyTorch and replicated several papers on DDPM and diffusion sampling for both linear and nonlinear inverse problems.",
+    "coverImage": "assets/notion-knowledge.svg",
+    "coverAlt": "Layered note pages with mathematical marks and a cyan path.",
+    "tags": ["Diffusion Models", "SDE", "Inverse Problem", "PyTorch"],
+    "links": {
+      "github": "",
+      "arxiv": "",
+      "publication": ""
+    },
+    "details": [
+      "Surveyed score-based diffusion and its mathematical foundations end to end.",
+      "Replicated DDPM and diffusion posterior sampling pipelines for linear and nonlinear inverse problems."
+    ]
+  }
+]

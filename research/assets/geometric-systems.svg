@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+  <title id="title">Geometric systems cover</title>
+  <desc id="desc">Concentric geometric paths over a warm research grid.</desc>
+  <rect width="960" height="560" fill="#fff5e6"/>
+  <g stroke="#050505" stroke-opacity="0.08" stroke-width="1">
+    <path d="M0 80h960M0 160h960M0 240h960M0 320h960M0 400h960M0 480h960"/>
+    <path d="M120 0v560M240 0v560M360 0v560M480 0v560M600 0v560M720 0v560M840 0v560"/>
+  </g>
+  <circle cx="480" cy="280" r="180" fill="none" stroke="#050505" stroke-width="12"/>
+  <circle cx="480" cy="280" r="104" fill="none" stroke="#00fff0" stroke-width="26"/>
+  <path d="M230 420 480 88 730 420Z" fill="none" stroke="#050505" stroke-width="14" stroke-linejoin="round"/>
+  <circle cx="480" cy="280" r="20" fill="#050505"/>
+</svg>

@@ -1,23 +1,40 @@
 :root {
-  --bg-color: rgb(255, 245, 230);
-  --text_color: rgb(5, 5, 5);
-  --text-color: var(--text_color);
-  --shadow-color: #fff;
-  --shadow-color-inv: rgba(5, 5, 5, 0.1);
-  --light_blur: #00FFF0;
+  --color-bg: rgb(255, 245, 230);
+  --color-text: rgb(5, 5, 5);
+  --color-text-muted: rgba(5, 5, 5, 0.62);
+  --color-surface: rgba(255, 255, 255, 0.78);
+  --color-surface-strong: rgb(255, 255, 255);
+  --color-border: rgba(5, 5, 5, 0.1);
+  --color-accent: #00FFF0;
+  --color-accent-hover: #007BFF;
+  --color-shadow: rgba(5, 5, 5, 0.12);
+  --color-inverse: rgb(255, 245, 230);
+  --font-body: 'Microsoft Yahei', 'Inter', 'Segoe UI', Arial, sans-serif;
+  --font-display: var(--font-body);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-pill: 999px;
+  --shadow-soft: 0 calc(var(--grid-size) * 0.24) calc(var(--grid-size) * 0.6) var(--color-shadow);
+
+  --bg-color: var(--color-bg);
+  --text_color: var(--color-text);
+  --text-color: var(--color-text);
+  --shadow-color: var(--color-surface-strong);
+  --shadow-color-inv: var(--color-border);
+  --light_blur: var(--color-accent);
   --grid-columns: 48;
   --grid-size: calc(100vw / var(--grid-columns));
-  --font-zh-en: 'Microsoft Yahei', sans-serif;
+  --font-zh-en: var(--font-body);
 
   --body-height: 200vh;
   --main-height: 400vh;
   --home-height: 100vh;
 
   --h1-font-size-multiplier: 1.4;
-  --h1-letter-spacing: -0.06em;
+  --h1-letter-spacing: 0;
   --h1-text-shadow-blur-multiplier: 0.2;
   --h2-font-size: 1.5em;
-  --h2-letter-spacing: -0.08em;
+  --h2-letter-spacing: 0;
 
   --title-top: 40%;
   --title-left: 50%;
@@ -53,34 +70,34 @@
   --arrow-offset-x-multiplier: 1.6;
   --arrow-offset-y-multiplier: -0.5;
 
-  --grid-line-color: rgba(0, 0, 0, 0.1);
+  --grid-line-color: var(--color-border);
   --grid-line-thickness-multiplier: 0.02;
   --grid-overlay-opacity: 0;
   --grid-overlay-opacity-debug: 1;
   --grid-overlay-z: 9999;
 
-  --nav-bg: rgba(255, 255, 255, 0.85);
+  --nav-bg: var(--color-surface);
   --nav-padding-x-multiplier: 0.32;
   --nav-gap-multiplier: 4;
   --nav-radius-multiplier: 999;
   --nav-shadow-y-multiplier: 0.08;
   --nav-shadow-blur-multiplier: 0.24;
-  --nav-shadow-color: rgba(0, 0, 0, 0.1);
+  --nav-shadow-color: var(--color-shadow);
   --nav-blur-multiplier: 0.12;
-  --nav-hover-color: #007BFF;
+  --nav-hover-color: var(--color-accent-hover);
 
   --selector-gap-multiplier: 2;
   --selector-offset-y-multiplier: 3;
-  --selector-card-bg: rgba(255, 255, 255, 0.8);
+  --selector-card-bg: var(--color-surface);
   --selector-card-border-width-multiplier: 0.02;
-  --selector-card-border-color: rgba(0, 0, 0, 0.08);
+  --selector-card-border-color: var(--color-border);
   --selector-card-radius-multiplier: 0.36;
   --selector-card-padding-y-multiplier: 0.7;
   --selector-card-padding-x-multiplier: 1.1;
   --selector-card-min-width-multiplier: 6;
   --selector-card-shadow-y-multiplier: 0.24;
   --selector-card-shadow-blur-multiplier: 0.48;
-  --selector-card-shadow-color: rgba(0, 0, 0, 0.08);
+  --selector-card-shadow-color: var(--color-shadow);
   --selector-card-transition-duration: 0.2s;
   --selector-card-transition-ease: ease;
   --selector-card-blur-multiplier: 0.12;
@@ -88,9 +105,9 @@
   --selector-card-hover-translate-multiplier: -0.08;
   --selector-card-hover-shadow-y-multiplier: 0.32;
   --selector-card-hover-shadow-blur-multiplier: 0.6;
-  --selector-card-hover-shadow-color: rgba(0, 0, 0, 0.12);
+  --selector-card-hover-shadow-color: var(--color-shadow);
   --selector-title-size: 1.2em;
-  --selector-title-letter-spacing: -0.04em;
+  --selector-title-letter-spacing: 0;
   --selector-sub-size: 0.8em;
   --selector-sub-opacity: 0.8;
   --selector-card-mobile-width-multiplier: 9;
@@ -119,11 +136,11 @@
   --debug-toggle-padding-x-multiplier: 0.4;
   --debug-toggle-padding-y-multiplier: 0.2;
   --debug-toggle-radius-multiplier: 0.4;
-  --debug-toggle-bg: rgba(255, 255, 255, 0.85);
-  --debug-toggle-color: var(--text_color);
+  --debug-toggle-bg: var(--color-surface);
+  --debug-toggle-color: var(--color-text);
   --debug-toggle-shadow-y-multiplier: 0.08;
   --debug-toggle-shadow-blur-multiplier: 0.24;
-  --debug-toggle-shadow-color: rgba(0, 0, 0, 0.15);
+  --debug-toggle-shadow-color: var(--color-shadow);
   --debug-toggle-font-size-multiplier: 0.28;
 
   --debug-panel-offset-x-multiplier: 0.4;
@@ -131,7 +148,7 @@
   --debug-panel-padding-multiplier: 0.4;
   --debug-panel-radius-multiplier: 0.4;
   --debug-panel-bg: rgba(5, 5, 5, 0.75);
-  --debug-panel-color: rgb(255, 245, 230);
+  --debug-panel-color: var(--color-inverse);
   --debug-panel-font-size-multiplier: 0.26;
 
   --anim-sun-scale-start: 5;
@@ -189,8 +206,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: rgb(5, 5, 5);
-    --text_color: rgb(255, 245, 230);
+    --color-bg: rgb(5, 5, 5);
+    --color-text: rgb(255, 245, 230);
+    --color-text-muted: rgba(255, 245, 230, 0.66);
+    --color-surface: rgba(20, 20, 20, 0.82);
+    --color-surface-strong: rgb(20, 20, 20);
+    --color-border: rgba(255, 245, 230, 0.14);
+    --color-shadow: rgba(0, 0, 0, 0.34);
+    --color-inverse: rgb(5, 5, 5);
     --shadow-color: #000;
   }
 }

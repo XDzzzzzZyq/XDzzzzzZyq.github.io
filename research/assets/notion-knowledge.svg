@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+  <title id="title">Knowledge notes cover</title>
+  <desc id="desc">Stacked note pages with mathematical marks and an accent path.</desc>
+  <rect width="960" height="560" fill="#050505"/>
+  <rect x="170" y="90" width="520" height="360" rx="8" fill="#fff5e6"/>
+  <rect x="220" y="130" width="520" height="360" rx="8" fill="#ffffff"/>
+  <g fill="none" stroke="#050505" stroke-width="8" stroke-linecap="round">
+    <path d="M286 220h244M286 274h360M286 328h310"/>
+    <path d="M286 388c44-70 92-70 144 0s98 70 150 0"/>
+  </g>
+  <path d="M650 162c38 52 42 116 12 192s-16 124 42 164" fill="none" stroke="#00fff0" stroke-width="20" stroke-linecap="round"/>
+</svg>
