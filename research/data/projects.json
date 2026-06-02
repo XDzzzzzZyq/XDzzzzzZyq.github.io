@@ -1,10 +1,12 @@
 [
   {
     "slug": "gvae-spatial-transcriptomics",
+    "category": "research",
     "title": "Spatial Transcriptomics Denoising through GVAE and Mass Conservation",
     "year": "2025",
     "status": "Research Intern · Dr. Yi Zhang",
-    "affiliation": "MScAC, University of Toronto",
+    "affiliation": "Duke University",
+    "piWebsite": "https://yi-zhang-compbio-lab.github.io/",
     "summary": "Light-weight Graph Variational Auto-Encoder for denoising spatial transcriptomics data with zero-inflated negative binomial reconstruction and mass conservation.",
     "abstract": "Developed a Graph Variational Auto-Encoder (GVAE) that denoises spatial transcriptomics data by addressing zero-inflated observation noise and gene diffusion, ensuring localized graph structure and mass conservation while reconstructing a zero-inflated negative binomial distribution. Incorporated probabilistic programming (Pyro) and recent GVAE techniques for robust modeling and inference, achieving accurate reconstruction of gene expression fields from sparse samples and improving downstream latent clustering and cell/bin-level classification. Work to be published this year.",
     "coverImage": "assets/learning-dynamics.svg",
@@ -23,10 +25,11 @@
   },
   {
     "slug": "ocean-oxygen-relative-spatial-embedding",
+    "category": "research",
     "title": "Enhancing Ocean Surface Oxygen Representation via Relative Spatial Embedding",
     "year": "2024",
     "status": "Research Assistant · Dr. Zuchuan Li",
-    "affiliation": "MScAC, University of Toronto",
+    "affiliation": "Duke Kunshan University",
     "summary": "Investigating relative spatial embedding for ocean surface feature representation with Vision Transformer variants on hundreds of gigabytes of satellite time-series data.",
     "abstract": "Reproduced, modified, and examined several transformer-based models — including Vision Transformer, Positional-induced Transformer, and Relative Position Embedding — to assess how relative spatial embedding enhances ocean surface feature representation. Implemented a satellite data matching system and a corresponding data loader to process massive time-series datasets at the hundreds-of-gigabytes scale.",
     "coverImage": "assets/geometric-systems.svg",
@@ -44,10 +47,12 @@
   },
   {
     "slug": "gene-expression-neural-ode",
+    "category": "research",
     "title": "Gene Expression Field Estimation via Poisson Resampling and Neural ODEs",
     "year": "2024-2025",
     "status": "Research Intern · Dr. Yi Zhang",
-    "affiliation": "MScAC, University of Toronto",
+    "affiliation": "Duke University",
+    "piWebsite": "https://yi-zhang-compbio-lab.github.io/",
     "summary": "Modeling spatial transcriptomics as Poisson sampling on a diffused gene expression field, with a reversed Neural ODE process for reliable sample generation.",
     "abstract": "Formulated spatial transcriptomics data as a spatial Poisson sampling process on a diffused gene expression field. Proposed a deep learning algorithm that generates reliable Poisson samples through a reversed Neural ODE process, combining supervised pretraining with semi-supervised operator learning. Achieved accurate reconstruction of the mean field from sparse samples and developed a deeper understanding of fluid dynamics simulation in biological data.",
     "coverImage": "assets/learning-dynamics.svg",
@@ -65,17 +70,18 @@
   },
   {
     "slug": "bpinn-kalman-time-series",
+    "category": "research",
     "title": "Solving Time Series Inverse Problems by Combining Bayesian-PINN with Kalman Filter",
     "year": "2023-2024",
     "status": "Research Assistant · Dr. Zuchuan Li",
-    "affiliation": "MScAC, University of Toronto",
+    "affiliation": "Duke Kunshan University",
     "summary": "A Bayesian-PINN and Kalman Filter hybrid for field dynamics inverse problems, with a patched covariance method to improve filter performance.",
-    "abstract": "Proposed a deep learning model for solving inverse problems of field dynamics systems by combining Bayesian neural networks (BNNs), physics-informed neural networks (PINNs), and stochastic differential equations (SDEs) with a Kalman filter. Introduced a patched covariance method to improve Kalman filter performance, and implemented the B-PINN-Kalman pipeline in PyTorch alongside a CUDA-accelerated 2D advection-diffusion fluid solver used as a neural operator.",
+    "abstract": "Proposed a deep learning model for solving inverse problems of field dynamics systems by combining Bayesian neural networks (BNNs), physics-informed neural networks (PINNs), and stochastic differential equations (SDEs) with a Kalman filter. Introduced a patched covariance method to improve Kalman filter performance, and implemented the B-PINN-Kalman pipeline in PyTorch alongside a CUDA-accelerated 2D advection-diffusion fluid solver as a neural operator.",
     "coverImage": "assets/geometric-systems.svg",
     "coverAlt": "Geometric shapes and cyan circle on a warm grid background.",
     "tags": ["Bayesian NN", "PINN", "Kalman Filter", "SDE", "Inverse Problem", "CUDA"],
     "links": {
-      "github": "",
+      "github": "https://github.com/XDzzzzzZyq/b-pinn-kalman-filter",
       "arxiv": "",
       "publication": ""
     },
@@ -85,24 +91,70 @@
     ]
   },
   {
-    "slug": "ddpm-general-inverse-problem",
-    "title": "General Study of Denoising Diffusion Probability Models",
-    "year": "2023-2024",
-    "status": "Independent Study · Dr. Zuchuan Li",
-    "affiliation": "MScAC, University of Toronto",
-    "summary": "Independent study of score-based diffusion on general inverse problems, with PyTorch implementations of DDPM and diffusion posterior sampling.",
-    "abstract": "Independently studied score-based diffusion models on the general inverse problem, covering stochastic differential equations, score-based diffusion processes, and diffusion posterior sampling. Implemented diffusion posterior sampling in PyTorch and replicated several papers on DDPM and diffusion sampling for both linear and nonlinear inverse problems.",
-    "coverImage": "assets/notion-knowledge.svg",
-    "coverAlt": "Layered note pages with mathematical marks and a cyan path.",
-    "tags": ["Diffusion Models", "SDE", "Inverse Problem", "PyTorch"],
+    "slug": "ref-gaussian-webgl",
+    "category": "personal",
+    "title": "WebGL Implementation of Reflective Gaussian Splatting (Ref-Gaussian)",
+    "year": "2025-2026",
+    "status": "Signature Work · Dr. Shixin Xu",
+    "affiliation": "Duke Kunshan University",
+    "summary": "Browser-native WebGL pipeline for Ref-Gaussian rendering at 60+ FPS, with COLMAP-to-Docker end-to-end tooling and Approximate Tangent Axis estimation for Gaussian Surfels.",
+    "abstract": "Conducted an in-depth survey of recent 3D Gaussian Splatting methods and identified performance and deployment limitations in existing browser-native implementations. Implemented the latest Ref-Gaussian pipeline in WebGL, achieving 60+ FPS real-time rendering with optimized loading and memory efficiency. Proposed Approximate Tangent Axis (ATA) estimation for Gaussian Surfels rasterization, producing smoother position maps and improved visual stability. Combined with early alpha discard, view-frustum culling, and chunk-based lazy updates, significantly improved rendering throughput and reduced GPU utilization. Built an end-to-end pipeline including COLMAP reconstruction, Ref-Gaussian inference, data post-processing, and Docker-based web deployment.",
+    "coverImage": "assets/learning-dynamics.svg",
+    "coverAlt": "Cyan learning trajectory drawn through a dark grid of model states.",
+    "tags": ["WebGL", "3D Gaussian Splatting", "Real-time Rendering", "COLMAP", "Docker"],
     "links": {
-      "github": "",
+      "github": "https://github.com/XDzzzzzZyq/dku-splat",
       "arxiv": "",
       "publication": ""
     },
     "details": [
-      "Surveyed score-based diffusion and its mathematical foundations end to end.",
-      "Replicated DDPM and diffusion posterior sampling pipelines for linear and nonlinear inverse problems."
+      "Achieved 60+ FPS real-time WebGL rendering of Ref-Gaussian on consumer-grade laptops.",
+      "Built an end-to-end COLMAP → inference → Docker-deployed browser pipeline for campus navigation."
+    ]
+  },
+  {
+    "slug": "opengl-renderer",
+    "category": "personal",
+    "title": "GPU (OpenGL) based Renderer Development",
+    "year": "2022-Now",
+    "status": "Independent Project",
+    "affiliation": "Individual",
+    "summary": "Long-term personal C++/OpenGL real-time rendering engine: 15,000+ lines, 450+ commits, with PBR, SDFs, real-time global illumination, and reproductions of 3 SIGGRAPH works.",
+    "abstract": "Led long-term development of a real-time rendering engine for over two years, producing 15,000+ lines of C++/OpenGL code across 450+ commits. Studied 30+ foundational and state-of-the-art graphics papers, including reproductions of three SIGGRAPH works. Conducted in-depth exploration of physically based rendering, radiometry, high-quality shadowing, signed distance fields, spatio-temporal denoising, and real-time global illumination. Acquired strong expertise in GPU architecture, high-performance computing, and shader programming, with advanced proficiency in C++ and modern OpenGL for real-time graphics systems.",
+    "coverImage": "assets/geometric-systems.svg",
+    "coverAlt": "Geometric shapes and cyan circle on a warm grid background.",
+    "tags": ["OpenGL", "C++", "PBR", "Real-time GI", "SDF"],
+    "links": {
+      "github": "https://github.com/XDzzzzzZyq/OpengL",
+      "website": "https://xdzzzzzzyq.github.io/OpengL/",
+      "arxiv": "",
+      "publication": ""
+    },
+    "details": [
+      "Two-plus-year independent project: 15,000+ LOC of C++/OpenGL across 450+ commits.",
+      "Reproduced three SIGGRAPH works and explored 30+ foundational graphics papers."
+    ]
+  },
+  {
+    "slug": "cuda-vision",
+    "category": "personal",
+    "title": "CUDA Image Processing Operator Development",
+    "year": "2024",
+    "status": "Course Project · CS 207",
+    "affiliation": "Duke Kunshan University",
+    "summary": "CUDA-accelerated Python image processing and computer vision library: convolution, geometric transforms, dithering, morphology, and texture segmentation on the GPU.",
+    "abstract": "Developed a CUDA-accelerated Python library for Image Processing (IP) and Computer Vision, achieving high-throughput GPU performance and scalable execution. Implemented core algorithms including convolution, geometric transformations, dithering, morphological operations, and texture segmentation. Gained in-depth expertise in CUDA programming and high-performance computing, and explored hybrid pipelines that integrate PyTorch, CUDA, and C++ for efficient parallel computing and research prototyping.",
+    "coverImage": "assets/notion-knowledge.svg",
+    "coverAlt": "Layered note pages with mathematical marks and a cyan path.",
+    "tags": ["CUDA", "Image Processing", "Computer Vision", "Python", "HPC"],
+    "links": {
+      "github": "https://github.com/XDzzzzzZyq/cuda-vision",
+      "arxiv": "",
+      "publication": ""
+    },
+    "details": [
+      "Implemented convolution, geometric transforms, dithering, morphology, and texture segmentation on GPU.",
+      "Explored hybrid PyTorch + CUDA + C++ pipelines for research prototyping."
     ]
   }
 ]

@@ -1,4 +1,4 @@
-const projectList = document.querySelector("[data-project-list]");
+const projectLists = Array.from(document.querySelectorAll("[data-project-list]"));
 
 const icons = {
   github: `
@@ -13,10 +13,24 @@ const icons = {
     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
       <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M6 3h9l3 3v15H6z"/>
       <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M9 12h6M9 16h6M14 3v4h4"/>
+    </svg>`,
+  website: `
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+      <polyline fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="15 3 21 3 21 9"/>
+      <line fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="10" y1="14" x2="21" y2="3"/>
     </svg>`
 };
 
 const hasUrl = value => typeof value === "string" && value.trim().length > 0;
+
+const t = (path, values) => {
+  const dict = window.__i18n;
+  if (!dict) return path;
+  const value = path.split(".").reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : undefined), dict);
+  if (value === undefined) return path;
+  return String(value).replace(/\{(\w+)\}/g, (_, k) => (values && values[k] !== undefined ? String(values[k]) : `{${k}}`));
+};
 
 const createTextElement = (tag, className, text) => {
   const element = document.createElement(tag);
@@ -75,9 +89,9 @@ const createProjectCard = project => {
 
   const summary = createTextElement("p", "project-summary", project.summary);
   const meta = createTextElement("p", "project-meta", `${project.year} · ${project.status}`);
-  const affiliation = hasUrl(project.affiliation)
-    ? null
-    : createTextElement("p", "project-affiliation", project.affiliation);
+  const affiliation = project.affiliation
+    ? createTextElement("p", "project-affiliation", project.affiliation)
+    : null;
 
   const tags = document.createElement("ul");
   tags.className = "tag-list";
@@ -90,6 +104,7 @@ const createProjectCard = project => {
   const actions = document.createElement("div");
   actions.className = "project-actions";
   if (hasUrl(project.links?.github)) actions.append(createIconLink("github", project.links.github));
+  if (hasUrl(project.links?.website)) actions.append(createIconLink("website", project.links.website));
   if (hasUrl(project.links?.arxiv)) actions.append(createIconLink("arxiv", project.links.arxiv));
   if (hasUrl(project.links?.publication)) actions.append(createIconLink("publication", project.links.publication));
 
@@ -99,17 +114,53 @@ const createProjectCard = project => {
 };
 
 const renderProjects = projects => {
-  projectList.replaceChildren();
-  projects.forEach(project => projectList.append(createProjectCard(project)));
+  const categoryLabel = cat => {
+    const dict = window.__i18n;
+    if (!dict) return cat;
+    if (cat === "research") return dict.nav?.projects || cat;
+    if (cat === "personal") return dict.nav?.personal || cat;
+    return cat;
+  };
+
+  projectLists.forEach(list => {
+    const category = list.dataset.projectList;
+    const filtered = projects.filter(project => (project.category || "research") === category);
+    list.replaceChildren();
+    if (filtered.length === 0) {
+      const empty = createTextElement("p", "empty-state", (t("projects.empty") || "No {category} projects yet.").replace(/\{category\}/g, categoryLabel(category)));
+      list.append(empty);
+      return;
+    }
+    filtered.forEach(project => list.append(createProjectCard(project)));
+  });
+
+  document.dispatchEvent(new CustomEvent("research:ready", { detail: { projects } }));
 };
 
-fetch("data/projects.json")
-  .then(response => {
+const loadProjects = async () => {
+  try {
+    const response = await fetch("data/projects.json");
     if (!response.ok) throw new Error(`Project data failed to load: ${response.status}`);
-    return response.json();
-  })
-  .then(renderProjects)
-  .catch(error => {
-    projectList.replaceChildren(createTextElement("p", "empty-state", "Projects could not be loaded. Check research/data/projects.json."));
+    return await response.json();
+  } catch (error) {
     console.error(error);
-  });
+    const errMsg = t("projects.loadError") || "Projects could not be loaded. Check research/data/projects.json.";
+    projectLists.forEach(list => {
+      list.replaceChildren(createTextElement("p", "empty-state", errMsg));
+    });
+    return [];
+  }
+};
+
+const start = async () => {
+  if (!window.__i18n) {
+    document.addEventListener("i18n:ready", start, { once: true });
+    return;
+  }
+  const projects = await loadProjects();
+  renderProjects(projects);
+};
+
+start();
+
+export { createProjectCard, loadProjects };
