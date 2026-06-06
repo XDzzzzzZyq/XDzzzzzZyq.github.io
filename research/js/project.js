@@ -142,11 +142,11 @@ const renderProject = (project, markdown) => {
     projectRoot.append(abstract);
   }
 
-  // Markdown body (the new project detail content)
   const mdPanel = document.createElement("section");
   mdPanel.className = "detail-panel markdown-panel";
   if (markdown) {
-    mdPanel.append(renderMarkdown(markdown.text));
+    const mdText = markdown.text.replace(/^# .+\n?/, "").trimStart();
+    mdPanel.append(renderMarkdown(mdText));
   } else {
     mdPanel.append(text("p", "empty-state", t("detail.markdownMissing") || "Detailed notes for this project are not available yet."));
   }
