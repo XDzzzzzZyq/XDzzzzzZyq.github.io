@@ -108,11 +108,9 @@ body.research-page {
 .detail-hero h1 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: var(--text-display);
   line-height: 0.95;
   text-align: left;
   text-shadow: none;
-  letter-spacing: 0;
   margin-left: -0.08em;
 }
 
@@ -142,11 +140,19 @@ body.research-page {
 }
 
 .bio-panel h2,
+.section-heading h2,
 .detail-panel h2 {
   margin: 0;
-  font-size: var(--text-heading);
+  text-align: left;
   line-height: 1.1;
-  letter-spacing: 0;
+}
+
+.bio-panel h3,
+.section-heading h3,
+.detail-panel h3 {
+  margin: 0;
+  text-align: left;
+  line-height: 1.1;
 }
 
 .bio-panel p,
@@ -283,9 +289,9 @@ body.research-page {
 
 .project-title {
   margin: 0 0 10px;
-  font-size: var(--text-heading);
+  font-size: var(--text-heading-small);
   line-height: 1.15;
-  letter-spacing: 0;
+  letter-spacing: var(--h2-letter-spacing);
 }
 
 .project-summary {
@@ -649,7 +655,7 @@ body.search-open {
   color: var(--color-text);
   font-family: var(--font-display);
   line-height: 1.2;
-  letter-spacing: 0;
+  letter-spacing: var(--h2-letter-spacing);
 }
 
 .markdown-body h1 {
@@ -848,7 +854,7 @@ body.search-open {
 .note-card h3 {
   margin: 0;
   font-size: var(--text-heading);
-  letter-spacing: 0;
+  letter-spacing: var(--h2-letter-spacing);
 }
 
 .note-card p {
@@ -949,7 +955,7 @@ body.search-open {
   line-height: 1;
   text-align: left;
   text-shadow: none;
-  letter-spacing: 0;
+  letter-spacing: var(--h1-letter-spacing);
 }
 
 .notion-frame-wrap {

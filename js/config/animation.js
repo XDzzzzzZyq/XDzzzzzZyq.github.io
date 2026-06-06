@@ -17,7 +17,10 @@ const readBool = (name, fallback) => {
 
 const readUnit = (name, fallback) => readVar(name, fallback);
 
-const readGridPx = () => readNumber("--grid-size", 0);
+const readGridPx = () => {
+  const columns = readNumber("--grid-columns", 48);
+  return columns > 0 ? window.innerWidth / columns : 0;
+};
 
 const gridPxValue = () => readGridPx();
 

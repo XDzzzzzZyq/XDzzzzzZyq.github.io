@@ -85,7 +85,7 @@ const createProjectCard = project => {
   const titleLink = document.createElement("a");
   titleLink.className = "project-title-link";
   titleLink.href = detailHref;
-  titleLink.append(createTextElement("h3", "project-title", project.title));
+  titleLink.append(createTextElement("h2", "project-title", project.title));
 
   const summary = createTextElement("p", "project-summary", project.summary);
   const meta = createTextElement("p", "project-meta", `${project.year} · ${project.status}`);

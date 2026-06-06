@@ -50,7 +50,7 @@
   font-family: var(--font-body);
   font-weight: bold;
   font-size: var(--text-heading);
-  letter-spacing: var(--selector-title-letter-spacing);
+  letter-spacing: var(--h1-letter-spacing);
 }
 
 .selector-sub {

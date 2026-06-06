@@ -27,17 +27,19 @@
   --font-zh-en: var(--font-body);
 
   --text-display: clamp(2rem, 5vw, 5rem);
-  --text-heading: clamp(1.15rem, 2.5vw, 1.5rem);
+  --text-heading: clamp(1.5rem, 2.5vw, 3.5rem);
+  --text-heading-small: clamp(1.15rem, 2.5vw, 1.5rem);
   --text-body: 1rem;
   --text-small: 0.85rem;
+  --h1-letter-spacing: -0.06em;
+  --h2-letter-spacing: -0.06em;
+  --h3-letter-spacing: -0.06em;
 
   --body-height: 200vh;
   --main-height: 400vh;
   --home-height: 100vh;
 
-  --h1-letter-spacing: 0;
   --h1-text-shadow-blur-multiplier: 0.2;
-  --h2-letter-spacing: 0;
 
   --title-top: 40%;
   --title-left: 50%;
@@ -109,7 +111,6 @@
   --selector-card-hover-shadow-y-multiplier: 0.32;
   --selector-card-hover-shadow-blur-multiplier: 0.6;
   --selector-card-hover-shadow-color: var(--color-shadow);
-  --selector-title-letter-spacing: 0;
   --selector-sub-opacity: 0.8;
   --selector-card-mobile-width-multiplier: 9;
 

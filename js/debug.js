@@ -45,4 +45,4 @@ window.addEventListener("resize", () => {
   updatePanel();
 });
 
-updatePanel();
+setDebugMode(true);

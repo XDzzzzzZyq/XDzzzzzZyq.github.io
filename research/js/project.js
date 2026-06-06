@@ -105,7 +105,7 @@ const renderProject = (project, markdown) => {
   const intro = document.createElement("div");
   intro.append(
     text("p", "detail-meta", `${project.year} · ${project.status}`),
-    text("h1", "", project.title),
+    text("h2", "", project.title),
     text("p", "research-hero__intro", project.summary)
   );
   if (hasUrl(project.affiliation)) {
@@ -137,7 +137,7 @@ const renderProject = (project, markdown) => {
   if (project.abstract) {
     const abstract = document.createElement("section");
     abstract.className = "detail-panel";
-    abstract.append(text("h2", "", t("detail.abstract") || "Abstract"));
+    abstract.append(text("h3", "", t("detail.abstract") || "Abstract"));
     abstract.append(text("p", "", project.abstract));
     projectRoot.append(abstract);
   }
@@ -166,7 +166,7 @@ const renderProject = (project, markdown) => {
   // Links
   const links = document.createElement("section");
   links.className = "detail-panel";
-  links.append(text("h2", "", t("detail.links") || "Links"));
+  links.append(text("h3", "", t("detail.links") || "Links"));
   const row = document.createElement("div");
   row.className = "button-row";
   Object.entries(project.links || {}).forEach(([type, href]) => {

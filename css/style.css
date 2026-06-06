@@ -34,6 +34,13 @@ h2 {
   letter-spacing: var(--h2-letter-spacing);
 }
 
+h3 {
+  font-size: var(--text-heading-small);
+  font-weight: bold;
+  text-align: left;
+  letter-spacing: var(--h3-letter-spacing);
+}
+
 p {
   text-align: left;
   letter-spacing: 0;
