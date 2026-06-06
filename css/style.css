@@ -6,6 +6,7 @@ body {
   height: var(--body-height);
   margin: 0;
   font-family: var(--font-body);
+  font-size: var(--text-body);
 }
 
 h1, h2, h3, p, li {
@@ -18,7 +19,7 @@ a {
 }
 
 h1 {
-  font-size: calc(var(--grid-size) * var(--h1-font-size-multiplier));
+  font-size: var(--text-display);
   font-weight: bold;
   text-align: center;
   text-shadow: 0 0 calc(var(--grid-size) * var(--h1-text-shadow-blur-multiplier)) var(--shadow-color);
@@ -27,7 +28,7 @@ h1 {
 }
 
 h2 {
-  font-size: var(--h2-font-size);
+  font-size: var(--text-heading);
   font-weight: bold;
   text-align: left;
   letter-spacing: var(--h2-letter-spacing);

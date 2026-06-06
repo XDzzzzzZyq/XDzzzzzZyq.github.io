@@ -45,7 +45,7 @@
     "bachelorValue": "Duke University & Duke Kunshan University · B.S. Applied Mathematics (Math Track) · 08/2022-05/2026."
   },
   "projects": {
-    "title": "Research Projects",
+    "title": "Research",
     "description": "Panels are loaded from <code>research/data/projects.json</code>. Each entry opens through one reusable detail template.",
     "loading": "Loading projects...",
     "loadError": "Projects could not be loaded. Check research/data/projects.json.",

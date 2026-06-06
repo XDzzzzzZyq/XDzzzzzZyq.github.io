@@ -26,14 +26,17 @@
   --grid-size: calc(100vw / var(--grid-columns));
   --font-zh-en: var(--font-body);
 
+  --text-display: clamp(2rem, 5vw, 5rem);
+  --text-heading: clamp(1.15rem, 2.5vw, 1.5rem);
+  --text-body: 1rem;
+  --text-small: 0.85rem;
+
   --body-height: 200vh;
   --main-height: 400vh;
   --home-height: 100vh;
 
-  --h1-font-size-multiplier: 1.4;
   --h1-letter-spacing: 0;
   --h1-text-shadow-blur-multiplier: 0.2;
-  --h2-font-size: 1.5em;
   --h2-letter-spacing: 0;
 
   --title-top: 40%;
@@ -106,9 +109,7 @@
   --selector-card-hover-shadow-y-multiplier: 0.32;
   --selector-card-hover-shadow-blur-multiplier: 0.6;
   --selector-card-hover-shadow-color: var(--color-shadow);
-  --selector-title-size: 1.2em;
   --selector-title-letter-spacing: 0;
-  --selector-sub-size: 0.8em;
   --selector-sub-opacity: 0.8;
   --selector-card-mobile-width-multiplier: 9;
 
@@ -124,12 +125,9 @@
   --work-card-transition-duration: 0.2s;
   --work-card-transition-ease: ease;
   --work-card-content-padding-multiplier: 0.32;
-  --work-card-title-size-multiplier: 0.32;
-  --work-card-meta-size-multiplier: 0.26;
+
   --work-card-meta-color: #bbb;
   --work-card-meta-margin-top-multiplier: 0.16;
-
-  --footer-font-size: 0.2em;
 
   --debug-toggle-offset-x-multiplier: 0.4;
   --debug-toggle-offset-y-multiplier: 0.4;
@@ -141,7 +139,6 @@
   --debug-toggle-shadow-y-multiplier: 0.08;
   --debug-toggle-shadow-blur-multiplier: 0.24;
   --debug-toggle-shadow-color: var(--color-shadow);
-  --debug-toggle-font-size-multiplier: 0.28;
 
   --debug-panel-offset-x-multiplier: 0.4;
   --debug-panel-offset-y-multiplier: 1.2;
@@ -149,7 +146,6 @@
   --debug-panel-radius-multiplier: 0.4;
   --debug-panel-bg: rgba(5, 5, 5, 0.75);
   --debug-panel-color: var(--color-inverse);
-  --debug-panel-font-size-multiplier: 0.26;
 
   --anim-sun-scale-start: 5;
   --anim-sun-scale-end: 1;

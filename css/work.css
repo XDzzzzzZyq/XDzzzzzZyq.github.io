@@ -31,12 +31,12 @@
 
 .card-title {
   color: var(--color-inverse);
-  font-size: calc(var(--grid-size) * var(--work-card-title-size-multiplier));
+  font-size: var(--text-heading);
   margin: 0;
 }
 
 .card-meta {
-  font-size: calc(var(--grid-size) * var(--work-card-meta-size-multiplier));
+  font-size: var(--text-small);
   color: var(--work-card-meta-color);
   margin-top: calc(var(--grid-size) * var(--work-card-meta-margin-top-multiplier));
 }

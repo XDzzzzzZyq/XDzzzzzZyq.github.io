@@ -49,13 +49,13 @@
 .selector-title {
   font-family: var(--font-body);
   font-weight: bold;
-  font-size: var(--selector-title-size);
+  font-size: var(--text-heading);
   letter-spacing: var(--selector-title-letter-spacing);
 }
 
 .selector-sub {
   font-family: var(--font-body);
-  font-size: var(--selector-sub-size);
+  font-size: var(--text-small);
   opacity: var(--selector-sub-opacity);
 }
 
@@ -124,7 +124,7 @@ footer {
   transform: translate(-50%, 0);
   color: var(--text-color);
   font-family: var(--font-body);
-  font-size: var(--footer-font-size);
+  font-size: var(--text-small);
   text-align: center;
 }
 
@@ -154,7 +154,7 @@ footer {
   background: var(--debug-toggle-bg);
   color: var(--debug-toggle-color);
   font-family: var(--font-body);
-  font-size: calc(var(--grid-size) * var(--debug-toggle-font-size-multiplier));
+  font-size: var(--text-small);
   box-shadow: 0 calc(var(--grid-size) * var(--debug-toggle-shadow-y-multiplier)) calc(var(--grid-size) * var(--debug-toggle-shadow-blur-multiplier)) var(--debug-toggle-shadow-color);
   cursor: pointer;
   z-index: calc(var(--grid-overlay-z) + 1);
@@ -169,7 +169,7 @@ footer {
   background: var(--debug-panel-bg);
   color: var(--debug-panel-color);
   font-family: var(--font-body);
-  font-size: calc(var(--grid-size) * var(--debug-panel-font-size-multiplier));
+  font-size: var(--text-small);
   z-index: calc(var(--grid-overlay-z) + 1);
   opacity: 0;
   pointer-events: none;

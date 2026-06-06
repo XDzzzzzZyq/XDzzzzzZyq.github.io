@@ -56,7 +56,7 @@ body.research-page {
 
 .research-nav a {
   color: var(--color-text-muted);
-  font-size: 0.9rem;
+  font-size: var(--text-body);
 }
 
 .research-nav a:hover,
@@ -104,21 +104,22 @@ body.research-page {
 }
 
 .research-hero h1,
+.section-heading h1,
 .detail-hero h1 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(3rem, 8vw, 7.5rem);
+  font-size: var(--text-display);
   line-height: 0.95;
   text-align: left;
   text-shadow: none;
   letter-spacing: 0;
+  margin-left: -0.08em;
 }
 
 .research-hero__intro {
   max-width: 680px;
   margin: 28px 0 0;
   color: var(--color-text-muted);
-  font-size: clamp(1.05rem, 2vw, 1.35rem);
   line-height: 1.6;
 }
 
@@ -141,10 +142,9 @@ body.research-page {
 }
 
 .bio-panel h2,
-.section-heading h2,
 .detail-panel h2 {
   margin: 0;
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-size: var(--text-heading);
   line-height: 1.1;
   letter-spacing: 0;
 }
@@ -176,7 +176,7 @@ body.research-page {
 
 .bio-fact dt {
   color: var(--color-text-muted);
-  font-size: 0.88rem;
+  font-size: var(--text-small);
 }
 
 .bio-fact dd {
@@ -202,7 +202,7 @@ body.research-page {
   background: var(--color-surface-strong);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-pill);
-  font-size: 0.92rem;
+  font-size: var(--text-body);
   font-weight: 700;
 }
 
@@ -283,7 +283,7 @@ body.research-page {
 
 .project-title {
   margin: 0 0 10px;
-  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  font-size: var(--text-heading);
   line-height: 1.15;
   letter-spacing: 0;
 }
@@ -294,13 +294,13 @@ body.research-page {
 
 .project-meta {
   margin: 0 0 18px;
-  font-size: 0.92rem;
+  font-size: var(--text-body);
 }
 
 .project-affiliation {
   margin: 0 0 18px;
   color: var(--color-accent-hover);
-  font-size: 0.85rem;
+  font-size: var(--text-small);
   font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -309,7 +309,7 @@ body.research-page {
 .detail-affiliation {
   margin: 18px 0 0;
   color: var(--color-accent-hover);
-  font-size: 0.9rem;
+  font-size: var(--text-small);
   font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -318,7 +318,7 @@ body.research-page {
 .detail-pi {
   margin: 10px 0 0;
   color: var(--color-text-muted);
-  font-size: 0.92rem;
+  font-size: var(--text-body);
 }
 
 .detail-pi-link {
@@ -346,7 +346,7 @@ body.research-page {
   background: var(--color-surface-strong);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-pill);
-  font-size: 0.85rem;
+  font-size: var(--text-body);
   cursor: pointer;
   transition: color 120ms ease, border-color 120ms ease, background 120ms ease;
 }
@@ -374,7 +374,7 @@ body.research-page {
   border: 1px solid var(--color-border);
   border-radius: 4px;
   font-family: var(--font-mono, monospace);
-  font-size: 0.7rem;
+  font-size: var(--text-small);
   line-height: 1;
 }
 
@@ -388,7 +388,7 @@ body.research-page {
   background: var(--color-surface-strong);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-pill);
-  font-size: 0.85rem;
+  font-size: var(--text-body);
   font-weight: 700;
   text-decoration: none;
   transition: color 120ms ease, border-color 120ms ease;
@@ -476,7 +476,7 @@ body.search-open {
   background: transparent;
   border: 0;
   outline: 0;
-  font-size: 1rem;
+  font-size: var(--text-body);
   font-family: inherit;
 }
 
@@ -496,7 +496,7 @@ body.search-open {
   border: 1px solid var(--color-border);
   border-radius: 4px;
   font-family: var(--font-mono, monospace);
-  font-size: 0.7rem;
+  font-size: var(--text-small);
   cursor: pointer;
 }
 
@@ -542,7 +542,7 @@ body.search-open {
   background: color-mix(in srgb, var(--color-accent) 18%, transparent);
   border: 1px solid color-mix(in srgb, var(--color-accent) 42%, transparent);
   border-radius: var(--radius-sm);
-  font-size: 0.7rem;
+  font-size: var(--text-small);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -551,7 +551,7 @@ body.search-open {
 
 .search-result__title {
   grid-area: title;
-  font-size: 0.98rem;
+  font-size: var(--text-body);
   font-weight: 700;
   line-height: 1.3;
   color: var(--color-text);
@@ -563,7 +563,7 @@ body.search-open {
 .search-result__meta {
   grid-area: meta;
   color: var(--color-text-muted);
-  font-size: 0.82rem;
+  font-size: var(--text-small);
   line-height: 1.4;
   white-space: nowrap;
   overflow: hidden;
@@ -573,7 +573,7 @@ body.search-open {
 .search-empty {
   padding: 18px 16px;
   color: var(--color-text-muted);
-  font-size: 0.92rem;
+  font-size: var(--text-small);
   text-align: center;
 }
 
@@ -586,7 +586,7 @@ body.search-open {
   margin: 0;
   padding: 8px 16px 10px;
   color: var(--color-text-muted);
-  font-size: 0.78rem;
+  font-size: var(--text-small);
   text-align: center;
   border-top: 1px solid var(--color-border);
 }
@@ -606,7 +606,7 @@ body.search-open {
   gap: 4px;
   margin: 28px 0 4px;
   color: var(--color-text-muted);
-  font-size: 0.88rem;
+  font-size: var(--text-small);
   text-decoration: none;
   transition: color 120ms ease;
 }
@@ -629,7 +629,7 @@ body.search-open {
 
 .markdown-body {
   color: var(--color-text);
-  font-size: 1rem;
+  font-size: var(--text-body);
   line-height: 1.7;
 }
 
@@ -654,24 +654,24 @@ body.search-open {
 
 .markdown-body h1 {
   margin-top: 0;
-  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  font-size: var(--text-heading);
   padding-bottom: 0.3em;
   border-bottom: 1px solid var(--color-border);
 }
 
 .markdown-body h2 {
-  font-size: clamp(1.45rem, 2.6vw, 2rem);
+  font-size: var(--text-heading);
   padding-bottom: 0.2em;
   border-bottom: 1px solid var(--color-border);
 }
 
 .markdown-body h3 {
-  font-size: 1.2rem;
+  font-size: var(--text-heading);
   color: var(--color-accent-hover);
 }
 
 .markdown-body h4 {
-  font-size: 1.05rem;
+  font-size: var(--text-body);
 }
 
 .markdown-body p {
@@ -719,7 +719,7 @@ body.search-open {
   border: 1px solid color-mix(in srgb, var(--color-accent) 30%, transparent);
   border-radius: var(--radius-sm);
   font-family: var(--font-mono, monospace);
-  font-size: 0.88em;
+  font-size: var(--text-small);
 }
 
 .markdown-body pre {
@@ -731,7 +731,7 @@ body.search-open {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   font-family: var(--font-mono, monospace);
-  font-size: 0.88rem;
+  font-size: var(--text-small);
   line-height: 1.55;
 }
 
@@ -762,7 +762,7 @@ body.search-open {
   margin: 0 0 1em;
   border-collapse: collapse;
   color: var(--color-text);
-  font-size: 0.92rem;
+  font-size: var(--text-body);
 }
 
 .markdown-body th,
@@ -805,7 +805,7 @@ body.search-open {
   background: color-mix(in srgb, var(--color-accent) 18%, transparent);
   border: 1px solid color-mix(in srgb, var(--color-accent) 42%, transparent);
   border-radius: var(--radius-sm);
-  font-size: 0.78rem;
+  font-size: var(--text-small);
 }
 
 .project-actions {
@@ -847,7 +847,7 @@ body.search-open {
 
 .note-card h3 {
   margin: 0;
-  font-size: 1.45rem;
+  font-size: var(--text-heading);
   letter-spacing: 0;
 }
 
@@ -893,7 +893,7 @@ body.search-open {
   margin: 0 auto;
   padding: 32px 0 40px;
   color: var(--color-text-muted);
-  font-size: 0.85rem;
+  font-size: var(--text-small);
 }
 
 .site-footer p {
@@ -945,7 +945,7 @@ body.search-open {
 
 .notion-hero h1 {
   margin: 0;
-  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  font-size: var(--text-display);
   line-height: 1;
   text-align: left;
   text-shadow: none;
@@ -971,7 +971,7 @@ body.search-open {
   }
 
   .research-nav__links {
-    gap: 10px;
+    gap: var(--grid-size);
   }
 
   .research-hero,
