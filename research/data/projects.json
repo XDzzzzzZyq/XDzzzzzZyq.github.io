@@ -1,6 +1,7 @@
 [
   {
     "slug": "gvae-spatial-transcriptomics",
+    "enable": true,
     "category": "research",
     "title": "Spatial Transcriptomics Denoising through GVAE and Mass Conservation",
     "year": "2025",
@@ -25,6 +26,7 @@
   },
   {
     "slug": "ocean-oxygen-relative-spatial-embedding",
+    "enable": true,
     "category": "research",
     "title": "Enhancing Ocean Surface Oxygen Representation via Relative Spatial Embedding",
     "year": "2024",
@@ -47,6 +49,7 @@
   },
   {
     "slug": "gene-expression-neural-ode",
+    "enable": true,
     "category": "research",
     "title": "Gene Expression Field Estimation via Poisson Resampling and Neural ODEs",
     "year": "2024-2025",
@@ -70,6 +73,7 @@
   },
   {
     "slug": "bpinn-kalman-time-series",
+    "enable": true,
     "category": "research",
     "title": "Solving Time Series Inverse Problems by Combining Bayesian-PINN with Kalman Filter",
     "year": "2023-2024",
@@ -92,6 +96,7 @@
   },
   {
     "slug": "ref-gaussian-webgl",
+    "enable": true,
     "category": "personal",
     "title": "WebGL Implementation of Reflective Gaussian Splatting (Ref-Gaussian)",
     "year": "2025-2026",
@@ -114,6 +119,7 @@
   },
   {
     "slug": "opengl-renderer",
+    "enable": true,
     "category": "personal",
     "title": "GPU (OpenGL) based Renderer Development",
     "year": "2022-Now",
@@ -137,6 +143,7 @@
   },
   {
     "slug": "cuda-vision",
+    "enable": true,
     "category": "personal",
     "title": "CUDA Image Processing Operator Development",
     "year": "2024",

@@ -141,7 +141,8 @@ const loadProjects = async () => {
   try {
     const response = await fetch("data/projects.json");
     if (!response.ok) throw new Error(`Project data failed to load: ${response.status}`);
-    return await response.json();
+    const all = await response.json();
+    return all.filter(p => p.enable !== false);
   } catch (error) {
     console.error(error);
     const errMsg = t("projects.loadError") || "Projects could not be loaded. Check research/data/projects.json.";

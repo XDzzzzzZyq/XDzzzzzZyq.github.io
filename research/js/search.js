@@ -32,7 +32,8 @@ const ensureProjects = async () => {
   try {
     const res = await fetch("data/projects.json");
     if (!res.ok) throw new Error(`search: projects.json ${res.status}`);
-    projects = await res.json();
+    const all = await res.json();
+    projects = all.filter(p => p.enable !== false);
   } catch (error) {
     console.error(error);
     projects = [];
