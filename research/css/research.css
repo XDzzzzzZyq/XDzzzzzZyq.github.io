@@ -1035,12 +1035,24 @@ body.search-open {
    Debug grid toggle
    ============================================================ */
 
-body.debug-mode.research-page {
-  background:
-    linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid-line-color) 1px, transparent 1px),
-    var(--color-bg);
+.grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(to right, var(--grid-line-color) calc(var(--grid-size) * var(--grid-line-thickness-multiplier)), transparent calc(var(--grid-size) * var(--grid-line-thickness-multiplier))),
+    linear-gradient(to bottom, var(--grid-line-color) calc(var(--grid-size) * var(--grid-line-thickness-multiplier)), transparent calc(var(--grid-size) * var(--grid-line-thickness-multiplier)));
   background-size: var(--grid-size) var(--grid-size);
+  pointer-events: none;
+  z-index: var(--grid-overlay-z);
+  opacity: var(--grid-overlay-opacity);
+  transition: opacity 0.2s ease;
+}
+
+body.debug-mode .grid-overlay {
+  opacity: var(--grid-overlay-opacity-debug);
 }
 
 .debug-toggle {

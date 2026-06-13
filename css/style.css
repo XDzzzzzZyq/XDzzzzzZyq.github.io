@@ -65,3 +65,82 @@ img {
   pointer-events: none;
   cursor: default;
 }
+
+/* ============================================================
+   Custom scrollbar (replaces native scrollbar to preserve alignment)
+   ============================================================ */
+
+/* Hide native scrollbar globally while keeping scroll functionality */
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+.custom-scrollbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 100%;
+  z-index: 100000;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.custom-scrollbar.is-visible {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.custom-scrollbar:hover,
+.custom-scrollbar.is-dragging {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.custom-scrollbar__track {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  bottom: 4px;
+  width: 4px;
+  background: transparent;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.custom-scrollbar:hover .custom-scrollbar__track,
+.custom-scrollbar.is-dragging .custom-scrollbar__track {
+  background: var(--color-border);
+}
+
+.custom-scrollbar__thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  background: var(--color-text-muted);
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: opacity 0.15s ease, background 0.15s ease, width 0.15s ease;
+}
+
+.custom-scrollbar:hover .custom-scrollbar__thumb,
+.custom-scrollbar.is-dragging .custom-scrollbar__thumb {
+  opacity: 0.7;
+  width: 6px;
+  right: -1px;
+}
+
+.custom-scrollbar__thumb:hover {
+  opacity: 1;
+  background: var(--color-accent-hover);
+  width: 6px;
+  right: -1px;
+}

@@ -26,7 +26,7 @@
   --grid-size: calc(100vw / var(--grid-columns));
   --font-zh-en: var(--font-body);
 
-  --text-display: clamp(2rem, 5vw, 5rem);
+  --text-display: clamp(3rem, 5vw, 7rem);
   --text-heading: clamp(1.5rem, 2.5vw, 3.5rem);
   --text-heading-small: clamp(1.15rem, 2.5vw, 1.5rem);
   --text-body: 1rem;
@@ -47,7 +47,6 @@
   --title-translate-x: -50%;
   --title-translate-y: -50%;
 
-  --xdzzyq-height-multiplier: 3;
   --xdzzyq-offset-x-multiplier: 0.2;
   --xdzzyq-offset-y-multiplier: 0.04;
 
@@ -92,13 +91,13 @@
   --nav-hover-color: var(--color-accent-hover);
 
   --selector-gap-multiplier: 2;
-  --selector-offset-y-multiplier: 3;
+  --selector-offset-y-multiplier: 1;
   --selector-card-bg: var(--color-surface);
   --selector-card-border-width-multiplier: 0.02;
   --selector-card-border-color: var(--color-border);
   --selector-card-radius-multiplier: 0.36;
   --selector-card-padding-y-multiplier: 0.7;
-  --selector-card-padding-x-multiplier: 1.1;
+  --selector-card-padding-x-multiplier: 0.7;
   --selector-card-min-width-multiplier: 6;
   --selector-card-shadow-y-multiplier: 0.24;
   --selector-card-shadow-blur-multiplier: 0.48;
