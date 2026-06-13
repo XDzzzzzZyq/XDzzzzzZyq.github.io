@@ -1,54 +1,78 @@
 import { config, readGridPx, gridPxValue } from "./config/animation.js";
 
-const updateCircleSizes = () => {
-  const cir1 = document.querySelector(".cir1");
-  const cir2 = document.querySelector(".cir2");
-  if (!cir1 || !cir2) return;
+const TITLE_HTML = `
+<img src="/res/elem/sun.svg" class="centered sun" alt="Sun">
+<svg data-size="cir1" width="70" height="70" xmlns="http://www.w3.org/2000/svg" class="centered cir1">
+    <circle cx="35" cy="35" r="35" fill="white" />
+</svg>
+<svg data-size="arc" width="145" height="145" xmlns="http://www.w3.org/2000/svg" class="centered arc" aria-hidden="true">
+    <path class="arc-path" d="M0,72.5 A72.5,72.5 0 0,1 72.5,0"/>
+</svg>
+<svg data-size="cir2" width="35" height="35" xmlns="http://www.w3.org/2000/svg" class="centered cir2">
+    <circle cx="17.5" cy="17.5" r="17.5" fill="white" />
+</svg>
+<h1 class="centered xdzzyq">XDzZyq</h1>
+<img src="/res/elem/arrow.svg" class="centered arrow" alt="Arrow">
+`;
 
-  const grid = readGridPx();
-  cir1.setAttribute("width", grid * config.hero.svgSizes.cir1Multiplier);
-  cir1.setAttribute("height", grid * config.hero.svgSizes.cir1Multiplier);
-  let circle = cir1.querySelector("circle");
-  circle.setAttribute("r", grid * config.hero.svgSizes.cir1Multiplier / 2);
-  circle.setAttribute("cx", grid * config.hero.svgSizes.cir1Multiplier / 2);
-  circle.setAttribute("cy", grid * config.hero.svgSizes.cir1Multiplier / 2);
-
-  cir2.setAttribute("width", grid * config.hero.svgSizes.cir2Multiplier);
-  cir2.setAttribute("height", grid * config.hero.svgSizes.cir2Multiplier);
-  circle = cir2.querySelector("circle");
-  circle.setAttribute("r", grid * config.hero.svgSizes.cir2Multiplier / 2);
-  circle.setAttribute("cx", grid * config.hero.svgSizes.cir2Multiplier / 2);
-  circle.setAttribute("cy", grid * config.hero.svgSizes.cir2Multiplier / 2);
+const injectTitle = (container) => {
+  container.innerHTML = TITLE_HTML;
 };
 
-const updateSvgSizes = () => {
-  const arcSvg = document.querySelector("svg[data-size='arc']");
+const getElements = (container) => ({
+  sun: container.querySelector(".sun"),
+  arcPath: container.querySelector(".arc-path"),
+  cir1: container.querySelector(".cir1"),
+  cir2: container.querySelector(".cir2"),
+  arrow: container.querySelector(".arrow"),
+});
+
+const updateCircleSizes = (container) => {
+  const grid = readGridPx();
+  const cir1 = container.querySelector(".cir1");
+  const cir2 = container.querySelector(".cir2");
+
+  if (cir1) {
+    cir1.setAttribute("width", grid * config.hero.svgSizes.cir1Multiplier);
+    cir1.setAttribute("height", grid * config.hero.svgSizes.cir1Multiplier);
+    const circle = cir1.querySelector("circle");
+    circle.setAttribute("r", grid * config.hero.svgSizes.cir1Multiplier / 2);
+    circle.setAttribute("cx", grid * config.hero.svgSizes.cir1Multiplier / 2);
+    circle.setAttribute("cy", grid * config.hero.svgSizes.cir1Multiplier / 2);
+  }
+
+  if (cir2) {
+    cir2.setAttribute("width", grid * config.hero.svgSizes.cir2Multiplier);
+    cir2.setAttribute("height", grid * config.hero.svgSizes.cir2Multiplier);
+    const circle = cir2.querySelector("circle");
+    circle.setAttribute("r", grid * config.hero.svgSizes.cir2Multiplier / 2);
+    circle.setAttribute("cx", grid * config.hero.svgSizes.cir2Multiplier / 2);
+    circle.setAttribute("cy", grid * config.hero.svgSizes.cir2Multiplier / 2);
+  }
+};
+
+const updateSvgSizes = (container) => {
+  const arcSvg = container.querySelector("svg[data-size='arc']");
   if (!arcSvg) return;
   const size = gridPxValue() * config.hero.svgSizes.arcSvgSizeMultiplier;
   arcSvg.setAttribute("width", size);
   arcSvg.setAttribute("height", size);
 };
 
-const initHeroAnimation = () => {
+const initHeroAnimation = (container) => {
   gsap.registerPlugin(ScrollTrigger);
 
-  const sun = document.querySelector(".sun");
-  const arc = document.querySelector(".arc-path");
-  const cir1 = document.querySelector(".cir1");
-  const cir2 = document.querySelector(".cir2");
-  const arrow = document.querySelector(".arrow");
-  if (!sun || !arc || !cir1 || !cir2 || !arrow) return;
-
+  const { sun, arcPath, cir2, arrow } = getElements(container);
   const off = config.hero.timelineOverlap;
   const tl = gsap.timeline();
 
-  const length = arc.getTotalLength();
-  gsap.set(arc, {
+  const length = arcPath.getTotalLength();
+  gsap.set(arcPath, {
     strokeDasharray: length,
     strokeDashoffset: length
   });
   gsap.set(cir2, { autoAlpha: 0 });
-  gsap.set(arc, { strokeDashoffset: length });
+  gsap.set(arcPath, { strokeDashoffset: length });
 
   tl.fromTo(
     sun,
@@ -90,7 +114,7 @@ const initHeroAnimation = () => {
     0
   );
   tl.fromTo(
-    cir1,
+    container.querySelector(".cir1"),
     { scale: 0 },
     {
       scale: 1,
@@ -100,7 +124,7 @@ const initHeroAnimation = () => {
     "<"
   );
   tl.to(
-    arc,
+    arcPath,
     {
       strokeDashoffset: 0,
       duration: config.hero.arcDrawDuration,
@@ -148,13 +172,30 @@ const initHeroAnimation = () => {
   );
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-  updateCircleSizes();
-  updateSvgSizes();
-  initHeroAnimation();
-});
+const initTitle = (containerSelector = ".title") => {
+  const container = document.querySelector(containerSelector);
+  if (!container) return;
 
-window.addEventListener("resize", () => {
-  updateCircleSizes();
-  updateSvgSizes();
-});
+  injectTitle(container);
+
+  // Wait for the browser to lay out the injected elements before GSAP
+  // reads layout-dependent properties (SVG getTotalLength, etc.)
+  requestAnimationFrame(() => {
+    updateCircleSizes(container);
+    updateSvgSizes(container);
+    initHeroAnimation(container);
+  });
+
+  window.addEventListener("resize", () => {
+    updateCircleSizes(container);
+    updateSvgSizes(container);
+  });
+};
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", () => initTitle());
+} else {
+  initTitle();
+}
+
+export { initTitle };
