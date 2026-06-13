@@ -1,0 +1,13 @@
+{
+  "name": "xdzzzzzzyq-github-io",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Personal website",
+  "scripts": {
+    "copy:gsap": "node lib/copy-gsap.js"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0"
+  }
+}

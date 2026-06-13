@@ -2,3 +2,4 @@
 .omo/
 .playwright-mcp/
 dep/
+node_modules/
