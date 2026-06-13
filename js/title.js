@@ -1,16 +1,13 @@
 import { config, readGridPx, gridPxValue } from "./config/animation.js";
 
-const sun = document.querySelector(".sun");
-const arc = document.querySelector(".arc-path");
-const cir1 = document.querySelector(".cir1");
-const cir2 = document.querySelector(".cir2");
-const arrow = document.querySelector(".arrow");
-
 const updateCircleSizes = () => {
+  const cir1 = document.querySelector(".cir1");
+  const cir2 = document.querySelector(".cir2");
+  if (!cir1 || !cir2) return;
+
   const grid = readGridPx();
   cir1.setAttribute("width", grid * config.hero.svgSizes.cir1Multiplier);
   cir1.setAttribute("height", grid * config.hero.svgSizes.cir1Multiplier);
-
   let circle = cir1.querySelector("circle");
   circle.setAttribute("r", grid * config.hero.svgSizes.cir1Multiplier / 2);
   circle.setAttribute("cx", grid * config.hero.svgSizes.cir1Multiplier / 2);
@@ -18,7 +15,6 @@ const updateCircleSizes = () => {
 
   cir2.setAttribute("width", grid * config.hero.svgSizes.cir2Multiplier);
   cir2.setAttribute("height", grid * config.hero.svgSizes.cir2Multiplier);
-
   circle = cir2.querySelector("circle");
   circle.setAttribute("r", grid * config.hero.svgSizes.cir2Multiplier / 2);
   circle.setAttribute("cx", grid * config.hero.svgSizes.cir2Multiplier / 2);
@@ -36,8 +32,15 @@ const updateSvgSizes = () => {
 const initHeroAnimation = () => {
   gsap.registerPlugin(ScrollTrigger);
 
-  const tl = gsap.timeline();
+  const sun = document.querySelector(".sun");
+  const arc = document.querySelector(".arc-path");
+  const cir1 = document.querySelector(".cir1");
+  const cir2 = document.querySelector(".cir2");
+  const arrow = document.querySelector(".arrow");
+  if (!sun || !arc || !cir1 || !cir2 || !arrow) return;
+
   const off = config.hero.timelineOverlap;
+  const tl = gsap.timeline();
 
   const length = arc.getTotalLength();
   gsap.set(arc, {

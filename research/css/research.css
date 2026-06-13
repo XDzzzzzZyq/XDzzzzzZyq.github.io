@@ -1,11 +1,7 @@
 body.research-page {
   min-height: 100vh;
   height: auto;
-  background:
-    linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid-line-color) 1px, transparent 1px),
-    var(--color-bg);
-  background-size: var(--grid-size) var(--grid-size);
+  background: var(--color-bg);
 }
 
 .research-shell {
@@ -1033,4 +1029,57 @@ body.search-open {
     height: 56px;
     border-width: 12px;
   }
+}
+
+/* ============================================================
+   Debug grid toggle
+   ============================================================ */
+
+body.debug-mode.research-page {
+  background:
+    linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line-color) 1px, transparent 1px),
+    var(--color-bg);
+  background-size: var(--grid-size) var(--grid-size);
+}
+
+.debug-toggle {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 10000;
+  padding: 6px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+}
+
+.debug-toggle:hover {
+  color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+.debug-panel {
+  position: fixed;
+  bottom: 56px;
+  right: 16px;
+  z-index: 10000;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(5, 5, 5, 0.75);
+  color: var(--color-inverse);
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+body.debug-mode .debug-panel {
+  opacity: 1;
 }
