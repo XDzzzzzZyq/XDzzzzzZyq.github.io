@@ -34,6 +34,26 @@ Keep these project-wide rules in mind:
 - Shared assets live under `res/`; design source assets may live under
   `design/`.
 
+## Visual Layer System
+
+The site uses 4 explicit z-index layers (defined as CSS variables in
+`css/variables.css`). Every visual element must belong to one of these layers:
+
+| Layer | Variable | Contains |
+|---|---|---|
+| 1 — Background | `--layer-bg` (0) | Body `background-color` |
+| 2 — Background animation | `--layer-bg-anim` (10) | Animated hero elements (XDzZyq title, sun, floating marks) |
+| 3 — Content | `--layer-content` (20) | Panels, cards, nav (`--layer-nav`: 100), overlays (`--layer-overlay`: 500) |
+| 4 — Debug | `--layer-debug-overlay` (9999), `--layer-debug-ui` (10000) | Debug grid overlay and toggle UI |
+
+Rules:
+- Never hardcode `z-index` numeric values. Use the layer CSS variables.
+- When introducing a new overlay or floating element, check if an existing
+  layer variable fits before adding a new one.
+- The debug layer must always be the highest layer on every page.
+- Layer 2 elements must use `pointer-events: none` to avoid blocking content
+  interaction.
+
 ## Research Page Systems (since the i18n + markdown + search refactor)
 
 The `/research/` area is a small content app, not just a static page:

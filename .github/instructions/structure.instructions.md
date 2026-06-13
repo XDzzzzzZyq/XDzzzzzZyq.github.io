@@ -20,6 +20,15 @@ Suggested directory structure
 - res/ for shared static assets (icons, images, SVGs).
 - .opencode/skills/ for project-local opencode skills (e.g. translate).
 
+Visual layer system
+- The site uses 4 explicit z-index layers defined in `css/variables.css`.
+  See `AGENTS.md` for the layer table.
+- Every visual element must use one of the `--layer-*` variables; never
+  hardcode `z-index` numeric values.
+- Layer 2 (`--layer-bg-anim`) is for animated background elements only;
+  these must have `pointer-events: none` to avoid blocking content.
+- Layer 4 (`--layer-debug-*`) must always be the highest layer on every page.
+
 Rules
 - Keep URLs stable: /design/ and /research/.
 - Avoid deep nesting; prefer clarity over brevity.

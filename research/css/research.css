@@ -4,20 +4,55 @@ body.research-page {
   background: var(--color-bg);
 }
 
+/* ============================================================
+   Layer 2: Animated background element (research page)
+   ============================================================ */
+
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: var(--layer-bg-anim);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-layer__mark {
+  position: absolute;
+  top: calc(var(--grid-size) * 2);
+  left: calc(var(--grid-size) * 2);
+  width: calc(var(--grid-size) * 8);
+  height: calc(var(--grid-size) * 8);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-accent) 6%, transparent);
+  filter: blur(calc(var(--grid-size) * 2));
+  animation: bg-layer-float 8s ease-in-out infinite alternate;
+}
+
+@keyframes bg-layer-float {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(calc(var(--grid-size) * 2), calc(var(--grid-size) * 1)) scale(1.3);
+    opacity: 0.8;
+  }
+}
+
 .research-shell {
-  width: min(1120px, calc(100% - 40px));
+  width: min(calc(var(--grid-size) * 28), calc(100% - var(--grid-size) * 2));
   margin: 0 auto;
 }
 
 .research-main {
   flex: 1;
-  padding: 32px 0 72px;
+  padding: calc(var(--grid-size) * 1) 0 calc(var(--grid-size) * 2);
 }
 
 .research-nav {
   position: sticky;
   top: 16px;
-  z-index: 10;
+  z-index: var(--layer-nav);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -62,17 +97,17 @@ body.research-page {
 
 .research-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
-  gap: 48px;
+  grid-template-columns: minmax(0, 1.2fr) minmax(calc(var(--grid-size) * 6), 0.8fr);
+  gap: calc(var(--grid-size) * 1);
   align-items: end;
-  padding: 112px 0 96px;
+  padding: calc(var(--grid-size) * 3) 0 calc(var(--grid-size) * 2);
 }
 
 .hero-mark {
   position: relative;
-  width: 148px;
-  height: 148px;
-  margin-bottom: 28px;
+  width: calc(var(--grid-size) * 4);
+  height: calc(var(--grid-size) * 4);
+  margin-bottom: calc(var(--grid-size) * 1);
 }
 
 .hero-mark::before,
@@ -83,17 +118,17 @@ body.research-page {
 }
 
 .hero-mark::before {
-  inset: 18px;
+  inset: calc(var(--grid-size) * 0.5);
   background: var(--color-surface-strong);
   box-shadow: var(--shadow-soft);
 }
 
 .hero-mark::after {
-  right: 2px;
-  bottom: 18px;
-  width: 76px;
-  height: 76px;
-  border: 16px solid var(--color-accent);
+  right: 0;
+  bottom: calc(var(--grid-size) * 0.5);
+  width: calc(var(--grid-size) * 2);
+  height: calc(var(--grid-size) * 2);
+  border: calc(var(--grid-size) * 0.5) solid var(--color-accent);
   border-left-color: transparent;
   border-top-color: transparent;
   transform: rotate(-22deg);
@@ -111,8 +146,8 @@ body.research-page {
 }
 
 .research-hero__intro {
-  max-width: 680px;
-  margin: 28px 0 0;
+  max-width: calc(var(--grid-size) * 18);
+  margin: calc(var(--grid-size) * 1) 0 0;
   color: var(--color-text-muted);
   line-height: 1.6;
 }
@@ -132,7 +167,7 @@ body.research-page {
 }
 
 .bio-panel {
-  padding: 28px;
+  padding: calc(var(--grid-size) * 1);
 }
 
 .bio-panel h2,
@@ -164,15 +199,15 @@ body.research-page {
 
 .bio-facts {
   display: grid;
-  gap: 14px;
-  margin: 24px 0;
+  gap: calc(var(--grid-size) * 0.5);
+  margin: calc(var(--grid-size) * 1) 0;
 }
 
 .bio-fact {
   display: grid;
-  grid-template-columns: 96px 1fr;
-  gap: 18px;
-  padding-top: 14px;
+  grid-template-columns: calc(var(--grid-size) * 2) 1fr;
+  gap: calc(var(--grid-size) * 0.5);
+  padding-top: calc(var(--grid-size) * 0.5);
   border-top: 1px solid var(--color-border);
 }
 
@@ -191,7 +226,7 @@ body.research-page {
 .contact-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: calc(var(--grid-size) * 0.5);
 }
 
 .link-button {
@@ -230,31 +265,31 @@ body.research-page {
 }
 
 .section-block {
-  padding: 48px 0;
+  padding: calc(var(--grid-size) * 1) 0;
 }
 
 .section-heading {
   display: flex;
   align-items: end;
   justify-content: space-between;
-  gap: 24px;
-  margin-bottom: 24px;
+  gap: calc(var(--grid-size) * 1);
+  margin-bottom: calc(var(--grid-size) * 1);
 }
 
 .section-heading p {
-  max-width: 520px;
+  max-width: calc(var(--grid-size) * 14);
   margin: 0;
 }
 
 .project-list {
   display: grid;
-  gap: 18px;
+  gap: calc(var(--grid-size) * 0.5);
 }
 
 .project-panel {
   display: grid;
-  grid-template-columns: minmax(220px, 280px) 1fr;
-  gap: 24px;
+  grid-template-columns: minmax(calc(var(--grid-size) * 6), calc(var(--grid-size) * 7)) 1fr;
+  gap: calc(var(--grid-size) * 1);
   overflow: hidden;
 }
 
@@ -267,7 +302,7 @@ body.research-page {
 .project-cover {
   width: 100%;
   height: 100%;
-  min-height: 190px;
+  min-height: calc(var(--grid-size) * 5);
   object-fit: cover;
   background: var(--color-surface-strong);
 }
@@ -275,8 +310,8 @@ body.research-page {
 .project-content {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 20px;
-  padding: 24px;
+  gap: calc(var(--grid-size) * 1);
+  padding: calc(var(--grid-size) * 1);
 }
 
 .project-copy {
@@ -414,10 +449,10 @@ body.research-page {
 .search-overlay {
   position: fixed;
   inset: 0;
-  z-index: 100;
+  z-index: var(--layer-overlay);
   display: grid;
   place-items: start center;
-  padding: 80px 16px 16px;
+  padding: calc(var(--grid-size) * 3) calc(var(--grid-size) * 1) calc(var(--grid-size) * 1);
 }
 
 .search-overlay[hidden] {
@@ -437,8 +472,8 @@ body.search-open {
 
 .search-panel {
   position: relative;
-  width: min(640px, 100%);
-  max-height: min(70vh, 720px);
+  width: min(calc(var(--grid-size) * 16), 100%);
+  max-height: min(70vh, calc(var(--grid-size) * 18));
   display: flex;
   flex-direction: column;
   background: var(--color-surface);
@@ -605,8 +640,8 @@ body.search-open {
 .back-link {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  margin: 28px 0 4px;
+  gap: calc(var(--grid-size) * 0.25);
+  margin: calc(var(--grid-size) * 1) 0 0;
   color: var(--color-text-muted);
   font-size: var(--text-small);
   text-decoration: none;
@@ -619,14 +654,14 @@ body.search-open {
 }
 
 .back-link-bottom {
-  margin: 32px 0 64px;
-  padding: 0 16px;
-  min-height: 42px;
+  margin: calc(var(--grid-size) * 1) 0 calc(var(--grid-size) * 2);
+  padding: 0 calc(var(--grid-size) * 0.5);
+  min-height: calc(var(--grid-size) * 1);
   width: max-content;
 }
 
 .markdown-panel {
-  padding: 32px 36px;
+  padding: calc(var(--grid-size) * 1) calc(var(--grid-size) * 1);
 }
 
 .markdown-body {
@@ -726,7 +761,7 @@ body.search-open {
 
 .markdown-body pre {
   margin: 0 0 1em;
-  padding: 16px 18px;
+  padding: calc(var(--grid-size) * 0.5) calc(var(--grid-size) * 0.5);
   overflow-x: auto;
   color: var(--color-text);
   background: var(--color-surface-strong);
@@ -788,7 +823,7 @@ body.search-open {
 
 @media (max-width: 720px) {
   .markdown-panel {
-    padding: 24px 22px;
+    padding: calc(var(--grid-size) * 1) calc(var(--grid-size) * 1);
   }
 }
 
@@ -835,14 +870,14 @@ body.search-open {
 .notes-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+  gap: calc(var(--grid-size) * 1);
 }
 
 .note-card {
   display: grid;
-  gap: 14px;
-  min-height: 180px;
-  padding: 24px;
+  gap: calc(var(--grid-size) * 1);
+  min-height: calc(var(--grid-size) * 5);
+  padding: calc(var(--grid-size) * 1);
   color: var(--color-text);
   text-decoration: none;
 }
@@ -867,12 +902,12 @@ body.search-open {
 
 .publication-list {
   margin: 0;
-  padding: 24px 24px 24px 52px;
+  padding: calc(var(--grid-size) * 1) calc(var(--grid-size) * 1) calc(var(--grid-size) * 1) calc(var(--grid-size) * 2);
 }
 
 .publication-list li {
-  padding-left: 8px;
-  margin-bottom: 18px;
+  padding-left: 0;
+  margin-bottom: calc(var(--grid-size) * 0.5);
   line-height: 1.55;
 }
 
@@ -887,13 +922,13 @@ body.search-open {
 
 .contact-panel,
 .detail-panel {
-  padding: 28px;
+  padding: calc(var(--grid-size) * 1);
 }
 
 .site-footer {
-  width: min(1120px, calc(100% - 40px));
+  width: min(calc(var(--grid-size) * 28), calc(100% - var(--grid-size) * 2));
   margin: 0 auto;
-  padding: 32px 0 40px;
+  padding: calc(var(--grid-size) * 1) 0 calc(var(--grid-size) * 1);
   color: var(--color-text-muted);
   font-size: var(--text-small);
 }
@@ -904,15 +939,15 @@ body.search-open {
 }
 
 .detail-nav {
-  margin-bottom: 56px;
+  margin-bottom: calc(var(--grid-size) * 2);
 }
 
 .detail-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
-  gap: 40px;
+  grid-template-columns: minmax(0, 1fr) minmax(calc(var(--grid-size) * 7), calc(var(--grid-size) * 11));
+  gap: calc(var(--grid-size) * 1);
   align-items: end;
-  padding: 64px 0 42px;
+  padding: calc(var(--grid-size) * 2) 0 calc(var(--grid-size) * 1);
 }
 
 .detail-cover {
@@ -930,19 +965,19 @@ body.search-open {
 }
 
 .detail-panel {
-  margin-bottom: 18px;
+  margin-bottom: calc(var(--grid-size) * 0.5);
 }
 
 .detail-panel p {
-  margin: 16px 0 0;
+  margin: calc(var(--grid-size) * 0.5) 0 0;
 }
 
 .notion-page .research-main {
-  min-height: calc(100vh - 120px);
+  min-height: calc(100vh - var(--grid-size) * 3);
 }
 
 .notion-hero {
-  padding: 64px 0 24px;
+  padding: calc(var(--grid-size) * 2) 0 calc(var(--grid-size) * 1);
 }
 
 .notion-hero h1 {
@@ -955,7 +990,7 @@ body.search-open {
 }
 
 .notion-frame-wrap {
-  height: min(76vh, 860px);
+  height: min(76vh, calc(var(--grid-size) * 22));
   overflow: hidden;
 }
 
@@ -984,7 +1019,7 @@ body.search-open {
   }
 
   .research-hero {
-    padding: 72px 0 56px;
+    padding: calc(var(--grid-size) * 2) 0 calc(var(--grid-size) * 2);
   }
 
   .project-content {
@@ -1000,14 +1035,14 @@ body.search-open {
   }
 
   .section-heading p {
-    margin-top: 12px;
+    margin-top: calc(var(--grid-size) * 0.5);
   }
 }
 
 @media (max-width: 560px) {
   .research-shell,
   .site-footer {
-    width: min(100% - 28px, 1120px);
+    width: min(calc(100% - var(--grid-size) * 2), calc(var(--grid-size) * 28));
   }
 
   .research-nav {
@@ -1016,82 +1051,19 @@ body.search-open {
 
   .bio-fact {
     grid-template-columns: 1fr;
-    gap: 6px;
+    gap: calc(var(--grid-size) * 0.25);
   }
 
   .hero-mark {
-    width: 112px;
-    height: 112px;
+    width: calc(var(--grid-size) * 4);
+    height: calc(var(--grid-size) * 4);
   }
 
   .hero-mark::after {
-    width: 56px;
-    height: 56px;
-    border-width: 12px;
+    width: calc(var(--grid-size) * 2);
+    height: calc(var(--grid-size) * 2);
+    border-width: calc(var(--grid-size) * 0.5);
   }
 }
 
-/* ============================================================
-   Debug grid toggle
-   ============================================================ */
 
-.grid-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image:
-    linear-gradient(to right, var(--grid-line-color) calc(var(--grid-size) * var(--grid-line-thickness-multiplier)), transparent calc(var(--grid-size) * var(--grid-line-thickness-multiplier))),
-    linear-gradient(to bottom, var(--grid-line-color) calc(var(--grid-size) * var(--grid-line-thickness-multiplier)), transparent calc(var(--grid-size) * var(--grid-line-thickness-multiplier)));
-  background-size: var(--grid-size) var(--grid-size);
-  pointer-events: none;
-  z-index: var(--grid-overlay-z);
-  opacity: var(--grid-overlay-opacity);
-  transition: opacity 0.2s ease;
-}
-
-body.debug-mode .grid-overlay {
-  opacity: var(--grid-overlay-opacity-debug);
-}
-
-.debug-toggle {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  z-index: 10000;
-  padding: 6px 14px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-pill);
-  background: var(--color-surface);
-  color: var(--color-text);
-  font-family: var(--font-body);
-  font-size: var(--text-small);
-  cursor: pointer;
-  box-shadow: var(--shadow-soft);
-}
-
-.debug-toggle:hover {
-  color: var(--color-accent-hover);
-  border-color: var(--color-accent-hover);
-}
-
-.debug-panel {
-  position: fixed;
-  bottom: 56px;
-  right: 16px;
-  z-index: 10000;
-  padding: 6px 14px;
-  border-radius: var(--radius-pill);
-  background: rgba(5, 5, 5, 0.75);
-  color: var(--color-inverse);
-  font-family: var(--font-body);
-  font-size: var(--text-small);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-}
-
-body.debug-mode .debug-panel {
-  opacity: 1;
-}

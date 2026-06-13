@@ -74,11 +74,26 @@
   --arrow-offset-x-multiplier: 1.6;
   --arrow-offset-y-multiplier: -0.5;
 
+  /* Visual layer z-index system
+     Four layers from back to front:
+       Layer 1 (--layer-bg):        Body background color
+       Layer 2 (--layer-bg-anim):   Animated background elements (XDzZyq title, sun, etc.)
+       Layer 3 (--layer-content):   Panels, cards, nav, overlays
+       Layer 4 (--layer-debug):     Debug grid overlay + UI
+     Reserve gaps between layers for future sub-layers. */
+  --layer-bg: 0;
+  --layer-bg-anim: 10;
+  --layer-content: 20;
+  --layer-nav: 100;
+  --layer-overlay: 500;
+  --layer-debug-overlay: 9999;
+  --layer-debug-ui: 10000;
+
   --grid-line-color: var(--color-border);
   --grid-line-thickness-multiplier: 0.02;
   --grid-overlay-opacity: 0;
   --grid-overlay-opacity-debug: 1;
-  --grid-overlay-z: 9999;
+  --grid-overlay-z: var(--layer-debug-overlay);
 
   --nav-bg: var(--color-surface);
   --nav-padding-x-multiplier: 0.32;

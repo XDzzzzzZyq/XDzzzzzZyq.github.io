@@ -15,6 +15,7 @@
   width: 100%;
   height: calc(var(--grid-size) * var(--title-height-multiplier));
   transform: translate(var(--title-translate-x), var(--title-translate-y));
+  z-index: var(--layer-bg-anim);
 }
 
 .selector {
@@ -22,20 +23,23 @@
   gap: calc(var(--grid-size) * var(--selector-gap-multiplier));
   transform: translate(-50%, -50%) translate(0, calc(var(--grid-size) * var(--selector-offset-y-multiplier)));
   pointer-events: auto;
-  z-index: 2;
+  z-index: var(--layer-content);
 }
 
 .selector-card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
   text-decoration: none;
   color: var(--text-color);
   background: var(--selector-card-bg);
   border: calc(var(--grid-size) * var(--selector-card-border-width-multiplier)) solid var(--selector-card-border-color);
   border-radius: calc(var(--grid-size) * var(--selector-card-radius-multiplier));
   padding: calc(var(--grid-size) * var(--selector-card-padding-y-multiplier)) calc(var(--grid-size) * var(--selector-card-padding-x-multiplier));
-  min-width: calc(var(--grid-size) * var(--selector-card-min-width-multiplier));
+  box-sizing: border-box;
+  width: calc(var(--grid-size) * 7);
+  height: calc(var(--grid-size) * 3);
   box-shadow: 0 calc(var(--grid-size) * var(--selector-card-shadow-y-multiplier)) calc(var(--grid-size) * var(--selector-card-shadow-blur-multiplier)) var(--selector-card-shadow-color);
   backdrop-filter: blur(calc(var(--grid-size) * var(--selector-card-blur-multiplier)));
   transition: transform var(--selector-card-transition-duration) var(--selector-card-transition-ease), box-shadow var(--selector-card-transition-duration) var(--selector-card-transition-ease);
@@ -67,6 +71,7 @@
 
   .selector-card {
     width: calc(var(--grid-size) * var(--selector-card-mobile-width-multiplier));
+    height: calc(var(--grid-size) * 3);
   }
 }
 
@@ -126,67 +131,6 @@ footer {
   text-align: center;
 }
 
-.grid-overlay {
-  position: fixed;
-  top: 0;
-  left: -0;
-  width: 100%;
-  height: 100%;
-  background-image:
-    linear-gradient(to right, var(--grid-line-color) calc(var(--grid-size) * var(--grid-line-thickness-multiplier)), transparent calc(var(--grid-size) * var(--grid-line-thickness-multiplier))),
-    linear-gradient(to bottom, var(--grid-line-color) calc(var(--grid-size) * var(--grid-line-thickness-multiplier)), transparent calc(var(--grid-size) * var(--grid-line-thickness-multiplier)));
-  background-size: var(--grid-size) var(--grid-size);
-  pointer-events: none;
-  z-index: var(--grid-overlay-z);
-  opacity: var(--grid-overlay-opacity);
-  transition: opacity 0.2s ease;
-}
-
-.debug-toggle {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  z-index: 10000;
-  padding: 6px 14px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-pill);
-  background: var(--color-surface);
-  color: var(--color-text);
-  font-family: var(--font-body);
-  font-size: var(--text-small);
-  cursor: pointer;
-  box-shadow: var(--shadow-soft);
-}
-
-.debug-toggle:hover {
-  color: var(--color-accent-hover);
-  border-color: var(--color-accent-hover);
-}
-
-.debug-panel {
-  position: fixed;
-  bottom: 56px;
-  right: 16px;
-  z-index: 10000;
-  padding: 6px 14px;
-  border-radius: var(--radius-pill);
-  background: rgba(5, 5, 5, 0.75);
-  color: var(--color-inverse);
-  font-family: var(--font-body);
-  font-size: var(--text-small);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-}
-
-body.debug-mode .grid-overlay {
-  opacity: var(--grid-overlay-opacity-debug);
-}
-
-body.debug-mode .debug-panel {
-  opacity: 1;
-}
-
 .floating-nav {
   position: fixed;
   top: var(--grid-size);
@@ -198,7 +142,7 @@ body.debug-mode .debug-panel {
   gap: calc(var(--grid-size) * var(--nav-gap-multiplier));
   border-radius: calc(var(--grid-size) * var(--nav-radius-multiplier));
   box-shadow: 0 calc(var(--grid-size) * var(--nav-shadow-y-multiplier)) calc(var(--grid-size) * var(--nav-shadow-blur-multiplier)) var(--nav-shadow-color);
-  z-index: 1000;
+  z-index: var(--layer-nav);
   backdrop-filter: blur(calc(var(--grid-size) * var(--nav-blur-multiplier)));
 }
 

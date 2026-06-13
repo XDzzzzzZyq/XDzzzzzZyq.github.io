@@ -144,3 +144,68 @@ html::-webkit-scrollbar {
   width: 6px;
   right: -1px;
 }
+
+/* ============================================================
+   Layer 4: Debug grid overlay + UI (shared across all pages)
+   ============================================================ */
+
+.grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(to right, var(--grid-line-color) calc(var(--grid-size) * var(--grid-line-thickness-multiplier)), transparent calc(var(--grid-size) * var(--grid-line-thickness-multiplier))),
+    linear-gradient(to bottom, var(--grid-line-color) calc(var(--grid-size) * var(--grid-line-thickness-multiplier)), transparent calc(var(--grid-size) * var(--grid-line-thickness-multiplier)));
+  background-size: var(--grid-size) var(--grid-size);
+  pointer-events: none;
+  z-index: var(--layer-debug-overlay);
+  opacity: var(--grid-overlay-opacity);
+  transition: opacity 0.2s ease;
+}
+
+.debug-toggle {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: var(--layer-debug-ui);
+  padding: 6px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+}
+
+.debug-toggle:hover {
+  color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+.debug-panel {
+  position: fixed;
+  bottom: 56px;
+  right: 16px;
+  z-index: var(--layer-debug-ui);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(5, 5, 5, 0.75);
+  color: var(--color-inverse);
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+body.debug-mode .grid-overlay {
+  opacity: var(--grid-overlay-opacity-debug);
+}
+
+body.debug-mode .debug-panel {
+  opacity: 1;
+}
