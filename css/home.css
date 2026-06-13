@@ -53,7 +53,7 @@
 .selector-title {
   font-family: var(--font-body);
   font-weight: bold;
-  font-size: var(--text-heading);
+  font-size: var(--text-heading-small);
   letter-spacing: var(--h1-letter-spacing);
 }
 
