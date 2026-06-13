@@ -82,7 +82,7 @@ body.research-page {
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
-  gap: 14px;
+  gap: calc(var(--grid-size) * 0.5);
 }
 
 .research-nav a {
