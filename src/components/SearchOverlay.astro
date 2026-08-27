@@ -1,0 +1,41 @@
+---
+import type { Lang } from "../lib/i18n";
+import { getSearchIndex } from "../lib/projects";
+import { interpolate, type Dictionary } from "../lib/i18n";
+
+type Props = {
+  lang: Lang;
+  dict: Dictionary;
+};
+
+const { lang, dict } = Astro.props;
+const searchIndex = getSearchIndex();
+---
+<div class="search-overlay" data-search-overlay hidden aria-hidden="true">
+  <div class="search-backdrop" data-search-close></div>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label={dict.site.searchLabel}>
+    <div class="search-input-wrap">
+      <svg class="search-input-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"></circle>
+        <line x1="16.5" y1="16.5" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+      </svg>
+      <input
+        type="text"
+        class="search-input"
+        data-search-input
+        autocomplete="off"
+        spellcheck="false"
+        placeholder={dict.site.searchPlaceholder}
+      />
+      <kbd class="search-input-kbd" data-search-close>Esc</kbd>
+    </div>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-hint">{interpolate(dict.site.searchHint)}</p>
+  </div>
+</div>
+<script is:inline define:vars={{ lang, dict, searchIndex }}>
+  window.__lang = lang;
+  window.__i18n = dict;
+  window.__SEARCH_INDEX__ = searchIndex;
+</script>
+<script src="../scripts/search.ts"></script>

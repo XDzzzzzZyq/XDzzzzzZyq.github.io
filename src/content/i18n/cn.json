@@ -1,0 +1,97 @@
+{
+  "site": {
+    "lang": "cn",
+    "title": "研究",
+    "brand": "XDzZyq",
+    "langLabel": "中",
+    "langOther": "EN",
+    "searchLabel": "搜索",
+    "searchPlaceholder": "搜索项目、笔记、标签...",
+    "searchNoResults": "没有找到匹配项。",
+    "searchHint": "按 / 或 ⌘K 打开搜索 · Esc 关闭"
+  },
+  "nav": {
+    "bio": "简介",
+    "projects": "研究项目",
+    "personal": "个人项目",
+    "notes": "笔记",
+    "publications": "发表",
+    "contact": "联系"
+  },
+  "hero": {
+    "title": "研究",
+    "intro": "XDzZyq 的学习系统、数学笔记与项目记录。本页通过统一的数据源管理研究条目，便于持续更新。"
+  },
+  "snapshot": {
+    "title": "概览",
+    "name": "姓名",
+    "focus": "方向",
+    "status": "状态",
+    "contact": "联系",
+    "nameValue": "Yuqian Zhang (XDzZyq)",
+    "focusValue": "机器学习、数学推理、计算物理与生物、计算机图形学。",
+    "statusValue": "多伦多大学 MScAC 一年级在读。",
+    "downloadCV": "下载简历",
+    "contactButton": "联系"
+  },
+  "bio": {
+    "title": "简介",
+    "description": "背景、教育与当前研究方向。",
+    "paragraph1": "我是 Yuqian Zhang，多伦多大学 MScAC 一年级学生。研究方向聚焦于计算物理、生物、一般反问题与计算机图形学的交叉领域。",
+    "paragraph2": "我的研究以数学建模、物理驱动与计算方法、深度学习及计算机图形学为核心。曾从事基于图变分自编码器的空间转录组去噪、基于神经 ODE 的基因表达场估计、基于 Transformer 的海洋表层表示学习，以及贝叶斯-PINN-Kalman 混合模型求解时间序列反问题。",
+    "now": "现在",
+    "nowValue": "多伦多大学 MScAC 一年级在读。",
+    "bachelor": "本科",
+    "bachelorValue": "杜克大学 & 昆山杜克大学 · 应用数学理学学士（数学方向）· 2022/08-2026/05。"
+  },
+  "projects": {
+    "title": "研究项目",
+    "description": "项目面板在构建时由 <code>src/data/projects.json</code> 生成，每个项目有独立详情页。",
+    "loading": "正在加载项目...",
+    "loadError": "项目加载失败，请检查 src/data/projects.json。",
+    "empty": "暂无 {category} 项目。"
+  },
+  "personalProjects": {
+    "title": "个人项目",
+    "description": "正式研究之外的独立工程、图形与工具项目。"
+  },
+  "notes": {
+    "title": "数学笔记",
+    "description": "已发布的 Notion 笔记保留外链，同时站点提供稳定本地页面作为回退。",
+    "mathTitle": "数学笔记",
+    "mathDescription": "在 Notion 中直接打开已发布的数学笔记。",
+    "mlTitle": "机器学习笔记",
+    "mlDescription": "在 Notion 中直接打开已发布的机器学习笔记。",
+    "openNotion": "打开 Notion"
+  },
+  "publications": {
+    "title": "发表",
+    "description": "精选稿件与预印本。论文进展过程中可更新年份、标题、发表渠道与链接。",
+    "empty": "暂无发表论文。稿件准备中。"
+  },
+  "contact": {
+    "title": "联系",
+    "description": "欢迎就研究合作、论文请求或学术事务联系我。",
+    "emailButton": "邮件",
+    "githubButton": "GitHub"
+  },
+  "detail": {
+    "notFoundTitle": "未找到项目",
+    "notFoundMessage": "项目 slug 与 src/data/projects.json 中任何条目都不匹配。",
+    "backButton": "返回项目列表",
+    "abstract": "摘要",
+    "details": "详情",
+    "links": "链接",
+    "noLinks": "该项目尚未挂载任何外部链接。",
+    "affiliationPrefix": "单位",
+    "piLab": "PI 实验室",
+    "markdownMissing": "本项目的详细笔记暂未提供。",
+    "backToList": "← 返回项目列表"
+  },
+  "card": {
+    "affiliationPrefix": "单位"
+  },
+  "footer": {
+    "copyright": "© 2026 XDzZyq. 保留所有权利。"
+  }
+}

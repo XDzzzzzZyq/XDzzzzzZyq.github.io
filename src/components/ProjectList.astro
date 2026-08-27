@@ -1,0 +1,22 @@
+---
+import type { Lang, Dictionary } from "../lib/i18n";
+import { interpolate } from "../lib/i18n";
+import { getProjectsByCategory, type ProjectCategory } from "../lib/projects";
+import ProjectCard from "./ProjectCard.astro";
+
+type Props = {
+  lang: Lang;
+  dict: Dictionary;
+  category: ProjectCategory;
+};
+
+const { lang, dict, category } = Astro.props;
+const projects = getProjectsByCategory(category);
+const empty = interpolate(dict.projects.empty, {
+  category: category === "personal" ? dict.nav.personal : dict.nav.projects,
+});
+---
+<div class="project-list" data-project-list={category}>
+  {projects.length === 0 && <p class="empty-state">{empty}</p>}
+  {projects.map((project) => <ProjectCard project={project} lang={lang} />)}
+</div>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting…</title>
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var slug = params.get("slug");
+        var lang = params.get("lang");
+        if (!lang) {
+          try { lang = localStorage.getItem("xdzzyq.lang"); } catch (e) { lang = "en"; }
+        }
+        var base = lang === "cn" ? "/research/cn/" : "/research/";
+        window.location.replace(slug ? base + encodeURIComponent(slug) + "/" : base);
+      })();
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to the project page…</p>
+  </body>
+</html>

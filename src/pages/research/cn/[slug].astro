@@ -1,0 +1,13 @@
+---
+import ProjectLayout from "../../../layouts/ProjectLayout.astro";
+import { getProjects } from "../../../lib/projects";
+
+export function getStaticPaths() {
+  return getProjects().map((project) => ({
+    params: { slug: project.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+---
+<ProjectLayout lang="cn" slug={slug!} />

@@ -1,16 +1,10 @@
 # Local Development
 
-This repository is a static site. There is no build step required for the
-current setup; the browser can load `index.html` and the assets under `css/`,
-`js/`, `res/`, `dep/`, and related folders directly through a local static
-server.
+This repository is an Astro static site. Preview it with the Astro dev server.
 
-## Preferred Local Server
-
-Use the Live Server launcher stored in `.draft/local-live-server.cjs`.
-
-```powershell
-& "D:\Program Files\nodejs\node.exe" ".\.draft\local-live-server.cjs"
+```bash
+npm install
+npm run dev
 ```
 
 Then open:
@@ -19,52 +13,23 @@ Then open:
 http://127.0.0.1:5500/
 ```
 
-The launcher serves the workspace root:
+The server binds to `127.0.0.1` on port `5500`.
 
-```text
-D:\MachineLearning\XDzzzzzZyq.github.io
+## Production build
+
+```bash
+npm run build
+npm run preview
 ```
 
-It binds to `127.0.0.1` on port `5500`, so the site is available only on the
-local machine.
+`npm run preview` serves the compiled `dist/` folder on the same host and port.
 
-## Simple Fallback
+## Type check
 
-If Live Server is unavailable, use Python's built-in static server from the
-repository root:
-
-```powershell
-python -m http.server 5500 --bind 127.0.0.1
+```bash
+npm run check
 ```
 
-Then open the same URL:
-
-```text
-http://127.0.0.1:5500/
-```
-
-## Verify The Server
-
-Check that the page responds:
-
-```powershell
-Invoke-WebRequest -Uri "http://127.0.0.1:5500/" -UseBasicParsing
-```
-
-Check that the port is listening:
-
-```powershell
-netstat -ano | Select-String ":5500"
-```
-
-## Stop The Server
+## Stop the server
 
 Press `Ctrl+C` in the terminal running the server.
-
-If the server was started in a detached or hidden process, find the process ID
-from `netstat` and stop it:
-
-```powershell
-netstat -ano | Select-String ":5500"
-Stop-Process -Id <PID>
-```

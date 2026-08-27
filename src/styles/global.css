@@ -1,0 +1,209 @@
+@import "./variables.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  height: var(--body-height);
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+}
+
+h1, h2, h3, p, li {
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+a {
+  color: inherit;
+}
+
+h1 {
+  font-size: var(--text-display);
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 0 calc(var(--grid-size) * var(--h1-text-shadow-blur-multiplier)) var(--shadow-color);
+  letter-spacing: var(--h1-letter-spacing);
+  width: 100%;
+}
+
+h2 {
+  font-size: var(--text-heading);
+  font-weight: bold;
+  text-align: left;
+  letter-spacing: var(--h2-letter-spacing);
+}
+
+h3 {
+  font-size: var(--text-heading-small);
+  font-weight: bold;
+  text-align: left;
+  letter-spacing: var(--h3-letter-spacing);
+}
+
+p {
+  text-align: left;
+  letter-spacing: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.unselectable {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  pointer-events: none;
+  cursor: default;
+}
+
+.custom-scrollbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 100%;
+  z-index: var(--layer-scrollbar);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.custom-scrollbar.is-visible {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.custom-scrollbar:hover,
+.custom-scrollbar.is-dragging {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.custom-scrollbar__track {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  bottom: 4px;
+  width: 4px;
+  background: transparent;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.custom-scrollbar:hover .custom-scrollbar__track,
+.custom-scrollbar.is-dragging .custom-scrollbar__track {
+  background: var(--color-border);
+}
+
+.custom-scrollbar__thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  background: var(--color-text-muted);
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: opacity 0.15s ease, background 0.15s ease, width 0.15s ease;
+}
+
+.custom-scrollbar:hover .custom-scrollbar__thumb,
+.custom-scrollbar.is-dragging .custom-scrollbar__thumb {
+  opacity: 0.7;
+  width: 6px;
+  right: -1px;
+}
+
+.custom-scrollbar__thumb:hover {
+  opacity: 1;
+  background: var(--color-accent-hover);
+  width: 6px;
+  right: -1px;
+}
+
+.grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(to right, var(--grid-line-color) calc(var(--grid-size) * var(--grid-line-thickness-multiplier)), transparent calc(var(--grid-size) * var(--grid-line-thickness-multiplier))),
+    linear-gradient(to bottom, var(--grid-line-color) calc(var(--grid-size) * var(--grid-line-thickness-multiplier)), transparent calc(var(--grid-size) * var(--grid-line-thickness-multiplier)));
+  background-size: var(--grid-size) var(--grid-size);
+  pointer-events: none;
+  z-index: var(--layer-debug-overlay);
+  opacity: var(--grid-overlay-opacity);
+  transition: opacity 0.2s ease;
+}
+
+.debug-toggle {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: var(--layer-debug-ui);
+  padding: 6px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+}
+
+.debug-toggle:hover {
+  color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+.debug-panel {
+  position: fixed;
+  bottom: 56px;
+  right: 16px;
+  z-index: var(--layer-debug-ui);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(5, 5, 5, 0.75);
+  color: var(--color-inverse);
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+body.debug-mode .grid-overlay {
+  opacity: var(--grid-overlay-opacity-debug);
+}
+
+body.debug-mode .debug-panel {
+  opacity: 1;
+}

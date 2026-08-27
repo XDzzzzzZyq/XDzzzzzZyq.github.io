@@ -1,0 +1,40 @@
+---
+import type { Lang, Dictionary } from "../lib/i18n";
+import { langSwitchHref, researchHomeHref } from "../lib/i18n";
+
+type Props = {
+  lang: Lang;
+  dict: Dictionary;
+  variant?: "home" | "detail";
+};
+
+const { lang, dict, variant = "home" } = Astro.props;
+const switchHref = langSwitchHref(lang, Astro.url.pathname);
+const otherLabel = dict.site.langOther;
+const home = (hash: string) =>
+  variant === "home" ? hash : researchHomeHref(lang, hash);
+---
+<nav class="research-nav" aria-label="Research navigation">
+  <a class="research-brand" href="/">{dict.site.brand}</a>
+  <div class="research-nav__links">
+    <a href={home("#bio")}>{dict.nav.bio}</a>
+    <a href={home("#projects")}>{dict.nav.projects}</a>
+    <a href={home("#personal-projects")}>{dict.nav.personal}</a>
+    <a href={home("#notes")}>{dict.nav.notes}</a>
+    <a href={home("#publications")}>{dict.nav.publications}</a>
+    <a href={home("#contact")}>{dict.nav.contact}</a>
+    <button type="button" class="nav-search-button" data-search-open aria-label={dict.site.searchLabel}>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"></circle>
+        <line x1="16.5" y1="16.5" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+      </svg>
+      <span>{dict.site.searchLabel}</span>
+      <kbd>/</kbd>
+    </button>
+    <a class="lang-switch" href={switchHref} data-lang-switch>
+      <span>{dict.site.langLabel}</span>
+      <span class="lang-switch__sep" aria-hidden="true">/</span>
+      <span data-lang-switch-label>{otherLabel}</span>
+    </a>
+  </div>
+</nav>

@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroTitle from "../components/HeroTitle.astro";
+import "../styles/home.css";
+---
+<BaseLayout title="XDzZyq | Home">
+  <main class="main">
+    <section id="home">
+      <HeroTitle />
+      <div class="unselectable centered selector">
+        <a class="selector-card" href="/design/" aria-label="Enter design portfolio">
+          <span class="selector-title">Design</span>
+          <span class="selector-sub">Art works, plugins, scripts</span>
+        </a>
+        <a class="selector-card" href="/research/" aria-label="Enter research portfolio">
+          <span class="selector-title">Research</span>
+          <span class="selector-sub">Notes, publications</span>
+        </a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p class="centered">&copy; 2026 XDzZyq. All rights reserved.</p>
+  </footer>
+</BaseLayout>

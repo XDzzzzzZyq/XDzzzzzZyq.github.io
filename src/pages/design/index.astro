@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import HeroTitle from "../../components/HeroTitle.astro";
+import { works } from "../../data/works";
+import "../../styles/home.css";
+import "../../styles/work.css";
+---
+<BaseLayout title="// __XDzZyq__">
+  <main class="main">
+    <nav class="floating-nav">
+      <a href="#home"><span class="link-text">Home</span></a>
+      <a href="#work"><span class="link-text">Works</span></a>
+      <a href="#bio"><span class="link-text">Bio</span></a>
+      <a href="#contact"><span class="link-text">Contact</span></a>
+    </nav>
+
+    <section id="home">
+      <HeroTitle />
+    </section>
+
+    <section id="work">
+      <div class="board-container" id="board">
+        {works.map((item) => (
+          <article class="card">
+            <img src={item.thumbnail} alt={item.title} />
+            <div class="card-content">
+              <h3 class="card-title">{item.title}</h3>
+              <div class="card-meta">by {item.creator}</div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section id="bio"></section>
+    <section id="contact"></section>
+  </main>
+  <footer>
+    <p class="centered">&copy; 2026 XDzZyq. All rights reserved.</p>
+  </footer>
+</BaseLayout>

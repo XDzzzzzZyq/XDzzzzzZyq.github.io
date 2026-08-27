@@ -1,0 +1,48 @@
+---
+import type { Lang, Dictionary } from "../lib/i18n";
+import { notes } from "../data/notes";
+import publications from "../data/publications.json";
+
+type Props = {
+  lang: Lang;
+  dict: Dictionary;
+};
+
+const { dict } = Astro.props;
+const items = publications as Array<{
+  year: string;
+  title: string;
+  venue: string;
+  href?: string;
+}>;
+---
+<section class="section-block" id="notes" aria-labelledby="notes-title">
+  <div class="section-heading">
+    <h2 id="notes-title">{dict.notes.title}</h2>
+    <p>{dict.notes.description}</p>
+  </div>
+  <div class="notes-grid">
+    {notes.map((note) => (
+      <a class="note-card" href={note.href} target="_blank" rel="noopener noreferrer">
+        <h3>{dict.notes[note.titleKey]}</h3>
+        <p>{dict.notes[note.descriptionKey]}</p>
+        <span>{dict.notes.openNotion}</span>
+      </a>
+    ))}
+  </div>
+</section>
+
+<section class="section-block" id="publications" aria-labelledby="publications-title">
+  <div class="section-heading">
+    <h2 id="publications-title">{dict.publications.title}</h2>
+    <p>{dict.publications.description}</p>
+  </div>
+  <ol class="publication-list">
+    {items.length === 0 && <li class="empty-state">{dict.publications.empty}</li>}
+    {items.map((item) => (
+      <li>
+        {item.year}. {item.href ? <a href={item.href} target="_blank" rel="noopener noreferrer">{item.title}</a> : item.title}. {item.venue}.
+      </li>
+    ))}
+  </ol>
+</section>

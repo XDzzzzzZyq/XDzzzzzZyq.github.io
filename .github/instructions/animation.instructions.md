@@ -2,6 +2,7 @@ GSAP usage
 - Register plugins once per page (ScrollTrigger, SplitText).
 - Prefer a single timeline per section.
 - Keep selectors stable; prefer ids or data- attributes.
+- Hero animation lives in `src/scripts/title.ts`.
 
 ScrollTrigger
 - Use clear start/end values with scrub where appropriate.

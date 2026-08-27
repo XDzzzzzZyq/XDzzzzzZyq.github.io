@@ -1,6 +1,6 @@
 # Agent Notes
 
-This is a static personal site. There is no build step for the current setup.
+This is an Astro 5 static personal site. GitHub Pages serves the compiled `dist/` folder.
 
 ## Instruction Routing
 
@@ -22,28 +22,23 @@ Then read the relevant focused instruction file before editing:
 
 ## Project Shape
 
-Keep these project-wide rules in mind:
-
-- Static HTML, CSS, and JS only; do not add a build step unless explicitly
-  requested.
-- Main entry points are `index.html`, `design/index.html`,
-  `research/index.html`, and `research/project.html`.
-- Preserve stable URLs for `/design/` and `/research/`.
-- Prefer semantic HTML, section ids for navigation, CSS variables for shared
-  tokens, and modular JS by page or section.
-- Shared assets live under `res/`; design source assets may live under
-  `design/`.
+- Astro 5 + TypeScript, static output, no SSR.
+- Source lives in `src/`. Compiled HTML/CSS/JS is emitted to `dist/`.
+- Preserve stable URLs for `/`, `/design/`, and `/research/`.
+- Shared assets live under `public/res/`; research cover images live under
+  `public/research/assets/`.
+- Prefer Astro components, CSS variables, and page-scoped client scripts.
 
 ## Visual Layer System
 
 The site uses 4 explicit z-index layers (defined as CSS variables in
-`css/variables.css`). Every visual element must belong to one of these layers:
+`src/styles/variables.css`). Every visual element must belong to one of these layers:
 
 | Layer | Variable | Contains |
 |---|---|---|
 | 1 — Background | `--layer-bg` (0) | Body `background-color` |
 | 2 — Background animation | `--layer-bg-anim` (10) | Animated hero elements (XDzZyq title, sun, floating marks) |
-| 3 — Content | `--layer-content` (20) | Panels, cards, nav (`--layer-nav`: 100), overlays (`--layer-overlay`: 500) |
+| 3 — Content | `--layer-content` (20) | Panels, cards, nav (`--layer-nav`: 100), scrollbar (`--layer-scrollbar`: 400), overlays (`--layer-overlay`: 500) |
 | 4 — Debug | `--layer-debug-overlay` (9999), `--layer-debug-ui` (10000) | Debug grid overlay and toggle UI |
 
 Rules:
@@ -54,53 +49,28 @@ Rules:
 - Layer 2 elements must use `pointer-events: none` to avoid blocking content
   interaction.
 
-## Research Page Systems (since the i18n + markdown + search refactor)
+## Research Page Systems
 
-The `/research/` area is a small content app, not just a static page:
+The `/research/` area is a small content app:
 
-- **i18n.** UI strings live in `research/i18n/<lang>.json` and are
-  applied via `data-i18n="<dotted.path>"` attributes. The active
-  language comes from `?lang=<code>`, then `localStorage["xdzzyq.lang"]`,
-  then defaults to `en`. The page reloads on switch. See
-  `research/js/i18n.js` and `.github/instructions/research.instructions.md`.
-- **Markdown project details.** Long-form content for each project lives
-  at `research/projects/<slug>.md` and `<slug>.cn.md`. The detail page
-  `research/project.html?slug=<slug>` renders them with marked + DOMPurify.
-- **Search overlay.** A Cmd+K / `/` floating search built on top of
-  `research/js/search.js`, indexed from `research/data/projects.json`.
-  Hotkeys: `Cmd+K` / `Ctrl+K` toggles, `/` opens, `Esc` closes,
-  `↑`/`↓` navigate, `Enter` jumps.
-- **Translate skill.** The local `.opencode/skills/translate/SKILL.md`
-  knows exactly which files to touch for EN↔CN parity and supports
-  scoped translation (all, by slug, by file, by git diff).
-
-## Local Skills
-
-Project-local opencode skills live in `.opencode/skills/`. Currently:
-
-- `translate` — keeps `research/i18n/` and `research/projects/`
-  in sync across languages. Use it whenever UI text or markdown
-  content changes; it handles scope, fallback ordering, and
-  verification.
+- **i18n.** UI strings live in `src/content/i18n/<lang>.json`. English pages
+  are at `/research/`; Chinese pages are at `/research/cn/`. `?lang=cn`
+  still redirects for compatibility.
+- **Markdown project details.** Long-form content lives at
+  `src/content/projects/en/<slug>.md` and `src/content/projects/cn/<slug>.md`.
+  Astro renders them at build time. Detail URLs are `/research/<slug>/` and
+  `/research/cn/<slug>/`.
+- **Search overlay.** A Cmd+K / `/` floating search built on
+  `src/scripts/search.ts`, indexed from `src/data/projects.json`.
+- **Translate skill.** `.opencode/skills/translate/SKILL.md` keeps EN↔CN
+  dictionaries and markdown bodies in sync.
 
 ## Local Preview
 
-For local preview, prefer the existing Live Server launcher:
-
-```powershell
-& "D:\Program Files\nodejs\node.exe" ".\.draft\local-live-server.cjs"
+```bash
+npm install
+npm run dev
 ```
 
-Open the site at:
-
-```text
-http://127.0.0.1:5500/
-```
-
-If Live Server is unavailable, run this from the repository root:
-
-```powershell
-python -m http.server 5500 --bind 127.0.0.1
-```
-
-For the longer runbook, read `LOCAL_DEVELOPMENT.md`.
+Open the site at `http://127.0.0.1:5500/`. For the longer runbook, read
+`LOCAL_DEVELOPMENT.md`.

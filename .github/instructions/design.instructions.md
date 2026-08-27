@@ -13,4 +13,5 @@ Content structure
 
 Refactor guidance
 - Split large styles into section-level files when growth demands it.
-- Keep shared tokens in shared/css/base.css.
+- Keep shared tokens in src/styles/variables.css.
+- Work metadata lives in src/data/works.ts.

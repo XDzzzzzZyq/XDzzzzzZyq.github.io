@@ -1,0 +1,66 @@
+---
+import type { ProjectRecord } from "../lib/projects";
+import { coverUrl } from "../lib/projects";
+import { projectHref, type Lang } from "../lib/i18n";
+
+type Props = {
+  project: ProjectRecord;
+  lang: Lang;
+};
+
+const { project, lang } = Astro.props;
+const href = projectHref(lang, project.slug);
+const cover = coverUrl(project.coverImage);
+const links = project.links ?? {};
+---
+<article class="project-panel">
+  <a class="project-media" href={href}>
+    <img class="project-cover" src={cover} alt={project.coverAlt || `${project.title} cover image`} />
+  </a>
+  <div class="project-content">
+    <div class="project-copy">
+      <a class="project-title-link" href={href}>
+        <h2 class="project-title">{project.title}</h2>
+      </a>
+      <p class="project-summary">{project.summary}</p>
+      <p class="project-meta">{project.year} · {project.status}</p>
+      {project.affiliation && <p class="project-affiliation">{project.affiliation}</p>}
+      <ul class="tag-list">
+        {(project.tags || []).map((tag) => <li>{tag}</li>)}
+      </ul>
+    </div>
+    <div class="project-actions">
+      {links.github && (
+        <a class="icon-link" href={links.github} target="_blank" rel="noopener noreferrer" aria-label="Open github link">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18a2.65 2.65 0 0 0-1.11-1.46c-.91-.62.07-.61.07-.61a2.1 2.1 0 0 1 1.53 1.03 2.13 2.13 0 0 0 2.91.83 2.12 2.12 0 0 1 .63-1.34c-2.22-.25-4.56-1.11-4.56-4.95a3.87 3.87 0 0 1 1.03-2.68 3.6 3.6 0 0 1 .1-2.64s.84-.27 2.75 1.02a9.48 9.48 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.4.1 2.64a3.87 3.87 0 0 1 1.03 2.68c0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"></path>
+          </svg>
+        </a>
+      )}
+      {links.website && (
+        <a class="icon-link" href={links.website} target="_blank" rel="noopener noreferrer" aria-label="Open website link">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="15 3 21 3 21 9"></polyline>
+            <line fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+      )}
+      {links.arxiv && (
+        <a class="icon-link" href={links.arxiv} target="_blank" rel="noopener noreferrer" aria-label="Open arxiv link">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M5.7 18.5 11 5.5h2l5.3 13h-2.2l-1.1-2.9H9l-1.1 2.9H5.7Zm4-4.8h4.6L12 7.8l-2.3 5.9Z"></path>
+          </svg>
+        </a>
+      )}
+      {links.publication && (
+        <a class="icon-link" href={links.publication} target="_blank" rel="noopener noreferrer" aria-label="Open publication link">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M6 3h9l3 3v15H6z"></path>
+            <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M9 12h6M9 16h6M14 3v4h4"></path>
+          </svg>
+        </a>
+      )}
+    </div>
+  </div>
+</article>

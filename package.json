@@ -1,13 +1,21 @@
 {
   "name": "xdzzzzzzyq-github-io",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "type": "module",
-  "description": "Personal website",
+  "description": "Personal website of Yuqian Zhang (XDzZyq)",
   "scripts": {
-    "copy:gsap": "node lib/copy-gsap.js"
+    "dev": "astro dev --host 127.0.0.1 --port 5500",
+    "build": "astro build",
+    "preview": "astro preview --host 127.0.0.1 --port 5500",
+    "check": "astro check"
   },
   "dependencies": {
+    "astro": "^5.13.5",
     "gsap": "^3.13.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "typescript": "^5.9.2"
   }
 }

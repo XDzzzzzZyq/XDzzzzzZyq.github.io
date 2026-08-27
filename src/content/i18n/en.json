@@ -1,0 +1,97 @@
+{
+  "site": {
+    "lang": "en",
+    "title": "Research",
+    "brand": "XDzZyq",
+    "langLabel": "EN",
+    "langOther": "中",
+    "searchLabel": "Search",
+    "searchPlaceholder": "Search projects, notes, tags...",
+    "searchNoResults": "No matches found.",
+    "searchHint": "Press / or ⌘K to open search · Esc to close"
+  },
+  "nav": {
+    "bio": "Bio",
+    "projects": "Projects",
+    "personal": "Personal",
+    "notes": "Notes",
+    "publications": "Publications",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Research",
+    "intro": "Publications, research projects, and study notes by XDzZyq. This page is structured so research entries can be updated from one readable data source."
+  },
+  "snapshot": {
+    "title": "Snapshot",
+    "name": "Name",
+    "focus": "Focus",
+    "status": "Status",
+    "contact": "Contact",
+    "nameValue": "Yuqian Zhang (XDzZyq)",
+    "focusValue": "Machine learning, mathematical reasoning, computational physics and biology, computer graphics.",
+    "statusValue": "First-year MScAC student at the University of Toronto.",
+    "downloadCV": "Download CV",
+    "contactButton": "Contact"
+  },
+  "bio": {
+    "title": "Bio",
+    "description": "Background, education, and current research direction.",
+    "paragraph1": "I am Yuqian Zhang, a first-year MScAC student at the University of Toronto. My work sits at the intersection of computational physics, biology, general inverse problems, and computer graphics.",
+    "paragraph2": "My research centers on mathematical modelling, physics-driven and computational methods, deep learning, and computer graphics. I have worked on spatial transcriptomics denoising with graph variational auto-encoders, Neural-ODE-based gene expression field estimation, ocean surface representation learning with transformers, and Bayesian-PINN-Kalman hybrids for time-series inverse problems",
+    "now": "Now",
+    "nowValue": "First-year MScAC student, University of Toronto.",
+    "bachelor": "Bachelor",
+    "bachelorValue": "Duke University & Duke Kunshan University · B.S. Applied Mathematics (Math Track) · 08/2022-05/2026."
+  },
+  "projects": {
+    "title": "Research",
+    "description": "Project panels are generated at build time from <code>src/data/projects.json</code>. Each entry opens a dedicated detail page.",
+    "loading": "Loading projects...",
+    "loadError": "Projects could not be loaded. Check src/data/projects.json.",
+    "empty": "No {category} projects yet."
+  },
+  "personalProjects": {
+    "title": "Personal Projects",
+    "description": "Independent engineering, graphics, and tooling work outside of formal research."
+  },
+  "notes": {
+    "title": "Math Notes",
+    "description": "Published Notion notes stay prominent while the site keeps stable local pages and fallbacks.",
+    "mathTitle": "Math Note",
+    "mathDescription": "Open the published Math note directly in Notion.",
+    "mlTitle": "Machine Learning Note",
+    "mlDescription": "Open the published Machine Learning note directly in Notion.",
+    "openNotion": "Open Notion"
+  },
+  "publications": {
+    "title": "Publications",
+    "description": "Selected manuscripts and preprints. Update year, title, venue, and links as papers move through the publication pipeline.",
+    "empty": "No published works yet. Manuscripts are in preparation."
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Reach out for research collaboration, paper requests, or academic inquiries.",
+    "emailButton": "Email",
+    "githubButton": "GitHub"
+  },
+  "detail": {
+    "notFoundTitle": "Project not found",
+    "notFoundMessage": "The project slug does not match an entry in src/data/projects.json.",
+    "backButton": "Back to projects",
+    "abstract": "Abstract",
+    "details": "Details",
+    "links": "Links",
+    "noLinks": "No external links are attached to this project yet.",
+    "affiliationPrefix": "Affiliation",
+    "piLab": "PI Lab",
+    "markdownMissing": "Detailed notes for this project are not available yet.",
+    "backToList": "← All projects"
+  },
+  "card": {
+    "affiliationPrefix": "Affiliation"
+  },
+  "footer": {
+    "copyright": "© 2026 XDzZyq. All rights reserved."
+  }
+}

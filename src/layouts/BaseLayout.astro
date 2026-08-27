@@ -1,0 +1,34 @@
+---
+import "../styles/global.css";
+import DebugOverlay from "../components/DebugOverlay.astro";
+
+type Props = {
+  title: string;
+  lang?: string;
+  bodyClass?: string;
+  description?: string;
+};
+
+const {
+  title,
+  lang = "en",
+  bodyClass = "layout",
+  description = "Personal website of Yuqian Zhang (XDzZyq).",
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="icon" href="/res/elem/sun.svg" type="image/svg+xml" />
+  </head>
+  <body class={bodyClass}>
+    <DebugOverlay />
+    <slot />
+    <script src="../scripts/scrollbar.ts"></script>
+    <script src="../scripts/debug.ts"></script>
+  </body>
+</html>

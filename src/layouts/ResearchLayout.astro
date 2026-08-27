@@ -1,0 +1,131 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ResearchNav from "../components/ResearchNav.astro";
+import SearchOverlay from "../components/SearchOverlay.astro";
+import ProjectList from "../components/ProjectList.astro";
+import NotesAndPublications from "../components/NotesAndPublications.astro";
+import {
+  getDict,
+  htmlLang,
+  type Lang,
+} from "../lib/i18n";
+import "../styles/research.css";
+
+type Props = {
+  lang: Lang;
+};
+
+const { lang } = Astro.props;
+const dict = getDict(lang);
+---
+<BaseLayout
+  title={`${dict.site.title} | XDzZyq`}
+  lang={htmlLang(lang)}
+  bodyClass="research-page"
+  description={dict.hero.intro}
+>
+  <script src="../scripts/lang-redirect.ts"></script>
+  <div class="bg-layer" aria-hidden="true">
+    <div class="bg-layer__mark"></div>
+  </div>
+  <main class="research-main">
+    <div class="research-shell">
+      <ResearchNav lang={lang} dict={dict} />
+
+      <section class="research-hero" id="home" aria-labelledby="research-title">
+        <div>
+          <div class="hero-mark" aria-hidden="true"></div>
+          <h1 id="research-title">{dict.hero.title}</h1>
+          <p class="research-hero__intro">{dict.hero.intro}</p>
+        </div>
+        <aside class="bio-panel" aria-labelledby="snapshot-title">
+          <h2 id="snapshot-title">{dict.snapshot.title}</h2>
+          <dl class="bio-facts">
+            <div class="bio-fact">
+              <dt>{dict.snapshot.name}</dt>
+              <dd>{dict.snapshot.nameValue}</dd>
+            </div>
+            <div class="bio-fact">
+              <dt>{dict.snapshot.focus}</dt>
+              <dd>{dict.snapshot.focusValue}</dd>
+            </div>
+            <div class="bio-fact">
+              <dt>{dict.snapshot.status}</dt>
+              <dd>{dict.snapshot.statusValue}</dd>
+            </div>
+            <div class="bio-fact">
+              <dt>{dict.snapshot.contact}</dt>
+              <dd><a href="mailto:xdz.zhang@mail.utoronto.ca">xdz.zhang@mail.utoronto.ca</a></dd>
+            </div>
+          </dl>
+          <div class="button-row">
+            <a class="link-button link-button--primary" href="/res/CV - Yuqian Zhang.pdf" target="_blank" rel="noopener noreferrer" download>{dict.snapshot.downloadCV}</a>
+            <a class="link-button" href="mailto:xdz.zhang@mail.utoronto.ca">{dict.snapshot.contactButton}</a>
+            <a class="link-button" href="https://github.com/XDzzzzzZyq" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section-block" id="bio" aria-labelledby="bio-title">
+        <div class="section-heading">
+          <h2 id="bio-title">{dict.bio.title}</h2>
+          <p>{dict.bio.description}</p>
+        </div>
+        <div class="bio-panel">
+          <p>{dict.bio.paragraph1}</p>
+          <p>{dict.bio.paragraph2}</p>
+          <dl class="bio-facts">
+            <div class="bio-fact">
+              <dt>{dict.bio.now}</dt>
+              <dd>{dict.bio.nowValue}</dd>
+            </div>
+            <div class="bio-fact">
+              <dt>{dict.bio.bachelor}</dt>
+              <dd>{dict.bio.bachelorValue}</dd>
+            </div>
+            <div class="bio-fact">
+              <dt>{dict.snapshot.contact}</dt>
+              <dd><a href="mailto:xdz.zhang@mail.utoronto.ca">xdz.zhang@mail.utoronto.ca</a></dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="section-block" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <h2 id="projects-title">{dict.projects.title}</h2>
+          <p set:html={dict.projects.description}></p>
+        </div>
+        <ProjectList lang={lang} dict={dict} category="research" />
+      </section>
+
+      <section class="section-block" id="personal-projects" aria-labelledby="personal-projects-title">
+        <div class="section-heading">
+          <h2 id="personal-projects-title">{dict.personalProjects.title}</h2>
+          <p>{dict.personalProjects.description}</p>
+        </div>
+        <ProjectList lang={lang} dict={dict} category="personal" />
+      </section>
+
+      <NotesAndPublications lang={lang} dict={dict} />
+
+      <section class="section-block" id="contact" aria-labelledby="contact-title">
+        <div class="section-heading">
+          <h2 id="contact-title">{dict.contact.title}</h2>
+          <p>{dict.contact.description}</p>
+        </div>
+        <div class="contact-panel">
+          <div class="contact-links">
+            <a class="link-button link-button--primary" href="/res/CV - Yuqian Zhang.pdf" target="_blank" rel="noopener noreferrer" download>{dict.snapshot.downloadCV}</a>
+            <a class="link-button" href="mailto:xdz.zhang@mail.utoronto.ca">{dict.contact.emailButton}</a>
+            <a class="link-button" href="https://github.com/XDzzzzzZyq" target="_blank" rel="noopener noreferrer">{dict.contact.githubButton}</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <p>{dict.footer.copyright}</p>
+  </footer>
+  <SearchOverlay lang={lang} dict={dict} />
+</BaseLayout>
