@@ -1,0 +1,27 @@
+---
+type Props = {
+  id: string;
+  index: number;
+  title: string;
+  description?: string;
+  descriptionHtml?: string;
+  count?: string;
+};
+
+const { id, index, title, description, descriptionHtml, count } = Astro.props;
+const label = String(index).padStart(2, "0");
+const headingId = `${id}-title`;
+---
+<section class="section" id={id} aria-labelledby={headingId}>
+  <header class="section__head">
+    <span class="section__index">{label}</span>
+    <h2 class="section__title" id={headingId}>{title}</h2>
+    <span class="section__rule" aria-hidden="true"></span>
+    {count && <span class="section__count">{count}</span>}
+  </header>
+  {descriptionHtml && <p class="section__desc" set:html={descriptionHtml}></p>}
+  {!descriptionHtml && description && <p class="section__desc">{description}</p>}
+  <div class="section__body">
+    <slot />
+  </div>
+</section>

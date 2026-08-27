@@ -4,11 +4,9 @@ import ResearchNav from "../components/ResearchNav.astro";
 import SearchOverlay from "../components/SearchOverlay.astro";
 import ProjectList from "../components/ProjectList.astro";
 import NotesAndPublications from "../components/NotesAndPublications.astro";
-import {
-  getDict,
-  htmlLang,
-  type Lang,
-} from "../lib/i18n";
+import SectionBlock from "../components/SectionBlock.astro";
+import { getDict, htmlLang, interpolate, type Lang } from "../lib/i18n";
+import { getProjectsByCategory } from "../lib/projects";
 import "../styles/research.css";
 
 type Props = {
@@ -17,6 +15,12 @@ type Props = {
 
 const { lang } = Astro.props;
 const dict = getDict(lang);
+const email = "xdz.zhang@mail.utoronto.ca";
+const cv = "/res/CV - Yuqian Zhang.pdf";
+const github = "https://github.com/XDzzzzzZyq";
+const count = (n: number) => interpolate(dict.site.entries, { count: String(n) });
+const researchCount = getProjectsByCategory("research").length;
+const personalCount = getProjectsByCategory("personal").length;
 ---
 <BaseLayout
   title={`${dict.site.title} | XDzZyq`}
@@ -32,96 +36,90 @@ const dict = getDict(lang);
     <div class="research-shell">
       <ResearchNav lang={lang} dict={dict} />
 
-      <section class="research-hero" id="home" aria-labelledby="research-title">
-        <div>
-          <div class="hero-mark" aria-hidden="true"></div>
-          <h1 id="research-title">{dict.hero.title}</h1>
-          <p class="research-hero__intro">{dict.hero.intro}</p>
-        </div>
-        <aside class="bio-panel" aria-labelledby="snapshot-title">
-          <h2 id="snapshot-title">{dict.snapshot.title}</h2>
-          <dl class="bio-facts">
-            <div class="bio-fact">
-              <dt>{dict.snapshot.name}</dt>
-              <dd>{dict.snapshot.nameValue}</dd>
-            </div>
-            <div class="bio-fact">
-              <dt>{dict.snapshot.focus}</dt>
-              <dd>{dict.snapshot.focusValue}</dd>
-            </div>
-            <div class="bio-fact">
-              <dt>{dict.snapshot.status}</dt>
-              <dd>{dict.snapshot.statusValue}</dd>
-            </div>
-            <div class="bio-fact">
-              <dt>{dict.snapshot.contact}</dt>
-              <dd><a href="mailto:xdz.zhang@mail.utoronto.ca">xdz.zhang@mail.utoronto.ca</a></dd>
-            </div>
-          </dl>
-          <div class="button-row">
-            <a class="link-button link-button--primary" href="/res/CV - Yuqian Zhang.pdf" target="_blank" rel="noopener noreferrer" download>{dict.snapshot.downloadCV}</a>
-            <a class="link-button" href="mailto:xdz.zhang@mail.utoronto.ca">{dict.snapshot.contactButton}</a>
-            <a class="link-button" href="https://github.com/XDzzzzzZyq" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <section class="hero" id="home" aria-labelledby="research-title">
+        <p class="hero__eyebrow label">{dict.site.brand} / {dict.site.title}</p>
+        <div class="hero__mark" aria-hidden="true"></div>
+        <h1 id="research-title">{dict.hero.title}</h1>
+        <p class="hero__intro">{dict.hero.intro}</p>
+        <dl class="spec-strip">
+          <div class="spec">
+            <dt>{dict.snapshot.name}</dt>
+            <dd>{dict.snapshot.nameValue}</dd>
           </div>
-        </aside>
+          <div class="spec">
+            <dt>{dict.snapshot.status}</dt>
+            <dd>{dict.snapshot.statusValue}</dd>
+          </div>
+          <div class="spec">
+            <dt>{dict.snapshot.focus}</dt>
+            <dd>{dict.snapshot.focusValue}</dd>
+          </div>
+          <div class="spec">
+            <dt>{dict.snapshot.contact}</dt>
+            <dd><a href={`mailto:${email}`}>{email}</a></dd>
+          </div>
+        </dl>
+        <div class="button-row">
+          <a class="link-button link-button--primary" href={cv} target="_blank" rel="noopener noreferrer" download>{dict.snapshot.downloadCV}</a>
+          <a class="link-button" href={github} target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
       </section>
 
-      <section class="section-block" id="bio" aria-labelledby="bio-title">
-        <div class="section-heading">
-          <h2 id="bio-title">{dict.bio.title}</h2>
-          <p>{dict.bio.description}</p>
-        </div>
-        <div class="bio-panel">
-          <p>{dict.bio.paragraph1}</p>
-          <p>{dict.bio.paragraph2}</p>
-          <dl class="bio-facts">
-            <div class="bio-fact">
+      <SectionBlock id="bio" index={1} title={dict.bio.title} description={dict.bio.description}>
+        <div class="bio">
+          <div class="bio__prose">
+            <p>{dict.bio.paragraph1}</p>
+            <p>{dict.bio.paragraph2}</p>
+          </div>
+          <dl class="facts">
+            <div class="fact">
               <dt>{dict.bio.now}</dt>
               <dd>{dict.bio.nowValue}</dd>
             </div>
-            <div class="bio-fact">
+            <div class="fact">
               <dt>{dict.bio.bachelor}</dt>
               <dd>{dict.bio.bachelorValue}</dd>
             </div>
-            <div class="bio-fact">
+            <div class="fact">
               <dt>{dict.snapshot.contact}</dt>
-              <dd><a href="mailto:xdz.zhang@mail.utoronto.ca">xdz.zhang@mail.utoronto.ca</a></dd>
+              <dd><a href={`mailto:${email}`}>{email}</a></dd>
             </div>
           </dl>
         </div>
-      </section>
+      </SectionBlock>
 
-      <section class="section-block" id="projects" aria-labelledby="projects-title">
-        <div class="section-heading">
-          <h2 id="projects-title">{dict.projects.title}</h2>
-          <p set:html={dict.projects.description}></p>
-        </div>
+      <SectionBlock
+        id="projects"
+        index={2}
+        title={dict.projects.title}
+        descriptionHtml={dict.projects.description}
+        count={count(researchCount)}
+      >
         <ProjectList lang={lang} dict={dict} category="research" />
-      </section>
+      </SectionBlock>
 
-      <section class="section-block" id="personal-projects" aria-labelledby="personal-projects-title">
-        <div class="section-heading">
-          <h2 id="personal-projects-title">{dict.personalProjects.title}</h2>
-          <p>{dict.personalProjects.description}</p>
-        </div>
+      <SectionBlock
+        id="personal-projects"
+        index={3}
+        title={dict.personalProjects.title}
+        description={dict.personalProjects.description}
+        count={count(personalCount)}
+      >
         <ProjectList lang={lang} dict={dict} category="personal" />
-      </section>
+      </SectionBlock>
 
-      <NotesAndPublications lang={lang} dict={dict} />
+      <NotesAndPublications lang={lang} dict={dict} notesIndex={4} publicationsIndex={5} />
 
-      <section class="section-block" id="contact" aria-labelledby="contact-title">
-        <div class="section-heading">
-          <h2 id="contact-title">{dict.contact.title}</h2>
-          <p>{dict.contact.description}</p>
-        </div>
-        <div class="contact-panel">
+      <SectionBlock id="contact" index={6} title={dict.contact.title} description={dict.contact.description}>
+        <div class="contact-strip">
+          <a class="contact-strip__mail" href={`mailto:${email}`}>{email}</a>
           <div class="contact-links">
-            <a class="link-button link-button--primary" href="/res/CV - Yuqian Zhang.pdf" target="_blank" rel="noopener noreferrer" download>{dict.snapshot.downloadCV}</a>
-            <a class="link-button" href="mailto:xdz.zhang@mail.utoronto.ca">{dict.contact.emailButton}</a>
-            <a class="link-button" href="https://github.com/XDzzzzzZyq" target="_blank" rel="noopener noreferrer">{dict.contact.githubButton}</a>
+            <a class="link-button link-button--primary" href={cv} target="_blank" rel="noopener noreferrer" download>{dict.snapshot.downloadCV}</a>
+            <a class="link-button" href={`mailto:${email}`}>{dict.contact.emailButton}</a>
+            <a class="link-button" href={github} target="_blank" rel="noopener noreferrer">{dict.contact.githubButton}</a>
           </div>
         </div>
-      </section>
+      </SectionBlock>
     </div>
   </main>
   <footer class="site-footer">

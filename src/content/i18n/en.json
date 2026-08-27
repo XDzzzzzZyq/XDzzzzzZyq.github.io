@@ -8,7 +8,8 @@
     "searchLabel": "Search",
     "searchPlaceholder": "Search projects, notes, tags...",
     "searchNoResults": "No matches found.",
-    "searchHint": "Press / or ⌘K to open search · Esc to close"
+    "searchHint": "Press / or ⌘K to open search · Esc to close",
+    "entries": "{count} entries"
   },
   "nav": {
     "bio": "Bio",

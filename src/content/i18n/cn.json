@@ -8,7 +8,8 @@
     "searchLabel": "搜索",
     "searchPlaceholder": "搜索项目、笔记、标签...",
     "searchNoResults": "没有找到匹配项。",
-    "searchHint": "按 / 或 ⌘K 打开搜索 · Esc 关闭"
+    "searchHint": "按 / 或 ⌘K 打开搜索 · Esc 关闭",
+    "entries": "共 {count} 项"
   },
   "nav": {
     "bio": "简介",

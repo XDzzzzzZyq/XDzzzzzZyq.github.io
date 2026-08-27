@@ -2,12 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ResearchNav from "../components/ResearchNav.astro";
 import SearchOverlay from "../components/SearchOverlay.astro";
-import {
-  getDict,
-  htmlLang,
-  researchHomeHref,
-  type Lang,
-} from "../lib/i18n";
+import { getDict, htmlLang, researchHomeHref, type Lang } from "../lib/i18n";
 import { coverUrl, getProject, renderProjectBody } from "../lib/projects";
 import "../styles/research.css";
 
@@ -22,7 +17,10 @@ const project = getProject(slug);
 const rendered = project ? await renderProjectBody(slug, lang) : null;
 const Content = rendered?.Content;
 const backHref = researchHomeHref(lang, "#projects");
-const links = project?.links ?? {};
+const links = Object.entries(project?.links ?? {}).filter(
+  (entry): entry is [string, string] =>
+    typeof entry[1] === "string" && entry[1].trim().length > 0
+);
 const linkLabels: Record<string, string> = {
   github: "GitHub",
   website: "Website",
@@ -45,27 +43,33 @@ const linkLabels: Record<string, string> = {
           <section class="detail-panel">
             <h1>{dict.detail.notFoundTitle}</h1>
             <p>{dict.detail.notFoundMessage}</p>
-            <a class="link-button link-button--primary" href={backHref}>{dict.detail.backButton}</a>
+            <a class="link-button link-button--primary back-link-bottom" href={backHref}>{dict.detail.backButton}</a>
           </section>
         )}
         {project && (
           <>
             <a class="back-link" href={backHref}>{dict.detail.backToList}</a>
             <section class="detail-hero">
-              <div>
-                <p class="detail-meta">{project.year} · {project.status}</p>
-                <h2>{project.title}</h2>
-                <p class="research-hero__intro">{project.summary}</p>
-                {project.affiliation && (
-                  <p class="detail-affiliation">{dict.detail.affiliationPrefix} · {project.affiliation}</p>
-                )}
-                {project.piWebsite && (
-                  <p class="detail-pi">
-                    {dict.detail.piLab} ·
-                    <a class="detail-pi-link" href={project.piWebsite} target="_blank" rel="noopener noreferrer">{dict.detail.piLab}</a>
-                  </p>
-                )}
-              </div>
+              <p class="detail-meta">
+                <span>{project.year}</span>
+                <span class="entry__sep" aria-hidden="true">/</span>
+                <span>{project.status}</span>
+              </p>
+              <h2>{project.title}</h2>
+              <p class="research-hero__intro">{project.summary}</p>
+              {project.affiliation && (
+                <p class="detail-affiliation">{dict.detail.affiliationPrefix} / {project.affiliation}</p>
+              )}
+              {project.piWebsite && (
+                <p class="detail-pi">
+                  <a class="detail-pi-link" href={project.piWebsite} target="_blank" rel="noopener noreferrer">{dict.detail.piLab} ↗</a>
+                </p>
+              )}
+              {project.tags?.length > 0 && (
+                <ul class="tag-list detail-tags">
+                  {project.tags.map((tag) => <li>{tag}</li>)}
+                </ul>
+              )}
               <img class="detail-cover" src={coverUrl(project.coverImage)} alt={project.coverAlt || `${project.title} cover image`} />
             </section>
             {project.abstract && (
@@ -83,26 +87,15 @@ const linkLabels: Record<string, string> = {
                 <p class="empty-state">{dict.detail.markdownMissing}</p>
               )}
             </section>
-            {project.tags?.length > 0 && (
-              <section class="detail-panel">
-                <ul class="tag-list">
-                  {project.tags.map((tag) => <li>{tag}</li>)}
-                </ul>
-              </section>
-            )}
             <section class="detail-panel">
               <h3>{dict.detail.links}</h3>
               <div class="button-row">
-                {Object.entries(links)
-                  .filter((entry): entry is [string, string] => typeof entry[1] === "string" && entry[1].trim().length > 0)
-                  .map(([type, href]) => (
-                    <a class="link-button" href={href} target="_blank" rel="noopener noreferrer">
-                      {linkLabels[type] || type}
-                    </a>
-                  ))}
-                {Object.values(links).every((href) => !href) && (
-                  <p class="empty-state">{dict.detail.noLinks}</p>
-                )}
+                {links.map(([type, href]) => (
+                  <a class="link-button" href={href} target="_blank" rel="noopener noreferrer">
+                    {linkLabels[type] || type} ↗
+                  </a>
+                ))}
+                {links.length === 0 && <p class="empty-state">{dict.detail.noLinks}</p>}
               </div>
             </section>
             <a class="link-button link-button--primary back-link-bottom" href={backHref}>{dict.detail.backButton}</a>

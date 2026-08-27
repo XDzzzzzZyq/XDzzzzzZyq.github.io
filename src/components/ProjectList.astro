@@ -16,7 +16,9 @@ const empty = interpolate(dict.projects.empty, {
   category: category === "personal" ? dict.nav.personal : dict.nav.projects,
 });
 ---
-<div class="project-list" data-project-list={category}>
+<div class="entry-list" data-project-list={category}>
   {projects.length === 0 && <p class="empty-state">{empty}</p>}
-  {projects.map((project) => <ProjectCard project={project} lang={lang} />)}
+  {projects.map((project, i) => (
+    <ProjectCard project={project} lang={lang} index={i + 1} />
+  ))}
 </div>
