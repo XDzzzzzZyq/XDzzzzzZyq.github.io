@@ -41,6 +41,7 @@ body.research-page {
 .panel,
 .spec-strip,
 .facts,
+.bio__prose,
 .entry,
 .note-card,
 .publication-list,
@@ -127,9 +128,8 @@ body.research-page {
   align-items: center;
   justify-content: space-between;
   gap: var(--gutter);
-  min-height: var(--space-1);
   margin-top: var(--space-1);
-  padding: 0 var(--space-1);
+  padding: var(--space-1-4) var(--space-1);
   background: var(--glass);
   border: 1px solid var(--rule);
   border-radius: var(--radius-pill);
@@ -163,9 +163,13 @@ body.research-page {
   text-decoration: none;
 }
 
+/* The hover underline is offset below the link box instead of being padded
+   in, so text links stay optically centred with the brand, search button
+   and language switch in the nav row. */
 .research-nav__links > a:not(.lang-switch) {
   position: relative;
-  padding-bottom: var(--space-1-8);
+  display: inline-flex;
+  align-items: center;
 }
 
 .research-nav__links > a:not(.lang-switch)::after {
@@ -173,7 +177,7 @@ body.research-page {
   position: absolute;
   left: 0;
   right: 100%;
-  bottom: 0;
+  bottom: calc(var(--space-1-8) * -1);
   height: 1px;
   background: var(--color-accent-hover);
   transition: right 160ms ease;
@@ -432,11 +436,25 @@ body.research-page {
   gap: var(--space-1);
 }
 
+/* Bio prose sits on its own glass panel so it reads as a content block
+   rather than loose text, and shares the page's type scale: a lead
+   paragraph at body size, the rest at the same small size as summaries. */
+.bio__prose {
+  padding: var(--panel-pad);
+}
+
 .bio__prose p {
-  margin: 0 0 1em;
+  margin: 0 0 var(--space-1-2);
   max-width: 62ch;
-  color: var(--color-text);
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: var(--text-small);
   line-height: 1.7;
+}
+
+.bio__prose p:first-child {
+  color: var(--color-text);
+  font-size: var(--text-body);
 }
 
 .bio__prose p:last-child {

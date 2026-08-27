@@ -38,7 +38,7 @@
   "bio": {
     "title": "简介",
     "description": "背景、教育与当前研究方向。",
-    "paragraph1": "我是 Yuqian Zhang，多伦多大学 MScAC 一年级学生。研究方向聚焦于计算物理、生物、一般反问题与计算机图形学的交叉领域。",
+    "paragraph1": "我是 XDzZyq。",
     "paragraph2": "我的研究以数学建模、物理驱动与计算方法、深度学习及计算机图形学为核心。曾从事基于图变分自编码器的空间转录组去噪、基于神经 ODE 的基因表达场估计、基于 Transformer 的海洋表层表示学习，以及贝叶斯-PINN-Kalman 混合模型求解时间序列反问题。",
     "now": "现在",
     "nowValue": "多伦多大学 MScAC 一年级在读。",

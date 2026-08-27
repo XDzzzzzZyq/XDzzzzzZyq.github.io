@@ -38,7 +38,7 @@
   "bio": {
     "title": "Bio",
     "description": "Background, education, and current research direction.",
-    "paragraph1": "I am Yuqian Zhang, a first-year MScAC student at the University of Toronto. My work sits at the intersection of computational physics, biology, general inverse problems, and computer graphics.",
+    "paragraph1": "I am Yuqian Zhang.",
     "paragraph2": "My research centers on mathematical modelling, physics-driven and computational methods, deep learning, and computer graphics. I have worked on spatial transcriptomics denoising with graph variational auto-encoders, Neural-ODE-based gene expression field estimation, ocean surface representation learning with transformers, and Bayesian-PINN-Kalman hybrids for time-series inverse problems",
     "now": "Now",
     "nowValue": "First-year MScAC student, University of Toronto.",
