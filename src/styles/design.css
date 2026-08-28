@@ -842,11 +842,13 @@ html.reveal-pending [data-reveal] {
   font-size: var(--text-small);
 }
 
-/* About: the Bilibili avatar sits beside the blurb and stacks on narrow screens. */
+/* About: the Bilibili avatar sits beside the blurb and stacks on narrow screens.
+   The text centres on the avatar's middle grid row. */
 .about-body {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: var(--space-1-2);
+  margin-bottom: var(--space-1);
 }
 
 .about-body p {
@@ -1135,5 +1137,6 @@ body.lightbox-open {
 
   .about-body {
     flex-direction: column;
+    align-items: flex-start;
   }
 }
