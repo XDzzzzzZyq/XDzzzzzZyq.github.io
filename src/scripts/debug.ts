@@ -33,4 +33,4 @@ toggle?.addEventListener("click", () => {
 });
 
 window.addEventListener("resize", updatePanel);
-setDebugMode(true);
+setDebugMode(false);
