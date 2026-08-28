@@ -1,0 +1,115 @@
+---
+import DesignLayout from "./DesignLayout.astro";
+import { getWork, getWorksBySection } from "../data/works";
+import type { Lang } from "../lib/i18n";
+import { designText, getDesignDict, getSectionText, getWorkText, sectionHref, statLabel, workHref } from "../lib/design";
+
+type Props = {
+  lang: Lang;
+  slug: string;
+};
+
+const { lang, slug } = Astro.props;
+const dict = getDesignDict(lang);
+const work = getWork(slug)!;
+const text = getWorkText(lang, slug)!;
+const meta = getSectionText(lang, work.section);
+const siblings = getWorksBySection(work.section);
+const position = siblings.findIndex((item) => item.slug === slug);
+const prev = siblings[position - 1];
+const next = siblings[position + 1];
+const pad = (n: number) => String(n).padStart(2, "0");
+const prevText = prev ? getWorkText(lang, prev.slug) : undefined;
+const nextText = next ? getWorkText(lang, next.slug) : undefined;
+---
+<DesignLayout
+  lang={lang}
+  title={`${text.title} | XDzZyq Design`}
+  description={text.summary}
+  active={work.section}
+>
+  <div class="work-root">
+    <a class="back-link" href={sectionHref(lang, work.section)}>
+      {designText(lang, "backToSection", { label: meta.label })}
+    </a>
+
+    <section class="detail-hero">
+      <p class="meta-row">
+        <span>{work.date}</span>
+        <span class="meta-row__sep" aria-hidden="true">/</span>
+        <span class="meta-row__accent">{meta.label}</span>
+        <span class="meta-row__sep" aria-hidden="true">/</span>
+        <span>{pad(position + 1)} / {pad(siblings.length)}</span>
+      </p>
+      <h1>
+        {text.title}
+        {text.subtitle && <small>{text.subtitle}</small>}
+      </h1>
+      <p class="detail-hero__summary">{text.summary}</p>
+      <ul class="tag-list">
+        {text.tags.map((tag) => <li>{tag}</li>)}
+      </ul>
+    </section>
+
+    <dl class="detail-strip">
+      <div>
+        <dt>{statLabel(lang, "date")}</dt>
+        <dd>{work.date}</dd>
+      </div>
+      {work.stats.map((stat) => (
+        <div>
+          <dt>{statLabel(lang, stat.key)}</dt>
+          <dd>{stat.value}</dd>
+        </div>
+      ))}
+    </dl>
+
+    <section class="detail-panel">
+      <h2>{dict.ui.bodyTitle}</h2>
+      {text.body.length > 0 ? (
+        text.body.map((paragraph) => <p>{paragraph}</p>)
+      ) : (
+        <p class="empty-state">{dict.ui.noBody}</p>
+      )}
+      {work.links.length > 0 && (
+        <div class="button-row">
+          {work.links.map((link, index) => (
+            <a
+              class={`link-button${index === work.links.length - 1 ? " link-button--primary" : ""}`}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {text.links[link.key] ?? link.key} ↗
+            </a>
+          ))}
+        </div>
+      )}
+    </section>
+
+    <div class="image-stack">
+      {work.images.map((src, index) => (
+        <figure class="image-figure">
+          <img
+            src={src}
+            alt={`${text.title} — ${pad(index + 1)}`}
+            loading={index === 0 ? "eager" : "lazy"}
+            decoding="async"
+          />
+          <figcaption>{pad(index + 1)} / {pad(work.images.length)}</figcaption>
+        </figure>
+      ))}
+    </div>
+
+    <div class="detail-nav">
+      {prev ? (
+        <a class="link-button" href={workHref(lang, prev.section, prev.slug)}>← {prevText?.title}</a>
+      ) : (
+        <a class="link-button" href={sectionHref(lang, work.section)}>← {meta.label}</a>
+      )}
+      {next && (
+        <a class="link-button" href={workHref(lang, next.section, next.slug)}>{nextText?.title} →</a>
+      )}
+    </div>
+  </div>
+</DesignLayout>

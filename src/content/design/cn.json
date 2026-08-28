@@ -1,0 +1,454 @@
+{
+  "ui": {
+    "lang": "cn",
+    "langLabel": "中",
+    "langOther": "EN",
+    "brand": "XDzZyq / Design",
+    "home": "Home",
+    "eyebrow": "XDzZyq / Design",
+    "hubTitle": "Motion, Graphic\n& Tools",
+    "hubIntro": "整理了一些认为比较有喜欢的个人作品，还有一些自己开发的工具",
+    "enter": "进入",
+    "featuredIndex": "重点",
+    "featuredTitle": "精选",
+    "moreIndex": "其他",
+    "moreTitle": "其他作品",
+    "worksCount": "{count} 件",
+    "view": "查看",
+    "imageCount": "{count} 图",
+    "aboutTitle": "关于",
+    "aboutBody": "小豆子zyq / XDzZyq。做 PV、MG 与静止系，也写渲染器、AE 插件和 Blender 脚本；平面部分多是成系列的静帧练习。这里只挑了自己还愿意再看一遍的部分。",
+    "bodyTitle": "简介",
+    "noBody": "原稿没有写简介，直接看片吧。",
+    "backToHub": "← 返回 Design",
+    "backToSection": "← 返回 {label}",
+    "footer": "© 2026 XDzZyq · 内容同步自 Bilibili @小豆子zyq",
+    "stats": {
+      "date": "日期",
+      "play": "播放",
+      "length": "时长",
+      "like": "点赞",
+      "view": "阅读",
+      "lines": "代码量",
+      "pieces": "张数",
+      "scenes": "场景"
+    }
+  },
+  "sections": {
+    "motion": {
+      "label": "Motion",
+      "intro": "PV、MG 与静止系：一半是自己的坑，一半是被拉去的合作。"
+    },
+    "graphic": {
+      "label": "Graphic",
+      "intro": "成系列的静帧：数学图解、白日梦记录、场景还原与排版练习。"
+    },
+    "tools": {
+      "label": "Tools",
+      "intro": "自己写的渲染器、AE 插件、Blender 脚本，以及图形学笔记。"
+    }
+  },
+  "works": {
+    "sirius-heart": {
+      "title": "シリウスの心臓",
+      "subtitle": "天狼星的心脏 feat. 异世界情绪",
+      "summary": "以天狼星双星系统为意象的自制 MV，与歌手和模型师协作完成。",
+      "tags": [
+        "MV",
+        "Blender",
+        "AE"
+      ],
+      "body": [
+        "位于大犬座的心脏的天狼星，是一颗由天狼星A和天狼星B所构成的双星系统。从太阳系出发，在无声的宇宙空间聆听两颗伴星的交流。在几乎永恒的环绕中无法相遇，因为相遇的代价是碰撞后的毁灭。也许这就是双星系统的解。",
+        "演唱：﻿@异世界情绪  \n作词・作曲・编曲：傘村トータ \nPV：﻿@小豆子zyq  \n模型：﻿@永眠配信只接稿不接广  ﻿ ﻿@打破碗花花_afa  \n本家：BV15v411t79V",
+        "完成了一件我期待已久的作品，算是完成了自己一个心愿。祝大家新年快乐！ver 2已更新",
+        "制作花絮 & 经验分享：BV1SMwUeUEYL"
+      ],
+      "links": {
+        "makingOf": "制作花絮",
+        "bilibili": "Bilibili"
+      }
+    },
+    "irradiate": {
+      "title": "Irradiate",
+      "subtitle": "MG 短片",
+      "summary": "把油墨印刷质感与图形学里的概念公式揉进 motion graphics。",
+      "tags": [
+        "MG",
+        "图形学",
+        "油墨质感"
+      ],
+      "body": [
+        "之前一直想做这首曲子，但是死活找不到灵感，现在终于把坑填上了。一开始还打算画分镜表，画了一点发现有些费时间而且实际做的时候一大部分镜头跟构思的有较大出入，所以还是变成边做边构思了。",
+        "尝试结合了油墨印刷质感和前一阵子图形学里的概念和公式，这下motion computer graphics了。",
+        "做到最后多少有点放飞自我，最抽象的一集",
+        "bgm: Such,PSYQUI - Don't you want me"
+      ],
+      "links": {
+        "bilibili": "Bilibili"
+      }
+    },
+    "getcha": {
+      "title": "GETCHA！",
+      "subtitle": "勺 × 希亚娜",
+      "summary": "为翻唱《GETCHA！》制作的 PV。",
+      "tags": [
+        "PV",
+        "翻唱"
+      ],
+      "body": [],
+      "links": {
+        "bilibili": "Bilibili"
+      }
+    },
+    "power-still": {
+      "title": "请下地狱来找本大爷吧",
+      "subtitle": "电锯人 · 帕瓦 静止系",
+      "summary": "从漫画抠图开始走完整套静止系流程的帕瓦同人，跨度近一个学期。",
+      "tags": [
+        "静止系",
+        "Blender",
+        "AE"
+      ],
+      "body": [
+        "上半年的成果，当时看到大家都在做电锯人的静止系，于是一拍脑门也开始整静止系了。但是没想到工作量这么大......真的好佩服大家。特别喜欢帕瓦这个角色，所以做了几话日常的部分",
+        "制作时间跨度：2020上寒假开始 --- 下半学期期中",
+        "尝试了从漫画抠图开始的大致全部流程，真的真的很需要热情。但是还是因为时间不太够了就先摸了，等以后再把后半部分完成！感觉我真的不会讲故事，编排也有问题，所以尽量加了音效帮助大家理解",
+        "软件：blender.eevee ae ps pr （blender太好用了，渲染帮大忙了）\nbgm：初音ミク,MARETU - マインドブランド"
+      ],
+      "links": {
+        "bilibili": "Bilibili"
+      }
+    },
+    "vivahappy-medley": {
+      "title": "ビバハピ",
+      "subtitle": "Mitchie M メドレー合作 P2",
+      "summary": "参加 PVSF2025 的十分钟超长合作，负责其中一段。",
+      "tags": [
+        "合作",
+        "PVSF2025"
+      ],
+      "body": [
+        "参加了PVSF2025！10分钟的超长合作！！感谢H2O的邀请",
+        "X：https://x.com/zyq30905782/status/1961972607080653188\n完整版：https://www.youtube.com/watch?v=kFn5rs0zdsk\nPVSF：https://pvsf.jp/release#list"
+      ],
+      "links": {
+        "bilibili": "Bilibili"
+      }
+    },
+    "exc2-cm2": {
+      "title": "EXC#2 出走派展 CM2",
+      "subtitle": "与小言合作",
+      "summary": "为 EXC#2 出走派展制作的第二支 CM。",
+      "tags": [
+        "CM",
+        "合作"
+      ],
+      "body": [
+        "制作者@小言_GAN  @小豆子zyq  \nEXC#2出走派展 CM2，参赛详情见专栏\n来一次，灵魂与现实的碰撞"
+      ],
+      "links": {
+        "bilibili": "Bilibili"
+      }
+    },
+    "exc2-cm2-p2": {
+      "title": "找不到看展的路了",
+      "subtitle": "EXC#2 CM2 · P2",
+      "summary": "用「场景」与「相片中的场景」互换来讲对数字媒介的思考。",
+      "tags": [
+        "CM",
+        "虚实结合"
+      ],
+      "body": [
+        "完整：https://b23.tv/7plzDte\n完成时间：2023‎.‎6‎.‎11",
+        "再次超级超级感谢小言老师又拉着我一起给EXC做了一次CM合作。在和言老师老师讨论的时候打算尝试点不一样的，再加上虚实结合的表现方式来表达一些有意思的东西。选曲为长谷川白纸的【毒】编曲很有意思，歌词也比较合适。除此之外努力去表现了“场景”与“相片中的场景”二者的转换，夹杂着当时我对数字媒介的一些思考。场景中的装置来自学长学姐艺术展的作品，最后是言老师上一次CM合作送的纪念品！",
+        "希望下次EXC#3也能帮上忙"
+      ],
+      "links": {
+        "bilibili": "Bilibili"
+      }
+    },
+    "huawen-hupo": {
+      "title": "质疑华文琥珀，成为华文琥珀",
+      "subtitle": "后期群合作 P12",
+      "summary": "第一次和后期群合作，试了神椿那种 PV 造字。",
+      "tags": [
+        "PV造字",
+        "合作"
+      ],
+      "body": [
+        "完整：未发布\n完成时间：2023‎.‎7‎.‎5",
+        "第一次跟后期群里的大伙们合作，试了试神椿的那种pv造字（用华文琥珀改了改），感觉很有意思。选曲是deco的ジレンマ"
+      ],
+      "links": {
+        "bilibili": "Bilibili"
+      }
+    },
+    "nebula-overlap": {
+      "title": "Nebula Overlap",
+      "subtitle": "三周目合作 P5",
+      "summary": "三周目合作中的一棒，顺手试了 RTFX 素材的新用法。",
+      "tags": [
+        "合作",
+        "RTFX"
+      ],
+      "body": [
+        "完整：BV1Rv2mY7EHE\n完成时间：2023.‎5‎.17",
+        "感谢阿相老师的邀请！制作过程非常快乐。顺便尝试了一下RTFX这类素材的新用法"
+      ],
+      "links": {
+        "bilibili": "Bilibili"
+      }
+    },
+    "procedural-memphis": {
+      "title": "Procedural Memphis",
+      "subtitle": "EXC#1 CM · P6",
+      "summary": "几何节点还没出现的年代，用 Sverchok 程序化生成的全部三维动画。",
+      "tags": [
+        "孟菲斯",
+        "Sverchok",
+        "AnimationNodes"
+      ],
+      "body": [
+        "完整：https://www.bilibili.com/video/BV17R4y1n7Xr/\n完成时间：2021‎.‎9‎.‎21‎",
+        "超级超级感谢小言老师和崩老师拉着我一起给EXC做了一次CM合作，尝试一下孟菲斯风格在三维和动效中的运用。使用软件为AE+Blender，由于当时Blender还没有几何节点功能，所有的模型和三维动画全部由Sverchok和Animation Node程序化生成。平面动画和合成在AE中完成。很有意思的一次创作经历"
+      ],
+      "links": {
+        "bilibili": "Bilibili"
+      }
+    },
+    "karasu-collab": {
+      "title": "カラスは真っ白 - 9番目の「？」",
+      "subtitle": "10 人 PV 合作 · 本人发起",
+      "summary": "自己发起的第三次群合作，从发起到完成花了两年。",
+      "tags": [
+        "合作发起",
+        "PV"
+      ],
+      "body": [
+        "【三周目合作】→本人发起的第三次合作\n参与人员：\nP1：@是阿相哦  \nP2：@不_咕鸟  \nP3：@白雁雁  \nP4：@一个不够成熟的夕  \nP5：@小豆子zyq  \nP6：@理头LilRans  \nP7：@陸忻遊  \nP8：@金蛋蛋Geg  \nP9：@MoDon某冻  \nP10：@kkmfd",
+        "-----------------------------------------------\n这次合作从发起到制作完成竟然花了两年……好像没到三年吧。\n不管是最开始就做完却一直被拖到现在的群友，还是最后极限交的群友，都辛苦了，祝大家新年快乐永远不死。\n这个合作是在我的PV交流群里发起的，所以也来厚脸皮的发一下群号：726189279。平时都没什么消息只是偶尔会发一下最近看到的好看的片，有机会还想再开合作。\n最后感谢观看！",
+        "----------------------\nPS：标签是群友语录大全"
+      ],
+      "links": {
+        "bilibili": "Bilibili"
+      }
+    },
+    "diy-renderer": {
+      "title": "DIY 渲染器",
+      "subtitle": "OpenGL / C++ 实时渲染实践",
+      "summary": "从三角形光栅化一路写到延迟渲染、PBR 与屏幕空间效果的自研渲染器，一万余行。",
+      "tags": [
+        "OpenGL",
+        "C++",
+        "PBR",
+        "图形学"
+      ],
+      "body": [
+        "DIY渲染器写了一年多了，断断续续写了有一万多行了。\n果然还是需要实践一下，这一年来学到了很多东西，编程能力也能感觉到有明显的提升。",
+        "渲染方面大致实现了：\n- 延时渲染\n- PBR材质\n- 光照\n   - 点光、平行光、聚光、区域光\n   - 基于shadowmap的硬阴影和软阴影\n- 环境光\n- 屏幕空间环境光遮蔽\n- 屏幕空间反射\n- FXAA（实现的效果一般般）",
+        "顺手帮忙翻译了一篇关于区域光的教程，也感谢同学 @theta-lin 的鼎力帮忙。",
+        "早期版本（2022.01）：\n最近试着拿c++写了一个超低效率的渲染器💃 一帧渲染30秒，比cycles还慢  目前达成的效果： 三角形绘制✔️ 反走样❌ z通道遮挡关系✔️ 漫反射项✔️ 环境光项✔️ 模型导入❌ 视锥变换❌ 高光项❌ shadow map❌ …  最后一张是eevee模拟的效果"
+      ],
+      "links": {
+        "repo": "代码仓库",
+        "videoLog": "OpenGL 日志",
+        "post": "动态",
+        "tutorial": "Area Lights 教程翻译"
+      }
+    },
+    "text-island-block": {
+      "title": "Text Island Block",
+      "subtitle": "AE 插件",
+      "summary": "按文字笔画生成色块，并支持挤出、偏移、随机排除的自制 AE 插件。",
+      "tags": [
+        "AE 插件",
+        "C++",
+        "文字动效"
+      ],
+      "body": [
+        "经过一年多的 C++ 洗礼重新来尝试 AE 插件开发。目前有文字笔画拆解的脚本，但没有基于笔画生成图形的效果，于是写了一个可以在每个笔画下生成方块的插件。",
+        "功能：色块颜色可调、可只显示色块、可跳过之前的效果、笔画内部的洞可镂空；随机挤出（沿两个方向挤出而非缩放）、随机偏移、按顺序或随机排除部分色块。",
+        "完整介绍、使用例与下载见专栏。"
+      ],
+      "links": {
+        "article": "专栏",
+        "post": "动态"
+      }
+    },
+    "rune-font": {
+      "title": "IsekaiType 符文字体",
+      "subtitle": "装饰性字体 / 纹饰",
+      "summary": "自制符文字体，含英文字母、四声与标点，数字用十二进制。",
+      "tags": [
+        "字体",
+        "排版",
+        "装饰"
+      ],
+      "body": [
+        "前一阵子(中二发作)整了一个符文字体，可以作为装饰性元素或者超酷的纹饰  但是只做了英文字母以及四声还有一些标点符号。中文可以用拼音",
+        "数字采用12进制，10和11分别是\"#\"和\"$\"",
+        "四声：（一声：< 二声：> 三声：^ 四声：\\）",
+        "大伙觉得像异世界的文字所以就叫它IsekaiType了，大伙可以试试！",
+        "下载链接请看置顶评论",
+        "后续（2022.04）：好像因为我做的时候是每个笔画一个形状，所以用拆字脚本可以把每个笔画都拆出来用autofill之类的做手写动画会很方便"
+      ],
+      "links": {
+        "post": "动态",
+        "strokePost": "拆字脚本动态"
+      }
+    },
+    "physics-dropper": {
+      "title": "物理排布脚本",
+      "subtitle": "Blender addon",
+      "summary": "不想花两美元买现成插件，于是自己写了个简陋版物理掉落排布脚本。",
+      "tags": [
+        "Blender",
+        "Python",
+        "addon"
+      ],
+      "body": [
+        "前几天看到的脚本觉得很方便：https://blendermarket.com/products/physics-dropper 但是要2刀，所以本着宁可自己写也不多花一分钱的精神试着写了个简陋版物理排布脚本  大致功能：设置掉落物和容器的属性、开始&结束掉落并应用变换、打组   差不多算是从0开始研究了一下addon的开发，发现blender的脚本写起来绝对比ae要方便100倍，门槛超级低而且教程和文档还多，调试起来也很方便。难度甚至可以跟ae表达式相类比"
+      ],
+      "links": {
+        "post": "动态"
+      }
+    },
+    "blender-patch": {
+      "title": "Blender 曲线半径贡献",
+      "subtitle": "毛发雕刻 #117101",
+      "summary": "第一次给 Blender 贡献代码：为毛发雕刻补上曲线半径属性与插值。",
+      "tags": [
+        "开源",
+        "Blender",
+        "C++"
+      ],
+      "body": [
+        "第一次给Blender贡献代码",
+        "有人在Issues里提到毛发雕刻的时候没有曲线半径属性(#117101)，不太方便。所以帮忙完善这部分代码。功能(999dfce736)包含：自定义初始半径、根据周围曲线半径进行插值（并考虑曲线内半径变化）。估计会整合在4.1里。之后希望可以帮忙完善EEVEE-Next的功能",
+        "从零开始走了一遍开源项目的开发流程，学到了很多东西。blender有自己的chat所以交流起来很方便，官方也都很耐心答疑解惑，就是时差问题导致pr review慢了一些。能够如此高效地维护开源社区真的是佩服。不愧是blender"
+      ],
+      "links": {
+        "post": "动态",
+        "issue": "Issue #117101"
+      }
+    },
+    "sdf-field-note": {
+      "title": "在 OpenGL 中构建并存储 SDF",
+      "subtitle": "图形学笔记",
+      "summary": "用三维数组存储有向距离场，并以三线性插值快速估计任意点距离。",
+      "tags": [
+        "图形学",
+        "OpenGL",
+        "笔记"
+      ],
+      "body": [
+        "几何数据除了显式存储网格，也可以隐式地存储空间中任意一点到表面的最短有向距离，即有向距离场（Signed Distance Field）。",
+        "实际应用中出于计算效率与显存考虑，通常用三维数组存储，再用三线性插值（Trilinear Interpolation）快速估计空间中任意一点的有向距离。",
+        "完整推导与实现见专栏。"
+      ],
+      "links": {
+        "article": "专栏",
+        "post": "动态"
+      }
+    },
+    "area-light-note": {
+      "title": "实时范围光 Area Light",
+      "subtitle": "图形学笔记 · LTC 数学推导",
+      "summary": "点光、平行光容易，连续表面的范围光需要更巧妙的实时解法。",
+      "tags": [
+        "图形学",
+        "OpenGL",
+        "笔记"
+      ],
+      "body": [
+        "点光、平行光和聚光灯的实现较容易，因为光源是定点或方向恒定；而范围光来自连续的表面，实现方式有本质不同。",
+        "离线渲染可以用路径追踪（蒙特卡洛积分）暴力解算，实时渲染则需要更巧妙的方式。这篇笔记复刻并推导了基于 LTC（Linear Transformed Cosines）的实时范围光方案。",
+        "完整推导见专栏。"
+      ],
+      "links": {
+        "article": "专栏",
+        "post": "动态"
+      }
+    },
+    "math-series": {
+      "title": "数学系列",
+      "subtitle": "Itô-isometry / Quadratic Variation / Urysohn's Lemma",
+      "summary": "把随机分析与拓扑里最漂亮的几个定理做成画面。",
+      "tags": [
+        "平面",
+        "数学",
+        "图解"
+      ],
+      "body": [
+        "Itô-isometry｜伊藤等距 —— 对于任意两个平方可积过程之间的距离等于其伊藤积分下的量之间的距离。一个优雅地桥接了两个空间的恒等式。",
+        "Quadratic Variation｜二次变分 —— 一种只能用在随机微分方程上的运算。巧妙地通过伊藤引理过滤掉了连续的偏移项，从而仅提取出作用在随机项上的累积方差。是随机分析中重要的分析工具之一。",
+        "Urysohn's Lemma｜乌雷松引理 —— 纪念一下拓扑学课上学到的最后一个大定理，证明足足有足足三页。Urysohn几乎通过完全独立的思路构造了T4拓扑空间上连接两个闭集的连续函数，这个结论可以形象的理解为两个导体之间的电势或者两座山之间的等高线的存在性。不过这个定理能覆盖范围要远比这个广。",
+        "是去年做的图忘记发了，最近打算把这个数学系列做完。"
+      ],
+      "links": {
+        "ito": "Itô-isometry",
+        "quadratic": "Quadratic Variation",
+        "urysohn": "Urysohn's Lemma"
+      }
+    },
+    "daydream-series": {
+      "title": "白日梦记录",
+      "subtitle": "幻想场景与命名",
+      "summary": "把一年来的幻想顺手记录下来，并起了一些不明觉厉的名字。",
+      "tags": [
+        "平面",
+        "Blender",
+        "PS",
+        "fSpy"
+      ],
+      "body": [
+        "顺手记录了一下最近一年来的幻想，顺便起了一些不明觉厉的名字：#1 浅睡眠、#2 秩序、#3 脱离、#4 降临、#5–#6 巡游、#7 不想上体育课、#8 层流。",
+        "#4 降临借同学的无人机拍了几张全景当 HDR 贴图；软件：PS | Blender | AE | fSpy。前一阵子做成了明信片。",
+        "更早的一张（2022.10）：还原了一下前一阵子做过的梦。"
+      ],
+      "links": {
+        "article": "专栏",
+        "dreamPost": "梦境还原动态"
+      }
+    },
+    "control-scenes": {
+      "title": "Control 场景还原",
+      "subtitle": "Blender 场景练习",
+      "summary": "用 Blender 还原《Control》里几个超酷的场景，含研究中心 #6 & #7。",
+      "tags": [
+        "平面",
+        "Blender",
+        "场景还原"
+      ],
+      "body": [
+        "前一阵子试着用 blender 还原了几个 Control 的场景，给大伙们看看。",
+        "Control 场景还原 - 研究中心 #6 & #7：补一下前一阵子试着做的两个超酷的场景。"
+      ],
+      "links": {
+        "control67": "研究中心 #6 & #7",
+        "controlEarly": "早期场景"
+      }
+    },
+    "typesetting-series": {
+      "title": "我超好排",
+      "subtitle": "排版练习",
+      "summary": "跟着 #我超好排# 排的几张：情绪、歌词与日常练习。",
+      "tags": [
+        "平面",
+        "排版",
+        "字体"
+      ],
+      "body": [
+        "排了一个情绪。",
+        "今天看来是不排不行了 —— 挺有感觉的一句歌词，想试试看把那种感觉做出来。",
+        "今天的排版。"
+      ],
+      "links": {
+        "mood": "排了一个情绪",
+        "must": "不排不行了",
+        "today": "今天的排版"
+      }
+    }
+  }
+}

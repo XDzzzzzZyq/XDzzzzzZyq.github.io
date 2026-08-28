@@ -1,0 +1,58 @@
+---
+import DesignLayout from "./DesignLayout.astro";
+import { getWorksBySection, sectionIds } from "../data/works";
+import type { Lang } from "../lib/i18n";
+import { designText, getDesignDict, sectionHref } from "../lib/design";
+
+type Props = {
+  lang: Lang;
+};
+
+const { lang } = Astro.props;
+const dict = getDesignDict(lang);
+const overview = sectionIds.map((id) => {
+  const works = getWorksBySection(id);
+  return {
+    id,
+    ...dict.sections[id],
+    count: works.length,
+    strip: works.filter((work) => work.featured).slice(0, 3),
+  };
+});
+---
+<DesignLayout lang={lang} title={`Design | XDzZyq`} description={dict.ui.hubIntro}>
+  <section class="design-hero">
+    <p class="design-hero__eyebrow label">{dict.ui.eyebrow}</p>
+    <div class="design-hero__mark" aria-hidden="true"></div>
+    <h1>{dict.ui.hubTitle}</h1>
+    <p class="design-hero__intro">{dict.ui.hubIntro}</p>
+  </section>
+
+  <div class="section-grid">
+    {overview.map((section) => (
+      <a class="section-card" href={sectionHref(lang, section.id)}>
+        <span class="section-card__index">
+          {designText(lang, "worksCount", { count: String(section.count) })}
+        </span>
+        <h2>{section.label}</h2>
+        <p>{section.intro}</p>
+        <div class="section-card__strip" aria-hidden="true">
+          {section.strip.map((work) => (
+            <img src={work.cover} alt="" loading="lazy" decoding="async" />
+          ))}
+        </div>
+        <span class="section-card__enter">{dict.ui.enter}</span>
+      </a>
+    ))}
+  </div>
+
+  <section class="detail-panel" id="about">
+    <h2>{dict.ui.aboutTitle}</h2>
+    <p>{dict.ui.aboutBody}</p>
+    <div class="button-row">
+      <a class="link-button link-button--primary" href="https://space.bilibili.com/302469604" target="_blank" rel="noopener noreferrer">Bilibili ↗</a>
+      <a class="link-button" href="https://github.com/XDzzzzzZyq" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      <a class="link-button" href="/">{dict.ui.home}</a>
+    </div>
+  </section>
+</DesignLayout>

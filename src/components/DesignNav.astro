@@ -1,0 +1,35 @@
+---
+import { sectionIds, type WorkSection } from "../data/works";
+import type { Lang } from "../lib/i18n";
+import { designHomeHref, designLangSwitchHref, getDesignDict, sectionHref } from "../lib/design";
+
+type Props = {
+  lang: Lang;
+  /** Highlights the current section in the nav. */
+  active?: WorkSection;
+};
+
+const { lang, active } = Astro.props;
+const dict = getDesignDict(lang);
+const switchHref = designLangSwitchHref(lang, Astro.url.pathname);
+---
+<nav class="design-nav" aria-label="Design navigation">
+  <a class="design-brand" href={designHomeHref(lang)}>{dict.ui.brand}</a>
+  <div class="design-nav__links">
+    {sectionIds.map((section) => (
+      <a
+        href={sectionHref(lang, section)}
+        aria-current={active === section ? "page" : undefined}
+      >
+        {dict.sections[section].label}
+      </a>
+    ))}
+    <a href="/">{dict.ui.home}</a>
+    <a href="https://space.bilibili.com/302469604" target="_blank" rel="noopener noreferrer">Bilibili ↗</a>
+    <a class="lang-switch" href={switchHref} data-lang-switch>
+      <span>{dict.ui.langLabel}</span>
+      <span class="lang-switch__sep" aria-hidden="true">/</span>
+      <span data-lang-switch-label>{dict.ui.langOther}</span>
+    </a>
+  </div>
+</nav>

@@ -1,0 +1,36 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import DesignNav from "../components/DesignNav.astro";
+import BackgroundSuns from "../components/BackgroundSuns.astro";
+import { htmlLang, type Lang } from "../lib/i18n";
+import { getDesignDict } from "../lib/design";
+import type { WorkSection } from "../data/works";
+import "../styles/design.css";
+
+type Props = {
+  lang: Lang;
+  title: string;
+  description: string;
+  /** Section id used to highlight the nav entry. */
+  active?: WorkSection;
+};
+
+const { lang, title, description, active } = Astro.props;
+const dict = getDesignDict(lang);
+---
+<BaseLayout title={title} lang={htmlLang(lang)} bodyClass="design-page" description={description}>
+  <script src="../scripts/lang-redirect.ts"></script>
+  <div class="bg-layer" aria-hidden="true">
+    <div class="bg-layer__mark"></div>
+  </div>
+  <main class="design-main">
+    <BackgroundSuns />
+    <div class="design-shell">
+      <DesignNav lang={lang} active={active} />
+      <slot />
+    </div>
+  </main>
+  <footer class="site-footer">
+    <p>{dict.ui.footer}</p>
+  </footer>
+</BaseLayout>

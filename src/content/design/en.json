@@ -1,0 +1,452 @@
+{
+  "ui": {
+    "lang": "en",
+    "langLabel": "EN",
+    "langOther": "中",
+    "brand": "XDzZyq / Design",
+    "home": "Home",
+    "eyebrow": "XDzZyq / Design",
+    "hubTitle": "Motion, Graphic\n& Tools",
+    "hubIntro": "A collection of the personal work I like most, along with a few tools I built myself",
+    "enter": "Enter",
+    "featuredIndex": "KEY",
+    "featuredTitle": "Featured",
+    "moreIndex": "MORE",
+    "moreTitle": "More",
+    "worksCount": "{count} works",
+    "view": "View",
+    "imageCount": "{count} images",
+    "aboutTitle": "About",
+    "aboutBody": "小豆子zyq / XDzZyq. I make PVs, motion graphics and still-motion, and also write renderers, AE plug-ins and Blender scripts; the graphic section is mostly still series. Only the pieces I would still look at twice are collected here.",
+    "bodyTitle": "Notes",
+    "noBody": "The original post has no description — just watch it.",
+    "backToHub": "← Back to Design",
+    "backToSection": "← Back to {label}",
+    "footer": "© 2026 XDzZyq · Content mirrored from Bilibili @小豆子zyq",
+    "stats": {
+      "date": "Date",
+      "play": "Play",
+      "length": "Length",
+      "like": "Like",
+      "view": "Read",
+      "lines": "Lines",
+      "pieces": "Pieces",
+      "scenes": "Scenes"
+    }
+  },
+  "sections": {
+    "motion": {
+      "label": "Motion",
+      "intro": "PV, MG and still-motion — half my own holes to fill, half collaborations I was pulled into."
+    },
+    "graphic": {
+      "label": "Graphic",
+      "intro": "Still series: maths diagrams, daydream logs, scene studies and layout practice."
+    },
+    "tools": {
+      "label": "Tools",
+      "intro": "A renderer, an AE plug-in, Blender scripts and graphics notes — all self-made."
+    }
+  },
+  "works": {
+    "sirius-heart": {
+      "title": "シリウスの心臓",
+      "subtitle": "Heart of Sirius · self-made MV feat. 异世界情绪",
+      "summary": "A self-made MV built around the Sirius binary system, made together with a singer and two modellers.",
+      "tags": [
+        "MV",
+        "Blender",
+        "AE"
+      ],
+      "body": [
+        "Sirius, the heart of Canis Major, is a binary system of Sirius A and Sirius B. Setting out from the solar system, you listen to the two companions talking in silent space. In their almost eternal orbit they can never meet, because the price of meeting is destruction. Maybe that is the solution of a binary system.",
+        "Vocals: @异世界情绪\nLyrics / music / arrangement: 傘村トータ\nPV: @小豆子zyq\nModels: @永眠配信只接稿不接广, @打破碗花花_afa\nOriginal song: BV15v411t79V",
+        "A piece I had been waiting a long time to make — one wish checked off. Happy new year! ver 2 is up.",
+        "Making-of and notes: BV1SMwUeUEYL"
+      ],
+      "links": {
+        "makingOf": "Making-of",
+        "bilibili": "Bilibili"
+      }
+    },
+    "irradiate": {
+      "title": "Irradiate",
+      "subtitle": "MG short",
+      "summary": "Ink-print texture crossed with ideas and formulas from graphics, as motion graphics.",
+      "tags": [
+        "MG",
+        "Graphics",
+        "Ink texture"
+      ],
+      "body": [
+        "I had wanted to cut this track for ages but could never find the idea; the hole is finally filled. I started a storyboard, then found it slow and too far from what the shots became, so I went back to figuring things out while building.",
+        "Tried mixing an ink-print texture with concepts and formulas from graphics — motion computer graphics, at last.",
+        "Towards the end I let go a bit. The most abstract episode.",
+        "bgm: Such, PSYQUI - Don't you want me"
+      ],
+      "links": {
+        "bilibili": "Bilibili"
+      }
+    },
+    "getcha": {
+      "title": "GETCHA！",
+      "subtitle": "Cover PV · 勺 × 希亚娜",
+      "summary": "PV for a cover of GETCHA!.",
+      "tags": [
+        "PV",
+        "Cover"
+      ],
+      "body": [],
+      "links": {
+        "bilibili": "Bilibili"
+      }
+    },
+    "power-still": {
+      "title": "Come Look for Me Down in Hell",
+      "subtitle": "Chainsaw Man · Power · still-motion",
+      "summary": "A Power still-motion that runs the whole pipeline, starting from cutting figures out of the manga.",
+      "tags": [
+        "Still-motion",
+        "Blender",
+        "AE"
+      ],
+      "body": [
+        "Work from the first half of the year. Everyone was making Chainsaw Man stills, so I jumped in on impulse — and never expected the workload. Real respect for everyone who finishes one. Power is my favourite character, so I did a few slice-of-life chapters.",
+        "Span: from the winter break of my first year to midterms of the spring semester.",
+        "I walked through roughly the whole pipeline, starting from cutting figures out of the manga; it really does run on enthusiasm. Time ran out so the second half is parked for later. I clearly cannot tell a story yet and the editing has problems, so I leaned on sound effects to help.",
+        "Software: blender.eevee, AE, PS, PR (blender is wonderful — rendering saved me).\nbgm: 初音ミク, MARETU - マインドブランド"
+      ],
+      "links": {
+        "bilibili": "Bilibili"
+      }
+    },
+    "vivahappy-medley": {
+      "title": "ビバハピ",
+      "subtitle": "Mitchie M medley collab · P2",
+      "summary": "One segment of a ten-minute medley collaboration for PVSF2025.",
+      "tags": [
+        "Collab",
+        "PVSF2025"
+      ],
+      "body": [
+        "Joined PVSF2025 — a ten-minute collaboration. Thanks to H2O for the invitation.",
+        "Full version, X post and the PVSF release list are linked in the original description."
+      ],
+      "links": {
+        "bilibili": "Bilibili"
+      }
+    },
+    "exc2-cm2": {
+      "title": "EXC#2 Exhibition CM2",
+      "subtitle": "with 小言_GAN",
+      "summary": "The second CM for the EXC#2 exhibition.",
+      "tags": [
+        "CM",
+        "Collab"
+      ],
+      "body": [
+        "Made with @小言_GAN. The second CM for the EXC#2 exhibition — “a collision between soul and reality”."
+      ],
+      "links": {
+        "bilibili": "Bilibili"
+      }
+    },
+    "exc2-cm2-p2": {
+      "title": "Lost on the Way to the Show",
+      "subtitle": "EXC#2 CM2 · P2",
+      "summary": "Switching between a scene and the scene inside a photograph, to talk about digital media.",
+      "tags": [
+        "CM",
+        "Real & virtual"
+      ],
+      "body": [
+        "Finished 2023-06-11.",
+        "Huge thanks to 小言 for pulling me into another CM collaboration for EXC. We wanted to try something different, mixing the real and the virtual to say something interesting. The track is Hasegawa Hakushi's 【毒】 — a fun arrangement with fitting lyrics. Beyond that I worked on switching between a “scene” and “the scene inside a photograph”, mixed with what I was then thinking about digital media. The installations come from a senior students' exhibition; the last shot is the souvenir 小言 gave me after our previous CM.",
+        "Hoping to help with EXC#3 as well."
+      ],
+      "links": {
+        "bilibili": "Bilibili"
+      }
+    },
+    "huawen-hupo": {
+      "title": "Doubt Huawen Hupo, Become Huawen Hupo",
+      "subtitle": "Post-production group collab · P12",
+      "summary": "First collaboration with the post-production group, trying KAMITSUBAKI-style PV lettering.",
+      "tags": [
+        "PV lettering",
+        "Collab"
+      ],
+      "body": [
+        "Finished 2023-07-05.",
+        "My first collaboration with everyone in the post-production group. I tried the KAMITSUBAKI-style PV lettering (built on top of the 华文琥珀 typeface), which was a lot of fun. The track is DECO*27's ジレンマ."
+      ],
+      "links": {
+        "bilibili": "Bilibili"
+      }
+    },
+    "nebula-overlap": {
+      "title": "Nebula Overlap",
+      "subtitle": "Third-round collab · P5",
+      "summary": "My segment of the third-round collaboration, with a new use for RTFX footage.",
+      "tags": [
+        "Collab",
+        "RTFX"
+      ],
+      "body": [
+        "Finished 2023-05-17.",
+        "Thanks to 阿相 for the invitation — a very happy production. I also tried a new way of using RTFX-style footage."
+      ],
+      "links": {
+        "bilibili": "Bilibili"
+      }
+    },
+    "procedural-memphis": {
+      "title": "Procedural Memphis",
+      "subtitle": "EXC#1 CM · P6",
+      "summary": "Memphis style in 3D, generated entirely procedurally before geometry nodes existed.",
+      "tags": [
+        "Memphis",
+        "Sverchok",
+        "AnimationNodes"
+      ],
+      "body": [
+        "Finished 2021-09-21.",
+        "Big thanks to 小言 and 崩 for pulling me into a CM collaboration for EXC, where I tried Memphis style in 3D and motion. Made with AE + Blender; Blender had no geometry nodes back then, so every model and 3D animation was generated procedurally with Sverchok and Animation Nodes, while 2D animation and compositing happened in AE. A very interesting piece of work."
+      ],
+      "links": {
+        "bilibili": "Bilibili"
+      }
+    },
+    "karasu-collab": {
+      "title": "カラスは真っ白 - 9番目の「？」",
+      "subtitle": "10-person PV collab · organised by me",
+      "summary": "The third group collaboration I organised; two years from the call to the final cut.",
+      "tags": [
+        "Organiser",
+        "PV"
+      ],
+      "body": [
+        "【三周目合作】= the third collaboration I organised.\nParticipants: 是阿相哦 / 不_咕鸟 / 白雁雁 / 一个不够成熟的夕 / 小豆子zyq / 理头LilRans / 陸忻遊 / 金蛋蛋Geg / MoDon某冻 / kkmfd",
+        "From the call to the final cut this took two years. Thanks to everyone — the ones who finished early and then waited, and the ones who delivered at the very last minute.",
+        "The collaboration started in my PV chat group (726189279); I would like to run another one some day."
+      ],
+      "links": {
+        "bilibili": "Bilibili"
+      }
+    },
+    "diy-renderer": {
+      "title": "DIY Renderer",
+      "subtitle": "OpenGL / C++ real-time rendering",
+      "summary": "A renderer written from triangle rasterisation up to deferred shading, PBR and screen-space effects — 10k+ lines.",
+      "tags": [
+        "OpenGL",
+        "C++",
+        "PBR",
+        "Graphics"
+      ],
+      "body": [
+        "I have been writing this renderer for over a year, on and off, and it is past ten thousand lines. Practice really was necessary: I learned a lot and can feel my programming getting noticeably better.",
+        "Implemented so far:\n- deferred rendering\n- PBR materials\n- lighting\n   - point, directional, spot and area lights\n   - hard and soft shadows from shadow maps\n- ambient light\n- screen-space ambient occlusion\n- screen-space reflection\n- FXAA (the result is so-so)",
+        "I also helped translate a tutorial on area lights; thanks to my classmate @theta-lin for the help.",
+        "Early version (2022-01): a very inefficient renderer in C++ — 30 seconds a frame, slower than cycles. Working: triangle rasterisation, z-occlusion, diffuse and ambient terms. Not yet: anti-aliasing, model import, frustum transform, specular, shadow maps. The last image is the eevee reference."
+      ],
+      "links": {
+        "repo": "Repository",
+        "videoLog": "OpenGL log",
+        "post": "Post",
+        "tutorial": "Area Lights translation"
+      }
+    },
+    "text-island-block": {
+      "title": "Text Island Block",
+      "subtitle": "AE plug-in",
+      "summary": "An AE plug-in that grows blocks from text strokes, with extrusion, offset and random exclusion.",
+      "tags": [
+        "AE plug-in",
+        "C++",
+        "Text animation"
+      ],
+      "body": [
+        "After a year of C++ I came back to AE plug-in development and it felt much smoother. Scripts that split text into strokes exist, but nothing that generates shapes from those strokes, so I wrote a small plug-in that puts a block under every stroke.",
+        "Features: adjustable block colour, blocks-only display, skipping previous effects, hollowing out the counters inside strokes; random extrusion (extruding along two axes rather than scaling), random offset, and excluding blocks in order or at random.",
+        "Full walkthrough, examples and download are in the article."
+      ],
+      "links": {
+        "article": "Article",
+        "post": "Post"
+      }
+    },
+    "rune-font": {
+      "title": "IsekaiType",
+      "subtitle": "Rune typeface / ornament",
+      "summary": "A hand-made rune typeface: Latin letters, the four Mandarin tones, base-twelve numerals.",
+      "tags": [
+        "Typeface",
+        "Typesetting",
+        "Ornament"
+      ],
+      "body": [
+        "A while ago (in a fit of chuunibyou) I built a rune typeface that works as a decorative element or an ornament. Only Latin letters, the four Mandarin tones and some punctuation are done; Chinese can be written in pinyin.",
+        "Numbers are base twelve, with 10 and 11 written as \"#\" and \"$\". Tones: 1st \"<\", 2nd \">\", 3rd \"^\", 4th \"\\\".",
+        "People said it looks like writing from another world, so it is called IsekaiType. Give it a try — the download link is in the pinned comment.",
+        "Follow-up (2022-04): because every stroke is its own shape, a stroke-splitting script can pull the strokes apart, which makes handwriting animation with autofill very convenient."
+      ],
+      "links": {
+        "post": "Post",
+        "strokePost": "Stroke script post"
+      }
+    },
+    "physics-dropper": {
+      "title": "Physics Scatter Script",
+      "subtitle": "Blender add-on",
+      "summary": "Rather than paying two dollars for an add-on, I wrote a crude physics scattering script.",
+      "tags": [
+        "Blender",
+        "Python",
+        "Add-on"
+      ],
+      "body": [
+        "I saw a handy script the other day (physics-dropper on Blender Market) but it costs two dollars, so — in the spirit of writing it myself rather than spending a cent — I made a crude physical scattering script. It sets properties for the dropped objects and the container, starts and ends the drop, applies the transforms and groups the result. It also meant researching add-on development from zero: Blender scripting is a hundred times friendlier than AE, with a low barrier, plenty of tutorials and docs, and easy debugging — about as hard as AE expressions."
+      ],
+      "links": {
+        "post": "Post"
+      }
+    },
+    "blender-patch": {
+      "title": "Blender Curve Radius Patch",
+      "subtitle": "Curve sculpting #117101",
+      "summary": "First contribution to Blender: a radius property and interpolation for curve sculpting.",
+      "tags": [
+        "Open source",
+        "Blender",
+        "C++"
+      ],
+      "body": [
+        "My first contribution to Blender.",
+        "Someone raised in the issue tracker that curve sculpting had no radius property (#117101), which is inconvenient, so I helped complete that part of the code. The patch (999dfce736) adds a custom initial radius and interpolation from surrounding curve radii, taking radius variation along a curve into account. It should land in 4.1. Next I hope to help with EEVEE-Next.",
+        "Walking through an open-source workflow from scratch taught me a lot. Blender has its own chat so communication is easy and the maintainers answer patiently; only the time difference made PR review slow. Maintaining a community this efficiently is impressive."
+      ],
+      "links": {
+        "post": "Post",
+        "issue": "Issue #117101"
+      }
+    },
+    "sdf-field-note": {
+      "title": "Building and Storing SDFs in OpenGL",
+      "subtitle": "Graphics notes",
+      "summary": "Storing a signed distance field in a 3D array and estimating any point with trilinear interpolation.",
+      "tags": [
+        "Graphics",
+        "OpenGL",
+        "Notes"
+      ],
+      "body": [
+        "Besides storing a mesh explicitly, geometry can be stored implicitly as the shortest signed distance from any point in space to the surface — a signed distance field.",
+        "In practice, for compute and memory reasons, the field is usually kept in a 3D array and any point is estimated quickly with trilinear interpolation.",
+        "Full derivation and implementation are in the article."
+      ],
+      "links": {
+        "article": "Article",
+        "post": "Post"
+      }
+    },
+    "area-light-note": {
+      "title": "Real-time Area Lights",
+      "subtitle": "Graphics notes · LTC derivation",
+      "summary": "Point and directional lights are easy; a continuous emitting surface needs a cleverer real-time solution.",
+      "tags": [
+        "Graphics",
+        "OpenGL",
+        "Notes"
+      ],
+      "body": [
+        "Point, directional and spot lights are relatively easy because the source is a point or the direction is constant; an area light emits from a continuous surface, so it needs a fundamentally different approach.",
+        "Offline renderers can brute-force it with path tracing (Monte Carlo integration); real time needs something cleverer. This note reproduces and derives the real-time area light solution based on LTC (Linear Transformed Cosines).",
+        "The full derivation is in the article."
+      ],
+      "links": {
+        "article": "Article",
+        "post": "Post"
+      }
+    },
+    "math-series": {
+      "title": "Maths Series",
+      "subtitle": "Itô-isometry / Quadratic Variation / Urysohn's Lemma",
+      "summary": "Turning the prettiest theorems from stochastic analysis and topology into images.",
+      "tags": [
+        "Graphic",
+        "Maths",
+        "Diagram"
+      ],
+      "body": [
+        "Itô-isometry — the distance between any two square-integrable processes equals the distance between their Itô integrals: an identity that bridges two spaces elegantly. A record of one of the most beautiful theorems from last term's stochastic analysis.",
+        "Quadratic Variation — an operation that only works on stochastic differential equations. Through Itô's lemma it filters out the continuous drift term and keeps only the accumulated variance of the stochastic term; one of the important analytical tools in stochastic analysis.",
+        "Urysohn's Lemma — a memento of the last big theorem from my topology course; the proof runs a full three pages. Urysohn constructed, along an almost entirely independent line of thought, a continuous function connecting two closed sets in a T4 space. Intuitively it is the potential between two conductors, or the existence of contour lines between two mountains — though the theorem reaches much further.",
+        "These were made last year and I forgot to post them; I plan to finish the maths series."
+      ],
+      "links": {
+        "ito": "Itô-isometry",
+        "quadratic": "Quadratic Variation",
+        "urysohn": "Urysohn's Lemma"
+      }
+    },
+    "daydream-series": {
+      "title": "Daydream Log",
+      "subtitle": "Imagined scenes, named",
+      "summary": "A year of daydreams, recorded and given deliberately impressive names.",
+      "tags": [
+        "Graphic",
+        "Blender",
+        "PS",
+        "fSpy"
+      ],
+      "body": [
+        "A casual record of the daydreams of the past year, with some deliberately impressive names: #1 Light Sleep, #2 Order, #3 Detachment, #4 Descent, #5–#6 Parade, #7 Skipping PE, #8 Laminar Flow.",
+        "For #4 Descent I borrowed a classmate's drone and shot a few panoramas to use as HDR maps. Software: PS | Blender | AE | fSpy. They were later printed as postcards.",
+        "An earlier piece (2022-10): a reconstruction of a dream I had."
+      ],
+      "links": {
+        "article": "Article",
+        "dreamPost": "Dream reconstruction"
+      }
+    },
+    "control-scenes": {
+      "title": "Control Scene Studies",
+      "subtitle": "Blender scene practice",
+      "summary": "Rebuilding several scenes from Control in Blender, including Research Sector #6 & #7.",
+      "tags": [
+        "Graphic",
+        "Blender",
+        "Scene study"
+      ],
+      "body": [
+        "I tried rebuilding a few scenes from Control in Blender.",
+        "Control scene study — Research Sector #6 & #7: two more very cool scenes, posted late."
+      ],
+      "links": {
+        "control67": "Research Sector #6 & #7",
+        "controlEarly": "Earlier scenes"
+      }
+    },
+    "typesetting-series": {
+      "title": "Layout Practice",
+      "subtitle": "#我超好排",
+      "summary": "A few entries for the #我超好排 challenge: a mood, a lyric, and daily practice.",
+      "tags": [
+        "Graphic",
+        "Typesetting",
+        "Type"
+      ],
+      "body": [
+        "Laid out a mood.",
+        "Today there is no way around it — a line of lyrics that hit me, and I wanted to see whether I could build that feeling.",
+        "Today's layout."
+      ],
+      "links": {
+        "mood": "Laid out a mood",
+        "must": "No way around it",
+        "today": "Today's layout"
+      }
+    }
+  }
+}

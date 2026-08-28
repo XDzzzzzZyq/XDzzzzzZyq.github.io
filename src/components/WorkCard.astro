@@ -1,0 +1,56 @@
+---
+import type { WorkItem } from "../data/works";
+import type { Lang } from "../lib/i18n";
+import { designText, getDesignDict, getWorkText, statLabel, workHref } from "../lib/design";
+
+type Props = {
+  lang: Lang;
+  work: WorkItem;
+  /** hero = full-width feature, band = half feature, wall = masonry entry. */
+  variant?: "hero" | "band" | "wall";
+};
+
+const { lang, work, variant = "wall" } = Astro.props;
+const dict = getDesignDict(lang);
+const text = getWorkText(lang, work.slug);
+const title = text?.title ?? work.slug;
+const stat = work.stats[0];
+const showStat = variant !== "wall" && stat;
+---
+<a
+  class={`work-card${variant === "hero" ? " work-card--hero" : ""}`}
+  href={workHref(lang, work.section, work.slug)}
+>
+  <div class="work-card__frame">
+    <img
+      src={work.cover}
+      alt={`${title} — 01`}
+      loading={variant === "hero" ? "eager" : "lazy"}
+      decoding="async"
+    />
+    {work.images.length > 1 && (
+      <span class="work-card__count">
+        {designText(lang, "imageCount", { count: String(work.images.length) })}
+      </span>
+    )}
+  </div>
+  <div class="work-card__body">
+    <p class="meta-row">
+      <span>{work.date}</span>
+      <span class="meta-row__sep" aria-hidden="true">/</span>
+      <span class="meta-row__accent">{text?.tags[0]}</span>
+      {showStat && (
+        <>
+          <span class="meta-row__sep" aria-hidden="true">/</span>
+          <span>{statLabel(lang, stat.key)} {stat.value}</span>
+        </>
+      )}
+    </p>
+    <h3 class="work-card__title">
+      {title}
+      {text?.subtitle && <small>{text.subtitle}</small>}
+    </h3>
+    <p class="work-card__summary">{text?.summary}</p>
+    <span class="work-card__open">{dict.ui.view}</span>
+  </div>
+</a>

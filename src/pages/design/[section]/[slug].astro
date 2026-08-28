@@ -1,0 +1,13 @@
+---
+import DesignWork from "../../../layouts/DesignWork.astro";
+import { works } from "../../../data/works";
+
+export function getStaticPaths() {
+  return works.map((work) => ({
+    params: { section: work.section, slug: work.slug },
+  }));
+}
+
+const { slug } = Astro.params as { slug: string };
+---
+<DesignWork lang="cn" slug={slug} />

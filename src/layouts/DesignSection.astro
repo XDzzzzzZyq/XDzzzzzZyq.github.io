@@ -1,0 +1,70 @@
+---
+import DesignLayout from "./DesignLayout.astro";
+import WorkCard from "../components/WorkCard.astro";
+import { getWorksBySection, sectionIds, type WorkSection } from "../data/works";
+import type { Lang } from "../lib/i18n";
+import { designHomeHref, designText, getDesignDict, getSectionText, sectionHref } from "../lib/design";
+
+type Props = {
+  lang: Lang;
+  section: WorkSection;
+};
+
+const { lang, section } = Astro.props;
+const dict = getDesignDict(lang);
+const meta = getSectionText(lang, section);
+const works = getWorksBySection(section);
+const featured = works.filter((work) => work.featured);
+const rest = works.filter((work) => !work.featured);
+const count = (n: number) => designText(lang, "worksCount", { count: String(n) });
+---
+<DesignLayout
+  lang={lang}
+  title={`${meta.label} | XDzZyq Design`}
+  description={meta.intro}
+  active={section}
+>
+  <section class="design-hero">
+    <p class="design-hero__eyebrow label">{dict.ui.eyebrow} / {meta.index}</p>
+    <div class="design-hero__mark" aria-hidden="true"></div>
+    <h1>{meta.label}</h1>
+    <p class="design-hero__intro">{meta.intro}</p>
+  </section>
+
+  <div class="section-head">
+    <span class="section-head__index">{dict.ui.featuredIndex}</span>
+    <h2>{dict.ui.featuredTitle}</h2>
+    <span class="section-head__rule" aria-hidden="true"></span>
+    <span class="section-head__count">{count(featured.length)}</span>
+  </div>
+  <div class="feature-band">
+    {featured.map((work, index) => (
+      <WorkCard lang={lang} work={work} variant={index === 0 ? "hero" : "band"} />
+    ))}
+  </div>
+
+  {rest.length > 0 && (
+    <>
+      <div class="section-head">
+        <span class="section-head__index">{dict.ui.moreIndex}</span>
+        <h2>{dict.ui.moreTitle}</h2>
+        <span class="section-head__rule" aria-hidden="true"></span>
+        <span class="section-head__count">{count(rest.length)}</span>
+      </div>
+      <div class="work-wall">
+        {rest.map((work) => (
+          <WorkCard lang={lang} work={work} variant="wall" />
+        ))}
+      </div>
+    </>
+  )}
+
+  <div class="detail-nav">
+    <a class="link-button" href={designHomeHref(lang)}>{dict.ui.backToHub}</a>
+    {sectionIds
+      .filter((id) => id !== section)
+      .map((id) => (
+        <a class="link-button" href={sectionHref(lang, id)}>{dict.sections[id].label} →</a>
+      ))}
+  </div>
+</DesignLayout>

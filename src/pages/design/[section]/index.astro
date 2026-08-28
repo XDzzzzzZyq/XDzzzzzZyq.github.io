@@ -1,0 +1,11 @@
+---
+import DesignSection from "../../../layouts/DesignSection.astro";
+import { sectionIds, type WorkSection } from "../../../data/works";
+
+export function getStaticPaths() {
+  return sectionIds.map((section) => ({ params: { section } }));
+}
+
+const { section } = Astro.params as { section: WorkSection };
+---
+<DesignSection lang="cn" section={section} />
