@@ -1,0 +1,38 @@
+---
+/**
+ * Decorative sun marks scattered down the research page. They sit on the
+ * background-animation layer so the frosted panels blur them through
+ * backdrop-filter.
+ *
+ * Positions are hand-tuned, not random, so the composition is stable and
+ * adjustable. Each entry is:
+ *   top      — % of the page height (where the sun lands vertically)
+ *   left     — % of the page width  (centre of the sun)
+ *   size     — width in grid units (--grid-size)
+ *   opacity  — 0.25-0.55 reads as a tint through the glass; higher competes
+ *              with the text
+ *   delay    — seconds before its intro plays, to desynchronise the group
+ */
+const suns = [
+  { top: 7, left: 78, size: 9, opacity: 0.6, delay: 0 },
+  { top: 24, left: 14, size: 8, opacity: 0.6, delay: 0.2 },
+  { top: 49, left: 68, size: 7, opacity: 0.6, delay: 0.1 },
+  { top: 58, left: 26, size: 9, opacity: 0.6, delay: 0.05 },
+  { top: 72, left: 80, size: 10, opacity: 0.6, delay: 0.15 },
+  { top: 90, left: 16, size: 9, opacity: 0.6, delay: 0.1 },
+];
+---
+<div class="bg-suns" aria-hidden="true">
+  {suns.map((sun) => (
+    <img
+      class="bg-sun"
+      data-bg-sun
+      data-delay={sun.delay}
+      src="/res/elem/sun.svg"
+      alt=""
+      decoding="async"
+      style={`--bg-sun-top:${sun.top}%;--bg-sun-left:${sun.left}%;--bg-sun-size:${sun.size};--bg-sun-opacity:${sun.opacity}`}
+    />
+  ))}
+</div>
+<script src="../scripts/bg-suns.ts"></script>

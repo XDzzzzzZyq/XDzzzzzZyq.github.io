@@ -92,16 +92,44 @@ body.research-page {
   }
 }
 
+/* Sun marks scattered down the page. They scroll with the content (absolute,
+   not fixed) so each one ends up behind a specific heading or panel, and the
+   panels blur them through backdrop-filter. */
+.bg-suns {
+  position: absolute;
+  inset: 0;
+  z-index: var(--layer-bg-anim);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-sun {
+  position: absolute;
+  top: var(--bg-sun-top);
+  left: var(--bg-sun-left);
+  width: calc(var(--grid-size) * var(--bg-sun-size));
+  aspect-ratio: 1;
+  height: auto;
+  opacity: var(--bg-sun-opacity);
+  /* Known layout height plus a resolved centring offset before the SVG loads,
+     otherwise GSAP freezes a half-height offset when it reads the matrix. */
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
 /* ============================================================
    Shell
    ============================================================ */
 
 .research-main {
+  position: relative;
   flex: 1;
   padding: 0 0 calc(var(--grid-size) * 2);
 }
 
 .research-shell {
+  position: relative;
+  z-index: var(--layer-content);
   width: min(var(--shell), calc(100% - var(--gutter) * 2));
   margin: 0 auto;
 }

@@ -5,6 +5,7 @@ import SearchOverlay from "../components/SearchOverlay.astro";
 import ProjectList from "../components/ProjectList.astro";
 import NotesAndPublications from "../components/NotesAndPublications.astro";
 import SectionBlock from "../components/SectionBlock.astro";
+import BackgroundSuns from "../components/BackgroundSuns.astro";
 import { getDict, htmlLang, interpolate, type Lang } from "../lib/i18n";
 import { getProjectsByCategory } from "../lib/projects";
 import "../styles/research.css";
@@ -33,6 +34,7 @@ const personalCount = getProjectsByCategory("personal").length;
     <div class="bg-layer__mark"></div>
   </div>
   <main class="research-main">
+    <BackgroundSuns />
     <div class="research-shell">
       <ResearchNav lang={lang} dict={dict} />
 
