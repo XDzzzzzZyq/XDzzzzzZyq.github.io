@@ -9,17 +9,17 @@
  *   top      — % of the page height (where the sun lands vertically)
  *   left     — % of the page width  (centre of the sun)
  *   size     — width in grid units (--grid-size)
- *   opacity  — 0.25-0.55 reads as a tint through the glass; higher competes
- *              with the text
+ *   opacity  — 1 keeps the mark's own colour; the frosted panels already soften
+ *              whatever sits behind them
  *   delay    — seconds before its intro plays, to desynchronise the group
  */
 const suns = [
-  { top: 7, left: 78, size: 9, opacity: 0.6, delay: 0 },
-  { top: 24, left: 14, size: 8, opacity: 0.6, delay: 0.2 },
-  { top: 49, left: 68, size: 7, opacity: 0.6, delay: 0.1 },
-  { top: 58, left: 26, size: 9, opacity: 0.6, delay: 0.05 },
-  { top: 72, left: 80, size: 10, opacity: 0.6, delay: 0.15 },
-  { top: 90, left: 16, size: 9, opacity: 0.6, delay: 0.1 },
+  { top: 7, left: 78, size: 9, opacity: 1, delay: 0 },
+  { top: 24, left: 14, size: 8, opacity: 1, delay: 0.2 },
+  { top: 49, left: 68, size: 7, opacity: 1, delay: 0.1 },
+  { top: 58, left: 26, size: 9, opacity: 1, delay: 0.05 },
+  { top: 72, left: 80, size: 10, opacity: 1, delay: 0.15 },
+  { top: 90, left: 16, size: 9, opacity: 1, delay: 0.1 },
 ];
 ---
 <div class="bg-suns" aria-hidden="true">
