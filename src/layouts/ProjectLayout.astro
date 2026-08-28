@@ -35,6 +35,7 @@ const linkLabels: Record<string, string> = {
   description={project?.summary ?? dict.detail.notFoundMessage}
 >
   <script src="../scripts/lang-redirect.ts"></script>
+  <script src="../scripts/reveal.ts"></script>
   <main class="research-main">
     <div class="research-shell">
       <ResearchNav lang={lang} dict={dict} variant="detail" />
@@ -49,7 +50,7 @@ const linkLabels: Record<string, string> = {
         {project && (
           <>
             <a class="back-link" href={backHref}>{dict.detail.backToList}</a>
-            <section class="detail-hero">
+            <section class="detail-hero" data-reveal>
               <p class="detail-meta">
                 <span>{project.year}</span>
                 <span class="entry__sep" aria-hidden="true">/</span>
@@ -73,12 +74,12 @@ const linkLabels: Record<string, string> = {
               <img class="detail-cover" src={coverUrl(project.coverImage)} alt={project.coverAlt || `${project.title} cover image`} />
             </section>
             {project.abstract && (
-              <section class="detail-panel">
+              <section class="detail-panel" data-reveal>
                 <h3>{dict.detail.abstract}</h3>
                 <p>{project.abstract}</p>
               </section>
             )}
-            <section class="detail-panel markdown-panel">
+            <section class="detail-panel markdown-panel" data-reveal>
               {Content ? (
                 <div class="markdown-body">
                   <Content />
@@ -87,7 +88,7 @@ const linkLabels: Record<string, string> = {
                 <p class="empty-state">{dict.detail.markdownMissing}</p>
               )}
             </section>
-            <section class="detail-panel">
+            <section class="detail-panel" data-reveal>
               <h3>{dict.detail.links}</h3>
               <div class="button-row">
                 {links.map(([type, href]) => (

@@ -31,7 +31,7 @@ const count = (n: number) =>
 >
   <div class="notes-grid">
     {notes.map((note) => (
-      <a class="note-card" href={note.href} target="_blank" rel="noopener noreferrer">
+      <a class="note-card" href={note.href} target="_blank" rel="noopener noreferrer" data-reveal>
         <h3>{dict.notes[note.titleKey]}</h3>
         <p>{dict.notes[note.descriptionKey]}</p>
         <span>{dict.notes.openNotion}</span>
@@ -47,7 +47,7 @@ const count = (n: number) =>
   description={dict.publications.description}
   count={count(items.length)}
 >
-  <ol class="publication-list">
+  <ol class="publication-list" data-reveal>
     {items.length === 0 && <li class="empty-state">{dict.publications.empty}</li>}
     {items.map((item) => (
       <li>

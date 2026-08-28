@@ -30,6 +30,7 @@ const personalCount = getProjectsByCategory("personal").length;
   description={dict.hero.intro}
 >
   <script src="../scripts/lang-redirect.ts"></script>
+  <script src="../scripts/reveal.ts"></script>
   <div class="bg-layer" aria-hidden="true">
     <div class="bg-layer__mark"></div>
   </div>
@@ -38,7 +39,7 @@ const personalCount = getProjectsByCategory("personal").length;
     <div class="research-shell">
       <ResearchNav lang={lang} dict={dict} />
 
-      <section class="hero" id="home" aria-labelledby="research-title">
+      <section class="hero" id="home" aria-labelledby="research-title" data-reveal>
         <p class="hero__eyebrow label">{dict.site.brand} / {dict.site.title}</p>
         <div class="hero__mark" aria-hidden="true"></div>
         <h1 id="research-title">{dict.hero.title}</h1>
@@ -69,11 +70,11 @@ const personalCount = getProjectsByCategory("personal").length;
 
       <SectionBlock id="bio" index={1} title={dict.bio.title} description={dict.bio.description}>
         <div class="bio">
-          <div class="bio__prose">
+          <div class="bio__prose" data-reveal>
             <p>{dict.bio.paragraph1}</p>
             <p>{dict.bio.paragraph2}</p>
           </div>
-          <dl class="facts">
+          <dl class="facts" data-reveal>
             <div class="fact">
               <dt>{dict.bio.now}</dt>
               <dd>{dict.bio.nowValue}</dd>
@@ -113,7 +114,7 @@ const personalCount = getProjectsByCategory("personal").length;
       <NotesAndPublications lang={lang} dict={dict} notesIndex={4} publicationsIndex={5} />
 
       <SectionBlock id="contact" index={6} title={dict.contact.title} description={dict.contact.description}>
-        <div class="contact-strip">
+        <div class="contact-strip" data-reveal>
           <a class="contact-strip__mail" href={`mailto:${email}`}>{email}</a>
           <div class="contact-links">
             <a class="link-button link-button--primary" href={cv} target="_blank" rel="noopener noreferrer" download>{dict.snapshot.downloadCV}</a>

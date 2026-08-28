@@ -33,7 +33,7 @@ const nextText = next ? getWorkText(lang, next.slug) : undefined;
       {designText(lang, "backToSection", { label: meta.label })}
     </a>
 
-    <section class="detail-hero">
+    <section class="detail-hero" data-reveal>
       <p class="meta-row">
         <span>{work.date}</span>
         <span class="meta-row__sep" aria-hidden="true">/</span>
@@ -51,7 +51,7 @@ const nextText = next ? getWorkText(lang, next.slug) : undefined;
       </ul>
     </section>
 
-    <dl class="detail-strip">
+    <dl class="detail-strip" data-reveal>
       <div>
         <dt>{statLabel(lang, "date")}</dt>
         <dd>{work.date}</dd>
@@ -64,7 +64,7 @@ const nextText = next ? getWorkText(lang, next.slug) : undefined;
       ))}
     </dl>
 
-    <section class="detail-panel">
+    <section class="detail-panel" data-reveal>
       <h2>{dict.ui.bodyTitle}</h2>
       {text.body.length > 0 ? (
         text.body.map((paragraph) => <p>{paragraph}</p>)
@@ -89,7 +89,7 @@ const nextText = next ? getWorkText(lang, next.slug) : undefined;
 
     <div class="image-stack">
       {work.images.map((src, index) => (
-        <figure class="image-figure">
+        <figure class="image-figure" data-reveal>
           <img
             src={src}
             alt={`${text.title} — ${pad(index + 1)}`}
@@ -101,7 +101,7 @@ const nextText = next ? getWorkText(lang, next.slug) : undefined;
       ))}
     </div>
 
-    <div class="detail-nav">
+    <div class="detail-nav" data-reveal>
       {prev ? (
         <a class="link-button" href={workHref(lang, prev.section, prev.slug)}>← {prevText?.title}</a>
       ) : (

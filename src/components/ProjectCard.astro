@@ -16,7 +16,7 @@ const links = project.links ?? {};
 const hasLinks = Boolean(links.github || links.website || links.arxiv || links.publication);
 const label = String(index).padStart(2, "0");
 ---
-<article class="entry">
+<article class="entry" data-reveal>
   <div class="entry__index" aria-hidden="true">{label}</div>
   <div class="entry__main">
     <p class="entry__meta">

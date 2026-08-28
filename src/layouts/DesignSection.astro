@@ -24,14 +24,14 @@ const count = (n: number) => designText(lang, "worksCount", { count: String(n) }
   description={meta.intro}
   active={section}
 >
-  <section class="design-hero">
+  <section class="design-hero" data-reveal>
     <p class="design-hero__eyebrow label">{dict.ui.eyebrow} / {meta.index}</p>
     <div class="design-hero__mark" aria-hidden="true"></div>
     <h1>{meta.label}</h1>
     <p class="design-hero__intro">{meta.intro}</p>
   </section>
 
-  <div class="section-head">
+  <div class="section-head" data-reveal>
     <span class="section-head__index">{dict.ui.featuredIndex}</span>
     <h2>{dict.ui.featuredTitle}</h2>
     <span class="section-head__rule" aria-hidden="true"></span>
@@ -45,7 +45,7 @@ const count = (n: number) => designText(lang, "worksCount", { count: String(n) }
 
   {rest.length > 0 && (
     <>
-      <div class="section-head">
+      <div class="section-head" data-reveal>
         <span class="section-head__index">{dict.ui.moreIndex}</span>
         <h2>{dict.ui.moreTitle}</h2>
         <span class="section-head__rule" aria-hidden="true"></span>
@@ -59,7 +59,7 @@ const count = (n: number) => designText(lang, "worksCount", { count: String(n) }
     </>
   )}
 
-  <div class="detail-nav">
+  <div class="detail-nav" data-reveal>
     <a class="link-button" href={designHomeHref(lang)}>{dict.ui.backToHub}</a>
     {sectionIds
       .filter((id) => id !== section)

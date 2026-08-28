@@ -21,7 +21,7 @@ const overview = sectionIds.map((id) => {
 });
 ---
 <DesignLayout lang={lang} title={`Design | XDzZyq`} description={dict.ui.hubIntro}>
-  <section class="design-hero">
+  <section class="design-hero" data-reveal>
     <p class="design-hero__eyebrow label">{dict.ui.eyebrow}</p>
     <div class="design-hero__mark" aria-hidden="true"></div>
     <h1>{dict.ui.hubTitle}</h1>
@@ -30,7 +30,7 @@ const overview = sectionIds.map((id) => {
 
   <div class="section-grid">
     {overview.map((section) => (
-      <a class="section-card" href={sectionHref(lang, section.id)}>
+      <a class="section-card" href={sectionHref(lang, section.id)} data-reveal>
         <span class="section-card__index">
           {designText(lang, "worksCount", { count: String(section.count) })}
         </span>
@@ -46,7 +46,7 @@ const overview = sectionIds.map((id) => {
     ))}
   </div>
 
-  <section class="detail-panel" id="about">
+  <section class="detail-panel" id="about" data-reveal>
     <h2>{dict.ui.aboutTitle}</h2>
     <p>{dict.ui.aboutBody}</p>
     <div class="button-row">

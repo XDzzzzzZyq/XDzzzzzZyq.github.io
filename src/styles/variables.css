@@ -193,6 +193,14 @@
   --anim-arrow-fade-duration: 0.5;
   --anim-arrow-y-offset-multiplier: -0.2;
   --anim-timeline-overlap: -=90%;
+
+  /* Panel reveal: content panels fade up as they enter the viewport, so a long
+     page arrives progressively instead of in one dump. */
+  --anim-reveal-shift-multiplier: 0.4;
+  --anim-reveal-duration: 0.55;
+  --anim-reveal-stagger: 0.07;
+  --anim-reveal-ease: power2.out;
+  --anim-reveal-start: top 94%;
 }
 
 @media (max-width: 64em) {

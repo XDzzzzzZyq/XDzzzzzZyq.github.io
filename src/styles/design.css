@@ -46,6 +46,18 @@ body.design-page {
   backdrop-filter: var(--glass-blur);
 }
 
+/* Panels stay hidden until src/scripts/reveal.ts adopts the state as inline
+   styles (the gate class is set in the document head, before first paint). */
+html.reveal-pending [data-reveal] {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.reveal-pending [data-reveal] {
+    opacity: 1;
+  }
+}
+
 /* ============================================================
    Layer 2: drifting background marks
    ============================================================ */

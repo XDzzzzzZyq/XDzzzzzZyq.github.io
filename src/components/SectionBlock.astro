@@ -13,7 +13,7 @@ const label = String(index).padStart(2, "0");
 const headingId = `${id}-title`;
 ---
 <section class="section" id={id} aria-labelledby={headingId}>
-  <header class="section__head">
+  <header class="section__head" data-reveal>
     <span class="section__index">{label}</span>
     <h2 class="section__title" id={headingId}>{title}</h2>
     <span class="section__rule" aria-hidden="true"></span>

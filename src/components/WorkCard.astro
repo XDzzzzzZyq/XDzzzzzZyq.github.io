@@ -20,6 +20,7 @@ const showStat = variant !== "wall" && stat;
 <a
   class={`work-card${variant === "hero" ? " work-card--hero" : ""}`}
   href={workHref(lang, work.section, work.slug)}
+  data-reveal
 >
   <div class="work-card__frame">
     <img

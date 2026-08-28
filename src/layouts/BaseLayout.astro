@@ -24,6 +24,16 @@ const {
     <meta name="description" content={description} />
     <title>{title}</title>
     <link rel="icon" href="/res/elem/sun.svg" type="image/svg+xml" />
+    <script is:inline>
+      // Hold reveal panels hidden before first paint; src/scripts/reveal.ts
+      // takes the hidden state over as inline styles as soon as it runs. The
+      // timeout is a safety net so content can never stay invisible if that
+      // module fails to load.
+      document.documentElement.classList.add("reveal-pending");
+      setTimeout(function () {
+        document.documentElement.classList.remove("reveal-pending");
+      }, 2000);
+    </script>
   </head>
   <body class={bodyClass}>
     <DebugOverlay />

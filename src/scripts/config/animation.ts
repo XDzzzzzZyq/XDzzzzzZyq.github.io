@@ -28,6 +28,13 @@ export const config = {
   get gridPx() {
     return readGridPx();
   },
+  reveal: {
+    shiftMultiplier: readNumber("--anim-reveal-shift-multiplier", 0.4),
+    duration: readNumber("--anim-reveal-duration", 0.55),
+    stagger: readNumber("--anim-reveal-stagger", 0.07),
+    ease: readUnit("--anim-reveal-ease", "power2.out"),
+    start: readUnit("--anim-reveal-start", "top 94%"),
+  },
   hero: {
     sunScaleStart: readNumber("--anim-sun-scale-start", 5),
     sunScaleEnd: readNumber("--anim-sun-scale-end", 1),
