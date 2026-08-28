@@ -21,6 +21,9 @@ body.research-page {
 
   --gutter: var(--space-1);
   --shell: calc(var(--grid-size) * 34);
+  /* Detail pages use a narrower, centred column so the prose measure fills
+     its panels instead of leaving a dead gutter on the right. */
+  --detail-shell: calc(var(--grid-size) * 26);
   --label-size: 0.72rem;
   --label-tracking: 0.14em;
   --entry-index-col: var(--space-1);
@@ -953,6 +956,15 @@ body.research-page {
 
 .project-root {
   display: block;
+  width: min(var(--detail-shell), 100%);
+  margin-inline: auto;
+}
+
+/* Inside the detail column the panels already carry the measure, so prose
+   fills the panel width and both edges stay aligned. */
+.project-root .research-hero__intro,
+.project-root .detail-panel p {
+  max-width: none;
 }
 
 .back-link {
@@ -1088,10 +1100,11 @@ body.research-page {
 }
 
 .markdown-body {
-  max-width: 78ch;
+  max-width: none;
   color: var(--color-text);
   font-size: var(--text-body);
   line-height: 1.75;
+  overflow-wrap: break-word;
 }
 
 .markdown-body > *:first-child {
@@ -1112,6 +1125,7 @@ body.research-page {
   line-height: 1.2;
   letter-spacing: -0.02em;
   text-align: left;
+  text-wrap: balance;
 }
 
 .markdown-body h2 {
@@ -1136,6 +1150,7 @@ body.research-page {
 
 .markdown-body p {
   margin: 0 0 1em;
+  text-wrap: pretty;
 }
 
 .markdown-body a {
@@ -1419,6 +1434,7 @@ body.search-open {
 @media (max-width: 64em) {
   body.research-page {
     --shell: calc(var(--grid-size) * 32);
+    --detail-shell: 100%;
     --thumb-col: calc(var(--grid-size) * 5);
   }
 
