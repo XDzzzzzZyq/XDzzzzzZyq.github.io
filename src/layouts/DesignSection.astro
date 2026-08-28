@@ -17,6 +17,10 @@ const works = getWorksBySection(section);
 const featured = works.filter((work) => work.featured);
 const rest = works.filter((work) => !work.featured);
 const count = (n: number) => designText(lang, "worksCount", { count: String(n) });
+// Deal the remaining works across three columns in reading order. The wall is a
+// plain grid rather than a CSS multi-column block, so the columns are built
+// here; see the .work-wall comment in design.css for why.
+const wallColumns = [0, 1, 2].map((column) => rest.filter((_, index) => index % 3 === column));
 ---
 <DesignLayout
   lang={lang}
@@ -52,8 +56,12 @@ const count = (n: number) => designText(lang, "worksCount", { count: String(n) }
         <span class="section-head__count">{count(rest.length)}</span>
       </div>
       <div class="work-wall">
-        {rest.map((work) => (
-          <WorkCard lang={lang} work={work} variant="wall" />
+        {wallColumns.map((column) => (
+          <div class="work-wall__col">
+            {column.map((work) => (
+              <WorkCard lang={lang} work={work} variant="wall" />
+            ))}
+          </div>
         ))}
       </div>
     </>

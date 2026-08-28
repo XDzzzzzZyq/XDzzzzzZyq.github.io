@@ -566,10 +566,23 @@ html.reveal-pending [data-reveal] {
   grid-column: 1 / -1;
 }
 
+/* The wall is a grid of column tracks that DesignSection fills itself, not a
+   CSS multi-column block. Safari stops painting a multi-column fragment while a
+   composited animation runs anywhere inside it, so every hover blanked the
+   cards sitting in the later columns; ordinary grid children have no such
+   fragments and keep their hover motion. */
 .work-wall {
-  columns: 3 calc(var(--grid-size) * 9);
-  column-gap: var(--space-1);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: var(--space-1);
   margin: var(--space-1) 0 var(--space-2);
+}
+
+.work-wall__col {
+  display: grid;
+  align-content: start;
+  gap: var(--space-1);
 }
 
 .work-card {
@@ -579,11 +592,6 @@ html.reveal-pending [data-reveal] {
   color: var(--color-text);
   text-decoration: none;
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
-}
-
-.work-wall .work-card {
-  break-inside: avoid;
-  margin-bottom: var(--space-1);
 }
 
 .work-card:hover,
@@ -1081,8 +1089,13 @@ body.lightbox-open {
     --detail-shell: 100%;
   }
 
+  /* Two tracks: the hand-dealt columns flatten so the cards reflow evenly. */
   .work-wall {
-    columns: 2 calc(var(--grid-size) * 10);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .work-wall__col {
+    display: contents;
   }
 }
 
@@ -1117,7 +1130,7 @@ body.lightbox-open {
   }
 
   .work-wall {
-    columns: 1;
+    grid-template-columns: 1fr;
   }
 
   .detail-strip {
