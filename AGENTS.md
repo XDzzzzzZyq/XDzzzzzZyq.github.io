@@ -65,6 +65,27 @@ The `/research/` area is a small content app:
 - **Translate skill.** `.opencode/skills/translate/SKILL.md` keeps EN↔CN
   dictionaries and markdown bodies in sync.
 
+## Design Page Systems
+
+The `/design/` area is a portfolio that opens with its own intro:
+
+- **i18n.** Dictionaries live in `src/content/design/{cn,en}.json` with helpers
+  in `src/lib/design.ts`. Design is Chinese-first — `/design/` is CN and
+  `/design/en/` is EN, the opposite of `/research/`.
+- **Work data.** `src/data/works.ts` carries every work: section, slug, cover,
+  images and an optional `video` (`bvid` + `cid`) that renders a Bilibili
+  player. Images are hosted locally under `public/design/assets/`.
+- **Cover intro.** `/design/` opens on a full-screen cover (`.design-splash`)
+  holding the same mark as the home page, which collapses into a band while the
+  nav, the section title and the background marks arrive.
+  `src/scripts/design-intro.ts` runs it; every duration, curve and offset is a
+  token on `body.design-page`.
+- **Image zoom.** `src/scripts/lightbox.ts` expands any `[data-lightbox]` image
+  over a dimmed overlay.
+- **No route home.** Nothing under `/design/` links to `/` or `/research/` —
+  the last nav entry is the About panel. Keep it that way: the research area is
+  not meant to be reachable from the portfolio.
+
 ## Local Preview
 
 ```bash
