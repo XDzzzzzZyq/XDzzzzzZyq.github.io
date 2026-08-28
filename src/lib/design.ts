@@ -76,3 +76,18 @@ export const designText = (
   key: keyof typeof en.ui,
   values?: Record<string, string>
 ): string => interpolate(String(getDesignDict(lang).ui[key]), values);
+
+/**
+ * Point an asset path at one of the downscaled copies that
+ * `scripts/thumbs.mjs` writes beside the originals.
+ *
+ *   sm  wall cards and feature bands — 640px, animation frozen to frame one
+ *   md  the image stack on a work detail page — 1440px, animation kept
+ *
+ * Anything outside /design/assets/ is returned untouched, and the original
+ * path stays the one the lightbox opens.
+ */
+export const derived = (src: string, size: "sm" | "md"): string =>
+  src.startsWith("/design/assets/")
+    ? src.replace("/design/assets/", `/design/derived/${size}/`).replace(/\.(png|jpe?g)$/i, ".webp")
+    : src;

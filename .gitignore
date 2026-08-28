@@ -5,4 +5,6 @@ dep/
 node_modules/
 dist/
 .astro/
+# Downscaled copies of public/design/assets/, rebuilt by scripts/thumbs.mjs.
+public/design/derived/
 .DS_Store

@@ -3,7 +3,7 @@ import DesignLayout from "./DesignLayout.astro";
 import HeroTitle from "../components/HeroTitle.astro";
 import { getWorksBySection, sectionIds } from "../data/works";
 import type { Lang } from "../lib/i18n";
-import { designText, getDesignDict, sectionHref } from "../lib/design";
+import { derived, designText, getDesignDict, sectionHref } from "../lib/design";
 
 type Props = {
   lang: Lang;
@@ -43,7 +43,7 @@ const overview = sectionIds.map((id) => {
         <p>{section.intro}</p>
         <div class="section-card__strip" aria-hidden="true">
           {section.strip.map((work) => (
-            <img src={work.cover} alt="" loading="lazy" decoding="async" />
+            <img src={derived(work.cover, "sm")} alt="" loading="lazy" decoding="async" />
           ))}
         </div>
         <span class="section-card__enter">{dict.ui.enter}</span>

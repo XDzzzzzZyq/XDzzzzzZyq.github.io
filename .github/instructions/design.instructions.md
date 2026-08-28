@@ -26,10 +26,19 @@ Content structure
 - Work metadata lives in src/data/works.ts, including an optional video
   ({ bvid, cid }) that renders a Bilibili player iframe.
 - Work images are hosted locally under public/design/assets/, not hotlinked.
+- Only the originals are committed. scripts/thumbs.mjs (run by predev and
+  prebuild) writes downscaled copies to public/design/derived/{sm,md}/, which is
+  gitignored. Never point a page at an original directly — call derived(src,
+  "sm") for cards and derived(src, "md") for the detail stack. The lightbox is
+  the one place that keeps the original.
 - Displayed images opt into the zoom overlay through data-lightbox; the overlay
   itself lives in src/layouts/DesignLayout.astro and src/scripts/lightbox.ts.
 
 Known traps
+- Animated webp is the heaviest thing in the portfolio and resizing barely dents
+  it — the frame count is the cost. thumbs.mjs freezes it to frame one for the
+  `sm` cards and keeps the animation only at `md`, so motion plays on a detail
+  page but never on a wall of twenty cards.
 - Do not build the work wall with CSS multi-column. Safari stops repainting
   column fragments while a composited animation runs inside the container, so
   cards vanish during hover. The wall is a real grid with hand-dealt columns

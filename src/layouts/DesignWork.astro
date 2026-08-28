@@ -2,7 +2,7 @@
 import DesignLayout from "./DesignLayout.astro";
 import { getWork, getWorksBySection } from "../data/works";
 import type { Lang } from "../lib/i18n";
-import { designText, getDesignDict, getSectionText, getWorkText, sectionHref, statLabel, workHref } from "../lib/design";
+import { derived, designText, getDesignDict, getSectionText, getWorkText, sectionHref, statLabel, workHref } from "../lib/design";
 
 type Props = {
   lang: Lang;
@@ -121,7 +121,7 @@ const playerSrc = work.video
               aria-label={dict.ui.zoomImage}
             >
               <img
-                src={src}
+                src={derived(src, "md")}
                 alt={`${text.title} — ${pad(index + 1)}`}
                 loading={index === 0 ? "eager" : "lazy"}
                 decoding="async"
