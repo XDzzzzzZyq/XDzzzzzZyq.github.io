@@ -57,21 +57,21 @@
 
   --cir1-size-multiplier: 2;
   --cir2-size-multiplier: 1;
-  --arc-svg-size-multiplier: 2.9;
+  --arc-svg-size-multiplier: 3;
   --arc-path-size-multiplier: 6;
 
   --cir1-offset-x-multiplier: -1.5;
-  --cir1-offset-y-multiplier: 0.12;
-  --cir2-offset-x-multiplier: 0.35;
+  --cir1-offset-y-multiplier: 0.0;
+  --cir2-offset-x-multiplier: 0.4;
   --cir2-offset-y-multiplier: 1.2;
 
-  --arc-stroke-width-multiplier: 0.7;
-  --arc-transform-x-multiplier: 1.8;
-  --arc-transform-y-multiplier: 1.24;
+  --arc-stroke-width-multiplier: 1.0;
+  --arc-transform-x-multiplier: 1.9;
+  --arc-transform-y-multiplier: 1.0;
   --arc-rotate: 90deg;
 
-  --arrow-width-multiplier: 0.5;
-  --arrow-offset-x-multiplier: 1.6;
+  --arrow-width-multiplier: 0.75;
+  --arrow-offset-x-multiplier: 1.3;
   --arrow-offset-y-multiplier: -0.5;
 
   /* Visual layer z-index system
@@ -191,7 +191,7 @@
   --anim-split-y-random: random(-100, 100);
   --anim-split-stagger-amount: 0.5;
   --anim-arrow-fade-duration: 0.5;
-  --anim-arrow-y-offset-multiplier: 0.2;
+  --anim-arrow-y-offset-multiplier: -0.2;
   --anim-timeline-overlap: -=90%;
 }
 

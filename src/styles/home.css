@@ -81,6 +81,17 @@
   transform: translate(-50%, -50%) translate(calc(var(--grid-size) * var(--xdzzyq-offset-x-multiplier)), calc(var(--grid-size) * var(--xdzzyq-offset-y-multiplier)));
 }
 
+/* sun.svg and arrow.svg are square (1600x1600 / viewBox 0 0 100 100). Pinning
+   the ratio gives them a layout height before the file loads, so the
+   translate(-50%, -50%) centring is correct on the first frame — GSAP reads
+   the computed matrix at init and would otherwise freeze a half-height
+   offset on whichever page loads the asset uncached. */
+.sun,
+.arrow {
+  aspect-ratio: 1;
+  height: auto;
+}
+
 .sun {
   transform-style: preserve-3d;
   align-items: center;
