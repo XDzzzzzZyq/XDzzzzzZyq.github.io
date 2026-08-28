@@ -27,6 +27,32 @@ body.design-page {
   --panel-radius: var(--radius-md);
   --panel-pad: var(--space-1);
 
+  /* Hub intro (scripts/design-intro.ts): how long the cover holds while the
+     mark plays, how long it takes to slide up, and how tall it ends up. */
+  --anim-design-intro-hold: 1.0;
+  --anim-design-intro-duration: 1.0;
+  --anim-design-intro-ease: power3.inOut;
+  --anim-design-intro-handoff: 0.45;
+  --design-splash-collapsed-multiplier: 12;
+
+  /* The mark's pieces are laid out around a point left of and below their box
+     centre (the sun sits 2 grid left), so the box is nudged to put the whole
+     composition in the middle of the cover. */
+  --design-splash-shift-x: 0.0;
+  --design-splash-shift-y: -0.3;
+
+  /* Body marks, design only (scripts/bg-suns.ts). The turn stays in the screen
+     plane, the marks arrive one after another and only show once their own turn
+     starts, the entrance and the scrubbed turn add up, and the scrub runs the
+     whole time a mark is on screen instead of starting a quarter down. */
+  --anim-bg-sun-scale: 2;
+  --anim-bg-sun-rotate-y: yes;
+  --anim-bg-sun-rotate-additive: on;
+  --anim-bg-sun-stagger: 0.1;
+  --anim-bg-sun-appear: with-rotation;
+  --anim-bg-sun-scroll-start: top bottom;
+  --anim-bg-sun-scroll-end: bottom top;
+
   min-height: 100vh;
   height: auto;
   background: var(--color-bg);
@@ -331,6 +357,61 @@ html.reveal-pending [data-reveal] {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-1-2);
+}
+
+/* ============================================================
+   Hub splash — the XDzZyq mark on a screen of its own
+   ============================================================ */
+
+/* The hub opens with the same mark as the home hero, centred on a full screen.
+   scripts/design-intro.ts lets the mark play, then shrinks this section to
+   .is-collapsed, which slides the mark up and leads into the section title.
+
+   HeroTitle is reused untouched, which means home.css rides along. That
+   stylesheet positions .title for the home page and styles `footer` by tag, so
+   both are re-anchored here rather than in the shared file. */
+.design-splash {
+  display: grid;
+  place-items: center;
+  height: calc(100vh - var(--space-3));
+  min-height: calc(var(--grid-size) * 10);
+  overflow: hidden;
+}
+
+.design-splash.is-collapsed {
+  height: calc(var(--grid-size) * var(--design-splash-collapsed-multiplier));
+}
+
+.design-splash .title {
+  top: auto;
+  left: auto;
+  width: 100%;
+  transform: translate(
+    calc(var(--grid-size) * var(--design-splash-shift-x)),
+    calc(var(--grid-size) * var(--design-splash-shift-y))
+  );
+  pointer-events: none;
+}
+
+/* The nav and the background marks wait until the mark has played;
+   design-intro.ts adopts the state as inline styles and drops the gate class
+   the head script sets. */
+html.design-intro-pending .design-nav,
+html.design-intro-pending .bg-suns {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.design-intro-pending .design-nav,
+  html.design-intro-pending .bg-suns {
+    opacity: 1;
+  }
+}
+
+body.design-page .site-footer {
+  left: auto;
+  transform: none;
+  text-align: left;
 }
 
 /* ============================================================

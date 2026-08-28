@@ -21,9 +21,19 @@ const suns = [
   { top: 72, left: 80, size: 10, opacity: 1, delay: 0.15 },
   { top: 90, left: 16, size: 9, opacity: 1, delay: 0.1 },
 ];
+
+type Props = {
+  /** Drop this many marks off the top, for pages that open with their own mark. */
+  omitTop?: number;
+  /** Wait for a "bg-suns:release" event before the marks play their intro. */
+  hold?: boolean;
+};
+
+const { omitTop = 0, hold = false } = Astro.props;
+const marks = suns.slice(omitTop);
 ---
-<div class="bg-suns" aria-hidden="true">
-  {suns.map((sun) => (
+<div class="bg-suns" data-bg-suns-hold={hold ? "" : undefined} aria-hidden="true">
+  {marks.map((sun) => (
     <img
       class="bg-sun"
       data-bg-sun

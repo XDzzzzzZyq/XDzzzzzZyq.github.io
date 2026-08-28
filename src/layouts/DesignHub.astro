@@ -1,5 +1,6 @@
 ---
 import DesignLayout from "./DesignLayout.astro";
+import HeroTitle from "../components/HeroTitle.astro";
 import { getWorksBySection, sectionIds } from "../data/works";
 import type { Lang } from "../lib/i18n";
 import { designText, getDesignDict, sectionHref } from "../lib/design";
@@ -20,7 +21,11 @@ const overview = sectionIds.map((id) => {
   };
 });
 ---
-<DesignLayout lang={lang} title={`Design | XDzZyq`} description={dict.ui.hubIntro}>
+<DesignLayout lang={lang} title={`Design | XDzZyq`} description={dict.ui.hubIntro} intro>
+  <section class="design-splash" data-design-splash>
+    <HeroTitle />
+  </section>
+
   <section class="design-hero" data-reveal>
     <p class="design-hero__eyebrow label">{dict.ui.eyebrow}</p>
     <div class="design-hero__mark" aria-hidden="true"></div>
@@ -63,7 +68,6 @@ const overview = sectionIds.map((id) => {
     <div class="button-row">
       <a class="link-button link-button--primary" href="https://space.bilibili.com/302469604" target="_blank" rel="noopener noreferrer">Bilibili ↗</a>
       <a class="link-button" href="https://github.com/XDzzzzzZyq" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-      <a class="link-button" href="/">{dict.ui.home}</a>
     </div>
   </section>
 </DesignLayout>

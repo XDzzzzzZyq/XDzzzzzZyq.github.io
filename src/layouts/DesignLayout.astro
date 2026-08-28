@@ -13,20 +13,31 @@ type Props = {
   description: string;
   /** Section id used to highlight the nav entry. */
   active?: WorkSection;
+  /** Hub only: hold the nav back until the logo intro has played. */
+  intro?: boolean;
 };
 
-const { lang, title, description, active } = Astro.props;
+const { lang, title, description, active, intro = false } = Astro.props;
 const dict = getDesignDict(lang);
 ---
 <BaseLayout title={title} lang={htmlLang(lang)} bodyClass="design-page" description={description}>
+  {intro && (
+    <script is:inline>
+      document.documentElement.classList.add("design-intro-pending");
+      setTimeout(function () {
+        document.documentElement.classList.remove("design-intro-pending");
+      }, 4000);
+    </script>
+  )}
   <script src="../scripts/lang-redirect.ts"></script>
   <script src="../scripts/reveal.ts"></script>
   <script src="../scripts/lightbox.ts"></script>
+  <script src="../scripts/design-intro.ts"></script>
   <div class="bg-layer" aria-hidden="true">
     <div class="bg-layer__mark"></div>
   </div>
   <main class="design-main">
-    <BackgroundSuns />
+    <BackgroundSuns omitTop={2} hold={intro} />
     <div class="design-shell">
       <DesignNav lang={lang} active={active} />
       <slot />
