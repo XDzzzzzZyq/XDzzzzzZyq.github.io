@@ -41,7 +41,7 @@
     },
     "graphic": {
       "label": "Graphic",
-      "intro": "Still series: maths diagrams, daydream logs, scene studies and layout practice."
+      "intro": "Still series: maths diagrams, daydreaming, scene studies and layout practice."
     },
     "tools": {
       "label": "Tools",
@@ -391,7 +391,7 @@
       }
     },
     "daydream-series": {
-      "title": "Daydream Log",
+      "title": "Daydreaming",
       "subtitle": "Imagined scenes, named",
       "summary": "A year of daydreams, recorded and given deliberately impressive names.",
       "tags": [
