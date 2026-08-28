@@ -847,7 +847,7 @@ html.reveal-pending [data-reveal] {
 .about-body {
   display: flex;
   align-items: center;
-  gap: var(--space-1-2);
+  gap: var(--space-1);
   margin-bottom: var(--space-1);
 }
 
