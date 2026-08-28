@@ -194,6 +194,24 @@
   --anim-arrow-y-offset-multiplier: -0.2;
   --anim-timeline-overlap: -=90%;
 
+  /* Home intro: the mark rises into its resting place and the two selector cards
+     follow it up on the same curve. The hold cuts into the tail of the mark's own
+     timeline above, and the cards start before the mark has settled, so the three
+     moves read as one gesture rather than a queue.
+
+     The curve needs a real start: an `out` ease leaves at full speed, so the
+     first frames of the move never read as motion. This one is a slow start, a
+     quick middle and a settle — cubic-bezier(0.42, 0, 0.16, 1). A value starting
+     with M is parsed as a CustomEase path, so the curve is edited here; a name
+     like power2.inOut still works. */
+  --anim-home-intro-hold: 1.0;
+  --anim-home-intro-duration: 1.55;
+  --anim-home-intro-ease: M0,0 C0.42,0 0.16,1 1,1;
+  --anim-home-intro-rise-multiplier: 1.5;
+  --anim-home-intro-selector-rise-multiplier: 0.9;
+  /* Fraction of the duration the cards wait before starting. */
+  --anim-home-intro-selector-offset: 0.3;
+
   /* Panel reveal: content panels fade up as they enter the viewport, so a long
      page arrives progressively instead of in one dump. */
   --anim-reveal-shift-multiplier: 0.4;

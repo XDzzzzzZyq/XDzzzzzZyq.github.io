@@ -14,16 +14,48 @@
   left: var(--title-left);
   width: 100%;
   height: calc(var(--grid-size) * var(--title-height-multiplier));
-  transform: translate(var(--title-translate-x), var(--title-translate-y));
+  transform: translate(var(--title-translate-x), var(--title-translate-y)) translateY(var(--home-intro-rise, 0px));
   z-index: var(--layer-bg-anim);
 }
 
 .selector {
   display: flex;
   gap: calc(var(--grid-size) * var(--selector-gap-multiplier));
-  transform: translate(-50%, -50%) translate(0, calc(var(--grid-size) * var(--selector-offset-y-multiplier)));
+  transform: translate(-50%, -50%) translate(0, calc(var(--grid-size) * var(--selector-offset-y-multiplier))) translateY(var(--home-intro-selector-rise, 0px));
   pointer-events: auto;
   z-index: var(--layer-content);
+}
+
+/* The mark starts below its resting place and the cards start lower still and out
+   of sight; home-intro.ts adopts both as inline styles and drops the gate class
+   the head script sets. The rise is a variable rather than a GSAP `y` tween
+   because the resting positions are percentage translates, and the fade sits on
+   the cards rather than on .selector so their backdrop-filter survives it — see
+   home-intro.ts for both. */
+html.home-intro-pending .title {
+  --home-intro-rise: calc(var(--grid-size) * var(--anim-home-intro-rise-multiplier));
+}
+
+html.home-intro-pending .selector {
+  --home-intro-selector-rise: calc(var(--grid-size) * var(--anim-home-intro-selector-rise-multiplier));
+}
+
+html.home-intro-pending .selector-card {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.home-intro-pending .title {
+    --home-intro-rise: 0px;
+  }
+
+  html.home-intro-pending .selector {
+    --home-intro-selector-rise: 0px;
+  }
+
+  html.home-intro-pending .selector-card {
+    opacity: 1;
+  }
 }
 
 .selector-card {

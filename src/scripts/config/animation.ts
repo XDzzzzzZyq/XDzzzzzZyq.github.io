@@ -35,6 +35,14 @@ export const config = {
     ease: readUnit("--anim-reveal-ease", "power2.out"),
     start: readUnit("--anim-reveal-start", "top 94%"),
   },
+  homeIntro: {
+    hold: readNumber("--anim-home-intro-hold", 1.4),
+    duration: readNumber("--anim-home-intro-duration", 0.55),
+    ease: readUnit("--anim-home-intro-ease", "power2.inOut"),
+    riseMultiplier: readNumber("--anim-home-intro-rise-multiplier", 1.2),
+    selectorRiseMultiplier: readNumber("--anim-home-intro-selector-rise-multiplier", 0.9),
+    selectorOffset: readNumber("--anim-home-intro-selector-offset", 0.3),
+  },
   hero: {
     sunScaleStart: readNumber("--anim-sun-scale-start", 5),
     sunScaleEnd: readNumber("--anim-sun-scale-end", 1),

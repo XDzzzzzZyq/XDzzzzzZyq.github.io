@@ -4,6 +4,10 @@ GSAP usage
 - Keep selectors stable; prefer ids or data- attributes.
 - Hero animation lives in `src/scripts/title.ts`; the design cover reuses it
   untouched through `src/components/HeroTitle.astro`.
+- The home page intro lives in `src/scripts/home-intro.ts`: the mark rises into
+  place while the two selector cards follow it up and fade in, all on
+  `--anim-home-intro-ease`. Nothing waits for the move before it — the hold cuts
+  into the tail of `title.ts` and the cards start before the mark settles.
 
 Parameters live in CSS
 - Durations, easings and offsets are CSS variables, read through
@@ -36,7 +40,7 @@ ScrollTrigger
   intro plays off screen.
 
 Reduced motion
-- `reveal.ts` and `design-intro.ts` skip to the final state when
+- `reveal.ts`, `design-intro.ts` and `home-intro.ts` skip to the final state when
   `prefers-reduced-motion` is set. `title.ts` and `bg-suns.ts` do not check it
   yet — worth fixing when either is next touched.
 - A script that skips its animation must still fire whatever event other scripts
@@ -48,3 +52,14 @@ Performance
 - Two tweens cannot share one transform component. To add a scrubbed rotation on
   top of an entrance rotation, tween plain numbers and write the sum to the
   element (see `startSun` in `src/scripts/bg-suns.ts`).
+- An element parked with a percentage translate must not be moved with a GSAP `x`
+  or `y` tween. GSAP takes the computed matrix over and bakes the percentage into
+  pixels, freezing the centring at the width measured on load. Tween a number and
+  write a CSS variable the transform already composes instead —
+  `--home-intro-rise` in `home-intro.ts` and `--splash-lift` in `design-intro.ts`
+  both do this.
+- Never fade a group that contains a `backdrop-filter`. An ancestor with opacity
+  below 1 becomes the backdrop root for its subtree, so the filter has nothing to
+  sample and the frosted glass only appears on the frame the fade ends. Fade the
+  frosted elements themselves — `home-intro.ts` fades `.selector-card`, not
+  `.selector`, for exactly this reason.

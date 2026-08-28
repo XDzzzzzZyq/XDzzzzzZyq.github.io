@@ -4,13 +4,23 @@ import HeroTitle from "../components/HeroTitle.astro";
 import "../styles/home.css";
 ---
 <BaseLayout title="XDzZyq | Home">
+  <script is:inline>
+    // Hold the selector cards out of sight and the mark off its resting place
+    // before first paint; src/scripts/home-intro.ts adopts both as inline styles
+    // as soon as it runs. The timeout is a safety net so the cards can never
+    // stay invisible if that module fails to load.
+    document.documentElement.classList.add("home-intro-pending");
+    setTimeout(function () {
+      document.documentElement.classList.remove("home-intro-pending");
+    }, 5000);
+  </script>
   <main class="main">
     <section id="home">
       <HeroTitle />
       <div class="unselectable centered selector">
         <a class="selector-card" href="/design/" aria-label="Enter design portfolio">
           <span class="selector-title">Design</span>
-          <span class="selector-sub">Art works, plugins, scripts</span>
+          <span class="selector-sub">Art works, tools, plugins</span>
         </a>
         <a class="selector-card" href="/research/" aria-label="Enter research portfolio">
           <span class="selector-title">Research</span>
@@ -22,4 +32,5 @@ import "../styles/home.css";
   <footer>
     <p class="centered">&copy; 2026 XDzZyq. All rights reserved.</p>
   </footer>
+  <script src="../scripts/home-intro.ts"></script>
 </BaseLayout>
