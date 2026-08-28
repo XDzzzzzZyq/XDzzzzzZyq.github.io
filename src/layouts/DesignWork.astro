@@ -21,6 +21,12 @@ const next = siblings[position + 1];
 const pad = (n: number) => String(n).padStart(2, "0");
 const prevText = prev ? getWorkText(lang, prev.slug) : undefined;
 const nextText = next ? getWorkText(lang, next.slug) : undefined;
+// Video works only carry their Bilibili cover as an image, and the player
+// already shows it — so the stack would just repeat the embed.
+const gallery = work.video && work.images.length === 1 ? [] : work.images;
+const playerSrc = work.video
+  ? `https://player.bilibili.com/player.html?isOutside=true&bvid=${work.video.bvid}&cid=${work.video.cid}&p=1&autoplay=0`
+  : undefined;
 ---
 <DesignLayout
   lang={lang}
@@ -64,6 +70,21 @@ const nextText = next ? getWorkText(lang, next.slug) : undefined;
       ))}
     </dl>
 
+    {playerSrc && (
+      <section class="video-panel" data-reveal>
+        <h2>{dict.ui.videoTitle}</h2>
+        <div class="video-frame">
+          <iframe
+            src={playerSrc}
+            title={text.title}
+            loading="lazy"
+            allowfullscreen="true"
+          ></iframe>
+        </div>
+        <noscript><p class="empty-state">{dict.ui.videoFallback}</p></noscript>
+      </section>
+    )}
+
     <section class="detail-panel" data-reveal>
       <h2>{dict.ui.bodyTitle}</h2>
       {text.body.length > 0 ? (
@@ -87,19 +108,30 @@ const nextText = next ? getWorkText(lang, next.slug) : undefined;
       )}
     </section>
 
-    <div class="image-stack">
-      {work.images.map((src, index) => (
-        <figure class="image-figure" data-reveal>
-          <img
-            src={src}
-            alt={`${text.title} — ${pad(index + 1)}`}
-            loading={index === 0 ? "eager" : "lazy"}
-            decoding="async"
-          />
-          <figcaption>{pad(index + 1)} / {pad(work.images.length)}</figcaption>
-        </figure>
-      ))}
-    </div>
+    {gallery.length > 0 && (
+      <div class="image-stack">
+        {gallery.map((src, index) => (
+          <figure class="image-figure" data-reveal>
+            <button
+              class="image-figure__zoom"
+              type="button"
+              data-lightbox
+              data-lightbox-src={src}
+              data-lightbox-caption={`${text.title} — ${pad(index + 1)} / ${pad(gallery.length)}`}
+              aria-label={dict.ui.zoomImage}
+            >
+              <img
+                src={src}
+                alt={`${text.title} — ${pad(index + 1)}`}
+                loading={index === 0 ? "eager" : "lazy"}
+                decoding="async"
+              />
+            </button>
+            <figcaption>{pad(index + 1)} / {pad(gallery.length)}</figcaption>
+          </figure>
+        ))}
+      </div>
+    )}
 
     <div class="detail-nav" data-reveal>
       {prev ? (

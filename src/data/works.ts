@@ -17,6 +17,12 @@ export type WorkLink = {
   href: string;
 };
 
+export type WorkVideo = {
+  /** Bilibili ids for the embedded player; only video works have them. */
+  bvid: string;
+  cid: string;
+};
+
 export type WorkItem = {
   slug: string;
   section: WorkSection;
@@ -27,6 +33,7 @@ export type WorkItem = {
   images: string[];
   stats: WorkStat[];
   links: WorkLink[];
+  video?: WorkVideo;
 };
 
 export const sectionIds: WorkSection[] = ["motion", "graphic", "tools"];
@@ -66,7 +73,11 @@ export const works: WorkItem[] = [
         key: "bilibili",
         href: "https://www.bilibili.com/video/BV1EiCYY6Ec4/"
       }
-    ]
+    ],
+    video: {
+      bvid: "BV1EiCYY6Ec4",
+      cid: "27528399254"
+    }
   },
   {
     slug: "irradiate",
@@ -92,7 +103,11 @@ export const works: WorkItem[] = [
         key: "bilibili",
         href: "https://www.bilibili.com/video/BV1PX4y1n7rv/"
       }
-    ]
+    ],
+    video: {
+      bvid: "BV1PX4y1n7rv",
+      cid: "1206706338"
+    }
   },
   {
     slug: "getcha",
@@ -118,7 +133,11 @@ export const works: WorkItem[] = [
         key: "bilibili",
         href: "https://www.bilibili.com/video/BV1bh411p79w/"
       }
-    ]
+    ],
+    video: {
+      bvid: "BV1bh411p79w",
+      cid: "411863353"
+    }
   },
   {
     slug: "power-still",
@@ -144,7 +163,11 @@ export const works: WorkItem[] = [
         key: "bilibili",
         href: "https://www.bilibili.com/video/BV1er4y1U7Mw/"
       }
-    ]
+    ],
+    video: {
+      bvid: "BV1er4y1U7Mw",
+      cid: "463019928"
+    }
   },
   {
     slug: "vivahappy-medley",
@@ -170,7 +193,11 @@ export const works: WorkItem[] = [
         key: "bilibili",
         href: "https://www.bilibili.com/video/BV1jjhrzrED9/"
       }
-    ]
+    ],
+    video: {
+      bvid: "BV1jjhrzrED9",
+      cid: "32062833539"
+    }
   },
   {
     slug: "exc2-cm2",
@@ -196,7 +223,11 @@ export const works: WorkItem[] = [
         key: "bilibili",
         href: "https://www.bilibili.com/video/BV1zV4y1m7SM/"
       }
-    ]
+    ],
+    video: {
+      bvid: "BV1zV4y1m7SM",
+      cid: "1164990416"
+    }
   },
   {
     slug: "exc2-cm2-p2",
@@ -222,7 +253,11 @@ export const works: WorkItem[] = [
         key: "bilibili",
         href: "https://www.bilibili.com/video/BV1jg4y1Q71m/"
       }
-    ]
+    ],
+    video: {
+      bvid: "BV1jg4y1Q71m",
+      cid: "1328935845"
+    }
   },
   {
     slug: "huawen-hupo",
@@ -248,7 +283,11 @@ export const works: WorkItem[] = [
         key: "bilibili",
         href: "https://www.bilibili.com/video/BV1KC4y1S7hz/"
       }
-    ]
+    ],
+    video: {
+      bvid: "BV1KC4y1S7hz",
+      cid: "1328947735"
+    }
   },
   {
     slug: "nebula-overlap",
@@ -274,7 +313,11 @@ export const works: WorkItem[] = [
         key: "bilibili",
         href: "https://www.bilibili.com/video/BV16N411M7da/"
       }
-    ]
+    ],
+    video: {
+      bvid: "BV16N411M7da",
+      cid: "1328955927"
+    }
   },
   {
     slug: "procedural-memphis",
@@ -300,7 +343,11 @@ export const works: WorkItem[] = [
         key: "bilibili",
         href: "https://www.bilibili.com/video/BV14Q4y187J8/"
       }
-    ]
+    ],
+    video: {
+      bvid: "BV14Q4y187J8",
+      cid: "1328924461"
+    }
   },
   {
     slug: "karasu-collab",
@@ -326,7 +373,11 @@ export const works: WorkItem[] = [
         key: "bilibili",
         href: "https://www.bilibili.com/video/BV1Rv2mY7EHE/"
       }
-    ]
+    ],
+    video: {
+      bvid: "BV1Rv2mY7EHE",
+      cid: "26240287897"
+    }
   },
   {
     slug: "diy-renderer",
@@ -378,7 +429,11 @@ export const works: WorkItem[] = [
         key: "tutorial",
         href: "https://learnopengl-cn.github.io/08%20Guest%20Articles/2022/03%20Area%20Lights/"
       }
-    ]
+    ],
+    video: {
+      bvid: "BV1MW4y127sQ",
+      cid: "779115204"
+    }
   },
   {
     slug: "text-island-block",

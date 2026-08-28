@@ -21,6 +21,7 @@ const dict = getDesignDict(lang);
 <BaseLayout title={title} lang={htmlLang(lang)} bodyClass="design-page" description={description}>
   <script src="../scripts/lang-redirect.ts"></script>
   <script src="../scripts/reveal.ts"></script>
+  <script src="../scripts/lightbox.ts"></script>
   <div class="bg-layer" aria-hidden="true">
     <div class="bg-layer__mark"></div>
   </div>
@@ -34,4 +35,14 @@ const dict = getDesignDict(lang);
   <footer class="site-footer">
     <p>{dict.ui.footer}</p>
   </footer>
+  {/* Zoom view for the work images; filled in by scripts/lightbox.ts on click. */}
+  <div class="lightbox" data-lightbox-root hidden>
+    <figure class="lightbox__figure">
+      <img data-lightbox-image src="" alt="" decoding="async" />
+      <figcaption data-lightbox-caption></figcaption>
+    </figure>
+    <button class="lightbox__close" type="button" aria-label={dict.ui.closeImage}>
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
 </BaseLayout>

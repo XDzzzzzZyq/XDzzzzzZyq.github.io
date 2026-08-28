@@ -201,6 +201,10 @@
   --anim-reveal-stagger: 0.07;
   --anim-reveal-ease: power2.out;
   --anim-reveal-start: top 94%;
+
+  /* Zoom view: seconds for the lightbox fade, read by both the stylesheet and
+     scripts/lightbox.ts (which waits this long before hiding the overlay). */
+  --anim-lightbox-duration: 0.24;
 }
 
 @media (max-width: 64em) {

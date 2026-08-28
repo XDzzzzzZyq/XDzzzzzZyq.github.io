@@ -38,6 +38,7 @@ body.design-page {
 .work-card,
 .detail-panel,
 .detail-strip,
+.video-panel,
 .image-figure {
   background: var(--glass);
   border: 1px solid var(--rule);
@@ -841,6 +842,38 @@ html.reveal-pending [data-reveal] {
   font-size: var(--text-small);
 }
 
+/* Bilibili player embed. The iframe keeps a 16:9 box so the panel height is
+   known before the player loads and nothing jumps on reveal. */
+.video-panel {
+  margin-bottom: var(--space-1);
+  padding: var(--panel-pad);
+}
+
+.video-panel h2 {
+  margin: 0 0 var(--space-1-2);
+  font-size: var(--label-size);
+  font-weight: 700;
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+}
+
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 /* Image stack: single column so tall pieces stay readable. */
 .image-stack {
   display: grid;
@@ -852,6 +885,23 @@ html.reveal-pending [data-reveal] {
   margin: 0;
   padding: var(--space-1-4);
   overflow: hidden;
+}
+
+/* The image itself is a button so it can open the zoom view from the keyboard
+   as well as the mouse. */
+.image-figure__zoom {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: none;
+  cursor: zoom-in;
+}
+
+.image-figure__zoom:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
 }
 
 .image-figure img {
@@ -896,6 +946,107 @@ html.reveal-pending [data-reveal] {
 .site-footer p {
   margin: 0;
   color: inherit;
+}
+
+/* ============================================================
+   Zoom view (lightbox)
+   ============================================================ */
+
+/* Near-fullscreen view of a single work image, dimming everything behind it.
+   Driven by src/scripts/lightbox.ts, which toggles .is-open and the `hidden`
+   attribute. */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: var(--layer-overlay);
+  display: grid;
+  place-items: center;
+  padding: var(--space-1);
+  background: color-mix(in srgb, var(--color-bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  cursor: zoom-out;
+  opacity: 0;
+  transition: opacity calc(var(--anim-lightbox-duration) * 1s) ease;
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox:not(.is-open) {
+  /* Still in the DOM while it fades out, so it must not swallow clicks. */
+  pointer-events: none;
+}
+
+.lightbox.is-open {
+  opacity: 1;
+}
+
+.lightbox__figure {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-4);
+  align-items: center;
+  margin: 0;
+  transform: scale(0.97);
+  transition: transform calc(var(--anim-lightbox-duration) * 1s) ease;
+}
+
+.lightbox.is-open .lightbox__figure {
+  transform: scale(1);
+}
+
+.lightbox__figure img {
+  display: block;
+  max-width: min(94vw, calc(var(--grid-size) * 44));
+  max-height: 86vh;
+  width: auto;
+  height: auto;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-soft);
+}
+
+.lightbox__figure figcaption {
+  color: var(--color-text-muted);
+  font-size: var(--label-size);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: var(--space-1);
+  right: var(--space-1);
+  display: grid;
+  place-items: center;
+  width: var(--space-1);
+  height: var(--space-1);
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-pill);
+  background: var(--glass);
+  color: var(--color-text);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  backdrop-filter: var(--glass-blur);
+}
+
+.lightbox__close:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lightbox,
+  .lightbox__figure {
+    transition: none;
+  }
 }
 
 /* ============================================================
