@@ -75,10 +75,10 @@ The `/design/` area is a portfolio that opens with its own intro:
 - **Work data.** `src/data/works.ts` carries every work: section, slug, cover,
   images and an optional `video` (`bvid` + `cid`) that renders a Bilibili
   player. Images are hosted locally under `public/design/assets/`.
-- **Derived images.** `scripts/thumbs.mjs`, wired to `predev` and `prebuild`,
-  downscales every asset into `public/design/derived/{sm,md}/`, which is
-  gitignored. Pages pick a size through `derived()` in `src/lib/design.ts`; only
-  the lightbox loads the original.
+- **Hub thumbnails.** `scripts/thumbs.mjs`, wired to `predev` and `prebuild`,
+  writes a 640px copy of each asset into `public/design/derived/sm/`, which is
+  gitignored. Only the hub's section strip uses it, through `derived()` in
+  `src/lib/design.ts`. Every other image on the site is the original.
 - **Cover intro.** `/design/` opens on a full-screen cover (`.design-splash`)
   holding the same mark as the home page, which collapses into a band while the
   nav, the section title and the background marks arrive.
