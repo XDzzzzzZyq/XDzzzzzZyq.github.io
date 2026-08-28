@@ -842,6 +842,26 @@ html.reveal-pending [data-reveal] {
   font-size: var(--text-small);
 }
 
+/* About: the Bilibili avatar sits beside the blurb and stacks on narrow screens. */
+.about-body {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-1-2);
+}
+
+.about-body p {
+  margin: 0;
+}
+
+.about-avatar {
+  flex: none;
+  width: calc(var(--grid-size) * 3);
+  height: calc(var(--grid-size) * 3);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-pill);
+  object-fit: cover;
+}
+
 /* Bilibili player embed. The iframe keeps a 16:9 box so the panel height is
    known before the player loads and nothing jumps on reveal. */
 .video-panel {
@@ -1111,5 +1131,9 @@ body.lightbox-open {
   .detail-strip > div:first-child {
     padding-top: 0;
     border-top: 0;
+  }
+
+  .about-body {
+    flex-direction: column;
   }
 }

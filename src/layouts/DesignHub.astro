@@ -48,7 +48,18 @@ const overview = sectionIds.map((id) => {
 
   <section class="detail-panel" id="about" data-reveal>
     <h2>{dict.ui.aboutTitle}</h2>
-    <p>{dict.ui.aboutBody}</p>
+    <div class="about-body">
+      <img
+        class="about-avatar"
+        src="/design/assets/avatar.webp"
+        alt={dict.ui.avatarAlt}
+        width="480"
+        height="480"
+        loading="lazy"
+        decoding="async"
+      />
+      <p>{dict.ui.aboutBody}</p>
+    </div>
     <div class="button-row">
       <a class="link-button link-button--primary" href="https://space.bilibili.com/302469604" target="_blank" rel="noopener noreferrer">Bilibili ↗</a>
       <a class="link-button" href="https://github.com/XDzzzzzZyq" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
