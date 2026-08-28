@@ -57,7 +57,7 @@
     "description": "Independent engineering, graphics, and tooling work outside of formal research."
   },
   "notes": {
-    "title": "Math Notes",
+    "title": "Notes",
     "description": "Published Notion notes stay prominent while the site keeps stable local pages and fallbacks.",
     "mathTitle": "Math Note",
     "mathDescription": "Open the published Math note directly in Notion.",

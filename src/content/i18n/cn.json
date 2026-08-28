@@ -57,7 +57,7 @@
     "description": "正式研究之外的独立工程、图形与工具项目。"
   },
   "notes": {
-    "title": "数学笔记",
+    "title": "笔记",
     "description": "已发布的 Notion 笔记保留外链，同时站点提供稳定本地页面作为回退。",
     "mathTitle": "数学笔记",
     "mathDescription": "在 Notion 中直接打开已发布的数学笔记。",
