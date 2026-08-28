@@ -597,20 +597,20 @@ export const works: WorkItem[] = [
     ]
   },
   {
-    slug: "daydream-series",
+    slug: "daydreaming",
     section: "graphic",
     date: "2022-10 — 2024-04",
     featured: true,
-    cover: "/design/assets/daydream-series/01.webp",
+    cover: "/design/assets/daydreaming/01.webp",
     images: [
-      "/design/assets/daydream-series/01.webp",
-      "/design/assets/daydream-series/02.webp",
-      "/design/assets/daydream-series/03.webp",
-      "/design/assets/daydream-series/04.webp",
-      "/design/assets/daydream-series/05.webp",
-      "/design/assets/daydream-series/06.webp",
-      "/design/assets/daydream-series/07.webp",
-      "/design/assets/daydream-series/08.webp"
+      "/design/assets/daydreaming/01.webp",
+      "/design/assets/daydreaming/02.webp",
+      "/design/assets/daydreaming/03.webp",
+      "/design/assets/daydreaming/04.webp",
+      "/design/assets/daydreaming/05.webp",
+      "/design/assets/daydreaming/06.webp",
+      "/design/assets/daydreaming/07.webp",
+      "/design/assets/daydreaming/08.webp"
     ],
     stats: [
       {
