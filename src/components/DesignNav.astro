@@ -25,7 +25,11 @@ const switchHref = designLangSwitchHref(lang, Astro.url.pathname);
       </a>
     ))}
     <a href={designHomeHref(lang, "#about")}>{dict.ui.aboutTitle}</a>
-    <a href="https://space.bilibili.com/302469604" target="_blank" rel="noopener noreferrer">Bilibili ↗</a>
+    {lang === "en" ? (
+      <a href="https://x.com/zyq30905782" target="_blank" rel="noopener noreferrer">X ↗</a>
+    ) : (
+      <a href="https://space.bilibili.com/302469604" target="_blank" rel="noopener noreferrer">Bilibili ↗</a>
+    )}
     <a class="lang-switch" href={switchHref} data-lang-switch>
       <span>{dict.ui.langLabel}</span>
       <span class="lang-switch__sep" aria-hidden="true">/</span>
