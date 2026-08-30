@@ -1,0 +1,250 @@
+{
+  "cn": {
+    "sirius-heart": {
+      "01": "MV 封面"
+    },
+    "irradiate": {
+      "01": "MG 封面"
+    },
+    "getcha": {
+      "01": "翻唱 PV 封面"
+    },
+    "power-still": {
+      "01": "静止系封面"
+    },
+    "vivahappy-medley": {
+      "01": "合作封面"
+    },
+    "exc2-cm2": {
+      "01": "EXC#2 CM 封面"
+    },
+    "exc2-cm2-p2": {
+      "01": "EXC#2 CM2 P2 封面"
+    },
+    "huawen-hupo": {
+      "01": "题字封面"
+    },
+    "nebula-overlap": {
+      "01": "合作封面"
+    },
+    "procedural-memphis": {
+      "01": "程序化孟菲斯封面"
+    },
+    "karasu-collab": {
+      "01": "合作 PV 封面"
+    },
+    "diy-renderer": {
+      "01": "场景搭建",
+      "02": "倾斜预览",
+      "03": "视图测试",
+      "04": "光照测试",
+      "05": "编辑器视角",
+      "06": "基准统计",
+      "07": "包围盒测试",
+      "08": "三角形集合",
+      "09": "Z 缓冲图解",
+      "10": "灰模测试",
+      "11": "叠层三角",
+      "12": "漫反射图解",
+      "13": "材质测试",
+      "14": "灰背景版本",
+      "15": "代码实现"
+    },
+    "text-island-block": {
+      "01": "日文标志 A",
+      "02": "日文标志 B",
+      "03": "英文标志",
+      "04": "深色版"
+    },
+    "rune-font": {
+      "01": "字体样张",
+      "02": "符文画布",
+      "03": "Blender 设定",
+      "04": "纹理测试"
+    },
+    "blender-patch": {
+      "01": "半径选项",
+      "02": "曲线雕刻预览"
+    },
+    "sdf-field-note": {
+      "01": "场景参考 A",
+      "02": "场景参考 B",
+      "03": "三线性插值图",
+      "04": "距离场可视化"
+    },
+    "area-light-note": {
+      "01": "暖色参考",
+      "02": "广角参考",
+      "03": "LTC 推导图",
+      "04": "预过滤示意"
+    },
+    "math-series": {
+      "01": "Itô 等距（浅色）",
+      "02": "Itô 等距（深色）",
+      "03": "Urysohn 引理（浅色）",
+      "04": "Urysohn 引理（深色）",
+      "05": "二次变差（绿色）",
+      "06": "二次变差（紫色）"
+    },
+    "daydreaming": {
+      "01": "浅睡",
+      "02": "秩序",
+      "03": "抽离",
+      "04": "坠落",
+      "05": "游行 A",
+      "06": "游行 B",
+      "07": "逃掉体育",
+      "08": "层流"
+    },
+    "control-scenes": {
+      "01": "粉彩庭院",
+      "02": "黄色楼梯间",
+      "03": "夜景立面",
+      "04": "日落中庭",
+      "05": "白色楼梯间",
+      "06": "绿色楼梯间",
+      "07": "棕调楼梯间",
+      "08": "蓝色楼梯间",
+      "09": "悬浮装置厅",
+      "10": "天花穹顶",
+      "11": "混凝土中庭",
+      "12": "管线楼梯间",
+      "13": "隧道下行",
+      "14": "门洞空间",
+      "15": "展位研究",
+      "16": "暗色展厅"
+    },
+    "typesetting-series": {
+      "01": "封面海报",
+      "02": "歌词版式 A",
+      "03": "歌词版式 B",
+      "04": "海报变体",
+      "05": "歌词页",
+      "06": "彩色封面"
+    }
+  },
+  "en": {
+    "sirius-heart": {
+      "01": "MV cover"
+    },
+    "irradiate": {
+      "01": "MG cover"
+    },
+    "getcha": {
+      "01": "Cover PV"
+    },
+    "power-still": {
+      "01": "Still-motion cover"
+    },
+    "vivahappy-medley": {
+      "01": "Collab cover"
+    },
+    "exc2-cm2": {
+      "01": "EXC#2 CM cover"
+    },
+    "exc2-cm2-p2": {
+      "01": "EXC#2 CM2 P2 cover"
+    },
+    "huawen-hupo": {
+      "01": "Lettering cover"
+    },
+    "nebula-overlap": {
+      "01": "Collab cover"
+    },
+    "procedural-memphis": {
+      "01": "Procedural Memphis cover"
+    },
+    "karasu-collab": {
+      "01": "Collab PV cover"
+    },
+    "diy-renderer": {
+      "01": "Scene blockout",
+      "02": "Tilted preview",
+      "03": "View test",
+      "04": "Lighting test",
+      "05": "Editor view",
+      "06": "Benchmark",
+      "07": "Bounding-box test",
+      "08": "Triangle set",
+      "09": "Z-buffer diagram",
+      "10": "Gray model test",
+      "11": "Layered triangles",
+      "12": "Lambertian diagram",
+      "13": "Material test",
+      "14": "Gray background version",
+      "15": "Implementation"
+    },
+    "text-island-block": {
+      "01": "Japanese logo A",
+      "02": "Japanese logo B",
+      "03": "English logo",
+      "04": "Dark variant"
+    },
+    "rune-font": {
+      "01": "Specimen poster",
+      "02": "Glyph canvas",
+      "03": "Blender setup",
+      "04": "Texture study"
+    },
+    "blender-patch": {
+      "01": "Radius option",
+      "02": "Curve sculpt preview"
+    },
+    "sdf-field-note": {
+      "01": "Scene reference A",
+      "02": "Scene reference B",
+      "03": "Trilinear interpolation diagram",
+      "04": "SDF visualization"
+    },
+    "area-light-note": {
+      "01": "Warm reference",
+      "02": "Wide reference",
+      "03": "LTC derivation diagram",
+      "04": "Prefiltering figure"
+    },
+    "math-series": {
+      "01": "Itô-isometry (light)",
+      "02": "Itô-isometry (dark)",
+      "03": "Urysohn's Lemma (light)",
+      "04": "Urysohn's Lemma (dark)",
+      "05": "Quadratic Variation (green)",
+      "06": "Quadratic Variation (purple)"
+    },
+    "daydreaming": {
+      "01": "Light Sleep",
+      "02": "Order",
+      "03": "Detachment",
+      "04": "Descent",
+      "05": "Parade A",
+      "06": "Parade B",
+      "07": "Skipping PE",
+      "08": "Laminar Flow"
+    },
+    "control-scenes": {
+      "01": "Pastel courtyard",
+      "02": "Yellow stairwell",
+      "03": "Night facade",
+      "04": "Sunset atrium",
+      "05": "White stairwell",
+      "06": "Green stairwell",
+      "07": "Sepia stairwell",
+      "08": "Blue stairwell",
+      "09": "Floating installation",
+      "10": "Ceiling canopy",
+      "11": "Concrete atrium",
+      "12": "Pipe stairwell",
+      "13": "Tunnel descent",
+      "14": "Portal room",
+      "15": "Booth study",
+      "16": "Dark gallery"
+    },
+    "typesetting-series": {
+      "01": "Cover poster",
+      "02": "Lyric layout A",
+      "03": "Lyric layout B",
+      "04": "Poster variant",
+      "05": "Lyric sheet",
+      "06": "Color cover"
+    }
+  }
+}

@@ -5,6 +5,7 @@ import type { Lang } from "../lib/i18n";
 import {
   designText,
   getDesignDict,
+  getWorkImageText,
   getSectionText,
   getWorkText,
   renderDesignInline,
@@ -119,26 +120,34 @@ const playerSrc = work.video
 
     {gallery.length > 0 && (
       <div class="image-stack">
-        {gallery.map((src, index) => (
-          <figure class="image-figure" data-reveal>
-            <button
-              class="image-figure__zoom"
-              type="button"
-              data-lightbox
-              data-lightbox-src={src}
-              data-lightbox-caption={`${text.title} — ${pad(index + 1)} / ${pad(gallery.length)}`}
-              aria-label={dict.ui.zoomImage}
-            >
-              <img
-                src={src}
-                alt={`${text.title} — ${pad(index + 1)}`}
-                loading={index === 0 ? "eager" : "lazy"}
-                decoding="async"
-              />
-            </button>
-            <figcaption>{pad(index + 1)} / {pad(gallery.length)}</figcaption>
-          </figure>
-        ))}
+        {gallery.map((src, index) => {
+          const imageName = getWorkImageText(lang, work.slug, src);
+          const caption = `${pad(index + 1)} / ${pad(gallery.length)}`;
+          const lightboxCaption = imageName ? `${text.title} — ${caption} · ${imageName}` : `${text.title} — ${caption}`;
+          return (
+            <figure class="image-figure" data-reveal>
+              <button
+                class="image-figure__zoom"
+                type="button"
+                data-lightbox
+                data-lightbox-src={src}
+                data-lightbox-caption={lightboxCaption}
+                aria-label={dict.ui.zoomImage}
+              >
+                <img
+                  src={src}
+                  alt={imageName ? `${text.title} — ${imageName}` : `${text.title} — ${caption}`}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  decoding="async"
+                />
+              </button>
+              <figcaption>
+                <span>{caption}</span>
+                {imageName && <span class="image-figure__name">{imageName}</span>}
+              </figcaption>
+            </figure>
+          );
+        })}
       </div>
     )}
 

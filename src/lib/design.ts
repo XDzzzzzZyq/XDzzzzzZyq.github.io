@@ -1,5 +1,6 @@
 import en from "../content/design/en.json";
 import cn from "../content/design/cn.json";
+import imageNames from "../content/design/image-names.json";
 import mentions from "../content/design/mentions.json";
 import { interpolate, otherLang, type Lang } from "./i18n";
 import { sectionIndex, type WorkSection } from "../data/works";
@@ -31,8 +32,10 @@ type MentionEntry = {
 };
 
 type MentionTable = Record<Lang, Record<string, MentionEntry>>;
+type ImageNameTable = Record<Lang, Record<string, Record<string, string>>>;
 
 const designMentionTables = mentions as MentionTable;
+const designImageTables = imageNames as ImageNameTable;
 
 const dictionaries: Record<Lang, DesignDict> = {
   en: en as DesignDict,
@@ -75,6 +78,12 @@ export const getSectionText = (lang: Lang, section: WorkSection) => ({
 
 export const getWorkText = (lang: Lang, slug: string): WorkText | undefined =>
   getDesignDict(lang).works[slug];
+
+export const getWorkImageText = (lang: Lang, slug: string, src: string): string | undefined => {
+  const fileName = src.split("/").pop()?.replace(/\.[^.]+$/, "");
+  if (!fileName) return undefined;
+  return designImageTables[lang]?.[slug]?.[fileName];
+};
 
 export const statLabel = (lang: Lang, key: string): string => {
   const labels = getDesignDict(lang).ui.stats as Record<string, string>;
