@@ -100,11 +100,9 @@ const escapeHtml = (value: string): string =>
     }
   });
 
-const mentionHref = (handle: string): string =>
-  designMentionHrefs[handle] ??
-  `https://search.bilibili.com/all?keyword=${encodeURIComponent(handle)}`;
+const mentionHref = (handle: string): string | undefined => designMentionHrefs[handle];
 
-const mentionPattern = /@([^\s<>{}\[\]()*，。！？!?;；:：/\\]+)/g;
+const mentionPattern = /@\{([^}]+)\}|@([^\s<>{}\[\]()*，。！？!?;；:：/\\]+)/g;
 
 /**
  * Render a short inline string with markdown-style bold and auto-linked @mentions.
@@ -115,8 +113,12 @@ export const renderDesignInline = (value: string): string => {
   const bolded = escaped.replace(/\*\*(.+?)\*\*/gs, "<strong>$1</strong>");
   return bolded.replace(
     mentionPattern,
-    (_match, handle: string) =>
-      `<a href="${escapeHtml(mentionHref(handle))}" target="_blank" rel="noopener noreferrer">@${handle}</a>`
+    (match, bracketedHandle: string, bareHandle: string) => {
+      const handle = bracketedHandle || bareHandle;
+      const href = mentionHref(handle);
+      if (!href) return match;
+      return `<a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">@${handle}</a>`;
+    }
   );
 };
 
