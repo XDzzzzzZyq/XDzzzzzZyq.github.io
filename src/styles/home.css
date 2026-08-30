@@ -140,21 +140,18 @@ html.home-intro-pending .selector-card {
   transform: translate(-50%, -50%) translate(calc(var(--grid-size) * var(--cir1-offset-x-multiplier)), calc(var(--grid-size) * var(--cir1-offset-y-multiplier)));
 }
 
-.cir2 {
-  transform: translate(-50%, -50%) translate(calc(var(--grid-size) * var(--cir2-offset-x-multiplier)), calc(var(--grid-size) * var(--cir2-offset-y-multiplier)));
-}
-
 .arc {
   mix-blend-mode: multiply;
+  transform: translate(calc(var(--grid-size) * var(--arc-transform-x-multiplier)), calc(var(--grid-size) * var(--arc-transform-y-multiplier))) rotate(var(--arc-rotate));
+  transform-box: view-box;
+  transform-origin: center;
+  overflow: visible;
 }
 
 .arc-path {
-  width: calc(var(--grid-size) * var(--arc-path-size-multiplier));
-  height: calc(var(--grid-size) * var(--arc-path-size-multiplier));
   fill: none;
   stroke: var(--light_blur);
   stroke-width: calc(var(--grid-size) * var(--arc-stroke-width-multiplier));
-  transform: translate(calc(var(--grid-size) * var(--arc-transform-x-multiplier)), calc(var(--grid-size) * var(--arc-transform-y-multiplier))) rotate(var(--arc-rotate));
 }
 
 .arrow {

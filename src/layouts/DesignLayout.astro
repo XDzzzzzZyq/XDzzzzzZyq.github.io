@@ -3,7 +3,7 @@ import BaseLayout from "./BaseLayout.astro";
 import DesignNav from "../components/DesignNav.astro";
 import BackgroundSuns from "../components/BackgroundSuns.astro";
 import { htmlLang, type Lang } from "../lib/i18n";
-import { getDesignDict } from "../lib/design";
+import { getDesignDict, renderDesignInline } from "../lib/design";
 import type { WorkSection } from "../data/works";
 import "../styles/design.css";
 
@@ -45,7 +45,7 @@ const dict = getDesignDict(lang);
     </div>
   </main>
   <footer class="site-footer">
-    <p>{dict.ui.footer}</p>
+    <p set:html={renderDesignInline(lang, dict.ui.footer)}></p>
   </footer>
   {/* Zoom view for the work images; filled in by scripts/lightbox.ts on click. */}
   <div class="lightbox" data-lightbox-root hidden>

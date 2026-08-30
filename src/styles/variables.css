@@ -58,16 +58,13 @@
   --cir1-size-multiplier: 2;
   --cir2-size-multiplier: 1;
   --arc-svg-size-multiplier: 3;
-  --arc-path-size-multiplier: 6;
 
-  --cir1-offset-x-multiplier: -1.5;
+  --cir1-offset-x-multiplier: -2.5;
   --cir1-offset-y-multiplier: 0.0;
-  --cir2-offset-x-multiplier: 0.4;
-  --cir2-offset-y-multiplier: 1.2;
 
   --arc-stroke-width-multiplier: 1.0;
-  --arc-transform-x-multiplier: 1.9;
-  --arc-transform-y-multiplier: 1.0;
+  --arc-transform-x-multiplier: -3.0;
+  --arc-transform-y-multiplier: -0.5;
   --arc-rotate: 90deg;
 
   --arrow-width-multiplier: 0.75;
@@ -182,11 +179,6 @@
   --anim-cir1-scale-duration: 1;
   --anim-arc-draw-duration: 1;
   --anim-arc-draw-ease: power2.out;
-  --anim-cir2-rotation-start: -90;
-  --anim-cir2-rotation-end: 0;
-  --anim-cir2-rotation-duration: 1;
-  --anim-cir2-origin: -150% 50%;
-  --anim-cir2-ease: power2.out;
   --anim-split-duration: 0.5;
   --anim-split-y-random: random(-100, 100);
   --anim-split-stagger-amount: 0.5;

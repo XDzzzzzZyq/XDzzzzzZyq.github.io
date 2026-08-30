@@ -12,9 +12,7 @@ const TITLE_HTML = `
 </svg>
 <svg data-size="arc" width="145" height="145" xmlns="http://www.w3.org/2000/svg" class="centered arc" aria-hidden="true">
     <path class="arc-path" d="M0,72.5 A72.5,72.5 0 0,1 72.5,0"/>
-</svg>
-<svg data-size="cir2" width="35" height="35" xmlns="http://www.w3.org/2000/svg" class="centered cir2">
-    <circle cx="17.5" cy="17.5" r="17.5" fill="white" />
+    <circle class="cir2" cx="0" cy="72.5" r="17.5" fill="white" />
 </svg>
 <h1 class="centered xdzzyq">XDzZyq</h1>
 <img src="/res/elem/arrow.svg" class="centered arrow" alt="Arrow">
@@ -31,7 +29,7 @@ const getElements = (container: Element) => ({
 const updateCircleSizes = (container: Element) => {
   const grid = readGridPx();
   const cir1 = container.querySelector("svg[data-size='cir1']");
-  const cir2 = container.querySelector("svg[data-size='cir2']");
+  const cir2 = container.querySelector(".arc .cir2");
 
   if (cir1 instanceof SVGElement) {
     const size = grid * config.hero.svgSizes.cir1Multiplier;
@@ -44,13 +42,8 @@ const updateCircleSizes = (container: Element) => {
   }
 
   if (cir2 instanceof SVGElement) {
-    const size = grid * config.hero.svgSizes.cir2Multiplier;
-    cir2.setAttribute("width", String(size));
-    cir2.setAttribute("height", String(size));
-    const circle = cir2.querySelector("circle");
-    circle?.setAttribute("r", String(size / 2));
-    circle?.setAttribute("cx", String(size / 2));
-    circle?.setAttribute("cy", String(size / 2));
+    const radius = (grid * config.hero.svgSizes.cir2Multiplier) / 2;
+    cir2.setAttribute("r", String(radius));
   }
 };
 
@@ -62,9 +55,18 @@ const updateSvgSizes = (container: Element) => {
   arcSvg.setAttribute("height", String(size));
 };
 
+const positionCir2 = (
+  arcPath: SVGGeometryElement,
+  cir2: SVGElement,
+  drawnLength: number
+) => {
+  const point = arcPath.getPointAtLength(drawnLength);
+  gsap.set(cir2, { attr: { cx: point.x, cy: point.y } });
+};
+
 const initHeroAnimation = (container: Element) => {
   const { sun, arcPath, cir2, arrow } = getElements(container);
-  if (!(arcPath instanceof SVGGeometryElement) || !sun || !cir2 || !arrow) return;
+  if (!(arcPath instanceof SVGGeometryElement) || !(cir2 instanceof SVGElement) || !sun || !arrow) return;
 
   const off = config.hero.timelineOverlap;
   const tl = gsap.timeline();
@@ -75,6 +77,7 @@ const initHeroAnimation = (container: Element) => {
     strokeDashoffset: length,
   });
   gsap.set(cir2, { autoAlpha: 0 });
+  positionCir2(arcPath, cir2, 0);
 
   tl.fromTo(
     sun,
@@ -131,21 +134,14 @@ const initHeroAnimation = (container: Element) => {
       strokeDashoffset: 0,
       duration: config.hero.arcDrawDuration,
       ease: config.hero.arcDrawEase,
+      onUpdate(this: gsap.core.Tween) {
+        const dashoffset = Number(gsap.getProperty(arcPath, "strokeDashoffset")) || 0;
+        positionCir2(arcPath, cir2, length - dashoffset);
+      },
     },
     off
   );
   tl.set(cir2, { autoAlpha: 1 }, "<");
-  tl.fromTo(
-    cir2,
-    { rotation: config.hero.cir2RotationStart },
-    {
-      rotation: config.hero.cir2RotationEnd,
-      duration: config.hero.cir2RotationDuration,
-      transformOrigin: config.hero.cir2TransformOrigin,
-      ease: config.hero.cir2Ease,
-    },
-    "<"
-  );
 
   const split = new SplitText(".xdzzyq", { type: "chars" });
   tl.from(
