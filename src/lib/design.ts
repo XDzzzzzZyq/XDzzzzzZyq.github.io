@@ -1,5 +1,6 @@
 import en from "../content/design/en.json";
 import cn from "../content/design/cn.json";
+import mentions from "../content/design/mentions.json";
 import { interpolate, otherLang, type Lang } from "./i18n";
 import { sectionIndex, type WorkSection } from "../data/works";
 
@@ -24,10 +25,7 @@ export type DesignDict = {
   works: Record<string, WorkText>;
 };
 
-const designMentionHrefs: Record<string, string> = {
-  小豆子zyq: "https://space.bilibili.com/302469604",
-  异世界情绪: "https://space.bilibili.com/488978908",
-};
+const designMentionHrefs = mentions as Record<string, string>;
 
 const dictionaries: Record<Lang, DesignDict> = {
   en: en as DesignDict,
@@ -102,7 +100,7 @@ const escapeHtml = (value: string): string =>
 
 const mentionHref = (handle: string): string | undefined => designMentionHrefs[handle];
 
-const mentionPattern = /@\{([^}]+)\}|@([^\s<>{}\[\]()*，。！？!?;；:：/\\]+)/g;
+const mentionPattern = /@\{([^}]+)\}/g;
 
 /**
  * Render a short inline string with markdown-style bold and auto-linked @mentions.
@@ -113,12 +111,9 @@ export const renderDesignInline = (value: string): string => {
   const bolded = escaped.replace(/\*\*(.+?)\*\*/gs, "<strong>$1</strong>");
   return bolded.replace(
     mentionPattern,
-    (match, bracketedHandle: string, bareHandle: string) => {
-      const handle = bracketedHandle || bareHandle;
+    (match, handle: string) => {
       const href = mentionHref(handle);
-      if (!href) {
-        return bracketedHandle ? `@${handle}` : match;
-      }
+      if (!href) return match;
       return `<a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">@${handle}</a>`;
     }
   );
