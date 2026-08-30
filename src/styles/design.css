@@ -797,16 +797,6 @@ body.design-page .site-footer {
 .detail-panel p a {
   color: var(--color-accent-hover);
   text-decoration: none;
-  border-bottom: 1px solid color-mix(in srgb, var(--color-accent-hover) 55%, transparent);
-}
-
-.work-card__summary a:hover,
-.work-card__summary a:focus-visible,
-.detail-hero__summary a:hover,
-.detail-hero__summary a:focus-visible,
-.detail-panel p a:hover,
-.detail-panel p a:focus-visible {
-  border-bottom-color: var(--color-accent-hover);
 }
 
 .work-card__summary strong,

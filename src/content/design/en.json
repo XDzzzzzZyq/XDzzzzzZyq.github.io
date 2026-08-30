@@ -17,7 +17,7 @@
     "imageCount": "{count} images",
     "aboutTitle": "About",
     "avatarAlt": "小豆子zyq's Bilibili avatar",
-    "aboutBody": "@{xiaodouzizyq} / XDzZyq. I make PVs, motion graphics and still-motion, and also write renderers, AE plug-ins and Blender scripts; the graphic section is mostly still series. Only the pieces I would still look at twice are collected here.",
+    "aboutBody": "@{小豆子zyq_en} / XDzZyq. I make PVs, motion graphics and still-motion, and also write renderers, AE plug-ins and Blender scripts; the graphic section is mostly still series. Only the pieces I would still look at twice are collected here.",
     "bodyTitle": "Notes",
     "noBody": "The original post has no description — just watch it.",
     "videoTitle": "Watch",
@@ -26,7 +26,7 @@
     "closeImage": "Close",
     "backToHub": "← Back to Design",
     "backToSection": "← Back to {label}",
-    "footer": "© 2026 XDzZyq · Content mirrored from Bilibili @{xiaodouzizyq}",
+    "footer": "© 2026 XDzZyq · Content mirrored from Bilibili @{小豆子zyq_en}",
     "stats": {
       "date": "Date",
       "play": "Play",
@@ -55,8 +55,8 @@
   "works": {
     "sirius-heart": {
       "title": "シリウスの心臓",
-      "subtitle": "Heart of Sirius · self-made MV feat. @{isekai_joucho}",
-      "summary": "A song I really love by the Japanese singer @{isekai_joucho}, for which I finally made the MV I had planned since high school.",
+      "subtitle": "Heart of Sirius · self-made MV feat. @{异世界情绪_en}",
+      "summary": "A song I really love by the Japanese singer @{异世界情绪_en}, for which I finally made the MV I had planned since high school.",
       "tags": [
         "MV",
         "Blender",
@@ -64,7 +64,7 @@
       ],
       "body": [
         "Sirius, the heart of Canis Major, is a binary system of Sirius A and Sirius B. Setting out from the solar system, you listen to the two companions talking in silent space. In their almost eternal orbit they can never meet, because the price of meeting is destruction. Maybe that is the solution of a binary system.",
-        "Vocals: @{isekai_joucho}\nLyrics / music / arrangement: 傘村トータ\nPV: @{xiaodouzizyq}\nModels: @{永眠配信只接稿不接广}, @{打破碗花花_afa}\nOriginal song: BV15v411t79V",
+        "Vocals: @{异世界情绪_en}\nLyrics / music / arrangement: @{傘村トータ_en}\nPV: @{小豆子zyq_en}\nModels: @{永眠配信只接稿不接广}, @{打破碗花花_afa}\nOriginal song: BV15v411t79V",
         "A piece I had been waiting a long time to make — one wish checked off. Happy new year! ver 2 is up.",
         "Making-of and notes: BV1SMwUeUEYL"
       ],
@@ -200,7 +200,7 @@
       ],
       "body": [
         "Finished 2023-05-17.",
-        "Thanks to @{阿相} for the invitation — a very happy production. I also tried a new way of using RTFX-style footage."
+        "Thanks to @{阿相_en} for the invitation — a very happy production. I also tried a new way of using RTFX-style footage."
       ],
       "links": {
         "bilibili": "Bilibili"
@@ -218,7 +218,7 @@
       ],
       "body": [
         "Finished 2021-09-21.",
-        "Big thanks to @{小言_GAN} and @{崩} for pulling me into a CM collaboration for EXC, where I tried Memphis style in 3D and motion. Made with AE + Blender; Blender had no geometry nodes back then, so every model and 3D animation was generated procedurally with Sverchok and Animation Nodes, while 2D animation and compositing happened in AE. A very interesting piece of work."
+        "Big thanks to @{小言_GAN} and @{崩_en} for pulling me into a CM collaboration for EXC, where I tried Memphis style in 3D and motion. Made with AE + Blender; Blender had no geometry nodes back then, so every model and 3D animation was generated procedurally with Sverchok and Animation Nodes, while 2D animation and compositing happened in AE. A very interesting piece of work."
       ],
       "links": {
         "bilibili": "Bilibili"
@@ -227,13 +227,13 @@
     "karasu-collab": {
       "title": "カラスは真っ白 - 9番目の「？」",
       "subtitle": "10-person PV collab · organised by me",
-      "summary": "The third group collaboration started by @{阿相}; it took two years from the call to the final cut.",
+      "summary": "The third group collaboration started by @{阿相_en}; it took two years from the call to the final cut.",
       "tags": [
         "Organiser",
         "PV"
       ],
       "body": [
-        "The third collaboration started by @{阿相}.\nParticipants: @{是阿相哦} / @{不_咕鸟} / @{白雁雁} / @{一个不够成熟的夕} / @{xiaodouzizyq} / @{理头LilRans} / @{陸忻遊} / @{金蛋蛋Geg} / @{MoDon某冻} / @{kkmfd}",
+        "The third collaboration started by @{阿相_en}.\nParticipants: @{是阿相哦_en} / @{不_咕鸟_en} / @{白雁雁_en} / @{一个不够成熟的夕_en} / @{小豆子zyq_en} / @{理头LilRans_en} / @{陸忻遊_en} / @{金蛋蛋Geg_en} / @{MoDon某冻_en} / @{kkmfd_en}",
         "From the call to the final cut this took two years. Thanks to everyone — the ones who finished early and then waited, and the ones who delivered at the very last minute.",
         "The collaboration started in my PV chat group (726189279); I would like to run another one some day."
       ],
@@ -439,7 +439,7 @@
     "typesetting-series": {
       "title": "Graphics Design Practice",
       "subtitle": "#我超好排",
-      "summary": "A graphics design challenge under #我超好排: @{isekai_joucho}, lyrics and daily practice.",
+      "summary": "A graphics design challenge under #我超好排: @{异世界情绪_en}, lyrics and daily practice.",
       "tags": [
         "Graphic",
         "Graphics design",
@@ -449,7 +449,7 @@
         "A graphics design practice challenge started by Taishu, where everyone shared their exercises and work enthusiastically and learned from one another."
       ],
       "links": {
-        "mood": "@{isekai_joucho} graphics design",
+        "mood": "@{异世界情绪_en} graphics design",
         "must": "No way around it",
         "today": "Today's layout"
       }

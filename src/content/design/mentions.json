@@ -1,23 +1,5 @@
 {
   "cn": {
-    "小豆子zyq": {
-      "name": "小豆子zyq",
-      "url": "https://space.bilibili.com/302469604"
-    },
-    "异世界情绪": {
-      "name": "异世界情绪",
-      "url": "https://space.bilibili.com/488978908"
-    },
-    "打破碗花花_afa": {
-      "name": "打破碗花花_afa",
-      "url": "https://space.bilibili.com/7513414"
-    },
-    "永眠配信只接稿不接广": {
-      "name": "永眠配信只接稿不接广",
-      "url": "https://space.bilibili.com/40153858"
-    }
-  },
-  "en": {
     "xiaodouzizyq": {
       "name": "XDzZyq",
       "url": "https://space.bilibili.com/302469604"
@@ -26,6 +8,18 @@
       "name": "Isekai Joucho",
       "url": "https://space.bilibili.com/488978908"
     },
+    "小豆子zyq": {
+      "name": "小豆子zyq",
+      "url": "https://space.bilibili.com/302469604"
+    },
+    "异世界情绪": {
+      "name": "异世界情绪",
+      "url": "https://space.bilibili.com/488978908"
+    },
+    "傘村トータ": {
+      "name": "傘村トータ",
+      "url": "https://x.com/machiomiii"
+    },
     "打破碗花花_afa": {
       "name": "打破碗花花_afa",
       "url": "https://space.bilibili.com/7513414"
@@ -33,6 +27,116 @@
     "永眠配信只接稿不接广": {
       "name": "永眠配信只接稿不接广",
       "url": "https://space.bilibili.com/40153858"
+    },
+    "阿相": {
+      "name": "阿相",
+      "url": "https://space.bilibili.com/5177356"
+    },
+    "是阿相哦": {
+      "name": "是阿相哦",
+      "url": "https://space.bilibili.com/5177356"
+    },
+    "不_咕鸟": {
+      "name": "不咕鸟不咕咕",
+      "url": "https://space.bilibili.com/413057231/"
+    },
+    "白雁雁": {
+      "name": "白雁雁",
+      "url": "https://space.bilibili.com/11187902/"
+    },
+    "一个不够成熟的夕": {
+      "name": "一个不够成熟的夕",
+      "url": "https://space.bilibili.com/13765005/"
+    },
+    "MoDon某冻": {
+      "name": "MoDon某冻",
+      "url": "https://space.bilibili.com/7411876/"
+    },
+    "kkmfd": {
+      "name": "kkmfd",
+      "url": "https://space.bilibili.com/158626885/"
+    },
+    "理头LilRans": {
+      "name": "理头LilRans",
+      "url": "https://space.bilibili.com/87604431/"
+    },
+    "陸忻遊": {
+      "name": "陸忻遊",
+      "url": "https://space.bilibili.com/3461573209229548/"
+    },
+    "金蛋蛋Geg": {
+      "name": "金蛋蛋Geg",
+      "url": "https://space.bilibili.com/32195377/"
+    },
+    "崩": {
+      "name": "崩坏的动态视力",
+      "url": "https://space.bilibili.com/529169675/"
+    }
+  },
+  "en": {
+    "小豆子zyq_en": {
+      "name": "XDzZyq",
+      "url": "https://x.com/zyq30905782"
+    },
+    "异世界情绪_en": {
+      "name": "ヰ世界情緒",
+      "url": "https://x.com/isekaijoucho"
+    },
+    "傘村トータ_en": {
+      "name": "傘村トータ",
+      "url": "https://x.com/machiomiii"
+    },
+    "打破碗花花_afa": {
+      "name": "打破碗花花_afa",
+      "url": "https://space.bilibili.com/7513414"
+    },
+    "永眠配信只接稿不接广": {
+      "name": "永眠配信只接稿不接广",
+      "url": "https://space.bilibili.com/40153858"
+    },
+    "阿相_en": {
+      "name": "阿相",
+      "url": "https://x.com/xiangsangs"
+    },
+    "是阿相哦_en": {
+      "name": "阿相",
+      "url": "https://x.com/xiangsangs"
+    },
+    "不_咕鸟_en": {
+      "name": "不咕鸟不咕咕",
+      "url": "https://space.bilibili.com/413057231/"
+    },
+    "白雁雁_en": {
+      "name": "白雁雁",
+      "url": "https://space.bilibili.com/11187902/"
+    },
+    "一个不够成熟的夕_en": {
+      "name": "一个不够成熟的夕",
+      "url": "https://space.bilibili.com/13765005/"
+    },
+    "MoDon某冻_en": {
+      "name": "MoDon某冻",
+      "url": "https://space.bilibili.com/7411876/"
+    },
+    "kkmfd_en": {
+      "name": "kkmfd",
+      "url": "https://x.com/kk_mfd"
+    },
+    "理头LilRans_en": {
+      "name": "理头LilRans",
+      "url": "https://space.bilibili.com/87604431/"
+    },
+    "陸忻遊_en": {
+      "name": "陸忻遊",
+      "url": "https://space.bilibili.com/3461573209229548/"
+    },
+    "金蛋蛋Geg_en": {
+      "name": "金蛋蛋Geg",
+      "url": "https://space.bilibili.com/32195377/"
+    },
+    "崩_en": {
+      "name": "崩坏的动态视力",
+      "url": "https://space.bilibili.com/529169675/"
     }
   }
 }

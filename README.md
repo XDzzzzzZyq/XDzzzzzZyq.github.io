@@ -19,6 +19,7 @@ npm run dev
 ```
 
 Open [http://127.0.0.1:5500/](http://127.0.0.1:5500/).
+`npm run dev` already pins the host and port, so do not append extra `--host` or `--port` flags.
 
 ```bash
 npm run build
