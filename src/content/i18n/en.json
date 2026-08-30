@@ -39,7 +39,7 @@
     "title": "Bio",
     "description": "Background, education, and current research direction.",
     "paragraph1": "I am Yuqian Zhang.",
-    "paragraph2": "My research centers on mathematical modelling, physics-driven and computational methods, deep learning, and computer graphics. I have worked on spatial transcriptomics denoising with graph variational auto-encoders, Neural-ODE-based gene expression field estimation, ocean surface representation learning with transformers, and Bayesian-PINN-Kalman hybrids for time-series inverse problems",
+    "paragraph2": "My research centers on mathematical modelling, physics-driven and data-driven methods. I have worked on spatial transcriptomics denoising with graph variational auto-encoders, Neural-ODE-based gene expression field estimation, ocean surface representation learning with transformers, and Bayesian-PINN-Kalman hybrids for time-series inverse problems. Also, I am a huge fan of Computer Graphics, my interests range from real-time rendering to physical simulation.",
     "now": "Now",
     "nowValue": "First-year MScAC student, University of Toronto.",
     "bachelor": "Bachelor",
