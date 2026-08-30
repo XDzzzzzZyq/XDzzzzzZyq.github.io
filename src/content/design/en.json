@@ -55,8 +55,8 @@
   "works": {
     "sirius-heart": {
       "title": "シリウスの心臓",
-      "subtitle": "Heart of Sirius · self-made MV feat. 异世界情绪",
-      "summary": "A self-made MV built around the Sirius binary system, made together with a singer and two modellers.",
+      "subtitle": "Heart of Sirius · self-made MV feat. Isekai Joucho",
+      "summary": "A song I really love by the Japanese singer Isekai Joucho, for which I finally made the MV I had planned since high school.",
       "tags": [
         "MV",
         "Blender",
@@ -64,7 +64,7 @@
       ],
       "body": [
         "Sirius, the heart of Canis Major, is a binary system of Sirius A and Sirius B. Setting out from the solar system, you listen to the two companions talking in silent space. In their almost eternal orbit they can never meet, because the price of meeting is destruction. Maybe that is the solution of a binary system.",
-        "Vocals: @异世界情绪\nLyrics / music / arrangement: 傘村トータ\nPV: @小豆子zyq\nModels: @永眠配信只接稿不接广, @打破碗花花_afa\nOriginal song: BV15v411t79V",
+        "Vocals: Isekai Joucho (@异世界情绪)\nLyrics / music / arrangement: 傘村トータ\nPV: @小豆子zyq\nModels: @永眠配信只接稿不接广, @打破碗花花_afa\nOriginal song: BV15v411t79V",
         "A piece I had been waiting a long time to make — one wish checked off. Happy new year! ver 2 is up.",
         "Making-of and notes: BV1SMwUeUEYL"
       ],
@@ -76,7 +76,7 @@
     "irradiate": {
       "title": "Irradiate",
       "subtitle": "MG short",
-      "summary": "Ink-print texture crossed with ideas and formulas from graphics, as motion graphics.",
+      "summary": "A short MG piece that folds in what I had been learning about graphics, with some basic concepts from graphics algorithms.",
       "tags": [
         "MG",
         "Graphics",
@@ -95,7 +95,7 @@
     "getcha": {
       "title": "GETCHA！",
       "subtitle": "Cover PV · 勺 × 希亚娜",
-      "summary": "PV for a cover of GETCHA!.",
+      "summary": "PV for a cover of GETCHA! — one of my favourite songs, and a very fun piece to make.",
       "tags": [
         "PV",
         "Cover"
@@ -108,7 +108,7 @@
     "power-still": {
       "title": "Come Look for Me Down in Hell",
       "subtitle": "Chainsaw Man · Power · still-motion",
-      "summary": "A Power still-motion that runs the whole pipeline, starting from cutting figures out of the manga.",
+      "summary": "A Power fan MAD that runs the whole still-motion pipeline, starting from cutting figures out of the manga.",
       "tags": [
         "Still-motion",
         "Blender",
@@ -127,7 +127,7 @@
     "vivahappy-medley": {
       "title": "ビバハピ",
       "subtitle": "Mitchie M medley collab · P2",
-      "summary": "One segment of a ten-minute medley collaboration for PVSF2025.",
+      "summary": "One segment of a ten-minute collaboration for PVSF2025 — a really interesting experience.",
       "tags": [
         "Collab",
         "PVSF2025"
@@ -145,8 +145,9 @@
       "subtitle": "with 小言_GAN",
       "summary": "The second CM for the EXC#2 exhibition.",
       "tags": [
+        "EXC",
         "CM",
-        "Collab"
+        "Dreamcore"
       ],
       "body": [
         "Made with @小言_GAN. The second CM for the EXC#2 exhibition — “a collision between soul and reality”."
@@ -161,7 +162,8 @@
       "summary": "Switching between a scene and the scene inside a photograph, to talk about digital media.",
       "tags": [
         "CM",
-        "Real & virtual"
+        "EXC",
+        "Dreamcore"
       ],
       "body": [
         "Finished 2023-06-11.",
@@ -209,6 +211,7 @@
       "subtitle": "EXC#1 CM · P6",
       "summary": "Memphis style in 3D, generated entirely procedurally before geometry nodes existed.",
       "tags": [
+        "EXC",
         "Memphis",
         "Sverchok",
         "AnimationNodes"
@@ -224,13 +227,13 @@
     "karasu-collab": {
       "title": "カラスは真っ白 - 9番目の「？」",
       "subtitle": "10-person PV collab · organised by me",
-      "summary": "The third group collaboration I organised; two years from the call to the final cut.",
+      "summary": "The third group collaboration started by 阿相; it took two years from the call to the final cut.",
       "tags": [
         "Organiser",
         "PV"
       ],
       "body": [
-        "【三周目合作】= the third collaboration I organised.\nParticipants: 是阿相哦 / 不_咕鸟 / 白雁雁 / 一个不够成熟的夕 / 小豆子zyq / 理头LilRans / 陸忻遊 / 金蛋蛋Geg / MoDon某冻 / kkmfd",
+        "The third collaboration started by 阿相.\nParticipants: 是阿相哦 / 不_咕鸟 / 白雁雁 / 一个不够成熟的夕 / 小豆子zyq / 理头LilRans / 陸忻遊 / 金蛋蛋Geg / MoDon某冻 / kkmfd",
         "From the call to the final cut this took two years. Thanks to everyone — the ones who finished early and then waited, and the ones who delivered at the very last minute.",
         "The collaboration started in my PV chat group (726189279); I would like to run another one some day."
       ],
@@ -241,7 +244,7 @@
     "diy-renderer": {
       "title": "DIY Renderer",
       "subtitle": "OpenGL / C++ real-time rendering",
-      "summary": "A renderer written from triangle rasterisation up to deferred shading, PBR and screen-space effects — 10k+ lines.",
+      "summary": "An in-house OpenGL renderer covering deferred shading, PBR and global illumination — over 30k lines.",
       "tags": [
         "OpenGL",
         "C++",
@@ -249,7 +252,7 @@
         "Graphics"
       ],
       "body": [
-        "I have been writing this renderer for over a year, on and off, and it is past ten thousand lines. Practice really was necessary: I learned a lot and can feel my programming getting noticeably better.",
+        "I have been writing this renderer for over four years, on and off, and it is past thirty thousand lines. Practice really was necessary: I learned a lot over the years and can feel my programming getting noticeably better.",
         "Implemented so far:\n- deferred rendering\n- PBR materials\n- lighting\n   - point, directional, spot and area lights\n   - hard and soft shadows from shadow maps\n- ambient light\n- screen-space ambient occlusion\n- screen-space reflection\n- FXAA (the result is so-so)",
         "I also helped translate a tutorial on area lights; thanks to my classmate @theta-lin for the help.",
         "Early version (2022-01): a very inefficient renderer in C++ — 30 seconds a frame, slower than cycles. Working: triangle rasterisation, z-occlusion, diffuse and ambient terms. Not yet: anti-aliasing, model import, frustum transform, specular, shadow maps. The last image is the eevee reference."
@@ -286,7 +289,7 @@
       "summary": "A hand-made rune typeface: Latin letters, the four Mandarin tones, base-twelve numerals.",
       "tags": [
         "Typeface",
-        "Typesetting",
+        "Graphics design",
         "Ornament"
       ],
       "body": [
@@ -376,7 +379,7 @@
     "math-series": {
       "title": "Maths Series",
       "subtitle": "Itô-isometry / Quadratic Variation / Urysohn's Lemma",
-      "summary": "Turning the prettiest theorems from stochastic analysis and topology into images.",
+      "summary": "Turning the prettiest theorems from stochastic analysis, differential geometry and topology into images.",
       "tags": [
         "Graphic",
         "Maths",
@@ -385,6 +388,7 @@
       "body": [
         "Itô-isometry — the distance between any two square-integrable processes equals the distance between their Itô integrals: an identity that bridges two spaces elegantly. A record of one of the most beautiful theorems from last term's stochastic analysis.",
         "Quadratic Variation — an operation that only works on stochastic differential equations. Through Itô's lemma it filters out the continuous drift term and keeps only the accumulated variance of the stochastic term; one of the important analytical tools in stochastic analysis.",
+        "Tangent Bundle — a structure formed by stitching together the tangent space at every point on a manifold. It is somewhat similar to traditional multivariable calculus, but from a more abstract point of view and a very important object in differential geometry.",
         "Urysohn's Lemma — a memento of the last big theorem from my topology course; the proof runs a full three pages. Urysohn constructed, along an almost entirely independent line of thought, a continuous function connecting two closed sets in a T4 space. Intuitively it is the potential between two conductors, or the existence of contour lines between two mountains — though the theorem reaches much further.",
         "These were made last year and I forgot to post them; I plan to finish the maths series."
       ],
@@ -397,7 +401,7 @@
     "daydreaming": {
       "title": "Daydreaming",
       "subtitle": "Imagined scenes, named",
-      "summary": "A year of daydreams, recorded and given deliberately impressive names.",
+      "summary": "A year of dreams, daydreams and fantasies, recorded and given deliberately impressive names.",
       "tags": [
         "Graphic",
         "Blender",
@@ -417,7 +421,7 @@
     "control-scenes": {
       "title": "Control Scene Studies",
       "subtitle": "Blender scene practice",
-      "summary": "Rebuilding several scenes from Control in Blender, including Research Sector #6 & #7.",
+      "summary": "Rebuilding several scenes from my favourite game Control in Blender — I learned a lot from it.",
       "tags": [
         "Graphic",
         "Blender",
@@ -433,21 +437,19 @@
       }
     },
     "typesetting-series": {
-      "title": "Layout Practice",
+      "title": "Graphics Design Practice",
       "subtitle": "#我超好排",
-      "summary": "A few entries for the #我超好排 challenge: a mood, a lyric, and daily practice.",
+      "summary": "A graphics design challenge under #我超好排: Isekai Joucho, lyrics and daily practice.",
       "tags": [
         "Graphic",
-        "Typesetting",
+        "Graphics design",
         "Type"
       ],
       "body": [
-        "Laid out a mood.",
-        "Today there is no way around it — a line of lyrics that hit me, and I wanted to see whether I could build that feeling.",
-        "Today's layout."
+        "A graphics design practice challenge started by Taishu, where everyone shared their exercises and work enthusiastically and learned from one another."
       ],
       "links": {
-        "mood": "Laid out a mood",
+        "mood": "Isekai Joucho graphics design",
         "must": "No way around it",
         "today": "Today's layout"
       }
