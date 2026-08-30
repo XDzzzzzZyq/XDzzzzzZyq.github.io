@@ -60,7 +60,7 @@ const playerSrc = work.video
         {text.title}
         {text.subtitle && <small>{text.subtitle}</small>}
       </h1>
-      <p class="detail-hero__summary" set:html={renderDesignInline(text.summary)}></p>
+      <p class="detail-hero__summary" set:html={renderDesignInline(lang, text.summary)}></p>
       <ul class="tag-list">
         {text.tags.map((tag) => <li>{tag}</li>)}
       </ul>
@@ -97,7 +97,7 @@ const playerSrc = work.video
     <section class="detail-panel" data-reveal>
       <h2>{dict.ui.bodyTitle}</h2>
       {text.body.length > 0 ? (
-        text.body.map((paragraph) => <p set:html={renderDesignInline(paragraph)}></p>)
+        text.body.map((paragraph) => <p set:html={renderDesignInline(lang, paragraph)}></p>)
       ) : (
         <p class="empty-state">{dict.ui.noBody}</p>
       )}

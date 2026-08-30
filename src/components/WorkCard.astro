@@ -55,7 +55,7 @@ const titleId = `${work.slug}-card-title`;
       {title}
       {text?.subtitle && <small>{text.subtitle}</small>}
     </h3>
-    <p class="work-card__summary" set:html={text ? renderDesignInline(text.summary) : ""}></p>
+    <p class="work-card__summary" set:html={text ? renderDesignInline(lang, text.summary) : ""}></p>
     <span class="work-card__open">{dict.ui.view}</span>
   </div>
 </article>

@@ -25,7 +25,14 @@ export type DesignDict = {
   works: Record<string, WorkText>;
 };
 
-const designMentionHrefs = mentions as Record<string, string>;
+type MentionEntry = {
+  name: string;
+  url: string;
+};
+
+type MentionTable = Record<Lang, Record<string, MentionEntry>>;
+
+const designMentionTables = mentions as MentionTable;
 
 const dictionaries: Record<Lang, DesignDict> = {
   en: en as DesignDict,
@@ -98,7 +105,8 @@ const escapeHtml = (value: string): string =>
     }
   });
 
-const mentionHref = (handle: string): string | undefined => designMentionHrefs[handle];
+const mentionEntry = (lang: Lang, handle: string): MentionEntry | undefined =>
+  designMentionTables[lang]?.[handle];
 
 const mentionPattern = /@\{([^}]+)\}/g;
 
@@ -106,15 +114,15 @@ const mentionPattern = /@\{([^}]+)\}/g;
  * Render a short inline string with markdown-style bold and auto-linked @mentions.
  * The result is safe to feed to `set:html` because the source is escaped first.
  */
-export const renderDesignInline = (value: string): string => {
+export const renderDesignInline = (lang: Lang, value: string): string => {
   const escaped = escapeHtml(value);
   const bolded = escaped.replace(/\*\*(.+?)\*\*/gs, "<strong>$1</strong>");
   return bolded.replace(
     mentionPattern,
-    (match, handle: string) => {
-      const href = mentionHref(handle);
-      if (!href) return match;
-      return `<a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">@${handle}</a>`;
+    (_match, handle: string) => {
+      const entry = mentionEntry(lang, handle);
+      if (!entry) return `@${handle}`;
+      return `<a href="${escapeHtml(entry.url)}" target="_blank" rel="noopener noreferrer">@${escapeHtml(entry.name)}</a>`;
     }
   );
 };
