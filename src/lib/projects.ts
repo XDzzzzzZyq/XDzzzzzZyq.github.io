@@ -16,25 +16,74 @@ export type ProjectRecord = {
   enable?: boolean;
   category: ProjectCategory;
   title: string;
+  titleCn?: string;
   year: string;
   status: string;
+  statusCn?: string;
   affiliation?: string;
+  affiliationCn?: string;
   piWebsite?: string;
   summary: string;
+  summaryCn?: string;
   abstract?: string;
+  abstractCn?: string;
   coverImage: string;
   coverAlt?: string;
+  coverAltCn?: string;
   tags: string[];
+  tagsCn?: string[];
   links?: ProjectLinks;
+  details?: string[];
+  detailsCn?: string[];
+};
+
+export type LocalizedProjectRecord = Omit<
+  ProjectRecord,
+  | "titleCn"
+  | "statusCn"
+  | "affiliationCn"
+  | "summaryCn"
+  | "abstractCn"
+  | "coverAltCn"
+  | "tagsCn"
+  | "detailsCn"
+> & {
+  title: string;
+  status: string;
+  affiliation?: string;
+  summary: string;
+  abstract?: string;
+  coverAlt?: string;
+  tags: string[];
   details?: string[];
 };
 
 export type SearchProject = Pick<
-  ProjectRecord,
+  LocalizedProjectRecord,
   "slug" | "title" | "summary" | "tags" | "status" | "category" | "year"
 >;
 
 const projects = rawProjects as ProjectRecord[];
+
+const pickLocalized = (lang: Lang, en: string, cn?: string): string =>
+  lang === "cn" && cn ? cn : en;
+
+const pickLocalizedArray = (lang: Lang, en: string[], cn?: string[]): string[] =>
+  lang === "cn" && cn && cn.length > 0 ? cn : en;
+
+export const localizeProject = (project: ProjectRecord, lang: Lang): LocalizedProjectRecord => ({
+  ...project,
+  title: pickLocalized(lang, project.title, project.titleCn),
+  status: pickLocalized(lang, project.status, project.statusCn),
+  affiliation: project.affiliation
+    ? pickLocalized(lang, project.affiliation, project.affiliationCn)
+    : undefined,
+  summary: pickLocalized(lang, project.summary, project.summaryCn),
+  abstract: project.abstract ? pickLocalized(lang, project.abstract, project.abstractCn) : undefined,
+  coverAlt: project.coverAlt ? pickLocalized(lang, project.coverAlt, project.coverAltCn) : undefined,
+  tags: pickLocalizedArray(lang, project.tags || [], project.tagsCn),
+  details: project.details ? pickLocalizedArray(lang, project.details, project.detailsCn) : undefined,
+});
 
 export const getProjects = (): ProjectRecord[] =>
   projects.filter((project) => project.enable !== false);
@@ -51,16 +100,19 @@ export const coverUrl = (coverImage: string): string => {
   return `/research/${coverImage}`;
 };
 
-export const getSearchIndex = (): SearchProject[] =>
-  getProjects().map((project) => ({
+export const getSearchIndex = (lang: Lang): SearchProject[] =>
+  getProjects().map((project) => {
+    const text = localizeProject(project, lang);
+    return {
     slug: project.slug,
-    title: project.title,
-    summary: project.summary,
-    tags: project.tags,
-    status: project.status,
+    title: text.title,
+    summary: text.summary,
+    tags: text.tags,
+    status: text.status,
     category: project.category,
     year: project.year,
-  }));
+  };
+  });
 
 export const getProjectBody = async (
   slug: string,

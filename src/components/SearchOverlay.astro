@@ -9,7 +9,7 @@ type Props = {
 };
 
 const { lang, dict } = Astro.props;
-const searchIndex = getSearchIndex();
+const searchIndex = getSearchIndex(lang);
 ---
 <div class="search-overlay" data-search-overlay hidden aria-hidden="true">
   <div class="search-backdrop" data-search-close></div>

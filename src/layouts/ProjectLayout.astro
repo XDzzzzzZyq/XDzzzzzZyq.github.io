@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ResearchNav from "../components/ResearchNav.astro";
 import SearchOverlay from "../components/SearchOverlay.astro";
 import { getDict, htmlLang, researchHomeHref, type Lang } from "../lib/i18n";
-import { coverUrl, getProject, renderProjectBody } from "../lib/projects";
+import { coverUrl, getProject, localizeProject, renderProjectBody } from "../lib/projects";
 import "../styles/research.css";
 
 type Props = {
@@ -14,6 +14,7 @@ type Props = {
 const { lang, slug } = Astro.props;
 const dict = getDict(lang);
 const project = getProject(slug);
+const text = project ? localizeProject(project, lang) : null;
 const rendered = project ? await renderProjectBody(slug, lang) : null;
 const Content = rendered?.Content;
 const backHref = researchHomeHref(lang, "#projects");
@@ -29,10 +30,10 @@ const linkLabels: Record<string, string> = {
 };
 ---
 <BaseLayout
-  title={project ? `${project.title} | XDzZyq Research` : `${dict.detail.notFoundTitle} | XDzZyq Research`}
+  title={text ? `${text.title} | XDzZyq Research` : `${dict.detail.notFoundTitle} | XDzZyq Research`}
   lang={htmlLang(lang)}
   bodyClass="research-page"
-  description={project?.summary ?? dict.detail.notFoundMessage}
+  description={text?.summary ?? dict.detail.notFoundMessage}
 >
   <script src="../scripts/lang-redirect.ts"></script>
   <script src="../scripts/reveal.ts"></script>
@@ -47,36 +48,36 @@ const linkLabels: Record<string, string> = {
             <a class="link-button link-button--primary back-link-bottom" href={backHref}>{dict.detail.backButton}</a>
           </section>
         )}
-        {project && (
+        {text && project && (
           <>
             <a class="back-link" href={backHref}>{dict.detail.backToList}</a>
             <section class="detail-hero" data-reveal>
               <p class="detail-meta">
                 <span>{project.year}</span>
                 <span class="entry__sep" aria-hidden="true">/</span>
-                <span>{project.status}</span>
+                <span>{text.status}</span>
               </p>
-              <h2>{project.title}</h2>
-              <p class="research-hero__intro">{project.summary}</p>
-              {project.affiliation && (
-                <p class="detail-affiliation">{dict.detail.affiliationPrefix} / {project.affiliation}</p>
+              <h2>{text.title}</h2>
+              <p class="research-hero__intro">{text.summary}</p>
+              {text.affiliation && (
+                <p class="detail-affiliation">{dict.detail.affiliationPrefix} / {text.affiliation}</p>
               )}
               {project.piWebsite && (
                 <p class="detail-pi">
                   <a class="detail-pi-link" href={project.piWebsite} target="_blank" rel="noopener noreferrer">{dict.detail.piLab} ↗</a>
                 </p>
               )}
-              {project.tags?.length > 0 && (
+              {text.tags?.length > 0 && (
                 <ul class="tag-list detail-tags">
-                  {project.tags.map((tag) => <li>{tag}</li>)}
+                  {text.tags.map((tag) => <li>{tag}</li>)}
                 </ul>
               )}
-              <img class="detail-cover" src={coverUrl(project.coverImage)} alt={project.coverAlt || `${project.title} cover image`} />
+              <img class="detail-cover" src={coverUrl(project.coverImage)} alt={text.coverAlt || `${text.title} cover image`} />
             </section>
-            {project.abstract && (
+            {text.abstract && (
               <section class="detail-panel" data-reveal>
                 <h3>{dict.detail.abstract}</h3>
-                <p>{project.abstract}</p>
+                <p>{text.abstract}</p>
               </section>
             )}
             <section class="detail-panel markdown-panel" data-reveal>

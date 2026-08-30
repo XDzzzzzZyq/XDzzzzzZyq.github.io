@@ -1,6 +1,6 @@
 ---
 import type { ProjectRecord } from "../lib/projects";
-import { coverUrl } from "../lib/projects";
+import { coverUrl, localizeProject } from "../lib/projects";
 import { projectHref, type Lang } from "../lib/i18n";
 
 type Props = {
@@ -10,6 +10,7 @@ type Props = {
 };
 
 const { project, lang, index } = Astro.props;
+const text = localizeProject(project, lang);
 const href = projectHref(lang, project.slug);
 const cover = coverUrl(project.coverImage);
 const links = project.links ?? {};
@@ -22,18 +23,18 @@ const label = String(index).padStart(2, "0");
     <p class="entry__meta">
       <span class="entry__year">{project.year}</span>
       <span class="entry__sep" aria-hidden="true">/</span>
-      <span>{project.status}</span>
-      {project.affiliation && (
+      <span>{text.status}</span>
+      {text.affiliation && (
         <>
           <span class="entry__sep" aria-hidden="true">/</span>
-          <span class="entry__affiliation">{project.affiliation}</span>
+          <span class="entry__affiliation">{text.affiliation}</span>
         </>
       )}
     </p>
-    <h3 class="entry__title"><a href={href}>{project.title}</a></h3>
-    <p class="entry__summary">{project.summary}</p>
+    <h3 class="entry__title"><a href={href}>{text.title}</a></h3>
+    <p class="entry__summary">{text.summary}</p>
     <ul class="tag-list">
-      {(project.tags || []).map((tag) => <li>{tag}</li>)}
+      {(text.tags || []).map((tag) => <li>{tag}</li>)}
     </ul>
   </div>
   <div class="entry__media">
@@ -42,14 +43,14 @@ const label = String(index).padStart(2, "0");
     </a>
     <div class="entry__actions" hidden={!hasLinks}>
     {links.github && (
-      <a class="icon-link" href={links.github} target="_blank" rel="noopener noreferrer" aria-label={`GitHub — ${project.title}`}>
+      <a class="icon-link" href={links.github} target="_blank" rel="noopener noreferrer" aria-label={`GitHub — ${text.title}`}>
         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
           <path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18a2.65 2.65 0 0 0-1.11-1.46c-.91-.62.07-.61.07-.61a2.1 2.1 0 0 1 1.53 1.03 2.13 2.13 0 0 0 2.91.83 2.12 2.12 0 0 1 .63-1.34c-2.22-.25-4.56-1.11-4.56-4.95a3.87 3.87 0 0 1 1.03-2.68 3.6 3.6 0 0 1 .1-2.64s.84-.27 2.75 1.02a9.48 9.48 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.4.1 2.64a3.87 3.87 0 0 1 1.03 2.68c0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"></path>
         </svg>
       </a>
     )}
     {links.website && (
-      <a class="icon-link" href={links.website} target="_blank" rel="noopener noreferrer" aria-label={`Website — ${project.title}`}>
+      <a class="icon-link" href={links.website} target="_blank" rel="noopener noreferrer" aria-label={`Website — ${text.title}`}>
         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
           <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
           <polyline fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="15 3 21 3 21 9"></polyline>
@@ -58,14 +59,14 @@ const label = String(index).padStart(2, "0");
       </a>
     )}
     {links.arxiv && (
-      <a class="icon-link" href={links.arxiv} target="_blank" rel="noopener noreferrer" aria-label={`arXiv — ${project.title}`}>
+      <a class="icon-link" href={links.arxiv} target="_blank" rel="noopener noreferrer" aria-label={`arXiv — ${text.title}`}>
         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
           <path fill="currentColor" d="M5.7 18.5 11 5.5h2l5.3 13h-2.2l-1.1-2.9H9l-1.1 2.9H5.7Zm4-4.8h4.6L12 7.8l-2.3 5.9Z"></path>
         </svg>
       </a>
     )}
     {links.publication && (
-      <a class="icon-link" href={links.publication} target="_blank" rel="noopener noreferrer" aria-label={`Publication — ${project.title}`}>
+      <a class="icon-link" href={links.publication} target="_blank" rel="noopener noreferrer" aria-label={`Publication — ${text.title}`}>
         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
           <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M6 3h9l3 3v15H6z"></path>
           <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M9 12h6M9 16h6M14 3v4h4"></path>

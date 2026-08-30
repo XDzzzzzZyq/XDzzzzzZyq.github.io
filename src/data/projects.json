@@ -3,16 +3,23 @@
     "slug": "gvae-spatial-transcriptomics",
     "enable": true,
     "category": "research",
-    "title": "Spatial Transcriptomics Denoising through GVAE and Mass Conservation",
+    "title": "PinFuse: Spatial Transcriptomics Denoising through GVAE and Mass Conservation",
+    "titleCn": "PinFuse: 基于 GVAE 与质量守恒的空间转录组去噪",
     "year": "2025",
     "status": "Research Intern · Dr. Yi Zhang",
+    "statusCn": "科研实习生 · Yi Zhang教授",
     "affiliation": "Duke University",
+    "affiliationCn": "杜克大学",
     "piWebsite": "https://yi-zhang-compbio-lab.github.io/",
     "summary": "Light-weight Graph Variational Auto-Encoder for denoising spatial transcriptomics data with zero-inflated negative binomial reconstruction and mass conservation.",
+    "summaryCn": "使用轻量级图变分自编码器，对空间转录组数据去噪，并结合零膨胀负二项重建与质量守恒约束。",
     "abstract": "Developed a Graph Variational Auto-Encoder (GVAE) that denoises spatial transcriptomics data by addressing zero-inflated observation noise and gene diffusion, ensuring localized graph structure and mass conservation while reconstructing a zero-inflated negative binomial distribution. Incorporated probabilistic programming (Pyro) and recent GVAE techniques for robust modeling and inference, achieving accurate reconstruction of gene expression fields from sparse samples and improving downstream latent clustering and cell/bin-level classification. Work to be published this year.",
+    "abstractCn": "构建了一个图变分自编码器（GVAE），通过处理零膨胀观测噪声和基因扩散来对空间转录组数据去噪，在重建零膨胀负二项分布的同时保持局部图结构与质量守恒。引入概率编程（Pyro）和较新的 GVAE 技术以增强建模与推断的稳健性，从稀疏样本中实现了对基因表达场的准确重建，并提升了下游潜空间聚类以及细胞 / bin 级分类性能。该工作将在今年发表。",
     "coverImage": "assets/learning-dynamics.svg",
     "coverAlt": "Cyan learning trajectory drawn through a dark grid of model states.",
-    "tags": ["Spatial Transcriptomics", "GVAE", "Pyro", "Probabilistic ML", "Single-cell"],
+    "coverAltCn": "青色的学习轨迹穿过深色模型状态网格。",
+    "tags": ["Computational Biology", "Spatial Transcriptomics", "GVAE", "Probabilistic ML", "Single-cell"],
+    "tagsCn": ["计算生物", "空间转录组", "GVAE", "概率机器学习", "单细胞"],
     "links": {
       "github": "",
       "arxiv": "",
@@ -22,6 +29,11 @@
       "Formulated denoising as reconstruction of a zero-inflated negative binomial distribution on a spatial graph.",
       "Improved downstream tasks including latent clustering, cell-level and bin-level classification.",
       "Publication in preparation; the project will be released alongside the paper this year."
+    ],
+    "detailsCn": [
+      "将去噪建模为在空间图上重建零膨胀负二项分布。",
+      "提升了潜变量聚类、细胞级与 bin 级分类等下游任务。",
+      "论文准备中，项目将在今年随论文一并发布。"
     ]
   },
   {
@@ -29,14 +41,21 @@
     "enable": true,
     "category": "research",
     "title": "Enhancing Ocean Surface Oxygen Representation via Relative Spatial Embedding",
+    "titleCn": "通过相对空间嵌入增强海洋表层氧表示",
     "year": "2024",
     "status": "Research Assistant · Dr. Zuchuan Li",
+    "statusCn": "科研助理 · Zuchuan Li老师",
     "affiliation": "Duke Kunshan University",
+    "affiliationCn": "昆山杜克大学",
     "summary": "Investigating relative spatial embedding for ocean surface feature representation with Vision Transformer variants on hundreds of gigabytes of satellite time-series data.",
+    "summaryCn": "在数百 GB 的卫星时序数据上，结合 Vision Transformer 变体研究相对空间嵌入对海洋表层特征表示的作用。",
     "abstract": "Reproduced, modified, and examined several transformer-based models — including Vision Transformer, Positional-induced Transformer, and Relative Position Embedding — to assess how relative spatial embedding enhances ocean surface feature representation. Implemented a satellite data matching system and a corresponding data loader to process massive time-series datasets at the hundreds-of-gigabytes scale.",
+    "abstractCn": "复现、修改并分析了若干基于 Transformer 的模型——包括 Vision Transformer、Positional-induced Transformer 和 Relative Position Embedding——以评估相对空间嵌入如何增强海洋表层特征表示。实现了一个卫星数据匹配系统及配套数据加载器，用于处理数百 GB 规模的大型时序数据集。",
     "coverImage": "assets/geometric-systems.svg",
     "coverAlt": "Geometric shapes and cyan circle on a warm grid background.",
-    "tags": ["Transformers", "Spatial Embedding", "Representation Learning", "Remote Sensing", "Time Series"],
+    "coverAltCn": "几何形状与青色圆点，置于暖色网格背景上。",
+    "tags": ["Transformers", "Spatial Embedding", "Representation Learning", "Remote Sensing", "Time Series Inverse Problem"],
+    "tagsCn": ["Transformer", "空间嵌入", "表征学习", "遥感", "时序反问题"],
     "links": {
       "github": "",
       "arxiv": "",
@@ -45,6 +64,10 @@
     "details": [
       "Built a satellite data matching pipeline and scalable data loader for hundreds of GB of time-series data.",
       "Empirically compared absolute and relative spatial embeddings on ocean surface feature prediction."
+    ],
+    "detailsCn": [
+      "搭建了卫星数据匹配流程与可扩展数据加载器，用于数百 GB 时序数据。",
+      "对海洋表层特征预测中的绝对与相对空间嵌入进行了实证比较。"
     ]
   },
   {
@@ -52,15 +75,22 @@
     "enable": true,
     "category": "research",
     "title": "Gene Expression Field Estimation via Poisson Resampling and Neural ODEs",
+    "titleCn": "通过泊松重采样与神经 ODE 估计基因表达场",
     "year": "2024-2025",
     "status": "Research Intern · Dr. Yi Zhang",
+    "statusCn": "科研实习生 · Yi Zhang教授",
     "affiliation": "Duke University",
+    "affiliationCn": "杜克大学",
     "piWebsite": "https://yi-zhang-compbio-lab.github.io/",
     "summary": "Modeling spatial transcriptomics as Poisson sampling on a diffused gene expression field, with a reversed Neural ODE process for reliable sample generation.",
+    "summaryCn": "将空间转录组建模为扩散后基因表达场上的泊松采样过程，并用反向神经 ODE 生成可靠样本。",
     "abstract": "Formulated spatial transcriptomics data as a spatial Poisson sampling process on a diffused gene expression field. Proposed a deep learning algorithm that generates reliable Poisson samples through a reversed Neural ODE process, combining supervised pretraining with semi-supervised operator learning. Achieved accurate reconstruction of the mean field from sparse samples and developed a deeper understanding of fluid dynamics simulation in biological data.",
+    "abstractCn": "将空间转录组数据形式化为扩散后基因表达场上的空间泊松采样过程。提出一种深度学习算法，通过反向神经 ODE 过程生成可靠的泊松样本，并结合监督预训练与半监督算子学习。实现了从稀疏样本对均值场的准确重建，同时加深了对生物数据中流体动力学模拟的理解。",
     "coverImage": "assets/learning-dynamics.svg",
     "coverAlt": "Cyan learning trajectory drawn through a dark grid of model states.",
-    "tags": ["Neural ODE", "Poisson Process", "Spatial Transcriptomics", "Operator Learning", "Fluid Dynamics"],
+    "coverAltCn": "青色的学习轨迹穿过深色模型状态网格。",
+    "tags": ["Computational Biology", "Neural ODE", "Poisson Process", "Spatial Transcriptomics", "Operator Learning", "Fluid Dynamics"],
+    "tagsCn": ["计算生物", "神经 ODE", "泊松过程", "空间转录组", "算子学习", "流体力学"],
     "links": {
       "github": "",
       "arxiv": "",
@@ -69,6 +99,10 @@
     "details": [
       "Combined supervised pretraining with semi-supervised operator learning to stabilize reversed Neural ODE training.",
       "Reconstructed gene expression mean fields from sparse samples on 2D tissue grids."
+    ],
+    "detailsCn": [
+      "结合监督预训练与半监督算子学习，稳定了反向神经 ODE 的训练。",
+      "在二维组织网格上从稀疏样本重建了基因表达均值场。"
     ]
   },
   {
@@ -76,14 +110,21 @@
     "enable": true,
     "category": "research",
     "title": "Solving Time Series Inverse Problems by Combining Bayesian-PINN with Kalman Filter",
+    "titleCn": "结合 Bayesian-PINN 与 Kalman 滤波求解时间序列反问题",
     "year": "2023-2024",
     "status": "Research Assistant · Dr. Zuchuan Li",
+    "statusCn": "科研助理 · Zuchuan Li教授",
     "affiliation": "Duke Kunshan University",
+    "affiliationCn": "昆山杜克大学",
     "summary": "A Bayesian-PINN and Kalman Filter hybrid for field dynamics inverse problems, with a patched covariance method to improve filter performance.",
+    "summaryCn": "基于 Bayesian-PINN 与 Kalman 滤波的混合模型，用于场动力系统反问题，并通过补丁协方差方法提升滤波性能。",
     "abstract": "Proposed a deep learning model for solving inverse problems of field dynamics systems by combining Bayesian neural networks (BNNs), physics-informed neural networks (PINNs), and stochastic differential equations (SDEs) with a Kalman filter. Introduced a patched covariance method to improve Kalman filter performance, and implemented the B-PINN-Kalman pipeline in PyTorch alongside a CUDA-accelerated 2D advection-diffusion fluid solver as a neural operator.",
+    "abstractCn": "提出一种用于求解场动力系统反问题的深度学习模型，将 Bayesian 神经网络（BNN）、物理信息神经网络（PINN）与随机微分方程（SDE）结合 Kalman 滤波。引入补丁协方差方法以提升 Kalman 滤波性能，并在 PyTorch 中实现了 B-PINN-Kalman 流程，同时还实现了一个 CUDA 加速的二维对流-扩散流体求解器作为神经算子。",
     "coverImage": "assets/geometric-systems.svg",
     "coverAlt": "Geometric shapes and cyan circle on a warm grid background.",
+    "coverAltCn": "几何形状与青色圆点，置于暖色网格背景上。",
     "tags": ["Bayesian NN", "PINN", "Kalman Filter", "SDE", "Inverse Problem", "CUDA"],
+    "tagsCn": ["贝叶斯神经网络", "PINN", "Kalman 滤波", "SDE", "反问题", "CUDA"],
     "links": {
       "github": "https://github.com/XDzzzzzZyq/b-pinn-kalman-filter",
       "arxiv": "",
@@ -92,6 +133,10 @@
     "details": [
       "Implemented B-PINN-Kalman in PyTorch and replicated related flow estimation and image generation papers.",
       "Built a CUDA-accelerated 2D advection-diffusion fluid solver as a neural operator backend."
+    ],
+    "detailsCn": [
+      "在 PyTorch 中实现了 B-PINN-Kalman，并复现了相关流场估计与图像生成论文。",
+      "构建了 CUDA 加速的二维对流-扩散流体求解器作为神经算子后端。"
     ]
   },
   {
@@ -99,14 +144,21 @@
     "enable": true,
     "category": "personal",
     "title": "WebGL Implementation of Reflective Gaussian Splatting (Ref-Gaussian)",
+    "titleCn": "Ref-Gaussian 的 WebGL 实现",
     "year": "2025-2026",
     "status": "Signature Work · Dr. Shixin Xu",
+    "statusCn": "代表作 · 许世新老师",
     "affiliation": "Duke Kunshan University",
+    "affiliationCn": "昆山杜克大学",
     "summary": "Browser-native WebGL pipeline for Ref-Gaussian rendering at 60+ FPS, with COLMAP-to-Docker end-to-end tooling and Approximate Tangent Axis estimation for Gaussian Surfels.",
+    "summaryCn": "面向 Ref-Gaussian 渲染的浏览器原生 WebGL 管线，可在 60+ FPS 下运行，并配有 COLMAP 到 Docker 的端到端工具链以及 Gaussian Surfels 的近似切轴估计。",
     "abstract": "Conducted an in-depth survey of recent 3D Gaussian Splatting methods and identified performance and deployment limitations in existing browser-native implementations. Implemented the latest Ref-Gaussian pipeline in WebGL, achieving 60+ FPS real-time rendering with optimized loading and memory efficiency. Proposed Approximate Tangent Axis (ATA) estimation for Gaussian Surfels rasterization, producing smoother position maps and improved visual stability. Combined with early alpha discard, view-frustum culling, and chunk-based lazy updates, significantly improved rendering throughput and reduced GPU utilization. Built an end-to-end pipeline including COLMAP reconstruction, Ref-Gaussian inference, data post-processing, and Docker-based web deployment.",
+    "abstractCn": "系统调研了近期 3D Gaussian Splatting 方法，识别出现有浏览器原生实现中的性能与部署限制。在 WebGL 中实现了最新的 Ref-Gaussian 管线，通过优化加载与内存效率实现 60+ FPS 的实时渲染。提出用于 Gaussian Surfels 光栅化的近似切轴（ATA）估计，生成更平滑的位置图并提升视觉稳定性。结合提前 alpha 丢弃、视锥裁剪和基于块的惰性更新，显著提升了渲染吞吐并降低 GPU 占用。同时构建了包含 COLMAP 重建、Ref-Gaussian 推理、数据后处理与 Docker Web 部署的端到端流程。",
     "coverImage": "assets/learning-dynamics.svg",
     "coverAlt": "Cyan learning trajectory drawn through a dark grid of model states.",
+    "coverAltCn": "青色的学习轨迹穿过深色模型状态网格。",
     "tags": ["WebGL", "3D Gaussian Splatting", "Real-time Rendering", "COLMAP", "Docker"],
+    "tagsCn": ["WebGL", "3D Gaussian Splatting", "实时渲染", "COLMAP", "Docker"],
     "links": {
       "github": "https://github.com/XDzzzzzZyq/dku-splat",
       "arxiv": "",
@@ -115,6 +167,10 @@
     "details": [
       "Achieved 60+ FPS real-time WebGL rendering of Ref-Gaussian on consumer-grade laptops.",
       "Built an end-to-end COLMAP → inference → Docker-deployed browser pipeline for campus navigation."
+    ],
+    "detailsCn": [
+      "在消费级笔记本上实现了 Ref-Gaussian 的 60+ FPS WebGL 实时渲染。",
+      "构建了 COLMAP → 推理 → Docker 部署浏览器的一体化流程，用于校园导航。"
     ]
   },
   {
@@ -122,14 +178,21 @@
     "enable": true,
     "category": "personal",
     "title": "GPU (OpenGL) based Renderer Development",
+    "titleCn": "基于 GPU（OpenGL）的渲染器开发",
     "year": "2022-Now",
     "status": "Independent Project",
+    "statusCn": "个人项目",
     "affiliation": "Individual",
+    "affiliationCn": "个人",
     "summary": "Long-term personal C++/OpenGL real-time rendering engine: 15,000+ lines, 450+ commits, with PBR, SDFs, real-time global illumination, and reproductions of 3 SIGGRAPH works.",
+    "summaryCn": "长期维护的个人 C++/OpenGL 实时渲染引擎：1.5 万+ 行、450+ 次提交，包含 PBR、SDF、实时全局光照，以及 3 个 SIGGRAPH 作品复现。",
     "abstract": "Led long-term development of a real-time rendering engine for over two years, producing 15,000+ lines of C++/OpenGL code across 450+ commits. Studied 30+ foundational and state-of-the-art graphics papers, including reproductions of three SIGGRAPH works. Conducted in-depth exploration of physically based rendering, radiometry, high-quality shadowing, signed distance fields, spatio-temporal denoising, and real-time global illumination. Acquired strong expertise in GPU architecture, high-performance computing, and shader programming, with advanced proficiency in C++ and modern OpenGL for real-time graphics systems.",
+    "abstractCn": "超过两年的长期开发，构建了一个实时渲染引擎，累计 15,000+ 行 C++/OpenGL 代码和 450+ 次提交。系统学习了 30+ 篇基础与前沿图形学论文，包括 3 个 SIGGRAPH 作品的复现。深入研究了基于物理的渲染、辐射度学、高质量阴影、符号距离场、时空去噪与实时全局光照，也在 GPU 架构、高性能计算和着色器编程上积累了扎实经验，对面向实时图形系统的 C++ 与现代 OpenGL 有较强掌握。",
     "coverImage": "assets/geometric-systems.svg",
     "coverAlt": "Geometric shapes and cyan circle on a warm grid background.",
+    "coverAltCn": "几何形状与青色圆点，置于暖色网格背景上。",
     "tags": ["OpenGL", "C++", "PBR", "Real-time GI", "SDF"],
+    "tagsCn": ["OpenGL", "C++", "PBR", "实时全局光照", "SDF"],
     "links": {
       "github": "https://github.com/XDzzzzzZyq/OpengL",
       "website": "https://xdzzzzzzyq.github.io/OpengL/",
@@ -139,6 +202,10 @@
     "details": [
       "Two-plus-year independent project: 15,000+ LOC of C++/OpenGL across 450+ commits.",
       "Reproduced three SIGGRAPH works and explored 30+ foundational graphics papers."
+    ],
+    "detailsCn": [
+      "两年以上的个人项目：15,000+ 行 C++/OpenGL，450+ 次提交。",
+      "复现了 3 个 SIGGRAPH 作品，并研究了 30+ 篇基础图形学论文。"
     ]
   },
   {
@@ -146,14 +213,21 @@
     "enable": true,
     "category": "personal",
     "title": "CUDA Image Processing Operator Development",
+    "titleCn": "CUDA 图像处理算子开发",
     "year": "2024",
     "status": "Course Project · CS 207",
+    "statusCn": "课程项目 · CS 207",
     "affiliation": "Duke Kunshan University",
+    "affiliationCn": "昆山杜克大学",
     "summary": "CUDA-accelerated Python image processing and computer vision library: convolution, geometric transforms, dithering, morphology, and texture segmentation on the GPU.",
+    "summaryCn": "CUDA 加速的 Python 图像处理与计算机视觉库：卷积、几何变换、抖动、形态学和纹理分割均在 GPU 上实现。",
     "abstract": "Developed a CUDA-accelerated Python library for Image Processing (IP) and Computer Vision, achieving high-throughput GPU performance and scalable execution. Implemented core algorithms including convolution, geometric transformations, dithering, morphological operations, and texture segmentation. Gained in-depth expertise in CUDA programming and high-performance computing, and explored hybrid pipelines that integrate PyTorch, CUDA, and C++ for efficient parallel computing and research prototyping.",
+    "abstractCn": "开发了一个 CUDA 加速的 Python 图像处理（IP）与计算机视觉库，实现高吞吐的 GPU 性能与可扩展执行。实现的核心算法包括卷积、几何变换、抖动、形态学操作和纹理分割。加深了对 CUDA 编程和高性能计算的理解，并探索了将 PyTorch、CUDA 与 C++ 结合的混合流程，以支持高效并行计算与研究原型开发。",
     "coverImage": "assets/notion-knowledge.svg",
     "coverAlt": "Layered note pages with mathematical marks and a cyan path.",
+    "coverAltCn": "分层笔记页、数学符号与一条青色路径。",
     "tags": ["CUDA", "Image Processing", "Computer Vision", "Python", "HPC"],
+    "tagsCn": ["CUDA", "图像处理", "计算机视觉", "Python", "高性能计算"],
     "links": {
       "github": "https://github.com/XDzzzzzZyq/cuda-vision",
       "arxiv": "",
@@ -162,6 +236,10 @@
     "details": [
       "Implemented convolution, geometric transforms, dithering, morphology, and texture segmentation on GPU.",
       "Explored hybrid PyTorch + CUDA + C++ pipelines for research prototyping."
+    ],
+    "detailsCn": [
+      "在 GPU 上实现了卷积、几何变换、抖动、形态学与纹理分割。",
+      "探索了 PyTorch + CUDA + C++ 的混合流程，用于研究原型开发。"
     ]
   }
 ]
