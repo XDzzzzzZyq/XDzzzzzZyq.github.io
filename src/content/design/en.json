@@ -26,7 +26,7 @@
     "closeImage": "Close",
     "backToHub": "← Back to Design",
     "backToSection": "← Back to {label}",
-    "footer": "© 2026 XDzZyq · Content mirrored from Bilibili @小豆子zyq",
+    "footer": "© 2026 XDzZyq · Content mirrored from Bilibili @{小豆子zyq}",
     "stats": {
       "date": "Date",
       "play": "Play",
@@ -64,7 +64,7 @@
       ],
       "body": [
         "Sirius, the heart of Canis Major, is a binary system of Sirius A and Sirius B. Setting out from the solar system, you listen to the two companions talking in silent space. In their almost eternal orbit they can never meet, because the price of meeting is destruction. Maybe that is the solution of a binary system.",
-        "Vocals: Isekai Joucho (@异世界情绪)\nLyrics / music / arrangement: 傘村トータ\nPV: @小豆子zyq\nModels: @永眠配信只接稿不接广, @打破碗花花_afa\nOriginal song: BV15v411t79V",
+        "Vocals: Isekai Joucho (@{异世界情绪})\nLyrics / music / arrangement: 傘村トータ\nPV: @{小豆子zyq}\nModels: @{永眠配信只接稿不接广}, @{打破碗花花_afa}\nOriginal song: BV15v411t79V",
         "A piece I had been waiting a long time to make — one wish checked off. Happy new year! ver 2 is up.",
         "Making-of and notes: BV1SMwUeUEYL"
       ],
@@ -150,7 +150,7 @@
         "Dreamcore"
       ],
       "body": [
-        "Made with @小言_GAN. The second CM for the EXC#2 exhibition — “a collision between soul and reality”."
+        "Made with @{小言_GAN}. The second CM for the EXC#2 exhibition — “a collision between soul and reality”."
       ],
       "links": {
         "bilibili": "Bilibili"
@@ -254,7 +254,7 @@
       "body": [
         "I have been writing this renderer for over four years, on and off, and it is past thirty thousand lines. Practice really was necessary: I learned a lot over the years and can feel my programming getting noticeably better.",
         "Implemented so far:\n- deferred rendering\n- PBR materials\n- lighting\n   - point, directional, spot and area lights\n   - hard and soft shadows from shadow maps\n- ambient light\n- screen-space ambient occlusion\n- screen-space reflection\n- FXAA (the result is so-so)",
-        "I also helped translate a tutorial on area lights; thanks to my classmate @theta-lin for the help.",
+        "I also helped translate a tutorial on area lights; thanks to my classmate @{theta-lin} for the help.",
         "Early version (2022-01): a very inefficient renderer in C++ — 30 seconds a frame, slower than cycles. Working: triangle rasterisation, z-occlusion, diffuse and ambient terms. Not yet: anti-aliasing, model import, frustum transform, specular, shadow maps. The last image is the eevee reference."
       ],
       "links": {

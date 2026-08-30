@@ -116,7 +116,9 @@ export const renderDesignInline = (value: string): string => {
     (match, bracketedHandle: string, bareHandle: string) => {
       const handle = bracketedHandle || bareHandle;
       const href = mentionHref(handle);
-      if (!href) return match;
+      if (!href) {
+        return bracketedHandle ? `@${handle}` : match;
+      }
       return `<a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">@${handle}</a>`;
     }
   );
