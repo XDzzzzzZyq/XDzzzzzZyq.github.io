@@ -24,6 +24,11 @@ export type DesignDict = {
   works: Record<string, WorkText>;
 };
 
+const designMentionHrefs: Record<string, string> = {
+  小豆子zyq: "https://space.bilibili.com/302469604",
+  异世界情绪: "https://space.bilibili.com/488978908",
+};
+
 const dictionaries: Record<Lang, DesignDict> = {
   en: en as DesignDict,
   cn: cn as DesignDict,
@@ -76,6 +81,44 @@ export const designText = (
   key: keyof typeof en.ui,
   values?: Record<string, string>
 ): string => interpolate(String(getDesignDict(lang).ui[key]), values);
+
+const escapeHtml = (value: string): string =>
+  value.replace(/[&<>"']/g, (char) => {
+    switch (char) {
+      case "&":
+        return "&amp;";
+      case "<":
+        return "&lt;";
+      case ">":
+        return "&gt;";
+      case '"':
+        return "&quot;";
+      case "'":
+        return "&#39;";
+      default:
+        return char;
+    }
+  });
+
+const mentionHref = (handle: string): string =>
+  designMentionHrefs[handle] ??
+  `https://search.bilibili.com/all?keyword=${encodeURIComponent(handle)}`;
+
+const mentionPattern = /@([^\s<>{}\[\]()*，。！？!?;；:：/\\]+)/g;
+
+/**
+ * Render a short inline string with markdown-style bold and auto-linked @mentions.
+ * The result is safe to feed to `set:html` because the source is escaped first.
+ */
+export const renderDesignInline = (value: string): string => {
+  const escaped = escapeHtml(value);
+  const bolded = escaped.replace(/\*\*(.+?)\*\*/gs, "<strong>$1</strong>");
+  return bolded.replace(
+    mentionPattern,
+    (_match, handle: string) =>
+      `<a href="${escapeHtml(mentionHref(handle))}" target="_blank" rel="noopener noreferrer">@${handle}</a>`
+  );
+};
 
 /**
  * Point an asset path at one of the small copies that `scripts/thumbs.mjs`

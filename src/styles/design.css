@@ -690,6 +690,10 @@ body.design-page .site-footer {
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
+.work-card[role="link"] {
+  cursor: pointer;
+}
+
 .work-card:hover,
 .work-card:focus-visible {
   transform: translateY(calc(var(--space-1-8) * -1));
@@ -785,6 +789,31 @@ body.design-page .site-footer {
   color: var(--color-text-muted);
   font-size: var(--text-small);
   line-height: 1.6;
+  white-space: pre-line;
+}
+
+.work-card__summary a,
+.detail-hero__summary a,
+.detail-panel p a {
+  color: var(--color-accent-hover);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-accent-hover) 55%, transparent);
+}
+
+.work-card__summary a:hover,
+.work-card__summary a:focus-visible,
+.detail-hero__summary a:hover,
+.detail-hero__summary a:focus-visible,
+.detail-panel p a:hover,
+.detail-panel p a:focus-visible {
+  border-bottom-color: var(--color-accent-hover);
+}
+
+.work-card__summary strong,
+.detail-hero__summary strong,
+.detail-panel strong {
+  font-weight: 700;
+  color: var(--color-text);
 }
 
 .work-card__open {
@@ -878,6 +907,7 @@ body.design-page .site-footer {
   margin: 0 0 var(--space-1-2);
   color: var(--color-text);
   line-height: 1.65;
+  white-space: pre-line;
 }
 
 .detail-strip {

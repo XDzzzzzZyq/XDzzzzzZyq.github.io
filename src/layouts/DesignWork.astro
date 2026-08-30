@@ -2,7 +2,16 @@
 import DesignLayout from "./DesignLayout.astro";
 import { getWork, getWorksBySection } from "../data/works";
 import type { Lang } from "../lib/i18n";
-import { designText, getDesignDict, getSectionText, getWorkText, sectionHref, statLabel, workHref } from "../lib/design";
+import {
+  designText,
+  getDesignDict,
+  getSectionText,
+  getWorkText,
+  renderDesignInline,
+  sectionHref,
+  statLabel,
+  workHref,
+} from "../lib/design";
 
 type Props = {
   lang: Lang;
@@ -51,7 +60,7 @@ const playerSrc = work.video
         {text.title}
         {text.subtitle && <small>{text.subtitle}</small>}
       </h1>
-      <p class="detail-hero__summary">{text.summary}</p>
+      <p class="detail-hero__summary" set:html={renderDesignInline(text.summary)}></p>
       <ul class="tag-list">
         {text.tags.map((tag) => <li>{tag}</li>)}
       </ul>
@@ -88,7 +97,7 @@ const playerSrc = work.video
     <section class="detail-panel" data-reveal>
       <h2>{dict.ui.bodyTitle}</h2>
       {text.body.length > 0 ? (
-        text.body.map((paragraph) => <p>{paragraph}</p>)
+        text.body.map((paragraph) => <p set:html={renderDesignInline(paragraph)}></p>)
       ) : (
         <p class="empty-state">{dict.ui.noBody}</p>
       )}

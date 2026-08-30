@@ -1,7 +1,7 @@
 ---
 import type { WorkItem } from "../data/works";
 import type { Lang } from "../lib/i18n";
-import { designText, getDesignDict, getWorkText, statLabel, workHref } from "../lib/design";
+import { designText, getDesignDict, getWorkText, renderDesignInline, statLabel, workHref } from "../lib/design";
 
 type Props = {
   lang: Lang;
@@ -16,10 +16,14 @@ const text = getWorkText(lang, work.slug);
 const title = text?.title ?? work.slug;
 const stat = work.stats[0];
 const showStat = variant !== "wall" && stat;
+const titleId = `${work.slug}-card-title`;
 ---
-<a
+<article
   class={`work-card${variant === "hero" ? " work-card--hero" : ""}`}
-  href={workHref(lang, work.section, work.slug)}
+  data-card-link={workHref(lang, work.section, work.slug)}
+  role="link"
+  tabindex="0"
+  aria-labelledby={titleId}
   data-reveal
 >
   <div class="work-card__frame">
@@ -47,11 +51,11 @@ const showStat = variant !== "wall" && stat;
         </>
       )}
     </p>
-    <h3 class="work-card__title">
+    <h3 class="work-card__title" id={titleId}>
       {title}
       {text?.subtitle && <small>{text.subtitle}</small>}
     </h3>
-    <p class="work-card__summary">{text?.summary}</p>
+    <p class="work-card__summary" set:html={text ? renderDesignInline(text.summary) : ""}></p>
     <span class="work-card__open">{dict.ui.view}</span>
   </div>
-</a>
+</article>
