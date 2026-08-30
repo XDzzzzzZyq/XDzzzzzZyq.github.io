@@ -1,6 +1,6 @@
 import { getCollection, render, type CollectionEntry } from "astro:content";
 import rawProjects from "../data/projects.json";
-import type { Lang } from "./i18n";
+import { otherLang, type Lang } from "./i18n";
 
 export type ProjectCategory = "research" | "personal";
 
@@ -60,8 +60,24 @@ export type LocalizedProjectRecord = Omit<
 
 export type SearchProject = Pick<
   LocalizedProjectRecord,
-  "slug" | "title" | "summary" | "tags" | "status" | "category" | "year"
+  | "slug"
+  | "title"
+  | "summary"
+  | "abstract"
+  | "tags"
+  | "status"
+  | "affiliation"
+  | "category"
+  | "year"
 >;
+export type SearchProjectText = Pick<
+  LocalizedProjectRecord,
+  "title" | "summary" | "abstract" | "tags" | "status" | "affiliation"
+>;
+
+export type SearchProjectRecord = SearchProject & {
+  alt: SearchProjectText;
+};
 
 const projects = rawProjects as ProjectRecord[];
 
@@ -100,18 +116,29 @@ export const coverUrl = (coverImage: string): string => {
   return `/research/${coverImage}`;
 };
 
-export const getSearchIndex = (lang: Lang): SearchProject[] =>
+export const getSearchIndex = (lang: Lang): SearchProjectRecord[] =>
   getProjects().map((project) => {
     const text = localizeProject(project, lang);
+    const altText = localizeProject(project, otherLang(lang));
     return {
-    slug: project.slug,
-    title: text.title,
-    summary: text.summary,
-    tags: text.tags,
-    status: text.status,
-    category: project.category,
-    year: project.year,
-  };
+      slug: project.slug,
+      title: text.title,
+      summary: text.summary,
+      abstract: text.abstract,
+      tags: text.tags,
+      status: text.status,
+      affiliation: text.affiliation,
+      category: project.category,
+      year: project.year,
+      alt: {
+        title: altText.title,
+        summary: altText.summary,
+        abstract: altText.abstract,
+        tags: altText.tags,
+        status: altText.status,
+        affiliation: altText.affiliation,
+      },
+    };
   });
 
 export const getProjectBody = async (

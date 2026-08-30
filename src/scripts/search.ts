@@ -1,9 +1,9 @@
-import type { SearchProject } from "../lib/projects";
+import type { SearchProjectRecord } from "../lib/projects";
 
 const MAX_RESULTS = 10;
 const STORAGE_KEY = "xdzzyq.lang";
 
-let projects: SearchProject[] = [];
+let projects: SearchProjectRecord[] = [];
 let query = "";
 let activeIndex = 0;
 
@@ -30,6 +30,15 @@ const categoryLabel = (cat: string): string => {
   return cat;
 };
 
+const normalize = (value: string): string =>
+  value
+    .toLowerCase()
+    .replace(/[_/·,，.()\-—:;|]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+const tokenize = (query: string): string[] => normalize(query).split(" ").filter(Boolean);
+
 const projectHref = (slug: string): string => {
   const lang = window.__lang || "en";
   const stored = (() => {
@@ -47,8 +56,9 @@ const projectHref = (slug: string): string => {
 
 const subsequenceScore = (rawQuery: string, target: string): number => {
   if (!rawQuery) return 0;
-  const q = rawQuery.toLowerCase();
-  const tg = target.toLowerCase();
+  const q = normalize(rawQuery);
+  const tg = normalize(target);
+  if (!q || !tg) return -Infinity;
   if (tg.includes(q)) {
     const idx = tg.indexOf(q);
     return 1000 - idx - Math.min(tg.length, 100);
@@ -72,21 +82,55 @@ const subsequenceScore = (rawQuery: string, target: string): number => {
   return score - Math.min(tg.length, 200) * 0.1;
 };
 
-const scoreProject = (project: SearchProject, q: string): number => {
-  const titleScore = subsequenceScore(q, project.title);
-  if (titleScore === -Infinity) return -Infinity;
-  let s = titleScore * 3;
-  const summaryScore = subsequenceScore(q, project.summary || "");
-  if (summaryScore !== -Infinity) s += summaryScore * 0.6;
-  for (const tag of project.tags || []) {
-    const tagScore = subsequenceScore(q, tag);
-    if (tagScore !== -Infinity) s += tagScore * 1.4;
+const scoreProject = (project: SearchProjectRecord, q: string): number => {
+  const terms = tokenize(q);
+  if (terms.length === 0) return 0;
+
+  const fields = [
+    { text: project.title || "", weight: 3 },
+    { text: project.alt.title || "", weight: 3 },
+    { text: (project.tags || []).join(" "), weight: 2 },
+    { text: (project.alt.tags || []).join(" "), weight: 2 },
+    { text: project.abstract || "", weight: 1.6 },
+    { text: project.alt.abstract || "", weight: 1.6 },
+    { text: project.summary || "", weight: 1 },
+    { text: project.alt.summary || "", weight: 1 },
+    { text: project.status || "", weight: 0.6 },
+    { text: project.alt.status || "", weight: 0.6 },
+    { text: project.affiliation || "", weight: 0.4 },
+    { text: project.alt.affiliation || "", weight: 0.4 },
+  ];
+
+  let total = 0;
+  for (const term of terms) {
+    let best = -Infinity;
+    for (const field of fields) {
+      if (!field.text) continue;
+      const score = subsequenceScore(term, field.text);
+      if (score !== -Infinity) {
+        best = Math.max(best, score * field.weight);
+      }
+    }
+    if (best === -Infinity) return -Infinity;
+    total += best;
   }
-  if (project.status) {
-    const stScore = subsequenceScore(q, project.status);
-    if (stScore !== -Infinity) s += stScore * 0.4;
-  }
-  return s;
+
+  const phrase = subsequenceScore(
+    q,
+    [
+      project.title,
+      project.summary,
+      project.abstract || "",
+      ...(project.tags || []),
+      project.alt.title,
+      project.alt.summary,
+      project.alt.abstract || "",
+      ...(project.alt.tags || []),
+    ].join(" ")
+  );
+  if (phrase !== -Infinity) total += phrase * 0.5;
+
+  return total;
 };
 
 const updateActiveClass = () => {
