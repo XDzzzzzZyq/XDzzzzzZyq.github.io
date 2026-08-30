@@ -17,7 +17,7 @@
     "imageCount": "{count} images",
     "aboutTitle": "About",
     "avatarAlt": "小豆子zyq's Bilibili avatar",
-    "aboutBody": "小豆子zyq / XDzZyq. I make PVs, motion graphics and still-motion, and also write renderers, AE plug-ins and Blender scripts; the graphic section is mostly still series. Only the pieces I would still look at twice are collected here.",
+    "aboutBody": "@{xiaodouzizyq} / XDzZyq. I make PVs, motion graphics and still-motion, and also write renderers, AE plug-ins and Blender scripts; the graphic section is mostly still series. Only the pieces I would still look at twice are collected here.",
     "bodyTitle": "Notes",
     "noBody": "The original post has no description — just watch it.",
     "videoTitle": "Watch",
@@ -55,8 +55,8 @@
   "works": {
     "sirius-heart": {
       "title": "シリウスの心臓",
-      "subtitle": "Heart of Sirius · self-made MV feat. Isekai Joucho",
-      "summary": "A song I really love by the Japanese singer Isekai Joucho, for which I finally made the MV I had planned since high school.",
+      "subtitle": "Heart of Sirius · self-made MV feat. @{isekai_joucho}",
+      "summary": "A song I really love by the Japanese singer @{isekai_joucho}, for which I finally made the MV I had planned since high school.",
       "tags": [
         "MV",
         "Blender",
@@ -142,7 +142,7 @@
     },
     "exc2-cm2": {
       "title": "EXC#2 Exhibition CM2",
-      "subtitle": "with 小言_GAN",
+      "subtitle": "with @{小言_GAN}",
       "summary": "The second CM for the EXC#2 exhibition.",
       "tags": [
         "EXC",
@@ -167,7 +167,7 @@
       ],
       "body": [
         "Finished 2023-06-11.",
-        "Huge thanks to 小言 for pulling me into another CM collaboration for EXC. We wanted to try something different, mixing the real and the virtual to say something interesting. The track is Hasegawa Hakushi's 【毒】 — a fun arrangement with fitting lyrics. Beyond that I worked on switching between a “scene” and “the scene inside a photograph”, mixed with what I was then thinking about digital media. The installations come from a senior students' exhibition; the last shot is the souvenir 小言 gave me after our previous CM.",
+        "Huge thanks to @{小言_GAN} for pulling me into another CM collaboration for EXC. We wanted to try something different, mixing the real and the virtual to say something interesting. The track is Hasegawa Hakushi's 【毒】 — a fun arrangement with fitting lyrics. Beyond that I worked on switching between a “scene” and “the scene inside a photograph”, mixed with what I was then thinking about digital media. The installations come from a senior students' exhibition; the last shot is the souvenir @{小言_GAN} gave me after our previous CM.",
         "Hoping to help with EXC#3 as well."
       ],
       "links": {
@@ -200,7 +200,7 @@
       ],
       "body": [
         "Finished 2023-05-17.",
-        "Thanks to 阿相 for the invitation — a very happy production. I also tried a new way of using RTFX-style footage."
+        "Thanks to @{阿相} for the invitation — a very happy production. I also tried a new way of using RTFX-style footage."
       ],
       "links": {
         "bilibili": "Bilibili"
@@ -218,7 +218,7 @@
       ],
       "body": [
         "Finished 2021-09-21.",
-        "Big thanks to 小言 and 崩 for pulling me into a CM collaboration for EXC, where I tried Memphis style in 3D and motion. Made with AE + Blender; Blender had no geometry nodes back then, so every model and 3D animation was generated procedurally with Sverchok and Animation Nodes, while 2D animation and compositing happened in AE. A very interesting piece of work."
+        "Big thanks to @{小言_GAN} and @{崩} for pulling me into a CM collaboration for EXC, where I tried Memphis style in 3D and motion. Made with AE + Blender; Blender had no geometry nodes back then, so every model and 3D animation was generated procedurally with Sverchok and Animation Nodes, while 2D animation and compositing happened in AE. A very interesting piece of work."
       ],
       "links": {
         "bilibili": "Bilibili"
@@ -227,13 +227,13 @@
     "karasu-collab": {
       "title": "カラスは真っ白 - 9番目の「？」",
       "subtitle": "10-person PV collab · organised by me",
-      "summary": "The third group collaboration started by 阿相; it took two years from the call to the final cut.",
+      "summary": "The third group collaboration started by @{阿相}; it took two years from the call to the final cut.",
       "tags": [
         "Organiser",
         "PV"
       ],
       "body": [
-        "The third collaboration started by 阿相.\nParticipants: 是阿相哦 / 不_咕鸟 / 白雁雁 / 一个不够成熟的夕 / 小豆子zyq / 理头LilRans / 陸忻遊 / 金蛋蛋Geg / MoDon某冻 / kkmfd",
+        "The third collaboration started by @{阿相}.\nParticipants: @{是阿相哦} / @{不_咕鸟} / @{白雁雁} / @{一个不够成熟的夕} / @{xiaodouzizyq} / @{理头LilRans} / @{陸忻遊} / @{金蛋蛋Geg} / @{MoDon某冻} / @{kkmfd}",
         "From the call to the final cut this took two years. Thanks to everyone — the ones who finished early and then waited, and the ones who delivered at the very last minute.",
         "The collaboration started in my PV chat group (726189279); I would like to run another one some day."
       ],
@@ -439,7 +439,7 @@
     "typesetting-series": {
       "title": "Graphics Design Practice",
       "subtitle": "#我超好排",
-      "summary": "A graphics design challenge under #我超好排: Isekai Joucho, lyrics and daily practice.",
+      "summary": "A graphics design challenge under #我超好排: @{isekai_joucho}, lyrics and daily practice.",
       "tags": [
         "Graphic",
         "Graphics design",
@@ -449,7 +449,7 @@
         "A graphics design practice challenge started by Taishu, where everyone shared their exercises and work enthusiastically and learned from one another."
       ],
       "links": {
-        "mood": "Isekai Joucho graphics design",
+        "mood": "@{isekai_joucho} graphics design",
         "must": "No way around it",
         "today": "Today's layout"
       }
