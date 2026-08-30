@@ -64,9 +64,9 @@
       ],
       "body": [
         "Sirius, the heart of Canis Major, is a binary system of Sirius A and Sirius B. Setting out from the solar system, you listen to the two companions talking in silent space. In their almost eternal orbit they can never meet, because the price of meeting is destruction. Maybe that is the solution of a binary system.",
-        "Vocals: @{异世界情绪_en}\nLyrics / music / arrangement: @{傘村トータ_en}\nPV: @{小豆子zyq_en}\nModels: @{永眠配信只接稿不接广}, @{打破碗花花_afa}\nOriginal song: BV15v411t79V",
+        "**Vocals:** @{异世界情绪_en}\n**Lyrics / music / arrangement:** @{傘村トータ_en}\n**PV:** @{小豆子zyq_en}\n**Models:** @{永眠配信只接稿不接广}, @{打破碗花花_afa}\n**Original song:** BV15v411t79V",
         "A piece I had been waiting a long time to make — one wish checked off. Happy new year! ver 2 is up.",
-        "Making-of and notes: BV1SMwUeUEYL"
+        "**Making-of and notes:** BV1SMwUeUEYL"
       ],
       "links": {
         "makingOf": "Making-of",
@@ -86,7 +86,7 @@
         "I had wanted to cut this track for ages but could never find the idea; the hole is finally filled. I started a storyboard, then found it slow and too far from what the shots became, so I went back to figuring things out while building.",
         "Tried mixing an ink-print texture with concepts and formulas from graphics — motion computer graphics, at last.",
         "Towards the end I let go a bit. The most abstract episode.",
-        "bgm: Such, PSYQUI - Don't you want me"
+        "**bgm:** Such, PSYQUI - Don't you want me"
       ],
       "links": {
         "bilibili": "Bilibili"
@@ -116,9 +116,9 @@
       ],
       "body": [
         "Work from the first half of the year. Everyone was making Chainsaw Man stills, so I jumped in on impulse — and never expected the workload. Real respect for everyone who finishes one. Power is my favourite character, so I did a few slice-of-life chapters.",
-        "Span: from the winter break of my first year to midterms of the spring semester.",
+        "**Span:** from the winter break of my first year to midterms of the spring semester.",
         "I walked through roughly the whole pipeline, starting from cutting figures out of the manga; it really does run on enthusiasm. Time ran out so the second half is parked for later. I clearly cannot tell a story yet and the editing has problems, so I leaned on sound effects to help.",
-        "Software: blender.eevee, AE, PS, PR (blender is wonderful — rendering saved me).\nbgm: 初音ミク, MARETU - マインドブランド"
+        "**Software:** blender.eevee, AE, PS, PR (blender is wonderful — rendering saved me).\n**bgm:** 初音ミク, MARETU - マインドブランド"
       ],
       "links": {
         "bilibili": "Bilibili"
@@ -233,7 +233,7 @@
         "PV"
       ],
       "body": [
-        "The third collaboration started by @{阿相_en}.\nParticipants: @{是阿相哦_en} / @{不_咕鸟_en} / @{白雁雁_en} / @{一个不够成熟的夕_en} / @{小豆子zyq_en} / @{理头LilRans_en} / @{陸忻遊_en} / @{金蛋蛋Geg_en} / @{MoDon某冻_en} / @{kkmfd_en}",
+        "The third collaboration started by @{阿相_en}.\n**Participants:** @{是阿相哦_en} / @{不_咕鸟_en} / @{白雁雁_en} / @{一个不够成熟的夕_en} / @{小豆子zyq_en} / @{理头LilRans_en} / @{陸忻遊_en} / @{金蛋蛋Geg_en} / @{MoDon某冻_en} / @{kkmfd_en}",
         "From the call to the final cut this took two years. Thanks to everyone — the ones who finished early and then waited, and the ones who delivered at the very last minute.",
         "The collaboration started in my PV chat group (726189279); I would like to run another one some day."
       ],
@@ -252,10 +252,10 @@
         "Graphics"
       ],
       "body": [
-        "I have been writing this renderer for over four years, on and off, and it is past thirty thousand lines. Practice really was necessary: I learned a lot over the years and can feel my programming getting noticeably better.",
-        "Implemented so far:\n- deferred rendering\n- PBR materials\n- lighting\n   - point, directional, spot and area lights\n   - hard and soft shadows from shadow maps\n- ambient light\n- screen-space ambient occlusion\n- screen-space reflection\n- FXAA (the result is so-so)",
+        "**I have been writing this renderer for over four years, on and off, and it is past thirty thousand lines. Practice really was necessary:** I learned a lot over the years and can feel my programming getting noticeably better.",
+        "**Implemented so far:**\n- deferred rendering\n- PBR materials\n- lighting\n   - point, directional, spot and area lights\n   - hard and soft shadows from shadow maps\n- ambient light\n- screen-space ambient occlusion\n- screen-space reflection\n- FXAA (the result is so-so)",
         "I also helped translate a tutorial on area lights; thanks to my classmate @{theta-lin} for the help.",
-        "Early version (2022-01): a very inefficient renderer in C++ — 30 seconds a frame, slower than cycles. Working: triangle rasterisation, z-occlusion, diffuse and ambient terms. Not yet: anti-aliasing, model import, frustum transform, specular, shadow maps. The last image is the eevee reference."
+        "**Early version (2022-01):** a very inefficient renderer in C++ — 30 seconds a frame, slower than cycles. Working: triangle rasterisation, z-occlusion, diffuse and ambient terms. Not yet: anti-aliasing, model import, frustum transform, specular, shadow maps. The last image is the eevee reference."
       ],
       "links": {
         "repo": "Repository",
@@ -275,7 +275,7 @@
       ],
       "body": [
         "After a year of C++ I came back to AE plug-in development and it felt much smoother. Scripts that split text into strokes exist, but nothing that generates shapes from those strokes, so I wrote a small plug-in that puts a block under every stroke.",
-        "Features: adjustable block colour, blocks-only display, skipping previous effects, hollowing out the counters inside strokes; random extrusion (extruding along two axes rather than scaling), random offset, and excluding blocks in order or at random.",
+        "**Features:** adjustable block colour, blocks-only display, skipping previous effects, hollowing out the counters inside strokes; random extrusion (extruding along two axes rather than scaling), random offset, and excluding blocks in order or at random.",
         "Full walkthrough, examples and download are in the article."
       ],
       "links": {
@@ -294,9 +294,9 @@
       ],
       "body": [
         "A while ago (in a fit of chuunibyou) I built a rune typeface that works as a decorative element or an ornament. Only Latin letters, the four Mandarin tones and some punctuation are done; Chinese can be written in pinyin.",
-        "Numbers are base twelve, with 10 and 11 written as \"#\" and \"$\". Tones: 1st \"<\", 2nd \">\", 3rd \"^\", 4th \"\\\".",
+        "**Numbers are base twelve, with 10 and 11 written as \"#\" and \"$\". Tones:** 1st \"<\", 2nd \">\", 3rd \"^\", 4th \"\\\".",
         "People said it looks like writing from another world, so it is called IsekaiType. Give it a try — the download link is in the pinned comment.",
-        "Follow-up (2022-04): because every stroke is its own shape, a stroke-splitting script can pull the strokes apart, which makes handwriting animation with autofill very convenient."
+        "**Follow-up (2022-04):** because every stroke is its own shape, a stroke-splitting script can pull the strokes apart, which makes handwriting animation with autofill very convenient."
       ],
       "links": {
         "post": "Post",
@@ -313,7 +313,7 @@
         "Add-on"
       ],
       "body": [
-        "I saw a handy script the other day (physics-dropper on Blender Market) but it costs two dollars, so — in the spirit of writing it myself rather than spending a cent — I made a crude physical scattering script. It sets properties for the dropped objects and the container, starts and ends the drop, applies the transforms and groups the result. It also meant researching add-on development from zero: Blender scripting is a hundred times friendlier than AE, with a low barrier, plenty of tutorials and docs, and easy debugging — about as hard as AE expressions."
+        "**I saw a handy script the other day (physics-dropper on Blender Market) but it costs two dollars, so — in the spirit of writing it myself rather than spending a cent — I made a crude physical scattering script. It sets properties for the dropped objects and the container, starts and ends the drop, applies the transforms and groups the result. It also meant researching add-on development from zero:** Blender scripting is a hundred times friendlier than AE, with a low barrier, plenty of tutorials and docs, and easy debugging — about as hard as AE expressions."
       ],
       "links": {
         "post": "Post"
@@ -386,7 +386,7 @@
         "Diagram"
       ],
       "body": [
-        "Itô-isometry — the distance between any two square-integrable processes equals the distance between their Itô integrals: an identity that bridges two spaces elegantly. A record of one of the most beautiful theorems from last term's stochastic analysis.",
+        "**Itô-isometry — the distance between any two square-integrable processes equals the distance between their Itô integrals:** an identity that bridges two spaces elegantly. A record of one of the most beautiful theorems from last term's stochastic analysis.",
         "Quadratic Variation — an operation that only works on stochastic differential equations. Through Itô's lemma it filters out the continuous drift term and keeps only the accumulated variance of the stochastic term; one of the important analytical tools in stochastic analysis.",
         "Tangent Bundle — a structure formed by stitching together the tangent space at every point on a manifold. It is somewhat similar to traditional multivariable calculus, but from a more abstract point of view and a very important object in differential geometry.",
         "Urysohn's Lemma — a memento of the last big theorem from my topology course; the proof runs a full three pages. Urysohn constructed, along an almost entirely independent line of thought, a continuous function connecting two closed sets in a T4 space. Intuitively it is the potential between two conductors, or the existence of contour lines between two mountains — though the theorem reaches much further.",
@@ -409,9 +409,9 @@
         "fSpy"
       ],
       "body": [
-        "A casual record of the daydreams of the past year, with some deliberately impressive names: #1 Light Sleep, #2 Order, #3 Detachment, #4 Descent, #5–#6 Parade, #7 Skipping PE, #8 Laminar Flow.",
-        "For #4 Descent I borrowed a classmate's drone and shot a few panoramas to use as HDR maps. Software: PS | Blender | AE | fSpy. They were later printed as postcards.",
-        "An earlier piece (2022-10): a reconstruction of a dream I had."
+        "**A casual record of the daydreams of the past year, with some deliberately impressive names:** #1 Light Sleep, #2 Order, #3 Detachment, #4 Descent, #5–#6 Parade, #7 Skipping PE, #8 Laminar Flow.",
+        "**For #4 Descent I borrowed a classmate's drone and shot a few panoramas to use as HDR maps. Software:** PS | Blender | AE | fSpy. They were later printed as postcards.",
+        "**An earlier piece (2022-10):** a reconstruction of a dream I had."
       ],
       "links": {
         "article": "Article",
@@ -429,7 +429,7 @@
       ],
       "body": [
         "I tried rebuilding a few scenes from Control in Blender.",
-        "Control scene study — Research Sector #6 & #7: two more very cool scenes, posted late."
+        "**Control scene study — Research Sector #6 & #7:** two more very cool scenes, posted late."
       ],
       "links": {
         "control67": "Research Sector #6 & #7",
