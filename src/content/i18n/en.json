@@ -31,7 +31,7 @@
     "contact": "Contact",
     "nameValue": "Yuqian Zhang (XDzZyq)",
     "focusValue": "Machine learning, computational physics and biology, computer graphics.",
-    "statusValue": "First-year MScAC student at the University of Toronto.",
+    "statusValue": "Intern at Baidu Famou.",
     "downloadCV": "Download CV",
     "contactButton": "Contact"
   },
@@ -39,9 +39,9 @@
     "title": "Bio",
     "description": "Background, education, and current research direction.",
     "paragraph1": "I am Yuqian Zhang.",
-    "paragraph2": "My research centers on mathematical modelling, physics-driven and data-driven methods. I have worked on spatial transcriptomics denoising with graph variational auto-encoders, Neural-ODE-based gene expression field estimation, ocean surface representation learning with transformers, and Bayesian-PINN-Kalman hybrids for time-series inverse problems. Also, I am a huge fan of Computer Graphics, my interests range from real-time rendering to physical simulation.",
+    "paragraph2": "My research centers on mathematical modelling, physics-driven and data-driven computational methods. My experience spans computational biology (spatial transcriptomics), computational physics (time-series inverse problems in ocean surface dynamics), and machine learning. Also, I am a huge fan of Computer Graphics, my interests range from real-time rendering to physical simulation.",
     "now": "Now",
-    "nowValue": "First-year MScAC student, University of Toronto.",
+    "nowValue": "Intern at Baidu Famou.",
     "bachelor": "Bachelor",
     "bachelorValue": "Duke University & Duke Kunshan University · B.S. Applied Mathematics (Math Track) · 08/2022-05/2026."
   },

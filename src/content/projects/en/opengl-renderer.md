@@ -8,8 +8,8 @@ lang: en
 A long-term personal project: build a **real-time rendering engine** from
 scratch in C++ and modern OpenGL, with physically based shading,
 high-quality shadowing, signed distance fields, and real-time global
-illumination. Over more than two years, the codebase grew past
-**15,000 lines of C++/OpenGL** across **450+ commits**, alongside study of
+illumination. Over more than four years, the codebase grew past
+**30,000 lines of C++/OpenGL** across **600+ commits**, alongside study of
 **30+ foundational and state-of-the-art graphics papers** — including
 reproductions of **3 SIGGRAPH works**.
 

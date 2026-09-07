@@ -11,10 +11,10 @@
     "affiliation": "Duke University",
     "affiliationCn": "杜克大学",
     "piWebsite": "https://yi-zhang-compbio-lab.github.io/",
-    "summary": "Light-weight Graph Variational Auto-Encoder for denoising spatial transcriptomics data with zero-inflated negative binomial reconstruction and mass conservation.",
-    "summaryCn": "使用轻量级图变分自编码器，对空间转录组数据去噪，并结合零膨胀负二项重建与质量守恒约束。",
-    "abstract": "Developed a Graph Variational Auto-Encoder (GVAE) that denoises spatial transcriptomics data by addressing zero-inflated observation noise and gene diffusion, ensuring localized graph structure and mass conservation while reconstructing a zero-inflated negative binomial distribution. Incorporated probabilistic programming (Pyro) and recent GVAE techniques for robust modeling and inference, achieving accurate reconstruction of gene expression fields from sparse samples and improving downstream latent clustering and cell/bin-level classification. Work to be published this year.",
-    "abstractCn": "构建了一个图变分自编码器（GVAE），通过处理零膨胀观测噪声和基因扩散来对空间转录组数据去噪，在重建零膨胀负二项分布的同时保持局部图结构与质量守恒。引入概率编程（Pyro）和较新的 GVAE 技术以增强建模与推断的稳健性，从稀疏样本中实现了对基因表达场的准确重建，并提升了下游潜空间聚类以及细胞 / bin 级分类性能。该工作将在今年发表。",
+    "summary": "Light-weight Graph Variational Auto-Encoder paired with a neural advection-diffusion operator, denoising and deblurring spatial transcriptomics data with zero-inflated negative binomial reconstruction and mass conservation.",
+    "summaryCn": "结合轻量级图变分自编码器和神经对流扩散算子，并结合零膨胀负二项重建与质量守恒约束，实现空间转录组数据去噪去模糊。",
+    "abstract": "Built a Graph Variational Auto-Encoder and a neural advection-diffusion operator on top of the Position-induced Transformer (PiT). It denoises and deblurs spatial transcriptomics data by modelling gene diffusion, preserving localized graph structure and mass conservation while reconstructing a zero-inflated negative binomial distribution. Also incorporated probabilistic programming (Pyro) and recent GVAE techniques for robust modeling and inference, achieving accurate reconstruction of gene expression fields from sparse samples and improving downstream latent clustering and gene marker purity. Work to be published this year.",
+    "abstractCn": "基于Position-induced Transformer（PiT）构建了一个图变分自编码器和一个神经对流扩散算子。通过处理基因扩散来对空间转录组数据去噪去扩散，在重建零膨胀负二项分布的同时保持局部图结构与质量守恒。之外引入了概率编程（Pyro）和近几年的 GVAE 技术以增强建模与推断的稳健性，从稀疏样本中实现了对基因表达场的准确重建，并提升了下游潜空间聚类以及基因marker的纯净度。该工作将在今年发表。",
     "coverImage": "assets/learning-dynamics.svg",
     "coverAlt": "Cyan learning trajectory drawn through a dark grid of model states.",
     "coverAltCn": "青色的学习轨迹穿过深色模型状态网格。",
@@ -37,8 +37,44 @@
     ]
   },
   {
-    "slug": "ocean-oxygen-relative-spatial-embedding",
+    "slug": "joint-distribution-flow-matching",
     "enable": true,
+    "category": "research",
+    "title": "MissingJiT: Learning the Joint Distribution of Satellite Imagery from Missing Data",
+    "titleCn": "MissingJiT: 从缺失数据中学习卫星影像的联合分布",
+    "year": "2025-2026",
+    "status": "Research Assistant · Dr. Zuchuan Li",
+    "statusCn": "科研助理 · Zuchuan Li老师",
+    "affiliation": "Duke Kunshan University",
+    "affiliationCn": "昆山杜克大学",
+    "summary": "MissingJiT learns the joint distribution of satellite imagery directly from incomplete observations, then performs posterior sampling in the resulting flow-matching model — a flow-matching analogue of DPS with an SSIM likelihood.",
+    "summaryCn": "MissingJiT 直接从不完整观测中学习卫星影像的联合分布，并在得到的 flow matching 模型上做后验采样——即 DPS 在 flow matching 上的对应形式，并以 SSIM 似然替代 L2。",
+    "abstract": "Diffusion posterior sampling (DPS) turns a pretrained generative model into a solver for general inverse problems by augmenting its score with a likelihood gradient, but it rests on two assumptions that fail for real sensor data: the forward process must be variance-preserving, and a score function must already model the joint distribution of complete high-dimensional data. Satellite imagery violates both — clouds, sensor gaps, and failed acquisitions leave only incomplete observations, so no complete dataset exists from which to learn the joint. MissingJiT is a framework that learns this joint distribution directly from missing data and performs posterior sampling in the resulting flow-matching model. First, a pixel-space Just image Transformer (JiT) learns the joint distribution of satellite imagery by discarding missing patches at tokenization, packing variable-length sequences with masked attention, and marginalizing over the missing mechanism under a missingness-at-random assumption. Second, because flow matching is not a VP-SDE, the stochastic differential equation whose time-marginals match the linear-interpolation flow is derived, along with its time-reversed probability-flow ODE and the isolated score term, yielding a flow-matching analogue of DPS. Third, the standard L2 likelihood is replaced with a differentiable structural-similarity (SSIM) distance to preserve fine-scale texture that L2 tends to blur. Unconditioned sampling already reveals realistic geophysical structure, and conditioning on partial observations enables spatially coherent inpainting.",
+    "abstractCn": "Diffusion posterior sampling（DPS）通过在 score 上叠加似然梯度，把预训练生成模型变成通用反问题求解器，但它依赖两个在真实传感器数据上不成立的假设：前向过程必须是方差保持（variance-preserving）的，且必须已有一个 score 函数刻画了完整高维数据的联合分布。卫星影像同时违背这两点——云层、传感器缺口与失败的获取只留下不完整观测，因此并不存在可用于学习联合分布的完整数据集。MissingJiT 直接从缺失数据中学习该联合分布，并在得到的 flow matching 模型上执行后验采样。其一，用像素空间的 Just image Transformer（JiT）学习卫星影像的联合分布：在 tokenization 阶段丢弃缺失 patch，用掩码注意力打包变长序列，并在随机缺失（missingness-at-random）假设下对缺失机制做边缘化。其二，由于 flow matching 并非 VP-SDE，推导了时间边缘分布与线性插值流一致的随机微分方程，及其时间反演的 probability-flow ODE 与独立的 score 项，从而得到 DPS 在 flow matching 上的对应形式。其三，将标准 L2 似然替换为可微的结构相似性（SSIM）距离，以保留 L2 容易模糊掉的细尺度纹理。无条件采样已能呈现真实的地球物理结构，而以部分观测为条件则可实现空间连贯的影像补全。",
+    "coverImage": "assets/learning-dynamics.svg",
+    "coverAlt": "Cyan learning trajectory drawn through a dark grid of model states.",
+    "coverAltCn": "青色的学习轨迹穿过深色模型状态网格。",
+    "tags": ["Flow Matching", "Diffusion Posterior Sampling", "JiT", "Missing Data", "Satellite Inpainting"],
+    "tagsCn": ["Flow Matching", "Diffusion Posterior Sampling", "JiT", "缺失数据", "卫星影像补全"],
+    "links": {
+      "github": "",
+      "arxiv": "",
+      "publication": ""
+    },
+    "details": [
+      "Learns the joint distribution directly from incomplete imagery: missing patches are discarded at tokenization, variable-length sequences are packed with masked attention, and the missing mechanism is marginalized under missingness-at-random.",
+      "Derived the SDE whose time-marginals match the linear-interpolation flow, its time-reversed probability-flow ODE, and the isolated score term — a flow-matching analogue of DPS, since flow matching is not a VP-SDE.",
+      "Replaced the L2 likelihood with a differentiable SSIM distance to preserve fine-scale texture, enabling spatially coherent inpainting from partial observations."
+    ],
+    "detailsCn": [
+      "直接从不完整影像中学习联合分布：tokenization 阶段丢弃缺失 patch，用掩码注意力打包变长序列，并在随机缺失假设下对缺失机制做边缘化。",
+      "推导了时间边缘分布与线性插值流一致的 SDE、其时间反演的 probability-flow ODE 与独立的 score 项——由于 flow matching 不是 VP-SDE，由此得到 DPS 的 flow matching 对应形式。",
+      "将 L2 似然替换为可微的 SSIM 距离以保留细尺度纹理，从而在部分观测条件下实现空间连贯的影像补全。"
+    ]
+  },
+  {
+    "slug": "ocean-oxygen-relative-spatial-embedding",
+    "enable": false,
     "category": "research",
     "title": "Enhancing Ocean Surface Oxygen Representation via Relative Spatial Embedding",
     "titleCn": "通过相对空间嵌入增强海洋表层氧表示",
@@ -184,10 +220,10 @@
     "statusCn": "个人项目",
     "affiliation": "Individual",
     "affiliationCn": "个人",
-    "summary": "Long-term personal C++/OpenGL real-time rendering engine: 15,000+ lines, 450+ commits, with PBR, SDFs, real-time global illumination, and reproductions of 3 SIGGRAPH works.",
-    "summaryCn": "长期维护的个人 C++/OpenGL 实时渲染引擎：1.5 万+ 行、450+ 次提交，包含 PBR、SDF、实时全局光照，以及 3 个 SIGGRAPH 作品复现。",
-    "abstract": "Led long-term development of a real-time rendering engine for over two years, producing 15,000+ lines of C++/OpenGL code across 450+ commits. Studied 30+ foundational and state-of-the-art graphics papers, including reproductions of three SIGGRAPH works. Conducted in-depth exploration of physically based rendering, radiometry, high-quality shadowing, signed distance fields, spatio-temporal denoising, and real-time global illumination. Acquired strong expertise in GPU architecture, high-performance computing, and shader programming, with advanced proficiency in C++ and modern OpenGL for real-time graphics systems.",
-    "abstractCn": "超过两年的长期开发，构建了一个实时渲染引擎，累计 15,000+ 行 C++/OpenGL 代码和 450+ 次提交。系统学习了 30+ 篇基础与前沿图形学论文，包括 3 个 SIGGRAPH 作品的复现。深入研究了基于物理的渲染、辐射度学、高质量阴影、符号距离场、时空去噪与实时全局光照，也在 GPU 架构、高性能计算和着色器编程上积累了扎实经验，对面向实时图形系统的 C++ 与现代 OpenGL 有较强掌握。",
+    "summary": "Long-term personal C++/OpenGL real-time rendering engine: 30,000+ lines, 600+ commits, with PBR, SDFs, real-time global illumination, and reproductions of 3 SIGGRAPH works.",
+    "summaryCn": "长期维护的个人 C++/OpenGL 实时渲染引擎：3 万+ 行、600+ 次提交，包含 PBR、SDF、实时全局光照，以及 3 个 SIGGRAPH 作品复现。",
+    "abstract": "Led long-term development of a real-time rendering engine for over four years, producing 30,000+ lines of C++/OpenGL code across 600+ commits. Studied 30+ foundational and state-of-the-art graphics papers, including reproductions of three SIGGRAPH works. Conducted in-depth exploration of physically based rendering, radiometry, high-quality shadowing, signed distance fields, spatio-temporal denoising, and real-time global illumination. Acquired strong expertise in GPU architecture, high-performance computing, and shader programming, with advanced proficiency in C++ and modern OpenGL for real-time graphics systems.",
+    "abstractCn": "超过四年的长期开发，构建了一个实时渲染引擎，累计 30,000+ 行 C++/OpenGL 代码和 600+ 次提交。系统学习了 30+ 篇基础与前沿图形学论文，包括 3 个 SIGGRAPH 作品的复现。深入研究了基于物理的渲染、辐射度学、高质量阴影、符号距离场、时空去噪与实时全局光照，也在 GPU 架构、高性能计算和着色器编程上积累了扎实经验，对面向实时图形系统的 C++ 与现代 OpenGL 有较强掌握。",
     "coverImage": "assets/geometric-systems.svg",
     "coverAlt": "Geometric shapes and cyan circle on a warm grid background.",
     "coverAltCn": "几何形状与青色圆点，置于暖色网格背景上。",
@@ -200,11 +236,11 @@
       "publication": ""
     },
     "details": [
-      "Two-plus-year independent project: 15,000+ LOC of C++/OpenGL across 450+ commits.",
+      "Four-plus-year independent project: 30,000+ LOC of C++/OpenGL across 600+ commits.",
       "Reproduced three SIGGRAPH works and explored 30+ foundational graphics papers."
     ],
     "detailsCn": [
-      "两年以上的个人项目：15,000+ 行 C++/OpenGL，450+ 次提交。",
+      "四年以上的个人项目：30,000+ 行 C++/OpenGL，600+ 次提交。",
       "复现了 3 个 SIGGRAPH 作品，并研究了 30+ 篇基础图形学论文。"
     ]
   },
