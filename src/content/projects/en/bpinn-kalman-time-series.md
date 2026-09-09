@@ -16,14 +16,15 @@ performance.
 ## Method
 
 - **Bayesian-PINN core.** A BNN encodes uncertainty over the unknown
-  parameters; a PINN term adds the underlying PDE/SDE residual as a soft
-  constraint so the inferred dynamics stay physically consistent.
-- **Kalman filter stage.** The BNN-PINN posterior is fed into a Kalman
+  parameters, so the B-PINN carries both physics-prior consistency and an
+  uncertainty estimate.
+- **Kalman filter stage.** The B-PINN posterior is fed into a Kalman
   filter to propagate uncertainty forward in time and fuse it with new
   observations.
-- **Patched covariance method.** The full covariance is approximated by
-  smaller, spatially or temporally local patches. This is cheaper to invert
-  and more stable when observations are sparse or irregular.
+- **Patched covariance method.** Discretizing the whole physical field leaves a
+  state so high-dimensional that a global covariance is impractical
+  (`O(w^4)`). Patching the domain spatially brings the cost down to
+  `O(W^2 P^2)`, and is more stable when observations are sparse or irregular.
 - **Implementation.** Built in **PyTorch**. A **CUDA-accelerated 2D
   advection-diffusion fluid solver** is implemented as a neural operator
   backend, providing fast forward simulations during training.

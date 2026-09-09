@@ -31,11 +31,11 @@ flow-matching model.
   flattened into a single sequence and masked attention keeps tokens of
   different images from attending to one another, giving a training signal
   independent of the missing pattern.
-- **Geo-referenced conditioning.** On top of the JiT backbone (RoPE, SiLU), an
-  absolute spatial embedding from each patch's latitude/longitude and a seasonal
-  embedding of time-of-year are fused with the diffusion-time conditioning
-  through adaLN-style modulation — geophysical fields depend on *where* and
-  *when*, not only on relative position.
+- **Geo-referenced conditioning.** Geophysical fields depend on *where* and
+  *when*, not only on relative position. On top of the JiT architecture (RoPE,
+  SiLU), an absolute spatial embedding from each patch's latitude/longitude and
+  a seasonal embedding of time-of-year are fused with the diffusion-time
+  conditioning through adaLN-style modulation.
 - **FM-DPS.** Flow matching is not a VP-SDE, so DPS does not transfer directly.
   The SDE whose time-marginals match the linear-interpolation path is derived,
   then its time-reversed probability-flow ODE, which isolates the score with an
@@ -49,7 +49,7 @@ flow-matching model.
 
 ## Results
 
-On single-channel sea-surface temperature crops:
+On multi-channel sea-surface temperature crops (SST, PAR, and others):
 
 - Unconditioned sampling already reveals realistic geophysical structure.
 - Conditioning on partial observations enables spatially coherent inpainting.

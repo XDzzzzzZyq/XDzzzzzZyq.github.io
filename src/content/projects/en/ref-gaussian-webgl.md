@@ -10,7 +10,8 @@ browser-native ports either lose fidelity or fail to hit real-time frame
 rates on consumer laptops. This signature work ports the latest
 **Reflective Gaussian Splatting (Ref-Gaussian)** pipeline to **WebGL**,
 shipping a Docker-deployed browser experience that runs at **60+ FPS** on
-typical hardware and supports glossy/reflective surfaces.
+typical hardware and supports glossy/reflective surfaces and other PBR
+properties.
 
 ## Method
 
@@ -31,7 +32,7 @@ typical hardware and supports glossy/reflective surfaces.
 ## Results
 
 - 60+ FPS real-time WebGL rendering of Ref-Gaussian on consumer-grade
-  laptops.
+  laptops (RTX 4060 Laptop).
 - Smoother visual quality on reflective surfaces thanks to ATA.
 - Significantly reduced GPU utilization compared to the naïve port.
 

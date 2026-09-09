@@ -5,33 +5,30 @@ lang: en
 
 ## Overview
 
-Ongoing upstream contribution to **Blender**, working inside a production C++
-codebase alongside its maintainers. The work centers on the **curve sculpting
-and geometry editing** pipeline, plus smaller fixes to material and
-curve-mapping interactions. **Five pull requests** have been accepted into the
-official repository.
+Ongoing upstream contribution to **Blender**, working alongside its maintainers
+inside a production, mid-to-large C++ codebase. The work centers on the **curve
+sculpting and geometry editing** pipeline, plus a handful of bug fixes to
+material and curve-mapping interactions. **Five pull requests** have been
+accepted into the official repository.
 
-## Contributions
+## Main contributions
 
-- **Curve radius initialization.** New curves start with a well-defined radius
-  instead of inheriting an arbitrary value, which makes subsequent sculpting
-  predictable.
-- **Radius interpolation.** Radius is interpolated along the curve rather than
-  applied per point, so tapering behaves continuously.
-- **UI integration.** The new parameters are exposed through the regular
-  operator and panel layout, following existing conventions rather than adding a
-  bespoke widget.
-- **Documentation.** The user-facing docs were updated alongside the code, since
-  a feature that is not documented is effectively invisible.
-- **Material and curve mapping.** Several material property editing and
-  curve-mapping interactions were smoothed out.
+- **Curve radius initialization.** When sculpting hair, new hairs no longer have
+  to start from a fixed value — radius and other vertex attributes can be
+  interpolated from the surrounding existing hairs.
+- **Curve mapping.** Fixed a long-standing interaction issue, and added
+  multi-point selection with slider control across all curve-mapping
+  operations.
+- **Documentation.** The user-facing docs were updated alongside the code, with
+  the Chinese translation handled as well.
 
 ## What it taught
 
-Contributing to a codebase this size is mostly reading. Each change has to
-match existing conventions, thread through the data layer and the UI, and
-survive public review before it lands — a very different discipline from
-building a personal project where every decision is yours.
+Contributing to a codebase this size is mostly reading. Most changes turned out
+to be more involved than they first looked. Each one has to match existing
+standards, thread through the data layer and the UI, and survive public review
+before it lands — a very different engineering flow from a personal project
+where every decision is yours.
 
 ## Contribution reports
 
