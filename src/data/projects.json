@@ -3,8 +3,8 @@
     "slug": "gvae-spatial-transcriptomics",
     "enable": true,
     "category": "research",
-    "title": "PinFuse: Spatial Transcriptomics Denoising through GVAE and Mass Conservation",
-    "titleCn": "PinFuse: 基于 GVAE 与质量守恒的空间转录组去噪",
+    "title": "PinFuse: Spatial Transcriptomics Data Denoising through Neural Advection-Diffusion Operator",
+    "titleCn": "PinFuse: 基于神经对流扩散算子的空间转录组去噪",
     "year": "2025",
     "status": "Research Intern · Dr. Yi Zhang",
     "statusCn": "科研实习生 · Yi Zhang教授",
@@ -145,7 +145,7 @@
     "slug": "bpinn-kalman-time-series",
     "enable": true,
     "category": "research",
-    "title": "Solving Time Series Inverse Problems by Combining Bayesian-PINN with Kalman Filter",
+    "title": "Solving Time Series Inverse Problem by Combining Bayesian-PINN with Kalman Filter",
     "titleCn": "结合 Bayesian-PINN 与 Kalman 滤波求解时间序列反问题",
     "year": "2023-2024",
     "status": "Research Assistant · Dr. Zuchuan Li",
@@ -207,6 +207,43 @@
     "detailsCn": [
       "在消费级笔记本上实现了 Ref-Gaussian 的 60+ FPS WebGL 实时渲染。",
       "构建了 COLMAP → 推理 → Docker 部署浏览器的一体化流程，用于校园导航。"
+    ]
+  },
+  {
+    "slug": "blender-development",
+    "enable": true,
+    "category": "personal",
+    "title": "Blender Development",
+    "titleCn": "Blender 开发",
+    "year": "2024-Now",
+    "status": "Individual Contributor",
+    "statusCn": "个人贡献者",
+    "affiliation": "Blender",
+    "affiliationCn": "Blender",
+    "summary": "Upstream contributions to Blender's curve sculpting and geometry editing pipeline: curve radius initialization and interpolation, UI integration, and material and curve-mapping interactions. 5 pull requests accepted.",
+    "summaryCn": "向 Blender 上游贡献曲线雕刻与几何编辑管线：曲线半径初始化与插值、界面集成，以及材质属性与曲线映射交互的改进。5 个 pull request 已合入官方仓库。",
+    "abstract": "Enhanced Blender's curve sculpting and geometry editing pipeline as an individual contributor, implementing curve radius initialization, radius interpolation, the surrounding UI integration, and the related documentation. Also improved several material property editing and curve-mapping interactions. Five pull requests have been accepted into the official Blender repository. Working inside a C++ codebase of this size meant reading far more code than was written: matching existing conventions, threading changes through the DNA/RNA data layer and the UI, and shipping each change through public review.",
+    "abstractCn": "以个人贡献者身份改进 Blender 的曲线雕刻与几何编辑管线，实现了曲线半径初始化、半径插值、配套的界面集成以及相关文档，并改进了若干材质属性编辑与曲线映射交互。已有 5 个 pull request 合入 Blender 官方仓库。在这样体量的 C++ 代码库里工作，读代码远多于写代码：需要遵循既有约定、把改动贯穿 DNA/RNA 数据层与界面层，并让每次改动通过公开评审。",
+    "coverImage": "assets/geometric-systems.svg",
+    "coverAlt": "Geometric shapes and cyan circle on a warm grid background.",
+    "coverAltCn": "几何形状与青色圆点，置于暖色网格背景上。",
+    "tags": ["Blender", "C++", "Open Source", "Curve Sculpting", "UI"],
+    "tagsCn": ["Blender", "C++", "开源贡献", "曲线雕刻", "界面开发"],
+    "links": {
+      "github": "",
+      "website": "https://projects.blender.org/Zyq-XDz/.profile/src/branch/main/reports/reports.md",
+      "arxiv": "",
+      "publication": ""
+    },
+    "details": [
+      "Implemented curve radius initialization and interpolation in the curve sculpting pipeline, with UI integration and documentation.",
+      "Improved material property editing and curve-mapping interactions.",
+      "5 pull requests accepted into the official Blender repository."
+    ],
+    "detailsCn": [
+      "在曲线雕刻管线中实现了曲线半径初始化与插值，并完成界面集成与文档。",
+      "改进了材质属性编辑与曲线映射交互。",
+      "5 个 pull request 已合入 Blender 官方仓库。"
     ]
   },
   {

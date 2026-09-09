@@ -22,6 +22,8 @@ const github = "https://github.com/XDzzzzzZyq";
 const count = (n: number) => interpolate(dict.site.entries, { count: String(n) });
 const researchCount = getProjectsByCategory("research").length;
 const personalCount = getProjectsByCategory("personal").length;
+// Authoring notes: visible while running `astro dev`, dropped from the build.
+const devOnly = (text: string) => (import.meta.env.DEV ? text : undefined);
 ---
 <BaseLayout
   title={`${dict.site.title} | XDzZyq`}
@@ -95,7 +97,7 @@ const personalCount = getProjectsByCategory("personal").length;
         id="projects"
         index={2}
         title={dict.projects.title}
-        descriptionHtml={dict.projects.description}
+        descriptionHtml={devOnly(dict.projects.description)}
         count={count(researchCount)}
       >
         <ProjectList lang={lang} dict={dict} category="research" />
@@ -105,7 +107,7 @@ const personalCount = getProjectsByCategory("personal").length;
         id="personal-projects"
         index={3}
         title={dict.personalProjects.title}
-        description={dict.personalProjects.description}
+        description={devOnly(dict.personalProjects.description)}
         count={count(personalCount)}
       >
         <ProjectList lang={lang} dict={dict} category="personal" />
