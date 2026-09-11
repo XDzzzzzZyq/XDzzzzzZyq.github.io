@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "year": "2026",
+    "title": "PinFuse: Spatial Transcriptomics Data Denoising through Neural Advection-Diffusion Operator",
+    "venue": "Zhang, Y., Shen, Z., Deng, Y. and Zhang, Y. Manuscript.",
+    "href": ""
+  },
+  {
+    "year": "2026",
+    "title": "MissingJiT: Learning the Joint Distribution of Satellite Imagery from Missing Data",
+    "venue": "Zhang, Y. and Li, Z. Manuscript.",
+    "href": ""
+  }
+]

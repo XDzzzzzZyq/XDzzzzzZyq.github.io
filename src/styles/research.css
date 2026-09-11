@@ -921,6 +921,14 @@ html.reveal-pending [data-reveal] {
   color: var(--color-text-muted);
 }
 
+.publication-list li span {
+  /* Hanging indent: the first line sits flush against the index column,
+     wrapped lines indent so they don't run back under the number. */
+  display: block;
+  text-indent: calc(-1 * var(--space-1));
+  padding-left: var(--space-1);
+}
+
 .publication-list a {
   color: var(--color-accent-hover);
   font-weight: 700;
