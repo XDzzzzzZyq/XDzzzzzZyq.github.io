@@ -15,7 +15,7 @@ const home = (hash: string) =>
   variant === "home" ? hash : researchHomeHref(lang, hash);
 ---
 <nav class="research-nav" aria-label="Research navigation">
-  <a class="research-brand" href="/">{dict.site.brand}</a>
+  <a class="research-brand" href={researchHomeHref(lang)}>{dict.site.brand} / {dict.site.title}</a>
   <div class="research-nav__links">
     <a href={home("#bio")}>{dict.nav.bio}</a>
     <a href={home("#projects")}>{dict.nav.projects}</a>
