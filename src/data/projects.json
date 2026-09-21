@@ -11,10 +11,10 @@
     "affiliation": "Duke University",
     "affiliationCn": "杜克大学",
     "piWebsite": "https://yi-zhang-compbio-lab.github.io/",
-    "summary": "Light-weight Graph Variational Auto-Encoder paired with a neural advection-diffusion operator, denoising and deblurring spatial transcriptomics data with zero-inflated negative binomial reconstruction and mass conservation.",
-    "summaryCn": "结合轻量级图变分自编码器和神经对流扩散算子，并结合零膨胀负二项重建与质量守恒约束，实现空间转录组数据去噪去模糊。",
-    "abstract": "Spatial transcriptomics resolves gene expression in situ, but the measured counts conflate the underlying expression field with two distinct corruptions: zero-inflated observation noise, and the physical diffusion of transcripts during wet-lab capture. Denoisers that treat this as generic count imputation address only the former, and may redistribute expression in ways the underlying transport does not permit. This work presents PinFuse, a lightweight graph variational auto-encoder built on Position-induced Transformer (PiT) variants, whose decoder is a neural advection-diffusion operator. Casting deblurring as an explicit transport process lets the model preserve localized graph structure and satisfy mass conservation by construction, while a zero-inflated negative binomial likelihood accounts for the observation noise; probabilistic inference is implemented in Pyro. PinFuse improves gene reconstruction, latent clustering, and marker purity over recent methods including ResolVI. A manuscript is in preparation for 2026.",
-    "abstractCn": "空间转录组能在原位测量基因表达，但观测计数中混杂了两种性质不同的失真：零膨胀观测噪声，以及湿实验捕获阶段转录本的物理扩散。把问题当作一般性计数填补的去噪方法只处理了前者，且可能以底层输运过程并不允许的方式重新分配表达量。本工作提出 PinFuse：一个基于 Position-induced Transformer（PiT）变体的轻量级图变分自编码器，其解码器是一个神经对流扩散算子。将去模糊建模为显式的输运过程，使模型在构造上即保持局部图结构与质量守恒，而零膨胀负二项似然负责刻画观测噪声，概率推断由 Pyro 实现。相较 ResolVI 等近期方法，PinFuse 在基因重建、潜空间聚类与 marker 纯净度上均有提升。论文准备中，预计 2026 年发表。",
+    "summary": "A light-weight graph variational auto-encoder whose decoder is a neural advection-diffusion operator, denoising and deblurring spatial transcriptomics data while respecting graph structure and mass conservation.",
+    "summaryCn": "一个轻量级图变分自编码器，其解码器为神经对流扩散算子，在保持图结构与质量守恒的前提下，实现空间转录组数据的去噪去模糊。",
+    "abstract": "Spatial transcriptomics resolves gene expression in situ, but the measured counts conflate the underlying expression field with two distinct corruptions: zero-inflated observation noise, and the physical diffusion of transcripts during wet-lab capture. Denoisers that treat this as generic count imputation address only the former, and may redistribute expression in ways the underlying transport does not permit. PinFuse is a lightweight graph variational auto-encoder whose decoder is a neural advection-diffusion operator, casting deblurring as an explicit transport process so that localized graph structure and mass conservation are respected by construction while a probabilistic likelihood accounts for the observation noise. PinFuse improves gene reconstruction, latent clustering, and marker purity over recent methods including ResolVI. A manuscript is in preparation for 2026; method details will follow with the publication.",
+    "abstractCn": "空间转录组能在原位测量基因表达，但观测计数中混杂了两种性质不同的失真：零膨胀观测噪声，以及湿实验捕获阶段转录本的物理扩散。把问题当作一般性计数填补的去噪方法只处理了前者，且可能以底层输运过程并不允许的方式重新分配表达量。PinFuse 是一个轻量级图变分自编码器，其解码器为神经对流扩散算子，把去模糊建模为显式的输运过程，使局部图结构与质量守恒由构造得以保持，而观测噪声由一个概率似然刻画。相较 ResolVI 等近期方法，PinFuse 在基因重建、潜空间聚类与 marker 纯净度上均有提升。论文准备中，预计 2026 年发表，具体方法将随发表一并公开。",
     "coverImage": "assets/learning-dynamics.svg",
     "coverAlt": "Cyan learning trajectory drawn through a dark grid of model states.",
     "coverAltCn": "青色的学习轨迹穿过深色模型状态网格。",
@@ -26,14 +26,14 @@
       "publication": ""
     },
     "details": [
-      "Formulated denoising as reconstruction of a zero-inflated negative binomial distribution on a spatial graph.",
-      "Improved downstream tasks including latent clustering, cell-level and bin-level classification.",
-      "Publication in preparation; the project will be released alongside the paper this year."
+      "Treats denoising as a transport-aware reconstruction of the gene expression field rather than generic count imputation.",
+      "Improved downstream tasks including latent clustering and marker purity over recent methods including ResolVI.",
+      "Publication in preparation; method details and code will be released alongside the paper this year."
     ],
     "detailsCn": [
-      "将去噪建模为在空间图上重建零膨胀负二项分布。",
-      "提升了潜变量聚类、细胞级与 bin 级分类等下游任务。",
-      "论文准备中，项目将在今年随论文一并发布。"
+      "将去噪建模为考虑输运的基因表达场重建，而非一般性的计数填补。",
+      "相较 ResolVI 等近期方法，在潜空间聚类与 marker 纯净度等下游任务上均有提升。",
+      "论文准备中，具体方法与代码将在今年随论文一并发布。"
     ]
   },
   {
@@ -47,10 +47,10 @@
     "statusCn": "科研助理 · Zuchuan Li老师",
     "affiliation": "Duke Kunshan University",
     "affiliationCn": "昆山杜克大学",
-    "summary": "MissingJiT learns the joint distribution of satellite imagery directly from incomplete observations, then performs posterior sampling in the resulting flow-matching model — a flow-matching analogue of DPS with an SSIM likelihood.",
-    "summaryCn": "MissingJiT 直接从不完整观测中学习卫星影像的联合分布，并在得到的 flow matching 模型上做后验采样——即 DPS 在 flow matching 上的对应形式，并以 SSIM 似然替代 L2。",
-    "abstract": "Diffusion posterior sampling (DPS) turns a pretrained generative model into a solver for general inverse problems by augmenting its score with a likelihood gradient, but it rests on two assumptions that fail for real sensor data: the forward process must be variance-preserving, and a score function must already model the joint distribution of complete high-dimensional data. Satellite imagery violates both — clouds, sensor gaps, and failed acquisitions leave only incomplete observations, so no complete dataset exists from which to learn the joint. MissingJiT is a framework that learns this joint distribution directly from missing data and performs posterior sampling in the resulting flow-matching model. First, a pixel-space Just image Transformer (JiT) learns the joint distribution of satellite imagery by discarding missing patches at tokenization, packing variable-length sequences with masked attention, and marginalizing over the missing mechanism under a missingness-at-random assumption. Second, because flow matching is not a VP-SDE, the stochastic differential equation whose time-marginals match the linear-interpolation flow is derived, along with its time-reversed probability-flow ODE and the isolated score term, yielding a flow-matching analogue of DPS. Third, the standard L2 likelihood is replaced with a differentiable structural-similarity (SSIM) distance to preserve fine-scale texture that L2 tends to blur. Unconditioned sampling already reveals realistic geophysical structure, and conditioning on partial observations enables spatially coherent inpainting.",
-    "abstractCn": "Diffusion posterior sampling（DPS）通过在 score 上叠加似然梯度，把预训练生成模型变成通用反问题求解器，但它依赖两个在真实传感器数据上不成立的假设：前向过程必须是方差保持（variance-preserving）的，且必须已有一个 score 函数刻画了完整高维数据的联合分布。卫星影像同时违背这两点——云层、传感器缺口与失败的获取只留下不完整观测，因此并不存在可用于学习联合分布的完整数据集。MissingJiT 直接从缺失数据中学习该联合分布，并在得到的 flow matching 模型上执行后验采样。其一，用像素空间的 Just image Transformer（JiT）学习卫星影像的联合分布：在 tokenization 阶段丢弃缺失 patch，用掩码注意力打包变长序列，并在随机缺失（missingness-at-random）假设下对缺失机制做边缘化。其二，由于 flow matching 并非 VP-SDE，推导了时间边缘分布与线性插值流一致的随机微分方程，及其时间反演的 probability-flow ODE 与独立的 score 项，从而得到 DPS 在 flow matching 上的对应形式。其三，将标准 L2 似然替换为可微的结构相似性（SSIM）距离，以保留 L2 容易模糊掉的细尺度纹理。无条件采样已能呈现真实的地球物理结构，而以部分观测为条件则可实现空间连贯的影像补全。",
+    "summary": "MissingJiT learns the joint distribution of satellite imagery directly from incomplete observations, then performs posterior sampling in the resulting flow-matching model to inpaint missing regions.",
+    "summaryCn": "MissingJiT 直接从不完整观测中学习卫星影像的联合分布，并在得到的 flow matching 模型上做后验采样，以补全缺失区域。",
+    "abstract": "Diffusion posterior sampling (DPS) turns a pretrained generative model into a solver for general inverse problems, but it assumes a score model already trained on the joint distribution of complete high-dimensional data. Satellite imagery breaks that assumption: clouds, sensor gaps, and failed acquisitions leave only incomplete observations, so no complete dataset exists from which to learn the joint distribution. MissingJiT learns this joint distribution directly from missing data — requiring no complete reference — and performs posterior sampling in the resulting flow-matching model, so conditioning on partial observations enables spatially coherent inpainting without task-specific retraining. Unconditioned sampling already reveals realistic geophysical structure. A manuscript is in preparation; method details will follow with the publication this year.",
+    "abstractCn": "Diffusion posterior sampling（DPS）能把预训练生成模型变成通用反问题求解器，但它假设已有一个在完整高维数据联合分布上训练好的 score 模型。卫星影像不满足这一假设：云层、传感器缺口与失败的获取只留下不完整观测，因此并不存在可用于学习联合分布的完整数据集。MissingJiT 直接从缺失数据中学习该联合分布——无需任何完整参考——并在得到的 flow matching 模型上执行后验采样，从而以部分观测为条件、无需任务特定重训练即可实现空间连贯的影像补全。无条件采样已能呈现真实的地球物理结构。论文准备中，具体方法将随今年的发表一并公开。",
     "coverImage": "assets/learning-dynamics.svg",
     "coverAlt": "Cyan learning trajectory drawn through a dark grid of model states.",
     "coverAltCn": "青色的学习轨迹穿过深色模型状态网格。",
@@ -62,14 +62,14 @@
       "publication": ""
     },
     "details": [
-      "Learns the joint distribution directly from incomplete imagery: missing patches are discarded at tokenization, variable-length sequences are packed with masked attention, and the missing mechanism is marginalized under missingness-at-random.",
-      "Derived the SDE whose time-marginals match the linear-interpolation flow, its time-reversed probability-flow ODE, and the isolated score term — a flow-matching analogue of DPS, since flow matching is not a VP-SDE.",
-      "Replaced the L2 likelihood with a differentiable SSIM distance to preserve fine-scale texture, enabling spatially coherent inpainting from partial observations."
+      "Learns the joint distribution of satellite imagery directly from incomplete observations, requiring no complete reference dataset.",
+      "Adapts posterior sampling to a flow-matching model, so partial observations can be inpainted without task-specific retraining.",
+      "Publication in preparation; method details will be released alongside the paper this year."
     ],
     "detailsCn": [
-      "直接从不完整影像中学习联合分布：tokenization 阶段丢弃缺失 patch，用掩码注意力打包变长序列，并在随机缺失假设下对缺失机制做边缘化。",
-      "推导了时间边缘分布与线性插值流一致的 SDE、其时间反演的 probability-flow ODE 与独立的 score 项——由于 flow matching 不是 VP-SDE，由此得到 DPS 的 flow matching 对应形式。",
-      "将 L2 似然替换为可微的 SSIM 距离以保留细尺度纹理，从而在部分观测条件下实现空间连贯的影像补全。"
+      "直接从不完整观测中学习卫星影像的联合分布，无需任何完整参考数据集。",
+      "将后验采样适配到 flow matching 模型，无需任务特定重训练即可补全部分观测。",
+      "论文准备中，具体方法将在今年随论文一并发布。"
     ]
   },
   {
